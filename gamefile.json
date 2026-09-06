@@ -295,7 +295,7 @@
       }
     }
   },
-  "defaultResources": {
+  "defaultRessources": {
     "decksUrl": "https://jfbaraky.github.io/cores/decks.json"
   },
   "cards": {
