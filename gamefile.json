@@ -1251,7 +1251,7 @@
               ]
             },
             "events": {
-              "onPlayersReady": "for (const zone of [\"Hand\", \"Deck\"]) {\n  for (const card of (cards[zone] || [])) {\n    const data = functions.getCardData(card);\n    if (data && data.isCapital) {\n      await functions.moveCard(card, \"Territorio\");\n      chatLog(\"Capital colocada em jogo automaticamente no Território.\");\n      return;\n    }\n  }\n}"
+              "onPlayersDeckPicked": "for (const zone of [\"Deck\", \"Hand\"]) {\n  for (const card of (cards[zone] || [])) {\n    const data = functions.getCardData(card);\n    if (data && data.isCapital) {\n      await functions.moveCard(card, \"Territorio\");\n      chatLog(\"Capital colocada em jogo automaticamente no Território.\");\n      return;\n    }\n  }\n}"
             }
           },
           "MercadoCombatentesPilha": {
