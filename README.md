@@ -123,10 +123,20 @@ como em uma mesa física. O `gamefile.json` só define:
   a Capital tiver sido uma das 6 originais (sobrariam só 5), ou devolve o
   excesso ao Império e reembaralha (`shuffleSection`) se a busca trouxe
   cartas demais. Roda em vários eventos (`onPlayersSideboardClosed`,
-  `onPlayersMulligan`, `onPlayersReady`, `onNewTurn`, `onCardsUpdate`) mas
-  é idempotente — a primeira coisa que checa é se já existe uma Capital no
-  Território, então chamadas repetidas não saem sacando o baralho de novo.
-  **Confirmado ao vivo** (ver "Testado ao vivo" abaixo).
+  `onPlayersMulligan`, `onPlayersReady`, `onNewTurn`, `onCardsUpdate`) e
+  tenta ser idempotente — a primeira coisa que checa é se já existe uma
+  Capital no Território, mais uma flag `inFlight` em memória — mas testado
+  ao vivo, a busca+correção completa ainda roda **duas vezes seguidas**
+  para o mesmo jogador em alguns jogos (provavelmente dois desses eventos
+  disparando próximos o bastante para cada um ler `cards` antes do outro
+  terminar). Isso é inofensivo — o resultado final observado (Capital no
+  Território, mão com exatamente 6) foi o mesmo com uma ou duas execuções,
+  já que cada rodada só mexe em cartas que ela mesma já sabe que são
+  seguras — mas gera linhas duplicadas no chat/log de partida e um
+  reembaralhamento a mais. **Confirmado ao vivo, com o resultado final
+  correto em todos os testes** (ver "Testado ao vivo" abaixo) — a
+  duplicação ocasional fica registrada aqui como um item cosmético, não
+  uma correção pendente.
 - **`boardCategoriesInSideboard` não funciona para este baralho
   pré-construído:** testado ao vivo (com e sem o toggle "Disable
   sideboard for all players" do anfitrião) — a tela "Swap cards with your
