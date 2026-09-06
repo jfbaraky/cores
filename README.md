@@ -171,10 +171,13 @@ documentação:
 - **Os 4 baralhos iniciais** aparecem corretamente na aba "Preconstructed
   decks" da tela de seleção de baralho, com os nomes certos e o conteúdo
   certo (12 Trabalhadores + 1 Capital cada).
-- **Mão inicial:** exatamente 6 cartas por jogador, Império com as 7
-  restantes — confirmado com 2 jogadores reais simultâneos (esse número
-  ficava incorretamente dobrado para 12/0 antes da correção de
-  `beforeGameStart`, ver histórico do git).
+- **Mão inicial:** exatamente 6 cartas por jogador — confirmado com 2
+  jogadores reais simultâneos (esse número ficava incorretamente dobrado
+  para 12/0 antes da correção de `beforeGameStart`, ver histórico do git).
+  Desde a correção do Sideboard, a Capital sai do baralho *antes* do
+  saque, então o Império sacável agora tem 12 Trabalhadores (não 13); a
+  mão de 6 deixa 6 cartas no baralho, não 7 como numa versão anterior
+  deste projeto (quando a Capital ainda contava como uma das 13).
 - **Mercado:** as 3 pilhas (Combatentes/Estratégias/Melhorias) são
   populadas automaticamente no início da partida com a contagem certa
   (57/73/74 cópias, batendo com o campo `copies` de cada carta).
