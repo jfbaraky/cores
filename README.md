@@ -105,7 +105,14 @@ como em uma mesa física. O `gamefile.json` só define:
   cada Renovação, seguindo a regra combinada (quem jogou por último vira o
   primeiro).
 - **"Trabalhar"/"Comerciar":** o jogador arrasta o(s) Trabalhador(es) da Mão
-  para o Descanso e ajusta o contador correspondente na Reserva manualmente.
+  para o Descanso (botão direito na carta → "To Descanso" → "Top") e ajusta o
+  contador correspondente na Reserva manualmente (clique no campo numérico e
+  digite o valor, ou use as setas ▲▼). Testado e funcionando ao vivo.
+- **Colocar a Capital em jogo:** a Capital está embaralhada dentro do
+  Império de 13 cartas do jogador — **não há garantia de que ela esteja na
+  mão inicial de 6 cartas** (ver "Itens de dados a revisar" abaixo). Assim
+  que for comprada (mão inicial ou depois), o jogador deve arrastá-la da Mão
+  para o Território como sua primeira ação disponível, sem custo.
 
 ## Itens de dados a revisar
 
@@ -141,28 +148,65 @@ o conteúdo "fechado":
 - **Trabalhadores:** ainda usam URLs de imagem placeholder — não há arte
   própria para eles ainda (cartas simples, coloridas por civilização, sem
   nome/arte única, conforme confirmado).
+- **A Capital não é garantida na mão inicial.** O manual (§7.1) descreve a
+  Capital entrando em jogo imediatamente, sem custo, na Preparação. Como a
+  Capital está embaralhada junto com os 12 Trabalhadores no Império de 13
+  cartas (não existe, na versão atual, um jeito confiável testado de
+  extrair uma carta específica do baralho embaralhado de cada jogador antes
+  do saque inicial), ela pode não sair nas 6 cartas da mão inicial — só
+  chegará quando for sacada, natural ou numa Renovação seguinte. Isso é uma
+  simplificação assumida deste projeto (não é assim no jogo físico); se
+  quiser a garantia real, a alternativa seria não embaralhar a Capital no
+  Império e usar `initialBoardSetup` com `createCardId` para colocá-la
+  direto no Território — mas isso exigiria um `gameplay` (formato) separado
+  por civilização, já que hoje as 4 Capitais compartilham o mesmo
+  `beforeGameStart`.
 
-## Pontos a validar no editor do TCG Arena (inferidos da documentação)
+## Testado ao vivo no TCG Arena
 
-A documentação pública não detalha 100% do schema em alguns pontos. Isto foi
-inferido com base no comportamento descrito e **precisa ser conferido/ajustado
-assim que você tiver acesso ao editor real**:
+As seções abaixo já foram verificadas numa partida real de 2 jogadores
+(2 abas do navegador conectadas na mesma sala), não apenas inferidas da
+documentação:
 
-1. **Seleção de Capital** (`customCategories`, `boardCategoriesInSideboard`,
-   `boardCardSelection` em `gamefile.json`) — a doc descreve a existência
-   dessas funcionalidades, mas não o schema completo nem para onde vai a
-   carta *selecionada* (só o destino da *não selecionada* é documentado).
-2. **`decks.json`** — a doc diz que normalmente esse arquivo é gerado pelo
-   próprio deck builder do TCG Arena ("Exportar → Baralho Inicial"), não
-   escrito à mão. O arquivo atual é uma tentativa razoável do formato; o
-   caminho mais seguro é recriar esse arquivo pela função de exportação assim
-   que `cards.json` tiver conteúdo real carregado no editor.
-3. **Nomes dos campos de `tokens`** (`tokens.player` / `tokens.draggable`) —
-   inferidos da descrição em prosa da documentação, não confirmados por um
-   exemplo de JSON.
+- **Link do jogo:** gerado com sucesso em `tcg-arena.fr` a partir da URL do
+  `gamefile.json` — o jogo é reconhecido pelo nome ("Cores da Guerra").
+- **Os 4 baralhos iniciais** aparecem corretamente na aba "Preconstructed
+  decks" da tela de seleção de baralho, com os nomes certos e o conteúdo
+  certo (12 Trabalhadores + 1 Capital cada).
+- **Mão inicial:** exatamente 6 cartas por jogador, Império com as 7
+  restantes — confirmado com 2 jogadores reais simultâneos (esse número
+  ficava incorretamente dobrado para 12/0 antes da correção de
+  `beforeGameStart`, ver histórico do git).
+- **Mercado:** as 3 pilhas (Combatentes/Estratégias/Melhorias) são
+  populadas automaticamente no início da partida com a contagem certa
+  (57/73/74 cópias, batendo com o campo `copies` de cada carta).
+- **Zonas e ações básicas:** "Mão" some por padrão atrás de um botão
+  "Show" (clique para abrir o leque de cartas — não é um bug de
+  visibilidade, é só a UI padrão do app); botão direito numa carta dá um
+  menu "To Descanso / To Império / To Pilha de X / ..." para mover cartas
+  entre zonas; o painel "Reserva & Hegemonia" aceita edição direta do
+  contador numérico.
+- **`defaultRessources`** (não `defaultResources`) é o nome de campo real
+  usado pelo motor — confirmado via inspeção de rede ao vivo (o app tentava
+  buscar uma URL `undefined` até a correção).
+- **Categoria de baralho "Capital"** precisa de um `type` de carta distinto
+  (`"Capital"`, não `"Melhoria"` com um campo `category` customizado) para
+  ser reconhecida pelo `deckRuleset` — confirmado ao vivo com o
+  deck-builder real.
 
-Nada disso bloqueia o desenvolvimento — só significa que a primeira sessão no
-editor real provavelmente vai exigir pequenos ajustes de nomes de campo.
+## Pontos ainda não verificados
+
+- **Esteira do Mercado / revelar as 4 cartas do topo de cada pilha:** as
+  pilhas foram populadas, mas o fluxo de "revelar as 4 do topo" e "rolar a
+  esteira" ainda não foi executado numa partida de teste — deve funcionar
+  via o mesmo menu de botão direito ("To Pilha de Combatentes" → "Top"),
+  mas isso move para o TOPO da pilha, não necessariamente "revela" num
+  sentido especial; testar esse fluxo específico antes de confiar nele.
+- **Compra de cartas (pagar com fichas de recurso)** e o bônus de "compra
+  plena" — não testados ao vivo ainda.
+- **Assalto/Combate completo** (casamento de cartas, Formações, etc.) — por
+  natureza é 100% manual/lido pelos jogadores; a zona "Campo de Batalha"
+  existe mas o fluxo completo de um Conflito não foi executado neste teste.
 
 ## Próximos passos
 
