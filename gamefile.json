@@ -3,25 +3,49 @@
   "cardRotation": 45,
   "customHelp": "Cores da Guerra é um jogo de construção de baralhos sobre o Mediterrâneo helenístico. Escolha sua Capital, gerencie Trabalhadores para gerar recursos, compre Combatentes, Estratégias e Melhorias no Mercado, e conquiste Hegemonia por vitória militar ou por influência.\n\nIMPORTANTE — esta implementação digital NÃO resolve Conflitos, Formações, habilidades de carta ou pontuação automaticamente. O motor oferece apenas as zonas, o estado de virado/tapado e contadores de apoio (aba 'Reserva'). Consultem sempre o Manual de Regras (Cores da Guerra — Manual de Regras v1) para resolver Assaltos, Combates e efeitos de carta.\n\nOrdem de jogo (primazia) a cada Campanha: quem jogou por último na Campanha anterior joga primeiro na próxima; os demais mantêm a ordem relativa. Passem o token 'Primazia' manualmente na Renovação.\n\nConflitos (Assalto/Combate) em partidas com 3-4 jogadores são sempre declarados 1 contra 1: quem ataca escolhe um único oponente-alvo: os demais não participam daquele Conflito.\n\nMONTAGEM DO BARALHO: o Império Inicial é sempre o mesmo (12 Trabalhadores + as 4 Capitais para escolher 1). Em vez de montar na mão, vá em Decks > Create deck > Import e cole:\n\n3 Trabalhador Helênico\n3 Trabalhador Latino\n3 Trabalhador Fenício\n3 Trabalhador Celta\n1 Pella\n1 Roma\n1 Cartago\n1 Avaricum\nSideboard:",
   "deckBuilding": {
-    "mainFilters": ["type", "civilization", "cost"],
-    "costCurveIgnoredTypes": ["Trabalhador", "Melhoria", "Capital"],
+    "mainFilters": [
+      "type",
+      "civilization",
+      "cost"
+    ],
+    "costCurveIgnoredTypes": [
+      "Trabalhador",
+      "Melhoria",
+      "Capital"
+    ],
     "formats": [
       {
         "title": "Padrão",
         "gameplay": "Padrao",
         "deckRuleset": "ImperioInicial",
         "customCategories": [
-          { "category": "Capital", "min": 1, "max": 1 }
+          {
+            "category": "Capital",
+            "min": 1,
+            "max": 1
+          }
         ]
       }
     ],
     "deckRulesets": {
       "ImperioInicial": {
         "checkCardLegality": false,
-        "general": { "min": 13, "max": 13, "maxPerCard": 3 },
+        "general": {
+          "min": 13,
+          "max": 13,
+          "maxPerCard": 3
+        },
         "categories": [
-          { "category": "Trabalhador", "min": 12, "max": 12 },
-          { "category": "Capital", "min": 1, "max": 1 }
+          {
+            "category": "Trabalhador",
+            "min": 12,
+            "max": 12
+          },
+          {
+            "category": "Capital",
+            "min": 1,
+            "max": 1
+          }
         ]
       }
     }
@@ -29,7 +53,9 @@
   "gameplay": {
     "Padrao": {
       "defaultNotes": "Hegemonia: 0\nRoxo: 0 | Vermelho: 0 | Azul: 0 | Verde: 0 | Ouro: 0",
-      "countersStartingValues": [0],
+      "countersStartingValues": [
+        0
+      ],
       "mulligan": {
         "startingHandSize": 6
       },
@@ -49,17 +75,47 @@
           }
         ],
         "draggable": [
-          { "id": "recurso-roxo", "name": "Recurso Helênico (Roxo)", "image": "https://jfbaraky.github.io/cores/assets/tokens/roxo.png" },
-          { "id": "recurso-vermelho", "name": "Recurso Latino (Vermelho)", "image": "https://jfbaraky.github.io/cores/assets/tokens/vermelho.png" },
-          { "id": "recurso-azul", "name": "Recurso Fenício (Azul)", "image": "https://jfbaraky.github.io/cores/assets/tokens/azul.png" },
-          { "id": "recurso-verde", "name": "Recurso Celta (Verde)", "image": "https://jfbaraky.github.io/cores/assets/tokens/verde.png" },
-          { "id": "ouro", "name": "Ouro", "image": "https://jfbaraky.github.io/cores/assets/tokens/ouro.png" },
-          { "id": "forca", "name": "Ficha de Força (Panóplia)", "image": "https://jfbaraky.github.io/cores/assets/tokens/forca.png" },
-          { "id": "muralha", "name": "Ficha de Muralha", "image": "https://jfbaraky.github.io/cores/assets/tokens/muralha.png" }
+          {
+            "id": "recurso-roxo",
+            "name": "Recurso Helênico (Roxo)",
+            "image": "https://jfbaraky.github.io/cores/assets/tokens/roxo.png"
+          },
+          {
+            "id": "recurso-vermelho",
+            "name": "Recurso Latino (Vermelho)",
+            "image": "https://jfbaraky.github.io/cores/assets/tokens/vermelho.png"
+          },
+          {
+            "id": "recurso-azul",
+            "name": "Recurso Fenício (Azul)",
+            "image": "https://jfbaraky.github.io/cores/assets/tokens/azul.png"
+          },
+          {
+            "id": "recurso-verde",
+            "name": "Recurso Celta (Verde)",
+            "image": "https://jfbaraky.github.io/cores/assets/tokens/verde.png"
+          },
+          {
+            "id": "ouro",
+            "name": "Ouro",
+            "image": "https://jfbaraky.github.io/cores/assets/tokens/ouro.png"
+          },
+          {
+            "id": "forca",
+            "name": "Ficha de Força (Panóplia)",
+            "image": "https://jfbaraky.github.io/cores/assets/tokens/forca.png"
+          },
+          {
+            "id": "muralha",
+            "name": "Ficha de Muralha",
+            "image": "https://jfbaraky.github.io/cores/assets/tokens/muralha.png"
+          }
         ]
       },
       "beforeGameStart": {
-        "boardCategoriesInSideboard": ["Capital"],
+        "boardCategoriesInSideboard": [
+          "Capital"
+        ],
         "boardCardSelection": [
           {
             "category": "Capital",
@@ -68,26 +124,944 @@
             "unselectedDestination": "Remove"
           }
         ],
-        "initialBoardSetup": [
-          { "drawFromTop": "Deck", "count": 6, "destination": "Hand" }
-        ]
+        "initialBoardSetup": {
+          "0": [
+            {
+              "createCardId": "combatente-companheiros",
+              "count": 1,
+              "destination": "MercadoCombatentesPilha"
+            },
+            {
+              "createCardId": "combatente-cavalaria-tessalia",
+              "count": 1,
+              "destination": "MercadoCombatentesPilha"
+            },
+            {
+              "createCardId": "combatente-sarisophoroi",
+              "count": 2,
+              "destination": "MercadoCombatentesPilha"
+            },
+            {
+              "createCardId": "combatente-prodomoi",
+              "count": 1,
+              "destination": "MercadoCombatentesPilha"
+            },
+            {
+              "createCardId": "combatente-escudos-de-prata",
+              "count": 1,
+              "destination": "MercadoCombatentesPilha"
+            },
+            {
+              "createCardId": "combatente-escudos-de-bronze",
+              "count": 1,
+              "destination": "MercadoCombatentesPilha"
+            },
+            {
+              "createCardId": "combatente-hipaspista",
+              "count": 1,
+              "destination": "MercadoCombatentesPilha"
+            },
+            {
+              "createCardId": "combatente-thureophoroi",
+              "count": 2,
+              "destination": "MercadoCombatentesPilha"
+            },
+            {
+              "createCardId": "combatente-arqueiro-cretense",
+              "count": 1,
+              "destination": "MercadoCombatentesPilha"
+            },
+            {
+              "createCardId": "combatente-akontistai",
+              "count": 2,
+              "destination": "MercadoCombatentesPilha"
+            },
+            {
+              "createCardId": "combatente-lithoboloi",
+              "count": 2,
+              "destination": "MercadoCombatentesPilha"
+            },
+            {
+              "createCardId": "combatente-cavalaria-celta",
+              "count": 1,
+              "destination": "MercadoCombatentesPilha"
+            },
+            {
+              "createCardId": "combatente-lanceiro-celtibero",
+              "count": 2,
+              "destination": "MercadoCombatentesPilha"
+            },
+            {
+              "createCardId": "combatente-campeao-gaules",
+              "count": 1,
+              "destination": "MercadoCombatentesPilha"
+            },
+            {
+              "createCardId": "combatente-cacadora-de-cabecas",
+              "count": 2,
+              "destination": "MercadoCombatentesPilha"
+            },
+            {
+              "createCardId": "combatente-cavalaria-celtiberica",
+              "count": 2,
+              "destination": "MercadoCombatentesPilha"
+            },
+            {
+              "createCardId": "combatente-peltasta-tracio",
+              "count": 2,
+              "destination": "MercadoCombatentesPilha"
+            },
+            {
+              "createCardId": "combatente-gaesatae",
+              "count": 2,
+              "destination": "MercadoCombatentesPilha"
+            },
+            {
+              "createCardId": "combatente-escaramucador",
+              "count": 2,
+              "destination": "MercadoCombatentesPilha"
+            },
+            {
+              "createCardId": "combatente-arqueiro",
+              "count": 2,
+              "destination": "MercadoCombatentesPilha"
+            },
+            {
+              "createCardId": "combatente-rorarius",
+              "count": 1,
+              "destination": "MercadoCombatentesPilha"
+            },
+            {
+              "createCardId": "combatente-veles",
+              "count": 2,
+              "destination": "MercadoCombatentesPilha"
+            },
+            {
+              "createCardId": "combatente-hastatus",
+              "count": 2,
+              "destination": "MercadoCombatentesPilha"
+            },
+            {
+              "createCardId": "combatente-guerreiro-samnita",
+              "count": 2,
+              "destination": "MercadoCombatentesPilha"
+            },
+            {
+              "createCardId": "combatente-princeps",
+              "count": 1,
+              "destination": "MercadoCombatentesPilha"
+            },
+            {
+              "createCardId": "combatente-triarius",
+              "count": 1,
+              "destination": "MercadoCombatentesPilha"
+            },
+            {
+              "createCardId": "combatente-cavalaria-italica",
+              "count": 1,
+              "destination": "MercadoCombatentesPilha"
+            },
+            {
+              "createCardId": "combatente-equites-auxilia",
+              "count": 1,
+              "destination": "MercadoCombatentesPilha"
+            },
+            {
+              "createCardId": "combatente-equites",
+              "count": 1,
+              "destination": "MercadoCombatentesPilha"
+            },
+            {
+              "createCardId": "combatente-cavalaria-numida",
+              "count": 1,
+              "destination": "MercadoCombatentesPilha"
+            },
+            {
+              "createCardId": "combatente-batedor-ibero",
+              "count": 2,
+              "destination": "MercadoCombatentesPilha"
+            },
+            {
+              "createCardId": "combatente-veterano-punico",
+              "count": 1,
+              "destination": "MercadoCombatentesPilha"
+            },
+            {
+              "createCardId": "combatente-cavalaria-sagrada",
+              "count": 1,
+              "destination": "MercadoCombatentesPilha"
+            },
+            {
+              "createCardId": "combatente-elefante-de-guerra",
+              "count": 1,
+              "destination": "MercadoCombatentesPilha"
+            },
+            {
+              "createCardId": "combatente-scutarii",
+              "count": 2,
+              "destination": "MercadoCombatentesPilha"
+            },
+            {
+              "createCardId": "combatente-veterano-libio",
+              "count": 1,
+              "destination": "MercadoCombatentesPilha"
+            },
+            {
+              "createCardId": "combatente-caetratus",
+              "count": 2,
+              "destination": "MercadoCombatentesPilha"
+            },
+            {
+              "createCardId": "combatente-fundeiro-balear",
+              "count": 2,
+              "destination": "MercadoCombatentesPilha"
+            },
+            {
+              "createCardId": "combatente-milicia-de-tanit",
+              "count": 1,
+              "destination": "MercadoCombatentesPilha"
+            },
+            {
+              "createCardId": "estrategia-alexandre-o-grande",
+              "count": 1,
+              "destination": "MercadoEstrategiasPilha"
+            },
+            {
+              "createCardId": "estrategia-ataque-noturno",
+              "count": 1,
+              "destination": "MercadoEstrategiasPilha"
+            },
+            {
+              "createCardId": "estrategia-batedores-tracios",
+              "count": 1,
+              "destination": "MercadoEstrategiasPilha"
+            },
+            {
+              "createCardId": "estrategia-assembleia-dos-mercadores",
+              "count": 1,
+              "destination": "MercadoEstrategiasPilha"
+            },
+            {
+              "createCardId": "estrategia-ostracismo",
+              "count": 1,
+              "destination": "MercadoEstrategiasPilha"
+            },
+            {
+              "createCardId": "estrategia-vitoria-de-pirro",
+              "count": 1,
+              "destination": "MercadoEstrategiasPilha"
+            },
+            {
+              "createCardId": "estrategia-armas-de-cerco",
+              "count": 1,
+              "destination": "MercadoEstrategiasPilha"
+            },
+            {
+              "createCardId": "estrategia-marcias-de-pella",
+              "count": 1,
+              "destination": "MercadoEstrategiasPilha"
+            },
+            {
+              "createCardId": "estrategia-antigono-i-monoftalmo",
+              "count": 1,
+              "destination": "MercadoEstrategiasPilha"
+            },
+            {
+              "createCardId": "estrategia-demetrio-i-poliocertes",
+              "count": 1,
+              "destination": "MercadoEstrategiasPilha"
+            },
+            {
+              "createCardId": "estrategia-batalha-de-gaugamela",
+              "count": 1,
+              "destination": "MercadoEstrategiasPilha"
+            },
+            {
+              "createCardId": "estrategia-jogos-olimpicos",
+              "count": 1,
+              "destination": "MercadoEstrategiasPilha"
+            },
+            {
+              "createCardId": "estrategia-cavalaria-batedora",
+              "count": 1,
+              "destination": "MercadoEstrategiasPilha"
+            },
+            {
+              "createCardId": "estrategia-falange-macedonica",
+              "count": 1,
+              "destination": "MercadoEstrategiasPilha"
+            },
+            {
+              "createCardId": "estrategia-homem-de-vime",
+              "count": 1,
+              "destination": "MercadoEstrategiasPilha"
+            },
+            {
+              "createCardId": "estrategia-batedores-celtas",
+              "count": 1,
+              "destination": "MercadoEstrategiasPilha"
+            },
+            {
+              "createCardId": "estrategia-breno-rei-dos-celtas",
+              "count": 1,
+              "destination": "MercadoEstrategiasPilha"
+            },
+            {
+              "createCardId": "estrategia-emboscada",
+              "count": 1,
+              "destination": "MercadoEstrategiasPilha"
+            },
+            {
+              "createCardId": "estrategia-cacadores-de-cabeca",
+              "count": 1,
+              "destination": "MercadoEstrategiasPilha"
+            },
+            {
+              "createCardId": "estrategia-chamado-de-guerra",
+              "count": 1,
+              "destination": "MercadoEstrategiasPilha"
+            },
+            {
+              "createCardId": "estrategia-escolhido-dos-deuses",
+              "count": 1,
+              "destination": "MercadoEstrategiasPilha"
+            },
+            {
+              "createCardId": "estrategia-investida",
+              "count": 1,
+              "destination": "MercadoEstrategiasPilha"
+            },
+            {
+              "createCardId": "estrategia-seguidores-de-acampamento",
+              "count": 1,
+              "destination": "MercadoEstrategiasPilha"
+            },
+            {
+              "createCardId": "estrategia-imigracao-celta",
+              "count": 1,
+              "destination": "MercadoEstrategiasPilha"
+            },
+            {
+              "createCardId": "estrategia-terror-celtico",
+              "count": 1,
+              "destination": "MercadoEstrategiasPilha"
+            },
+            {
+              "createCardId": "estrategia-mercadores-celtas",
+              "count": 1,
+              "destination": "MercadoEstrategiasPilha"
+            },
+            {
+              "createCardId": "estrategia-cavalaria-de-epona",
+              "count": 1,
+              "destination": "MercadoEstrategiasPilha"
+            },
+            {
+              "createCardId": "estrategia-o-ultimo-recurso",
+              "count": 1,
+              "destination": "MercadoEstrategiasPilha"
+            },
+            {
+              "createCardId": "estrategia-negociacoes-secretas",
+              "count": 1,
+              "destination": "MercadoEstrategiasPilha"
+            },
+            {
+              "createCardId": "estrategia-imperium",
+              "count": 1,
+              "destination": "MercadoEstrategiasPilha"
+            },
+            {
+              "createCardId": "estrategia-exploratores",
+              "count": 1,
+              "destination": "MercadoEstrategiasPilha"
+            },
+            {
+              "createCardId": "estrategia-quinto-fabio-maximo",
+              "count": 1,
+              "destination": "MercadoEstrategiasPilha"
+            },
+            {
+              "createCardId": "estrategia-saque-de-siracusa",
+              "count": 1,
+              "destination": "MercadoEstrategiasPilha"
+            },
+            {
+              "createCardId": "estrategia-triunfo-romano",
+              "count": 1,
+              "destination": "MercadoEstrategiasPilha"
+            },
+            {
+              "createCardId": "estrategia-evocati",
+              "count": 1,
+              "destination": "MercadoEstrategiasPilha"
+            },
+            {
+              "createCardId": "estrategia-circunvalacao",
+              "count": 1,
+              "destination": "MercadoEstrategiasPilha"
+            },
+            {
+              "createCardId": "estrategia-circunvalacao-2",
+              "count": 1,
+              "destination": "MercadoEstrategiasPilha"
+            },
+            {
+              "createCardId": "estrategia-cartografia",
+              "count": 1,
+              "destination": "MercadoEstrategiasPilha"
+            },
+            {
+              "createCardId": "estrategia-cipiao-o-africano",
+              "count": 1,
+              "destination": "MercadoEstrategiasPilha"
+            },
+            {
+              "createCardId": "estrategia-batalha-de-zama",
+              "count": 1,
+              "destination": "MercadoEstrategiasPilha"
+            },
+            {
+              "createCardId": "estrategia-marcha-forcada",
+              "count": 1,
+              "destination": "MercadoEstrategiasPilha"
+            },
+            {
+              "createCardId": "estrategia-saturnalia",
+              "count": 1,
+              "destination": "MercadoEstrategiasPilha"
+            },
+            {
+              "createCardId": "estrategia-lupercalia",
+              "count": 1,
+              "destination": "MercadoEstrategiasPilha"
+            },
+            {
+              "createCardId": "estrategia-taticas-de-cipiao",
+              "count": 1,
+              "destination": "MercadoEstrategiasPilha"
+            },
+            {
+              "createCardId": "estrategia-cursus-honorum",
+              "count": 1,
+              "destination": "MercadoEstrategiasPilha"
+            },
+            {
+              "createCardId": "estrategia-salarium",
+              "count": 1,
+              "destination": "MercadoEstrategiasPilha"
+            },
+            {
+              "createCardId": "estrategia-juramento-de-anibal",
+              "count": 1,
+              "destination": "MercadoEstrategiasPilha"
+            },
+            {
+              "createCardId": "estrategia-decepcao-de-maharbal",
+              "count": 1,
+              "destination": "MercadoEstrategiasPilha"
+            },
+            {
+              "createCardId": "estrategia-batedores-nubios",
+              "count": 1,
+              "destination": "MercadoEstrategiasPilha"
+            },
+            {
+              "createCardId": "estrategia-subterfugio",
+              "count": 1,
+              "destination": "MercadoEstrategiasPilha"
+            },
+            {
+              "createCardId": "estrategia-mapas-secretos-de-hano",
+              "count": 1,
+              "destination": "MercadoEstrategiasPilha"
+            },
+            {
+              "createCardId": "estrategia-anibal-barca",
+              "count": 1,
+              "destination": "MercadoEstrategiasPilha"
+            },
+            {
+              "createCardId": "estrategia-batalha-de-canas",
+              "count": 1,
+              "destination": "MercadoEstrategiasPilha"
+            },
+            {
+              "createCardId": "estrategia-bloqueio-naval",
+              "count": 1,
+              "destination": "MercadoEstrategiasPilha"
+            },
+            {
+              "createCardId": "estrategia-travessia-dos-alpes",
+              "count": 1,
+              "destination": "MercadoEstrategiasPilha"
+            },
+            {
+              "createCardId": "estrategia-naufragio",
+              "count": 1,
+              "destination": "MercadoEstrategiasPilha"
+            },
+            {
+              "createCardId": "estrategia-mercados-secretos",
+              "count": 1,
+              "destination": "MercadoEstrategiasPilha"
+            },
+            {
+              "createCardId": "estrategia-contadores-de-cartago",
+              "count": 1,
+              "destination": "MercadoEstrategiasPilha"
+            },
+            {
+              "createCardId": "estrategia-ouroboros",
+              "count": 1,
+              "destination": "MercadoEstrategiasPilha"
+            },
+            {
+              "createCardId": "estrategia-o-campeao",
+              "count": 1,
+              "destination": "MercadoEstrategiasPilha"
+            },
+            {
+              "createCardId": "estrategia-crescimento-populacional",
+              "count": 1,
+              "destination": "MercadoEstrategiasPilha"
+            },
+            {
+              "createCardId": "estrategia-desgaste-moral",
+              "count": 1,
+              "destination": "MercadoEstrategiasPilha"
+            },
+            {
+              "createCardId": "estrategia-agatocles-de-siracusa",
+              "count": 1,
+              "destination": "MercadoEstrategiasPilha"
+            },
+            {
+              "createCardId": "estrategia-troca-de-prisioneiros",
+              "count": 1,
+              "destination": "MercadoEstrategiasPilha"
+            },
+            {
+              "createCardId": "estrategia-contra-ataque",
+              "count": 1,
+              "destination": "MercadoEstrategiasPilha"
+            },
+            {
+              "createCardId": "estrategia-ataque-surpresa",
+              "count": 1,
+              "destination": "MercadoEstrategiasPilha"
+            },
+            {
+              "createCardId": "estrategia-colheita-de-graos",
+              "count": 1,
+              "destination": "MercadoEstrategiasPilha"
+            },
+            {
+              "createCardId": "estrategia-revolta-servil",
+              "count": 1,
+              "destination": "MercadoEstrategiasPilha"
+            },
+            {
+              "createCardId": "estrategia-revolta-mercenaria",
+              "count": 1,
+              "destination": "MercadoEstrategiasPilha"
+            },
+            {
+              "createCardId": "estrategia-guerra-civil",
+              "count": 1,
+              "destination": "MercadoEstrategiasPilha"
+            },
+            {
+              "createCardId": "estrategia-contra-ofensiva",
+              "count": 1,
+              "destination": "MercadoEstrategiasPilha"
+            },
+            {
+              "createCardId": "estrategia-interceptacao",
+              "count": 1,
+              "destination": "MercadoEstrategiasPilha"
+            },
+            {
+              "createCardId": "estrategia-massinissa-rei-numida",
+              "count": 1,
+              "destination": "MercadoEstrategiasPilha"
+            },
+            {
+              "createCardId": "melhoria-logistica",
+              "count": 1,
+              "destination": "MercadoMelhoriasPilha"
+            },
+            {
+              "createCardId": "melhoria-agora-helenistica",
+              "count": 1,
+              "destination": "MercadoMelhoriasPilha"
+            },
+            {
+              "createCardId": "melhoria-moinho-d-agua",
+              "count": 1,
+              "destination": "MercadoMelhoriasPilha"
+            },
+            {
+              "createCardId": "melhoria-memorial-de-guerra",
+              "count": 1,
+              "destination": "MercadoMelhoriasPilha"
+            },
+            {
+              "createCardId": "melhoria-arquimedes-de-siracusa",
+              "count": 1,
+              "destination": "MercadoMelhoriasPilha"
+            },
+            {
+              "createCardId": "melhoria-templo-de-hermes",
+              "count": 1,
+              "destination": "MercadoMelhoriasPilha"
+            },
+            {
+              "createCardId": "melhoria-templo-de-atena",
+              "count": 1,
+              "destination": "MercadoMelhoriasPilha"
+            },
+            {
+              "createCardId": "melhoria-templo-de-zeus",
+              "count": 1,
+              "destination": "MercadoMelhoriasPilha"
+            },
+            {
+              "createCardId": "melhoria-economia-helenica",
+              "count": 1,
+              "destination": "MercadoMelhoriasPilha"
+            },
+            {
+              "createCardId": "melhoria-mestre-de-grego",
+              "count": 1,
+              "destination": "MercadoMelhoriasPilha"
+            },
+            {
+              "createCardId": "melhoria-helenismo",
+              "count": 1,
+              "destination": "MercadoMelhoriasPilha"
+            },
+            {
+              "createCardId": "melhoria-arquitetura",
+              "count": 1,
+              "destination": "MercadoMelhoriasPilha"
+            },
+            {
+              "createCardId": "melhoria-cavalos-da-tessalia",
+              "count": 1,
+              "destination": "MercadoMelhoriasPilha"
+            },
+            {
+              "createCardId": "melhoria-reforma-thureophoroi",
+              "count": 1,
+              "destination": "MercadoMelhoriasPilha"
+            },
+            {
+              "createCardId": "melhoria-templo-de-epona",
+              "count": 2,
+              "destination": "MercadoMelhoriasPilha"
+            },
+            {
+              "createCardId": "melhoria-novo-lar",
+              "count": 2,
+              "destination": "MercadoMelhoriasPilha"
+            },
+            {
+              "createCardId": "melhoria-minas-de-hallstatt",
+              "count": 2,
+              "destination": "MercadoMelhoriasPilha"
+            },
+            {
+              "createCardId": "melhoria-metalurgia-do-ferro",
+              "count": 1,
+              "destination": "MercadoMelhoriasPilha"
+            },
+            {
+              "createCardId": "melhoria-templo-de-belenos",
+              "count": 1,
+              "destination": "MercadoMelhoriasPilha"
+            },
+            {
+              "createCardId": "melhoria-santuario-de-toutatis",
+              "count": 1,
+              "destination": "MercadoMelhoriasPilha"
+            },
+            {
+              "createCardId": "melhoria-salao-comunal",
+              "count": 1,
+              "destination": "MercadoMelhoriasPilha"
+            },
+            {
+              "createCardId": "melhoria-economia-celta",
+              "count": 1,
+              "destination": "MercadoMelhoriasPilha"
+            },
+            {
+              "createCardId": "melhoria-helvecios",
+              "count": 1,
+              "destination": "MercadoMelhoriasPilha"
+            },
+            {
+              "createCardId": "melhoria-sabedoria-druidica",
+              "count": 1,
+              "destination": "MercadoMelhoriasPilha"
+            },
+            {
+              "createCardId": "melhoria-terra-arrasada",
+              "count": 1,
+              "destination": "MercadoMelhoriasPilha"
+            },
+            {
+              "createCardId": "melhoria-rotacao-de-cultura",
+              "count": 1,
+              "destination": "MercadoMelhoriasPilha"
+            },
+            {
+              "createCardId": "melhoria-cultura-de-la-tene",
+              "count": 1,
+              "destination": "MercadoMelhoriasPilha"
+            },
+            {
+              "createCardId": "melhoria-templo-de-juno-moneta",
+              "count": 1,
+              "destination": "MercadoMelhoriasPilha"
+            },
+            {
+              "createCardId": "melhoria-fabrica-de-armas",
+              "count": 1,
+              "destination": "MercadoMelhoriasPilha"
+            },
+            {
+              "createCardId": "melhoria-banhos-publicos",
+              "count": 1,
+              "destination": "MercadoMelhoriasPilha"
+            },
+            {
+              "createCardId": "melhoria-academia",
+              "count": 1,
+              "destination": "MercadoMelhoriasPilha"
+            },
+            {
+              "createCardId": "melhoria-marmore-de-luna",
+              "count": 1,
+              "destination": "MercadoMelhoriasPilha"
+            },
+            {
+              "createCardId": "melhoria-templo-de-esculapio",
+              "count": 1,
+              "destination": "MercadoMelhoriasPilha"
+            },
+            {
+              "createCardId": "melhoria-templo-de-marte",
+              "count": 1,
+              "destination": "MercadoMelhoriasPilha"
+            },
+            {
+              "createCardId": "melhoria-argentarii",
+              "count": 1,
+              "destination": "MercadoMelhoriasPilha"
+            },
+            {
+              "createCardId": "melhoria-pomerium",
+              "count": 1,
+              "destination": "MercadoMelhoriasPilha"
+            },
+            {
+              "createCardId": "melhoria-collegia-fraborum",
+              "count": 1,
+              "destination": "MercadoMelhoriasPilha"
+            },
+            {
+              "createCardId": "melhoria-economia-romana",
+              "count": 1,
+              "destination": "MercadoMelhoriasPilha"
+            },
+            {
+              "createCardId": "melhoria-estado-cliente",
+              "count": 1,
+              "destination": "MercadoMelhoriasPilha"
+            },
+            {
+              "createCardId": "melhoria-mare-nostrum",
+              "count": 2,
+              "destination": "MercadoMelhoriasPilha"
+            },
+            {
+              "createCardId": "melhoria-castrum",
+              "count": 1,
+              "destination": "MercadoMelhoriasPilha"
+            },
+            {
+              "createCardId": "melhoria-de-architectura",
+              "count": 1,
+              "destination": "MercadoMelhoriasPilha"
+            },
+            {
+              "createCardId": "melhoria-aristocracia",
+              "count": 1,
+              "destination": "MercadoMelhoriasPilha"
+            },
+            {
+              "createCardId": "melhoria-farol",
+              "count": 1,
+              "destination": "MercadoMelhoriasPilha"
+            },
+            {
+              "createCardId": "melhoria-navegadores-de-hanno",
+              "count": 1,
+              "destination": "MercadoMelhoriasPilha"
+            },
+            {
+              "createCardId": "melhoria-banqueiros-de-cartago",
+              "count": 1,
+              "destination": "MercadoMelhoriasPilha"
+            },
+            {
+              "createCardId": "melhoria-banqueiros-punicos",
+              "count": 1,
+              "destination": "MercadoMelhoriasPilha"
+            },
+            {
+              "createCardId": "melhoria-alfabeto-fenicio",
+              "count": 1,
+              "destination": "MercadoMelhoriasPilha"
+            },
+            {
+              "createCardId": "melhoria-templo-de-melcarte",
+              "count": 1,
+              "destination": "MercadoMelhoriasPilha"
+            },
+            {
+              "createCardId": "melhoria-templo-de-tanit",
+              "count": 1,
+              "destination": "MercadoMelhoriasPilha"
+            },
+            {
+              "createCardId": "melhoria-economia-cartaginesa",
+              "count": 1,
+              "destination": "MercadoMelhoriasPilha"
+            },
+            {
+              "createCardId": "melhoria-tinturaria-de-murex",
+              "count": 1,
+              "destination": "MercadoMelhoriasPilha"
+            },
+            {
+              "createCardId": "melhoria-manufatura",
+              "count": 1,
+              "destination": "MercadoMelhoriasPilha"
+            },
+            {
+              "createCardId": "melhoria-sicilia",
+              "count": 1,
+              "destination": "MercadoMelhoriasPilha"
+            },
+            {
+              "createCardId": "melhoria-rota-da-purpura",
+              "count": 2,
+              "destination": "MercadoMelhoriasPilha"
+            },
+            {
+              "createCardId": "melhoria-hano-o-navegador",
+              "count": 1,
+              "destination": "MercadoMelhoriasPilha"
+            },
+            {
+              "createCardId": "melhoria-grandes-silos",
+              "count": 1,
+              "destination": "MercadoMelhoriasPilha"
+            },
+            {
+              "createCardId": "melhoria-caravana-do-deserto",
+              "count": 1,
+              "destination": "MercadoMelhoriasPilha"
+            },
+            {
+              "createCardId": "melhoria-mercadores-punicos",
+              "count": 1,
+              "destination": "MercadoMelhoriasPilha"
+            },
+            {
+              "createCardId": "melhoria-comercio-maritimo",
+              "count": 1,
+              "destination": "MercadoMelhoriasPilha"
+            },
+            {
+              "createCardId": "melhoria-porto-de-cartago",
+              "count": 1,
+              "destination": "MercadoMelhoriasPilha"
+            },
+            {
+              "createCardId": "melhoria-quartel-militar",
+              "count": 1,
+              "destination": "MercadoMelhoriasPilha"
+            },
+            {
+              "createCardId": "melhoria-estabulos",
+              "count": 1,
+              "destination": "MercadoMelhoriasPilha"
+            },
+            {
+              "createCardId": "melhoria-minas-de-ouro",
+              "count": 1,
+              "destination": "MercadoMelhoriasPilha"
+            },
+            {
+              "createCardId": "melhoria-campo-de-tiro",
+              "count": 1,
+              "destination": "MercadoMelhoriasPilha"
+            },
+            {
+              "createCardId": "melhoria-sentinelas-da-fortaleza",
+              "count": 1,
+              "destination": "MercadoMelhoriasPilha"
+            },
+            {
+              "createCardId": "melhoria-torre-de-vigia",
+              "count": 1,
+              "destination": "MercadoMelhoriasPilha"
+            },
+            {
+              "createCardId": "melhoria-queda-populacional",
+              "count": 1,
+              "destination": "MercadoMelhoriasPilha"
+            },
+            {
+              "createCardId": "melhoria-templo-do-deus-inominado",
+              "count": 1,
+              "destination": "MercadoMelhoriasPilha"
+            }
+          ]
+        }
       },
       "sections": {
         "layout": {
           "direction": "column",
           "isSymmetricalForOpponents": true,
           "content": [
-            { "section": "Territorio" },
+            {
+              "section": "Territorio"
+            },
             {
               "direction": "row",
               "content": [
-                { "section": "Reserva" },
-                { "section": "Deck" },
-                { "section": "Discard" },
-                { "section": "Remove" }
+                {
+                  "section": "Reserva"
+                },
+                {
+                  "section": "Deck"
+                },
+                {
+                  "section": "Discard"
+                },
+                {
+                  "section": "Remove"
+                }
               ]
             },
-            { "section": "Hand" }
+            {
+              "section": "Hand"
+            }
           ]
         },
         "sharedZone": {
@@ -98,25 +1072,39 @@
               {
                 "direction": "row",
                 "content": [
-                  { "section": "MercadoCombatentesPilha" },
-                  { "section": "MercadoCombatentesRevelado" }
+                  {
+                    "section": "MercadoCombatentesPilha"
+                  },
+                  {
+                    "section": "MercadoCombatentesRevelado"
+                  }
                 ]
               },
               {
                 "direction": "row",
                 "content": [
-                  { "section": "MercadoEstrategiasPilha" },
-                  { "section": "MercadoEstrategiasRevelado" }
+                  {
+                    "section": "MercadoEstrategiasPilha"
+                  },
+                  {
+                    "section": "MercadoEstrategiasRevelado"
+                  }
                 ]
               },
               {
                 "direction": "row",
                 "content": [
-                  { "section": "MercadoMelhoriasPilha" },
-                  { "section": "MercadoMelhoriasRevelado" }
+                  {
+                    "section": "MercadoMelhoriasPilha"
+                  },
+                  {
+                    "section": "MercadoMelhoriasRevelado"
+                  }
                 ]
               },
-              { "section": "CampoDeBatalha" }
+              {
+                "section": "CampoDeBatalha"
+              }
             ]
           }
         },
@@ -171,76 +1159,102 @@
             },
             "blueprint": {
               "type": "div",
-              "props": { "className": "reserva-panel" },
+              "props": {
+                "className": "reserva-panel"
+              },
               "children": [
                 {
                   "type": "div",
-                  "props": { "className": "reserva-row reserva-hegemonia" },
+                  "props": {
+                    "className": "reserva-row reserva-hegemonia"
+                  },
                   "children": [
                     "Hegemonia",
                     {
                       "type": "input-number",
-                      "props": { "value": "{{ game.data.Reserva.hegemonia }}" },
+                      "props": {
+                        "value": "{{ game.data.Reserva.hegemonia }}"
+                      },
                       "onChange": "game.data.Reserva.hegemonia = Number(value); chatLog(`Hegemonia agora: ${game.data.Reserva.hegemonia}`)"
                     }
                   ]
                 },
                 {
                   "type": "div",
-                  "props": { "className": "reserva-row" },
+                  "props": {
+                    "className": "reserva-row"
+                  },
                   "children": [
                     "Roxo (Helênica)",
                     {
                       "type": "input-number",
-                      "props": { "value": "{{ game.data.Reserva.roxo }}" },
+                      "props": {
+                        "value": "{{ game.data.Reserva.roxo }}"
+                      },
                       "onChange": "game.data.Reserva.roxo = Number(value)"
                     }
                   ]
                 },
                 {
                   "type": "div",
-                  "props": { "className": "reserva-row" },
+                  "props": {
+                    "className": "reserva-row"
+                  },
                   "children": [
                     "Vermelho (Latina)",
                     {
                       "type": "input-number",
-                      "props": { "value": "{{ game.data.Reserva.vermelho }}" },
+                      "props": {
+                        "value": "{{ game.data.Reserva.vermelho }}"
+                      },
                       "onChange": "game.data.Reserva.vermelho = Number(value)"
                     }
                   ]
                 },
                 {
                   "type": "div",
-                  "props": { "className": "reserva-row" },
+                  "props": {
+                    "className": "reserva-row"
+                  },
                   "children": [
                     "Azul (Fenícia)",
                     {
                       "type": "input-number",
-                      "props": { "value": "{{ game.data.Reserva.azul }}" },
+                      "props": {
+                        "value": "{{ game.data.Reserva.azul }}"
+                      },
                       "onChange": "game.data.Reserva.azul = Number(value)"
                     }
                   ]
                 },
                 {
                   "type": "div",
-                  "props": { "className": "reserva-row" },
+                  "props": {
+                    "className": "reserva-row"
+                  },
                   "children": [
                     "Verde (Celta)",
                     {
                       "type": "input-number",
-                      "props": { "value": "{{ game.data.Reserva.verde }}" },
+                      "props": {
+                        "value": "{{ game.data.Reserva.verde }}"
+                      },
                       "onChange": "game.data.Reserva.verde = Number(value)"
                     }
                   ]
                 },
                 {
                   "type": "div",
-                  "props": { "className": "reserva-row" },
+                  "props": {
+                    "className": "reserva-row"
+                  },
                   "children": [
                     "Ouro",
                     {
                       "type": "input-number",
-                      "props": { "value": "{{ game.data.Reserva.ouro }}" },
+                      "props": {
+                        "value": "{{ game.data.Reserva.ouro }}"
+                      },
                       "onChange": "game.data.Reserva.ouro = Number(value)"
                     }
                   ]
