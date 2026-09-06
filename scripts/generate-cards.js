@@ -24,7 +24,7 @@ const ROOT = path.join(__dirname, "..");
 const RAW_PATH = path.join(ROOT, "data", "raw-cards.json");
 const HAND_AUTHORED_PATH = path.join(ROOT, "data", "hand-authored-cards.json");
 const CARDS_PATH = path.join(ROOT, "cards.json");
-const IMAGE_BASE = "https://coresdaguerra.example.com/assets/cards/web";
+const IMAGE_BASE = "https://jfbaraky.github.io/cores/assets/cards/web";
 const IMAGE_EXT = "webp";
 
 function mapCard(raw) {

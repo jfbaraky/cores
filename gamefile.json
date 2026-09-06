@@ -44,18 +44,18 @@
         "player": [
           {
             "name": "Primazia",
-            "image": "https://coresdaguerra.example.com/assets/tokens/primazia.png",
+            "image": "https://jfbaraky.github.io/cores/assets/tokens/primazia.png",
             "isUnique": true
           }
         ],
         "draggable": [
-          { "id": "recurso-roxo", "name": "Recurso Helênico (Roxo)", "image": "https://coresdaguerra.example.com/assets/tokens/roxo.png" },
-          { "id": "recurso-vermelho", "name": "Recurso Latino (Vermelho)", "image": "https://coresdaguerra.example.com/assets/tokens/vermelho.png" },
-          { "id": "recurso-azul", "name": "Recurso Fenício (Azul)", "image": "https://coresdaguerra.example.com/assets/tokens/azul.png" },
-          { "id": "recurso-verde", "name": "Recurso Celta (Verde)", "image": "https://coresdaguerra.example.com/assets/tokens/verde.png" },
-          { "id": "ouro", "name": "Ouro", "image": "https://coresdaguerra.example.com/assets/tokens/ouro.png" },
-          { "id": "forca", "name": "Ficha de Força (Panóplia)", "image": "https://coresdaguerra.example.com/assets/tokens/forca.png" },
-          { "id": "muralha", "name": "Ficha de Muralha", "image": "https://coresdaguerra.example.com/assets/tokens/muralha.png" }
+          { "id": "recurso-roxo", "name": "Recurso Helênico (Roxo)", "image": "https://jfbaraky.github.io/cores/assets/tokens/roxo.png" },
+          { "id": "recurso-vermelho", "name": "Recurso Latino (Vermelho)", "image": "https://jfbaraky.github.io/cores/assets/tokens/vermelho.png" },
+          { "id": "recurso-azul", "name": "Recurso Fenício (Azul)", "image": "https://jfbaraky.github.io/cores/assets/tokens/azul.png" },
+          { "id": "recurso-verde", "name": "Recurso Celta (Verde)", "image": "https://jfbaraky.github.io/cores/assets/tokens/verde.png" },
+          { "id": "ouro", "name": "Ouro", "image": "https://jfbaraky.github.io/cores/assets/tokens/ouro.png" },
+          { "id": "forca", "name": "Ficha de Força (Panóplia)", "image": "https://jfbaraky.github.io/cores/assets/tokens/forca.png" },
+          { "id": "muralha", "name": "Ficha de Muralha", "image": "https://jfbaraky.github.io/cores/assets/tokens/muralha.png" }
         ]
       },
       "beforeGameStart": {
@@ -297,12 +297,12 @@
   },
   "defaultResources": {
     "backgrounds": [
-      "https://coresdaguerra.example.com/assets/backgrounds/mediterraneo.jpg"
+      "https://jfbaraky.github.io/cores/assets/backgrounds/mediterraneo.jpg"
     ],
-    "decksUrl": "https://coresdaguerra.example.com/decks.json"
+    "decksUrl": "https://jfbaraky.github.io/cores/decks.json"
   },
   "cards": {
-    "dataUrl": "https://coresdaguerra.example.com/cards.json",
-    "cardBack": "https://coresdaguerra.example.com/assets/cardback.jpg"
+    "dataUrl": "https://jfbaraky.github.io/cores/cards.json",
+    "cardBack": "https://jfbaraky.github.io/cores/assets/cardback.jpg"
   }
 }

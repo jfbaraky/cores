@@ -15,14 +15,14 @@
         },
         "type": "Melhoria",
         "cost": 0,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/capital-pella.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/capital-pella.webp"
       }
     },
     "name": "Pella",
     "activationType": "Ativada",
     "abilityText": "Olhe a carta do topo de seu Império. Se for uma carta Helênica e você a quiser, mostre-a para os outros jogadores e coloque-a em sua mão. Do contrário, devolva-a para o topo do seu Império.\nIndestrutível.",
     "sourceFile": "MELHORIAS/Slide1.PNG",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/capital-pella.webp"
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/capital-pella.webp"
   },
   "capital-roma": {
     "id": "capital-roma",
@@ -40,14 +40,14 @@
         },
         "type": "Melhoria",
         "cost": 0,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/capital-roma.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/capital-roma.webp"
       }
     },
     "name": "Roma",
     "activationType": "Ativada",
     "abilityText": "Olhe a carta do topo de seu Império. Se for uma carta Romana e você a quiser, mostre-a para os outros jogadores e coloque-a em sua mão. Do contrário, devolva-a para o topo do seu Império.\nIndestrutível.",
     "sourceFile": "MELHORIAS/Slide34.PNG",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/capital-roma.webp"
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/capital-roma.webp"
   },
   "capital-cartago": {
     "id": "capital-cartago",
@@ -65,14 +65,14 @@
         },
         "type": "Melhoria",
         "cost": 0,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/capital-cartago.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/capital-cartago.webp"
       }
     },
     "name": "Cartago",
     "activationType": "Ativada",
     "abilityText": "Olhe a carta do topo de seu Império. Se for uma carta Fenícia e você a quiser, mostre-a para os outros jogadores e coloque-a em sua mão. Do contrário, devolva-a para o topo do seu Império.\nIndestrutível.",
     "sourceFile": "MELHORIAS/Slide52.PNG",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/capital-cartago.webp"
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/capital-cartago.webp"
   },
   "capital-avaricum": {
     "id": "capital-avaricum",
@@ -90,14 +90,14 @@
         },
         "type": "Melhoria",
         "cost": 0,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/capital-avaricum.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/capital-avaricum.webp"
       }
     },
     "name": "Avaricum",
     "activationType": "Ativada",
     "abilityText": "Olhe a carta do topo de seu Império. Se for uma carta Celta e você a quiser, mostre-a para os outros jogadores e coloque-a em sua mão. Do contrário, devolva-a para o topo do seu Império.\nIndestrutível.",
     "sourceFile": "MELHORIAS/Slide16.PNG",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/capital-avaricum.webp"
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/capital-avaricum.webp"
   },
   "trabalhador-helenica": {
     "id": "trabalhador-helenica",
@@ -111,12 +111,12 @@
         },
         "type": "Trabalhador",
         "cost": 0,
-        "image": "https://coresdaguerra.example.com/assets/cards/trabalhador-helenica.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/trabalhador-helenica.webp"
       }
     },
     "name": "Trabalhador Helênico",
     "abilityText": "Descarte para Trabalhar (ganhe 1 Roxo) ou Comerciar (com outro trabalhador qualquer, ganhe 1 Ouro). Pode servir de Milícia ou ser Colonizado em uma Melhoria Helênica elegível.",
-    "image": "https://coresdaguerra.example.com/assets/cards/trabalhador-helenica.webp"
+    "image": "https://jfbaraky.github.io/cores/assets/cards/trabalhador-helenica.webp"
   },
   "trabalhador-latina": {
     "id": "trabalhador-latina",
@@ -130,12 +130,12 @@
         },
         "type": "Trabalhador",
         "cost": 0,
-        "image": "https://coresdaguerra.example.com/assets/cards/trabalhador-latina.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/trabalhador-latina.webp"
       }
     },
     "name": "Trabalhador Latino",
     "abilityText": "Descarte para Trabalhar (ganhe 1 Vermelho) ou Comerciar (com outro trabalhador qualquer, ganhe 1 Ouro). Pode servir de Milícia ou ser Colonizado em uma Melhoria Latina elegível.",
-    "image": "https://coresdaguerra.example.com/assets/cards/trabalhador-latina.webp"
+    "image": "https://jfbaraky.github.io/cores/assets/cards/trabalhador-latina.webp"
   },
   "trabalhador-fenicia": {
     "id": "trabalhador-fenicia",
@@ -149,12 +149,12 @@
         },
         "type": "Trabalhador",
         "cost": 0,
-        "image": "https://coresdaguerra.example.com/assets/cards/trabalhador-fenicia.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/trabalhador-fenicia.webp"
       }
     },
     "name": "Trabalhador Fenício",
     "abilityText": "Descarte para Trabalhar (ganhe 1 Azul) ou Comerciar (com outro trabalhador qualquer, ganhe 1 Ouro). Pode servir de Milícia ou ser Colonizado em uma Melhoria Fenícia elegível.",
-    "image": "https://coresdaguerra.example.com/assets/cards/trabalhador-fenicia.webp"
+    "image": "https://jfbaraky.github.io/cores/assets/cards/trabalhador-fenicia.webp"
   },
   "trabalhador-celta": {
     "id": "trabalhador-celta",
@@ -168,12 +168,12 @@
         },
         "type": "Trabalhador",
         "cost": 0,
-        "image": "https://coresdaguerra.example.com/assets/cards/trabalhador-celta.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/trabalhador-celta.webp"
       }
     },
     "name": "Trabalhador Celta",
     "abilityText": "Descarte para Trabalhar (ganhe 1 Verde) ou Comerciar (com outro trabalhador qualquer, ganhe 1 Ouro). Pode servir de Milícia ou ser Colonizado em uma Melhoria Celta elegível.",
-    "image": "https://coresdaguerra.example.com/assets/cards/trabalhador-celta.webp"
+    "image": "https://jfbaraky.github.io/cores/assets/cards/trabalhador-celta.webp"
   },
   "combatente-companheiros": {
     "id": "combatente-companheiros",
@@ -199,12 +199,12 @@
         },
         "type": "Combatente",
         "cost": 6,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-companheiros.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-companheiros.webp"
       }
     },
     "name": "COMPANHEIROS",
     "abilityText": "[LANCEAR]\n[CARGA]\n[ELITE]\n[CONSAGRADA]",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-companheiros.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-companheiros.webp",
     "strength": 3,
     "weightClass": "Pesado",
     "isCavalry": true,
@@ -231,12 +231,12 @@
         },
         "type": "Combatente",
         "cost": 5,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-cavalaria-tessalia.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-cavalaria-tessalia.webp"
       }
     },
     "name": "CAVALARIA TESSALIA",
     "abilityText": "[CARGA 2] descarte um combatente alvo de até força 2 (impressa)",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-cavalaria-tessalia.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-cavalaria-tessalia.webp",
     "strength": 3,
     "weightClass": "Pesado",
     "isCavalry": true,
@@ -264,12 +264,12 @@
         },
         "type": "Combatente",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-sarisophoroi.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-sarisophoroi.webp"
       }
     },
     "name": "SARISOPHOROI",
     "abilityText": "[LANCEAR]",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-sarisophoroi.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-sarisophoroi.webp",
     "strength": 1,
     "weightClass": "Ligeiro",
     "isCavalry": true,
@@ -297,12 +297,12 @@
         },
         "type": "Combatente",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-prodomoi.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-prodomoi.webp"
       }
     },
     "name": "PRODOMOI",
     "abilityText": "[ATIRAR]\n[FORRAGEAR]",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-prodomoi.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-prodomoi.webp",
     "strength": 1,
     "weightClass": "Ligeiro",
     "isCavalry": true,
@@ -330,12 +330,12 @@
         },
         "type": "Combatente",
         "cost": 5,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-escudos-de-prata.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-escudos-de-prata.webp"
       }
     },
     "name": "ESCUDOS DE PRATA",
     "abilityText": "[LANCEAR] a cavalaria alvo recebe -1 de força.\n[FALANGE] recebe +1 força quando em formação.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-escudos-de-prata.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-escudos-de-prata.webp",
     "strength": 3,
     "weightClass": "Pesado",
     "isCavalry": false,
@@ -363,12 +363,12 @@
         },
         "type": "Combatente",
         "cost": 4,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-escudos-de-bronze.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-escudos-de-bronze.webp"
       }
     },
     "name": "ESCUDOS DE BRONZE",
     "abilityText": "[LANCEAR] a cavalaria alvo recebe -1 de força.\n[FALANGE] recebe +1 força quando em formação.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-escudos-de-bronze.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-escudos-de-bronze.webp",
     "strength": 2,
     "weightClass": "Pesado",
     "isCavalry": false,
@@ -396,12 +396,12 @@
         },
         "type": "Combatente",
         "cost": 4,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-hipaspista.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-hipaspista.webp"
       }
     },
     "name": "HIPASPISTA",
     "abilityText": "[INVESTIDA]\n[REAÇÃO]: anula a habilidade [carga] do combatente ativo.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-hipaspista.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-hipaspista.webp",
     "strength": 2,
     "weightClass": "Médio",
     "isCavalry": false,
@@ -429,12 +429,12 @@
         },
         "type": "Combatente",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-thureophoroi.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-thureophoroi.webp"
       }
     },
     "name": "THUREOPHOROI",
     "abilityText": "[INVESTIDA]",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-thureophoroi.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-thureophoroi.webp",
     "strength": 1,
     "weightClass": "Ligeiro",
     "isCavalry": false,
@@ -463,12 +463,12 @@
         },
         "type": "Combatente",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-arqueiro-cretense.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-arqueiro-cretense.webp"
       }
     },
     "name": "ARQUEIRO CRETENSE",
     "abilityText": "[ATIRAR]\n[REAÇÃO] : Anule a habilidade [atirar] ou [investida] do combatente ativo.\n[ASSALTANTE]",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-arqueiro-cretense.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-arqueiro-cretense.webp",
     "strength": 1,
     "weightClass": "Ligeiro",
     "isCavalry": false,
@@ -497,12 +497,12 @@
         },
         "type": "Combatente",
         "cost": 2,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-akontistai.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-akontistai.webp"
       }
     },
     "name": "AKONTISTAI",
     "abilityText": "[ATIRAR]\n[REAÇÃO]: Anule a habilidade [atirar] ou [investida] do combatente ativo.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-akontistai.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-akontistai.webp",
     "strength": 1,
     "weightClass": "Ligeiro",
     "isCavalry": false,
@@ -530,12 +530,12 @@
         },
         "type": "Combatente",
         "cost": 2,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-lithoboloi.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-lithoboloi.webp"
       }
     },
     "name": "LITHOBOLOI",
     "abilityText": "[CONSCRITO]",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-lithoboloi.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-lithoboloi.webp",
     "strength": 1,
     "weightClass": "Ligeiro",
     "isCavalry": false,
@@ -563,12 +563,12 @@
         },
         "type": "Combatente",
         "cost": 5,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-cavalaria-celta.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-cavalaria-celta.webp"
       }
     },
     "name": "CAVALARIA CELTA",
     "abilityText": "[CARGA]\n[REAÇÃO]: anula a habilidade [carga] do combatente ativo.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-cavalaria-celta.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-cavalaria-celta.webp",
     "strength": 3,
     "weightClass": "Pesado",
     "isCavalry": true,
@@ -597,12 +597,12 @@
         },
         "type": "Combatente",
         "cost": 4,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-lanceiro-celtibero.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-lanceiro-celtibero.webp"
       }
     },
     "name": "LANCEIRO CELTIBERO",
     "abilityText": "[INVESTIDA] recebe +1 de força quando entra em Fase de Combate como atacante.\n[LANCEAR]",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-lanceiro-celtibero.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-lanceiro-celtibero.webp",
     "strength": 2,
     "weightClass": "Médio",
     "isCavalry": false,
@@ -631,12 +631,12 @@
         },
         "type": "Combatente",
         "cost": 5,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-campeao-gaules.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-campeao-gaules.webp"
       }
     },
     "name": "CAMPEÂO GAULÊS",
     "abilityText": "[INVESTIDA] [ELITE] [CONSAGRADA]",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-campeao-gaules.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-campeao-gaules.webp",
     "strength": 3,
     "weightClass": "Pesado",
     "isCavalry": false,
@@ -665,12 +665,12 @@
         },
         "type": "Combatente",
         "cost": 4,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-cacadora-de-cabecas.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-cacadora-de-cabecas.webp"
       }
     },
     "name": "CAÇADORA DE CABEÇAS",
     "abilityText": "[INDISCIPLINA][CAÇADORA] Você deve destruir uma carta de seu Descanso ao final do conflito. Do contrário, destrua esta carta.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-cacadora-de-cabecas.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-cacadora-de-cabecas.webp",
     "strength": 2,
     "weightClass": "Médio",
     "isCavalry": true,
@@ -698,12 +698,12 @@
         },
         "type": "Combatente",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-cavalaria-celtiberica.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-cavalaria-celtiberica.webp"
       }
     },
     "name": "CAVALARIA CELTIBÉRICA",
     "abilityText": "[GUERRILHA] antes da verificação de dano no fim da segunda etapa da Batalha, pague 1 recurso e coloque esta carta no topo de seu império.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-cavalaria-celtiberica.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-cavalaria-celtiberica.webp",
     "strength": 1,
     "weightClass": "Ligeiro",
     "isCavalry": true,
@@ -733,12 +733,12 @@
         },
         "type": "Combatente",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-peltasta-tracio.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-peltasta-tracio.webp"
       }
     },
     "name": "PELTASTA TRÁCIO",
     "abilityText": "[ATIRAR]\n[INDISCIPLINA]\n[REAÇÃO] : Anule a habilidade [atirar] ou [investida] do combatente ativo.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-peltasta-tracio.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-peltasta-tracio.webp",
     "strength": 2,
     "weightClass": "Médio",
     "isCavalry": false,
@@ -768,12 +768,12 @@
         },
         "type": "Combatente",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-gaesatae.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-gaesatae.webp"
       }
     },
     "name": "GAESATAE",
     "abilityText": "[LANCEAR]\n[INVESTIDA]\n[CONSAGRADA]",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-gaesatae.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-gaesatae.webp",
     "strength": 1,
     "weightClass": "Ligeiro",
     "isCavalry": false,
@@ -801,12 +801,12 @@
         },
         "type": "Combatente",
         "cost": 2,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-escaramucador.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-escaramucador.webp"
       }
     },
     "name": "ESCARAMUÇADOR",
     "abilityText": "[ATIRAR]",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-escaramucador.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-escaramucador.webp",
     "strength": 1,
     "weightClass": "Ligeiro",
     "isCavalry": false,
@@ -835,12 +835,12 @@
         },
         "type": "Combatente",
         "cost": 2,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-arqueiro.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-arqueiro.webp"
       }
     },
     "name": "ARQUEIRO",
     "abilityText": "[ATIRAR]\n[REAÇÃO]: Anule a habilidade [atirar] ou [investida] do combatente ativo.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-arqueiro.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-arqueiro.webp",
     "strength": 1,
     "weightClass": "Ligeiro",
     "isCavalry": false,
@@ -867,12 +867,12 @@
         },
         "type": "Combatente",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-rorarius.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-rorarius.webp"
       }
     },
     "name": "RORARIUS",
     "abilityText": "[RESERVA] Rorarius pode entrar no início da segunda etapa do conflito.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-rorarius.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-rorarius.webp",
     "strength": 1,
     "weightClass": "Ligeiro",
     "isCavalry": false,
@@ -901,12 +901,12 @@
         },
         "type": "Combatente",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-veles.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-veles.webp"
       }
     },
     "name": "VELES",
     "abilityText": "[ATIRAR]\n[FORRAGEAR]",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-veles.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-veles.webp",
     "strength": 1,
     "weightClass": "Ligeiro",
     "isCavalry": false,
@@ -935,12 +935,12 @@
         },
         "type": "Combatente",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-hastatus.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-hastatus.webp"
       }
     },
     "name": "HASTATUS",
     "abilityText": "[INVESTIDA]\n[REAÇÃO]: anula [INVESTIDA] do combatente alvo.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-hastatus.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-hastatus.webp",
     "strength": 1,
     "weightClass": "Médio",
     "isCavalry": false,
@@ -969,12 +969,12 @@
         },
         "type": "Combatente",
         "cost": 4,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-guerreiro-samnita.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-guerreiro-samnita.webp"
       }
     },
     "name": "GUERREIRO SAMNITA",
     "abilityText": "[ATIRAR]\n[INVESTIDA]",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-guerreiro-samnita.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-guerreiro-samnita.webp",
     "strength": 2,
     "weightClass": "Médio",
     "isCavalry": false,
@@ -1002,12 +1002,12 @@
         },
         "type": "Combatente",
         "cost": 4,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-princeps.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-princeps.webp"
       }
     },
     "name": "PRINCEPS",
     "abilityText": "[INVESTIDA]\n[REAÇÃO]: anula [INVESTIDA] do combatente alvo.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-princeps.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-princeps.webp",
     "strength": 2,
     "weightClass": "Pesado",
     "isCavalry": false,
@@ -1035,12 +1035,12 @@
         },
         "type": "Combatente",
         "cost": 5,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-triarius.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-triarius.webp"
       }
     },
     "name": "TRIARIUS",
     "abilityText": "[LANCEAR]\n[RESERVA] pode entrar no início da segunda etapa do conflito.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-triarius.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-triarius.webp",
     "strength": 3,
     "weightClass": "Pesado",
     "isCavalry": false,
@@ -1067,12 +1067,12 @@
         },
         "type": "Combatente",
         "cost": 4,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-cavalaria-italica.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-cavalaria-italica.webp"
       }
     },
     "name": "CAVALARIA ITÁLICA",
     "abilityText": "[CARGA]",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-cavalaria-italica.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-cavalaria-italica.webp",
     "strength": 2,
     "weightClass": "Médio",
     "isCavalry": true,
@@ -1100,12 +1100,12 @@
         },
         "type": "Combatente",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-equites-auxilia.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-equites-auxilia.webp"
       }
     },
     "name": "EQUITES AUXILIA",
     "abilityText": "[ATIRAR]\n[FORRAGEAR]",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-equites-auxilia.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-equites-auxilia.webp",
     "strength": 1,
     "weightClass": "Ligeiro",
     "isCavalry": true,
@@ -1133,12 +1133,12 @@
         },
         "type": "Combatente",
         "cost": 4,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-equites.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-equites.webp"
       }
     },
     "name": "EQUITES",
     "abilityText": "[CARGA]\n[ELITE]",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-equites.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-equites.webp",
     "strength": 2,
     "weightClass": "Médio",
     "isCavalry": true,
@@ -1168,12 +1168,12 @@
         },
         "type": "Combatente",
         "cost": 4,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-cavalaria-numida.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-cavalaria-numida.webp"
       }
     },
     "name": "CAVALARIA NÚMIDA",
     "abilityText": "[ATIRAR] [FORRAGEAR] [CARGA]\n[VÔO DO CISNE] não pode ser alvo de outros combatentes em jogo.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-cavalaria-numida.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-cavalaria-numida.webp",
     "strength": 1,
     "weightClass": "Ligeiro",
     "isCavalry": true,
@@ -1201,12 +1201,12 @@
         },
         "type": "Combatente",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-batedor-ibero.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-batedor-ibero.webp"
       }
     },
     "name": "BATEDOR ÍBERO",
     "abilityText": "[FORRAGEAR]",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-batedor-ibero.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-batedor-ibero.webp",
     "strength": 1,
     "weightClass": "Ligeiro",
     "isCavalry": true,
@@ -1235,12 +1235,12 @@
         },
         "type": "Combatente",
         "cost": 5,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-veterano-punico.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-veterano-punico.webp"
       }
     },
     "name": "VETERANO PÚNICO",
     "abilityText": "[LANCEAR]\n[CONSAGRADA]\n[ELITE]",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-veterano-punico.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-veterano-punico.webp",
     "strength": 3,
     "weightClass": "Pesado",
     "isCavalry": false,
@@ -1269,12 +1269,12 @@
         },
         "type": "Combatente",
         "cost": 5,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-cavalaria-sagrada.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-cavalaria-sagrada.webp"
       }
     },
     "name": "CAVALARIA SAGRADA",
     "abilityText": "[CARGA]\n[CONSAGRADA]\n[ELITE]",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-cavalaria-sagrada.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-cavalaria-sagrada.webp",
     "strength": 3,
     "weightClass": "Pesado",
     "isCavalry": true,
@@ -1304,12 +1304,12 @@
         },
         "type": "Combatente",
         "cost": 6,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-elefante-de-guerra.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-elefante-de-guerra.webp"
       }
     },
     "name": "ELEFANTE DE GUERRA",
     "abilityText": "[CONSAGRADA]\n[ELITE]\n[PÂNICO] Cavalarias não podem entrar na segunda etapa.\n[INDISCIPLINA]",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-elefante-de-guerra.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-elefante-de-guerra.webp",
     "strength": 3,
     "weightClass": null,
     "isCavalry": false,
@@ -1337,12 +1337,12 @@
         },
         "type": "Combatente",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-scutarii.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-scutarii.webp"
       }
     },
     "name": "SCUTARII",
     "abilityText": "[LANCEAR]",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-scutarii.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-scutarii.webp",
     "strength": 2,
     "weightClass": "Médio",
     "isCavalry": false,
@@ -1370,12 +1370,12 @@
         },
         "type": "Combatente",
         "cost": 4,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-veterano-libio.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-veterano-libio.webp"
       }
     },
     "name": "VETERANO LÍBIO",
     "abilityText": "[LANCEAR]\n[REAÇÃO]: anula a habilidade [CARGA] do combatente ativo.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-veterano-libio.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-veterano-libio.webp",
     "strength": 2,
     "weightClass": "Médio",
     "isCavalry": false,
@@ -1405,12 +1405,12 @@
         },
         "type": "Combatente",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-caetratus.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-caetratus.webp"
       }
     },
     "name": "CAETRATUS",
     "abilityText": "[ATIRAR]\n[GUERRILHA]\n[INDISCIPLINA]",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-caetratus.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-caetratus.webp",
     "strength": 1,
     "weightClass": "Médio",
     "isCavalry": false,
@@ -1441,12 +1441,12 @@
         },
         "type": "Combatente",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-fundeiro-balear.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-fundeiro-balear.webp"
       }
     },
     "name": "FUNDEIRO BALEAR",
     "abilityText": "[ATIRAR] [FORRAGEAR] [ASSALTANTE]\n[REAÇÃO]: Anule a habilidade [atirar] ou [investida] do combatente ativo.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-fundeiro-balear.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-fundeiro-balear.webp",
     "strength": 1,
     "weightClass": "Ligeiro",
     "isCavalry": false,
@@ -1473,12 +1473,12 @@
         },
         "type": "Combatente",
         "cost": 2,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-milicia-de-tanit.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-milicia-de-tanit.webp"
       }
     },
     "name": "MILICIA DE TANIT",
     "abilityText": "[CONSCRITO]",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-milicia-de-tanit.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/combatente-milicia-de-tanit.webp",
     "strength": 1,
     "weightClass": "Ligeiro",
     "isCavalry": false,
@@ -1503,12 +1503,12 @@
         },
         "type": "Estratégia",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-alexandre-o-grande.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-alexandre-o-grande.webp"
       }
     },
     "name": "Alexandre, o Grande",
     "abilityText": "Seus combatentes macedônios recebem +1⚔ durante esta Campanha.\nSe você baixar um atirador, um espadachim, um lanceiro e uma cavalaria na mesma Fase de Combate. Aqueles combatentes recebem +1⚔",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-alexandre-o-grande.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-alexandre-o-grande.webp",
     "subtype": "General",
     "bottomLeftIcon": "mão segurando uma carta"
   },
@@ -1531,12 +1531,12 @@
         },
         "type": "Estratégia",
         "cost": 4,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-ataque-noturno.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-ataque-noturno.webp"
       }
     },
     "name": "Ataque Noturno",
     "abilityText": "O Jogador-alvo saca duas cartas.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-ataque-noturno.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-ataque-noturno.webp",
     "subtype": "Tática",
     "bottomLeftIcon": null
   },
@@ -1559,12 +1559,12 @@
         },
         "type": "Estratégia",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-batedores-tracios.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-batedores-tracios.webp"
       }
     },
     "name": "Batedores Trácios",
     "abilityText": "No seu turno; Destrua uma carta do Mercado e saque uma carta.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-batedores-tracios.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-batedores-tracios.webp",
     "subtype": "Especialista",
     "bottomLeftIcon": null
   },
@@ -1587,12 +1587,12 @@
         },
         "type": "Estratégia",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-assembleia-dos-mercadores.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-assembleia-dos-mercadores.webp"
       }
     },
     "name": "Assembléia dos Mercadores",
     "abilityText": "Saque uma carta para cada Melhoria Macedônia baixada em seu Território.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-assembleia-dos-mercadores.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-assembleia-dos-mercadores.webp",
     "subtype": "Política",
     "bottomLeftIcon": null
   },
@@ -1615,12 +1615,12 @@
         },
         "type": "Estratégia",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-ostracismo.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-ostracismo.webp"
       }
     },
     "name": "Ostracismo",
     "abilityText": "Outro jogador devolve uma carta do Descanso dele para o Mercado.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-ostracismo.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-ostracismo.webp",
     "subtype": "Política",
     "bottomLeftIcon": null
   },
@@ -1643,12 +1643,12 @@
         },
         "type": "Estratégia",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-vitoria-de-pirro.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-vitoria-de-pirro.webp"
       }
     },
     "name": "Vitória de Pirro",
     "abilityText": "Quando o jogador alvo ganhar um ponto militar; ele deve destruir um combatente dele que tenha participado desta Fase de Combate.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-vitoria-de-pirro.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-vitoria-de-pirro.webp",
     "subtype": "Evento",
     "bottomLeftIcon": "mão segurando uma carta"
   },
@@ -1671,12 +1671,12 @@
         },
         "type": "Estratégia",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-armas-de-cerco.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-armas-de-cerco.webp"
       }
     },
     "name": "Armas de Cerco",
     "abilityText": "No início da fase de Assalto; declare uma civilização e destrua as muralhas daquela civilização do jogador alvo.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-armas-de-cerco.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-armas-de-cerco.webp",
     "subtype": "Conhecimento",
     "bottomLeftIcon": null
   },
@@ -1699,12 +1699,12 @@
         },
         "type": "Estratégia",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-marcias-de-pella.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-marcias-de-pella.webp"
       }
     },
     "name": "Marcias de Pella",
     "abilityText": "Toda vez que você comprar uma carta de macedônia, saque uma carta de seu Império.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-marcias-de-pella.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-marcias-de-pella.webp",
     "subtype": "Especialista",
     "bottomLeftIcon": null
   },
@@ -1727,12 +1727,12 @@
         },
         "type": "Estratégia",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-antigono-i-monoftalmo.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-antigono-i-monoftalmo.webp"
       }
     },
     "name": "Antígono I, Monoftalmo",
     "abilityText": "Busque um combatente do tipo lanceiro do seu Descanso e coloque-o no topo de seu Império.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-antigono-i-monoftalmo.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-antigono-i-monoftalmo.webp",
     "subtype": "General",
     "bottomLeftIcon": "mão segurando uma carta"
   },
@@ -1755,12 +1755,12 @@
         },
         "type": "Estratégia",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-demetrio-i-poliocertes.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-demetrio-i-poliocertes.webp"
       }
     },
     "name": "Demétrio I Poliocertes",
     "abilityText": "Teus combatentes ganham +1⚔ ao assaltarem Melhorias nesta Campanha.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-demetrio-i-poliocertes.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-demetrio-i-poliocertes.webp",
     "subtype": "General",
     "bottomLeftIcon": "mão segurando uma carta"
   },
@@ -1783,12 +1783,12 @@
         },
         "type": "Estratégia",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-batalha-de-gaugamela.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-batalha-de-gaugamela.webp"
       }
     },
     "name": "Batalha de Gaugamela",
     "abilityText": "Você ganha pontos de vitória militar em dobro (respeitando o limite de 6) ao vencer esta Fase de Combate.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-batalha-de-gaugamela.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-batalha-de-gaugamela.webp",
     "subtype": "Evento",
     "bottomLeftIcon": "mão segurando uma carta"
   },
@@ -1811,12 +1811,12 @@
         },
         "type": "Estratégia",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-jogos-olimpicos.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-jogos-olimpicos.webp"
       }
     },
     "name": "Jogos Olímpicos",
     "abilityText": "Combatentes macedônios não podem ser usados para atacar durante esta Campanha.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-jogos-olimpicos.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-jogos-olimpicos.webp",
     "subtype": "Cultura -- Evento",
     "bottomLeftIcon": "mão segurando uma carta"
   },
@@ -1839,12 +1839,12 @@
         },
         "type": "Estratégia",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-cavalaria-batedora.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-cavalaria-batedora.webp"
       }
     },
     "name": "Cavalaria Batedora",
     "abilityText": "Descarte uma cavalaria ligeira ou média de custo x de sua mão e saque x cartas.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-cavalaria-batedora.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-cavalaria-batedora.webp",
     "subtype": "Especialista",
     "bottomLeftIcon": null
   },
@@ -1867,12 +1867,12 @@
         },
         "type": "Estratégia",
         "cost": 2,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-falange-macedonica.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-falange-macedonica.webp"
       }
     },
     "name": "Falange Macedônica",
     "abilityText": "Lanceiros do jogador alvo recebem +1⚔ durante esta Campanha.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-falange-macedonica.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-falange-macedonica.webp",
     "subtype": "Tática",
     "bottomLeftIcon": null
   },
@@ -1895,12 +1895,12 @@
         },
         "type": "Estratégia",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-homem-de-vime.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-homem-de-vime.webp"
       }
     },
     "name": "Homem de Vime",
     "abilityText": "Destrua uma carta de seu Descanso.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-homem-de-vime.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-homem-de-vime.webp",
     "subtype": "Cultura",
     "bottomLeftIcon": "saco de moedas"
   },
@@ -1923,12 +1923,12 @@
         },
         "type": "Estratégia",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-batedores-celtas.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-batedores-celtas.webp"
       }
     },
     "name": "Batedores Celtas",
     "abilityText": "No seu turno; Destrua uma carta do Mercado e destrua uma carta de seu Descanso.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-batedores-celtas.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-batedores-celtas.webp",
     "subtype": "Especialista",
     "bottomLeftIcon": null
   },
@@ -1951,12 +1951,12 @@
         },
         "type": "Estratégia",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-breno-rei-dos-celtas.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-breno-rei-dos-celtas.webp"
       }
     },
     "name": "Breno, Rei dos Celtas",
     "abilityText": "Seus combatentes celtas recebem +1⚔ durante esta Campanha. Você pode buscar combatentes Celtas de até custo 3 em seu Descanso e baixá-los no Início da Fase de combate que você iniciou.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-breno-rei-dos-celtas.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-breno-rei-dos-celtas.webp",
     "subtype": "General",
     "bottomLeftIcon": null
   },
@@ -1979,12 +1979,12 @@
         },
         "type": "Estratégia",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-emboscada.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-emboscada.webp"
       }
     },
     "name": "Emboscada",
     "abilityText": "Descarte um combatente-alvo baixado nesta Fase de Combate.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-emboscada.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-emboscada.webp",
     "subtype": "Tática",
     "bottomLeftIcon": null
   },
@@ -2007,12 +2007,12 @@
         },
         "type": "Estratégia",
         "cost": 2,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-cacadores-de-cabeca.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-cacadores-de-cabeca.webp"
       }
     },
     "name": "Caçadores de Cabeça",
     "abilityText": "No início de um Conflito; Os jogadores alvo não poderão baixar combatentes atacantes do tipo ligeiro durante esta Campanha.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-cacadores-de-cabeca.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-cacadores-de-cabeca.webp",
     "subtype": "Tática – Especialista",
     "bottomLeftIcon": null
   },
@@ -2035,12 +2035,12 @@
         },
         "type": "Estratégia",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-chamado-de-guerra.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-chamado-de-guerra.webp"
       }
     },
     "name": "Chamado de Guerra",
     "abilityText": "Ganhe 1⚔ para cada carta Celta baixada em seu Território.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-chamado-de-guerra.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-chamado-de-guerra.webp",
     "subtype": "Política",
     "bottomLeftIcon": null
   },
@@ -2063,12 +2063,12 @@
         },
         "type": "Estratégia",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-escolhido-dos-deuses.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-escolhido-dos-deuses.webp"
       }
     },
     "name": "Escolhido dos Deuses",
     "abilityText": "Busque no seu Descanso um combatente celta e coloque-o no topo do Império alvo.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-escolhido-dos-deuses.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-escolhido-dos-deuses.webp",
     "subtype": "Cultura",
     "bottomLeftIcon": null
   },
@@ -2091,12 +2091,12 @@
         },
         "type": "Estratégia",
         "cost": 2,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-investida.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-investida.webp"
       }
     },
     "name": "Investida!",
     "abilityText": "Você pode assaltar novamente uma Melhoria alvo em jogo.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-investida.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-investida.webp",
     "subtype": "Cultura – Tática",
     "bottomLeftIcon": "escudo com espada cruzada"
   },
@@ -2119,12 +2119,12 @@
         },
         "type": "Estratégia",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-seguidores-de-acampamento.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-seguidores-de-acampamento.webp"
       }
     },
     "name": "Seguidores de Acampamento",
     "abilityText": "Desvire uma Melhoria sua. Você pode usá-la logo em seguida.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-seguidores-de-acampamento.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-seguidores-de-acampamento.webp",
     "subtype": "Cultura – Evento",
     "bottomLeftIcon": null
   },
@@ -2147,12 +2147,12 @@
         },
         "type": "Estratégia",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-imigracao-celta.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-imigracao-celta.webp"
       }
     },
     "name": "Imigração Celta",
     "abilityText": "Coloque uma Melhoria Celta tua no Desterro.\nSaque x cartas, onde x é igual ao custo da Melhoria colocada no Desterro.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-imigracao-celta.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-imigracao-celta.webp",
     "subtype": "Política",
     "bottomLeftIcon": null
   },
@@ -2175,12 +2175,12 @@
         },
         "type": "Estratégia",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-terror-celtico.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-terror-celtico.webp"
       }
     },
     "name": "Terror Céltico",
     "abilityText": "Toda vez que você fizer assalto bem sucedido contra Melhoria nesta Campanha, destrua aquela Melhoria.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-terror-celtico.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-terror-celtico.webp",
     "subtype": "Cultura – Tática",
     "bottomLeftIcon": "escudo com espada cruzada"
   },
@@ -2203,12 +2203,12 @@
         },
         "type": "Estratégia",
         "cost": 4,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-mercadores-celtas.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-mercadores-celtas.webp"
       }
     },
     "name": "Mercadores Celtas",
     "abilityText": "Escolha entre:\n+1⚔ ou +2💰",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-mercadores-celtas.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-mercadores-celtas.webp",
     "subtype": "Comércio",
     "bottomLeftIcon": null
   },
@@ -2231,12 +2231,12 @@
         },
         "type": "Estratégia",
         "cost": 4,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-cavalaria-de-epona.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-cavalaria-de-epona.webp"
       }
     },
     "name": "Cavalaria de Epona",
     "abilityText": "Descarte uma carta celta de tua mão para cada cavalaria em teu Descanso que queira colocar no topo de teu Império.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-cavalaria-de-epona.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-cavalaria-de-epona.webp",
     "subtype": "Cultura",
     "bottomLeftIcon": "escudo com espada cruzada"
   },
@@ -2259,12 +2259,12 @@
         },
         "type": "Estratégia",
         "cost": 2,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-o-ultimo-recurso.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-o-ultimo-recurso.webp"
       }
     },
     "name": "O Último Recurso",
     "abilityText": "Em Conflito que você esteja perdendo; Saque 5 cartas. Coloque os combatentes do tipo infantaria em jogo e descarte as demais cartas. Após o Conflito, destrua aqueles combatentes.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-o-ultimo-recurso.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-o-ultimo-recurso.webp",
     "subtype": "Tática",
     "bottomLeftIcon": null
   },
@@ -2287,12 +2287,12 @@
         },
         "type": "Estratégia",
         "cost": 2,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-negociacoes-secretas.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-negociacoes-secretas.webp"
       }
     },
     "name": "Negociações Secretas",
     "abilityText": "Durante esta Campanha, outros jogadores não podem jogar Estratégias.\nQualquer jogador pode pagar 1 recurso para você para ignorar este efeito para si mesmo.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-negociacoes-secretas.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-negociacoes-secretas.webp",
     "subtype": "Política",
     "bottomLeftIcon": "saco de moedas"
   },
@@ -2315,12 +2315,12 @@
         },
         "type": "Estratégia",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-imperium.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-imperium.webp"
       }
     },
     "name": "Imperium",
     "abilityText": "Nomeie uma carta, busque essa carta em seu Império, coloque-a em sua Mão e embaralhe o Império.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-imperium.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-imperium.webp",
     "subtype": "Política",
     "bottomLeftIcon": null
   },
@@ -2343,12 +2343,12 @@
         },
         "type": "Estratégia",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-exploratores.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-exploratores.webp"
       }
     },
     "name": "Exploratores",
     "abilityText": "No seu turno; Destrua uma carta no Mercado e ganhe uma ficha de força ou construa uma muralha em melhoria sua.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-exploratores.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-exploratores.webp",
     "subtype": "Especialista",
     "bottomLeftIcon": null
   },
@@ -2371,12 +2371,12 @@
         },
         "type": "Estratégia",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-quinto-fabio-maximo.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-quinto-fabio-maximo.webp"
       }
     },
     "name": "Quinto Fábio Máximo",
     "abilityText": "Construa 1 defesa em uma Melhoria alvo que não tenha nenhum nível de defesa.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-quinto-fabio-maximo.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-quinto-fabio-maximo.webp",
     "subtype": "General",
     "bottomLeftIcon": null
   },
@@ -2399,12 +2399,12 @@
         },
         "type": "Estratégia",
         "cost": 2,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-saque-de-siracusa.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-saque-de-siracusa.webp"
       }
     },
     "name": "Saque de Siracusa",
     "abilityText": "Os jogadores deverão gastar 1 recurso para cada estratégia que queiram usar durante esta Campanha.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-saque-de-siracusa.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-saque-de-siracusa.webp",
     "subtype": "Evento",
     "bottomLeftIcon": null
   },
@@ -2427,12 +2427,12 @@
         },
         "type": "Estratégia",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-triunfo-romano.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-triunfo-romano.webp"
       }
     },
     "name": "Triunfo Romano",
     "abilityText": "Se você possuir combatente romano no seu Descanso ao final desta Campanha, ganhe 1 ponto de vitória.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-triunfo-romano.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-triunfo-romano.webp",
     "subtype": "Cultura",
     "bottomLeftIcon": null
   },
@@ -2455,12 +2455,12 @@
         },
         "type": "Estratégia",
         "cost": 4,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-evocati.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-evocati.webp"
       }
     },
     "name": "Evocati",
     "abilityText": "Busque do Descarte um Combatente romano e coloque-o em sua Mão.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-evocati.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-evocati.webp",
     "subtype": "Especialista",
     "bottomLeftIcon": null
   },
@@ -2483,12 +2483,12 @@
         },
         "type": "Estratégia",
         "cost": 4,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-circunvalacao.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-circunvalacao.webp"
       }
     },
     "name": "Circunvalação",
     "abilityText": "Você pode assaltar duas melhorias ao mesmo tempo com as mesmas cartas.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-circunvalacao.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-circunvalacao.webp",
     "subtype": "Especialista",
     "bottomLeftIcon": null
   },
@@ -2511,12 +2511,12 @@
         },
         "type": "Estratégia",
         "cost": 4,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-circunvalacao-2.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-circunvalacao-2.webp"
       }
     },
     "name": "Circunvalação",
     "abilityText": "Outros jogadores deverão pagar 1 recurso para cada Melhoria sua que queiram assaltar.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-circunvalacao-2.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-circunvalacao-2.webp",
     "subtype": "Especialista",
     "bottomLeftIcon": null
   },
@@ -2539,12 +2539,12 @@
         },
         "type": "Estratégia",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-cartografia.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-cartografia.webp"
       }
     },
     "name": "Cartografia",
     "abilityText": "[No inicio do Conflito] Os jogadores alvo devem jogar cartas reveladas em todas as etapas dos Conflitos durante esta Campanha.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-cartografia.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-cartografia.webp",
     "subtype": "Conhecimento",
     "bottomLeftIcon": null
   },
@@ -2567,12 +2567,12 @@
         },
         "type": "Estratégia",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-cipiao-o-africano.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-cipiao-o-africano.webp"
       }
     },
     "name": "Cipião, o Africano",
     "abilityText": "Seus combatentes de Roma recebem +1 força nesta Campanha.\nNa fase de Combate em que você seja atacante, seus combatentes não cartagineses/romanos recebem +1 força se houver Melhoria cartaginesa de outro jogador em jogo.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-cipiao-o-africano.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-cipiao-o-africano.webp",
     "subtype": "General",
     "bottomLeftIcon": "escudo com espada cruzada"
   },
@@ -2595,12 +2595,12 @@
         },
         "type": "Estratégia",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-batalha-de-zama.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-batalha-de-zama.webp"
       }
     },
     "name": "Batalha de Zama",
     "abilityText": "Atiradores que você controla ganham +1⚔ até o final da Campanha.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-batalha-de-zama.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-batalha-de-zama.webp",
     "subtype": "Evento",
     "bottomLeftIcon": "mão segurando uma carta"
   },
@@ -2623,12 +2623,12 @@
         },
         "type": "Estratégia",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-marcha-forcada.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-marcha-forcada.webp"
       }
     },
     "name": "Marcha Forçada",
     "abilityText": "Toda vez que você, pelo efeito desta carta, pagar +1 recurso ao comprar combatente nesta Campanha, coloque-o no topo de seu Império.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-marcha-forcada.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-marcha-forcada.webp",
     "subtype": "Tática",
     "bottomLeftIcon": null
   },
@@ -2651,12 +2651,12 @@
         },
         "type": "Estratégia",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-saturnalia.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-saturnalia.webp"
       }
     },
     "name": "Saturnália",
     "abilityText": "No início da Campanha; Escolha uma civilização. Os jogadores não podem usar trabalhadores daquela civilização da Mão para produzir recursos.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-saturnalia.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-saturnalia.webp",
     "subtype": "Cultura",
     "bottomLeftIcon": null
   },
@@ -2679,12 +2679,12 @@
         },
         "type": "Estratégia",
         "cost": 2,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-lupercalia.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-lupercalia.webp"
       }
     },
     "name": "Lupercália",
     "abilityText": "Coloque seu Império em seu Descanso. Embaralhe as cartas e faça um novo Império. Saque uma carta",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-lupercalia.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-lupercalia.webp",
     "subtype": "Cultura",
     "bottomLeftIcon": null
   },
@@ -2707,12 +2707,12 @@
         },
         "type": "Estratégia",
         "cost": 4,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-taticas-de-cipiao.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-taticas-de-cipiao.webp"
       }
     },
     "name": "Táticas de Cipião",
     "abilityText": "Copie a ação de uma Estratégia alvo jogada nesta Campanha.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-taticas-de-cipiao.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-taticas-de-cipiao.webp",
     "subtype": "Política – Tática",
     "bottomLeftIcon": null
   },
@@ -2735,12 +2735,12 @@
         },
         "type": "Estratégia",
         "cost": 4,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-cursus-honorum.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-cursus-honorum.webp"
       }
     },
     "name": "Cursus Honorum",
     "abilityText": "Fase de Compra; Você paga apenas 1 recurso ao comprar uma Estratégia neste turno.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-cursus-honorum.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-cursus-honorum.webp",
     "subtype": "Política – Cultura",
     "bottomLeftIcon": null
   },
@@ -2763,12 +2763,12 @@
         },
         "type": "Estratégia",
         "cost": 2,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-salarium.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-salarium.webp"
       }
     },
     "name": "Salarium",
     "abilityText": "No início de um conflito; Você pode alocar 1💰 em cada combatente seu. Aqueles combatentes ganham bônus de +1 força.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-salarium.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-salarium.webp",
     "subtype": "Comércio – Política",
     "bottomLeftIcon": null
   },
@@ -2791,12 +2791,12 @@
         },
         "type": "Estratégia",
         "cost": 2,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-juramento-de-anibal.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-juramento-de-anibal.webp"
       }
     },
     "name": "Juramento de Aníbal",
     "abilityText": "Cada combatente cartaginês que você controla recebe +1⚔ se houver Melhorias romanas de outros jogadores em jogo.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-juramento-de-anibal.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-juramento-de-anibal.webp",
     "subtype": "Evento",
     "bottomLeftIcon": "saco de moedas"
   },
@@ -2819,12 +2819,12 @@
         },
         "type": "Estratégia",
         "cost": 2,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-decepcao-de-maharbal.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-decepcao-de-maharbal.webp"
       }
     },
     "name": "Decepção de Maharbal",
     "abilityText": "No início da Fase de Assalto; O jogador alvo não poderá assaltar tuas Melhorias muradas durante esta Campanha.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-decepcao-de-maharbal.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-decepcao-de-maharbal.webp",
     "subtype": "Evento",
     "bottomLeftIcon": null
   },
@@ -2847,12 +2847,12 @@
         },
         "type": "Estratégia",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-batedores-nubios.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-batedores-nubios.webp"
       }
     },
     "name": "Batedores Núbios",
     "abilityText": "No seu turno; Destrua uma carta do Mercado e ganhe uma ficha de Ouro.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-batedores-nubios.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-batedores-nubios.webp",
     "subtype": "Especialista",
     "bottomLeftIcon": null
   },
@@ -2875,12 +2875,12 @@
         },
         "type": "Estratégia",
         "cost": 4,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-subterfugio.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-subterfugio.webp"
       }
     },
     "name": "Subterfúgio",
     "abilityText": "Olhe secretamente as três primeiras cartas do Império do jogador-alvo. Descarte uma e devolva as restantes para o topo do Império dele em qualquer ordem. Após isso, saque uma carta.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-subterfugio.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-subterfugio.webp",
     "subtype": "Tática – Política",
     "bottomLeftIcon": null
   },
@@ -2903,12 +2903,12 @@
         },
         "type": "Estratégia",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-mapas-secretos-de-hano.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-mapas-secretos-de-hano.webp"
       }
     },
     "name": "Mapas Secretos de Hano",
     "abilityText": "Revele a carta do topo do Império de outro jogador. Aquele jogador deve pagar a você um recurso. Do contrário, descarte a carta que você acabou de revelar.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-mapas-secretos-de-hano.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-mapas-secretos-de-hano.webp",
     "subtype": "Conhecimento",
     "bottomLeftIcon": "mão segurando uma carta"
   },
@@ -2931,12 +2931,12 @@
         },
         "type": "Estratégia",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-anibal-barca.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-anibal-barca.webp"
       }
     },
     "name": "Aníbal Barca",
     "abilityText": "Seus combatentes de Cartago e mercenários recebem +1⚔ nesta Campanha.\nSeus mercenários não precisam pagar soldo para serem descartados nesta Campanha.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-anibal-barca.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-anibal-barca.webp",
     "subtype": "General",
     "bottomLeftIcon": "saco de moedas"
   },
@@ -2959,12 +2959,12 @@
         },
         "type": "Estratégia",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-batalha-de-canas.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-batalha-de-canas.webp"
       }
     },
     "name": "Batalha de Canas",
     "abilityText": "Todos os combatentes médios e pesados de outros jogadores alvo que forem usados nesta Campanha recebem -1⚔.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-batalha-de-canas.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-batalha-de-canas.webp",
     "subtype": "Batalha Histórica",
     "bottomLeftIcon": null
   },
@@ -2987,12 +2987,12 @@
         },
         "type": "Estratégia",
         "cost": 1,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-bloqueio-naval.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-bloqueio-naval.webp"
       }
     },
     "name": "Bloqueio Naval",
     "abilityText": "Pague x recursos; escolha uma Melhoria alvo em jogo e vire sua face para baixo. A Melhoria permanecerá desabilitada durante a partida até que o dono dela pague x recursos.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-bloqueio-naval.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-bloqueio-naval.webp",
     "subtype": "Tática",
     "bottomLeftIcon": null
   },
@@ -3015,12 +3015,12 @@
         },
         "type": "Estratégia",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-travessia-dos-alpes.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-travessia-dos-alpes.webp"
       }
     },
     "name": "Travessia dos Alpes",
     "abilityText": "Destrua Travessia dos Alpes.\nDestrua até três cartas da sua mão, Império ou Descanso em qualquer ordem. Caso destrua cartas de seu Império, embaralhe-o em seguida.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-travessia-dos-alpes.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-travessia-dos-alpes.webp",
     "subtype": "Evento",
     "bottomLeftIcon": null
   },
@@ -3043,12 +3043,12 @@
         },
         "type": "Estratégia",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-naufragio.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-naufragio.webp"
       }
     },
     "name": "Naufrágio",
     "abilityText": "No início da próxima Campanha, outro jogador alvo descarta duas cartas da mão dele.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-naufragio.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-naufragio.webp",
     "subtype": "Evento",
     "bottomLeftIcon": null
   },
@@ -3071,12 +3071,12 @@
         },
         "type": "Estratégia",
         "cost": 2,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-mercados-secretos.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-mercados-secretos.webp"
       }
     },
     "name": "Mercados Secretos",
     "abilityText": "Compre uma carta na Fase de Compra de outro jogador.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-mercados-secretos.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-mercados-secretos.webp",
     "subtype": "Comércio",
     "bottomLeftIcon": null
   },
@@ -3099,12 +3099,12 @@
         },
         "type": "Estratégia",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-contadores-de-cartago.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-contadores-de-cartago.webp"
       }
     },
     "name": "Contadores de Cartago",
     "abilityText": "Busque até duas cartas de trabalhadores cartagineses de seu Descanso e coloque-as em sua Mão.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-contadores-de-cartago.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-contadores-de-cartago.webp",
     "subtype": "Comércio",
     "bottomLeftIcon": null
   },
@@ -3127,12 +3127,12 @@
         },
         "type": "Estratégia",
         "cost": 4,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-ouroboros.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-ouroboros.webp"
       }
     },
     "name": "Ouroboros",
     "abilityText": "Saque uma carta. Você deve destruir uma carta de seu Descanso. Do contrário, destrua Ouroboros.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-ouroboros.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-ouroboros.webp",
     "subtype": "Cultura",
     "bottomLeftIcon": null
   },
@@ -3155,12 +3155,12 @@
         },
         "type": "Estratégia",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-o-campeao.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-o-campeao.webp"
       }
     },
     "name": "O Campeão",
     "abilityText": "Trabalhadores da civilização da Melhoria em que esta carta esteja anexada geram fichas de ouro na Renovação. Ganhe uma ficha de força toda vez que alocar uma carta de trabalhadores.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-o-campeao.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-o-campeao.webp",
     "subtype": "Especialista",
     "bottomLeftIcon": null
   },
@@ -3183,12 +3183,12 @@
         },
         "type": "Estratégia",
         "cost": 2,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-crescimento-populacional.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-crescimento-populacional.webp"
       }
     },
     "name": "Crescimento Populacional",
     "abilityText": "Escolha uma carta de trabalhadores do Descanso ou Desterro do jogador alvo e coloque aquela carta no topo do Império daquele jogador.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-crescimento-populacional.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-crescimento-populacional.webp",
     "subtype": "Evento",
     "bottomLeftIcon": null
   },
@@ -3211,12 +3211,12 @@
         },
         "type": "Estratégia",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-desgaste-moral.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-desgaste-moral.webp"
       }
     },
     "name": "Desgaste Moral",
     "abilityText": "Na próxima Campanha: o jogador alvo não poderá jogar combatentes de custo 3 ou menos.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-desgaste-moral.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-desgaste-moral.webp",
     "subtype": "Evento – Tática",
     "bottomLeftIcon": null
   },
@@ -3239,12 +3239,12 @@
         },
         "type": "Estratégia",
         "cost": 4,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-agatocles-de-siracusa.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-agatocles-de-siracusa.webp"
       }
     },
     "name": "Agátocles de Siracusa",
     "abilityText": "Mercenários ganham +1 força em Conflitos.\nNa fase de Combate; Tome controle de um combatente alvo em jogo. Coloque-o no Descanso de seu dono após o fim do conflito.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-agatocles-de-siracusa.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-agatocles-de-siracusa.webp",
     "subtype": "General – Tática",
     "bottomLeftIcon": null
   },
@@ -3267,12 +3267,12 @@
         },
         "type": "Estratégia",
         "cost": 4,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-troca-de-prisioneiros.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-troca-de-prisioneiros.webp"
       }
     },
     "name": "Troca de Prisioneiros",
     "abilityText": "Troque um combatente do seu Descanso por outro de custo igual ou menor do Mercado e coloque-o no topo do seu Império.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-troca-de-prisioneiros.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-troca-de-prisioneiros.webp",
     "subtype": "Política",
     "bottomLeftIcon": null
   },
@@ -3295,12 +3295,12 @@
         },
         "type": "Estratégia",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-contra-ataque.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-contra-ataque.webp"
       }
     },
     "name": "Contra Ataque",
     "abilityText": "Fase de Combate; você pode inverter a ordem do Conflito e ser o atacante com os eventuais bônus da posição. Seus adversários agora são defensores.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-contra-ataque.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-contra-ataque.webp",
     "subtype": "Tática",
     "bottomLeftIcon": null
   },
@@ -3323,12 +3323,12 @@
         },
         "type": "Estratégia",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-ataque-surpresa.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-ataque-surpresa.webp"
       }
     },
     "name": "Ataque Surpresa",
     "abilityText": "Declare Fase de assalto contra o jogador alvo e resolva aquele Conflito.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-ataque-surpresa.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-ataque-surpresa.webp",
     "subtype": "Tática",
     "bottomLeftIcon": null
   },
@@ -3351,12 +3351,12 @@
         },
         "type": "Estratégia",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-colheita-de-graos.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-colheita-de-graos.webp"
       }
     },
     "name": "Colheita de Grãos",
     "abilityText": "Anexe até três cartas de trabalhadores vindas do seu Descanso em suas Melhorias elegíveis em jogo respeitando as civilizações originais.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-colheita-de-graos.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-colheita-de-graos.webp",
     "subtype": "Conhecimento",
     "bottomLeftIcon": null
   },
@@ -3379,12 +3379,12 @@
         },
         "type": "Estratégia",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-revolta-servil.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-revolta-servil.webp"
       }
     },
     "name": "Revolta Servil",
     "abilityText": "O jogador alvo deve descartar todos os trabalhadores anexados nas Melhorias em jogo dele.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-revolta-servil.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-revolta-servil.webp",
     "subtype": "Política – Evento",
     "bottomLeftIcon": null
   },
@@ -3407,12 +3407,12 @@
         },
         "type": "Estratégia",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-revolta-mercenaria.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-revolta-mercenaria.webp"
       }
     },
     "name": "Revolta Mercenária",
     "abilityText": "No início de um Conflito; Os jogadores alvo não podem usar combatentes do tipo mercenário durante esta Campanha.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-revolta-mercenaria.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-revolta-mercenaria.webp",
     "subtype": "Política – Evento",
     "bottomLeftIcon": null
   },
@@ -3435,12 +3435,12 @@
         },
         "type": "Estratégia",
         "cost": 1,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-guerra-civil.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-guerra-civil.webp"
       }
     },
     "name": "Guerra Civil",
     "abilityText": "Destrua uma carta do Descanso de outro jogador.\nJogue esta carta no Descanso daquele jogador após usá-la.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-guerra-civil.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-guerra-civil.webp",
     "subtype": "Evento – Política",
     "bottomLeftIcon": null
   },
@@ -3463,12 +3463,12 @@
         },
         "type": "Estratégia",
         "cost": 2,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-contra-ofensiva.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-contra-ofensiva.webp"
       }
     },
     "name": "Contra Ofensiva",
     "abilityText": "Anule o efeito de uma estratégia antes dela ser resolvida. A carta anulada é descartada.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-contra-ofensiva.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-contra-ofensiva.webp",
     "subtype": "Tática",
     "bottomLeftIcon": null
   },
@@ -3491,12 +3491,12 @@
         },
         "type": "Estratégia",
         "cost": 2,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-interceptacao.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-interceptacao.webp"
       }
     },
     "name": "Interceptação",
     "abilityText": "No início da segunda Etapa; nesta Campanha, os jogadores não poderão jogar cavalarias na segunda Etapa.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-interceptacao.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-interceptacao.webp",
     "subtype": "Tática",
     "bottomLeftIcon": null
   },
@@ -3519,12 +3519,12 @@
         },
         "type": "Estratégia",
         "cost": 4,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-massinissa-rei-numida.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-massinissa-rei-numida.webp"
       }
     },
     "name": "Massinissa, Rei Númida",
     "abilityText": "Na fase de Combate; tome controle de um combatente alvo em jogo. Coloque-o no Descanso de seu dono após o fim do conflito",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-massinissa-rei-numida.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/estrategia-massinissa-rei-numida.webp",
     "subtype": "General",
     "bottomLeftIcon": null
   },
@@ -3547,12 +3547,12 @@
         },
         "type": "Melhoria",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-logistica.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-logistica.webp"
       }
     },
     "name": "Logística",
     "abilityText": "Saque +1 carta toda vez que for completar sua Mão na Renovação.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-logistica.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-logistica.webp",
     "subtype": "Conhecimento",
     "isCapital": false,
     "activationType": "Fixa",
@@ -3577,12 +3577,12 @@
         },
         "type": "Melhoria",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-agora-helenistica.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-agora-helenistica.webp"
       }
     },
     "name": "Ágora Helenística",
     "abilityText": "Toda vez que você fizer uma compra limpa, saque uma carta.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-agora-helenistica.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-agora-helenistica.webp",
     "subtype": "Construção – Conhecimento – Política",
     "isCapital": false,
     "activationType": "Fixa",
@@ -3607,12 +3607,12 @@
         },
         "type": "Melhoria",
         "cost": 4,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-moinho-d-agua.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-moinho-d-agua.webp"
       }
     },
     "name": "Moinho d'Água",
     "abilityText": "Toda vez que você comprar no Mercado, saque uma carta.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-moinho-d-agua.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-moinho-d-agua.webp",
     "subtype": "Conhecimento",
     "isCapital": false,
     "activationType": "Fixa",
@@ -3637,12 +3637,12 @@
         },
         "type": "Melhoria",
         "cost": 2,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-memorial-de-guerra.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-memorial-de-guerra.webp"
       }
     },
     "name": "Memorial de Guerra",
     "abilityText": "Saque uma carta se houver combatente macedônico em seu Descanso.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-memorial-de-guerra.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-memorial-de-guerra.webp",
     "subtype": "Construção – Cultura",
     "isCapital": false,
     "activationType": "Ativada",
@@ -3667,12 +3667,12 @@
         },
         "type": "Melhoria",
         "cost": 2,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-arquimedes-de-siracusa.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-arquimedes-de-siracusa.webp"
       }
     },
     "name": "Arquimedes de Siracusa",
     "abilityText": "Toda vez que você pagar +1 recurso ao construir muralha em Melhoria sua, ganhe uma ficha de força.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-arquimedes-de-siracusa.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-arquimedes-de-siracusa.webp",
     "subtype": "Conhecimento – Especialista",
     "isCapital": false,
     "activationType": "Fixa",
@@ -3697,12 +3697,12 @@
         },
         "type": "Melhoria",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-templo-de-hermes.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-templo-de-hermes.webp"
       }
     },
     "name": "Templo de Hermes",
     "abilityText": "Pague -1 recurso ao comprar uma Estratégia ou Melhoria neste turno.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-templo-de-hermes.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-templo-de-hermes.webp",
     "subtype": "Construção – Templo",
     "isCapital": false,
     "activationType": "Ativada",
@@ -3727,12 +3727,12 @@
         },
         "type": "Melhoria",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-templo-de-atena.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-templo-de-atena.webp"
       }
     },
     "name": "Templo de Atena",
     "abilityText": "Fase de Compra; Você pode comprar Melhorias do Desterro.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-templo-de-atena.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-templo-de-atena.webp",
     "subtype": "Construção – Templo",
     "isCapital": false,
     "activationType": "Fixa",
@@ -3757,12 +3757,12 @@
         },
         "type": "Melhoria",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-templo-de-zeus.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-templo-de-zeus.webp"
       }
     },
     "name": "Templo de Zeus",
     "abilityText": "Toda vez que você for ganhar o ponto de influência Macedônia ao final da Campanha, ganhe 1 ponto extra se você tiver Templo de Zeus baixado em seu território.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-templo-de-zeus.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-templo-de-zeus.webp",
     "subtype": "Construção – Templo",
     "isCapital": false,
     "activationType": "Fixa",
@@ -3787,12 +3787,12 @@
         },
         "type": "Melhoria",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-economia-helenica.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-economia-helenica.webp"
       }
     },
     "name": "Economia Helênica",
     "abilityText": "Pague -1 recurso ao comprar uma carta macedônica.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-economia-helenica.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-economia-helenica.webp",
     "subtype": "Comércio – Conhecimento",
     "isCapital": false,
     "activationType": "Ativada",
@@ -3817,12 +3817,12 @@
         },
         "type": "Melhoria",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-mestre-de-grego.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-mestre-de-grego.webp"
       }
     },
     "name": "Mestre de Grego",
     "abilityText": "Aloque um trabalhador macedônio em uma melhoria elegível de outra civilização tua. Enquanto o trabalhador estiver alocado, aquela Melhoria tem: Na Renovação, saque +1 carta e descarte uma carta.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-mestre-de-grego.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-mestre-de-grego.webp",
     "subtype": "Especialista – Conhecimento",
     "isCapital": false,
     "activationType": "Ativada",
@@ -3847,12 +3847,12 @@
         },
         "type": "Melhoria",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-helenismo.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-helenismo.webp"
       }
     },
     "name": "Helenismo",
     "abilityText": "Escolha uma Melhoria alvo em jogo, aquela Melhoria será considerada macedônica na pontuação por influência enquanto \"Helenismo\" permanecer em jogo.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-helenismo.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-helenismo.webp",
     "subtype": "Cultura – Conhecimento",
     "isCapital": false,
     "activationType": "Ativada",
@@ -3877,12 +3877,12 @@
         },
         "type": "Melhoria",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-arquitetura.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-arquitetura.webp"
       }
     },
     "name": "Arquitetura",
     "abilityText": "Toda vez que você comprar Melhoria, você pode baixar aquela Melhoria imediatamente em seu Território e ativar e resolver a ação dela se elegível.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-arquitetura.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-arquitetura.webp",
     "subtype": "Conhecimento",
     "isCapital": false,
     "activationType": "Fixa",
@@ -3907,12 +3907,12 @@
         },
         "type": "Melhoria",
         "cost": 4,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-cavalos-da-tessalia.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-cavalos-da-tessalia.webp"
       }
     },
     "name": "Cavalos da Tessália",
     "abilityText": "Descarte um trabalhador;\nGanhe 2 fichas de recurso roxo.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-cavalos-da-tessalia.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-cavalos-da-tessalia.webp",
     "subtype": "Comércio",
     "isCapital": false,
     "activationType": "Ativada",
@@ -3937,12 +3937,12 @@
         },
         "type": "Melhoria",
         "cost": 4,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-reforma-thureophoroi.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-reforma-thureophoroi.webp"
       }
     },
     "name": "Reforma Thureophoroi",
     "abilityText": "Todas as infantarias ligeiras do jogador alvo recebem +1 força e são consideradas \"infantaria média\" durante esta Campanha.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-reforma-thureophoroi.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-reforma-thureophoroi.webp",
     "subtype": "Conhecimento – Evento",
     "isCapital": false,
     "activationType": "Ativada",
@@ -3968,12 +3968,12 @@
         },
         "type": "Melhoria",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-templo-de-epona.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-templo-de-epona.webp"
       }
     },
     "name": "Templo de Epona",
     "abilityText": "Você paga -1 recurso toda vez que comprar combatente do tipo Cavalaria.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-templo-de-epona.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-templo-de-epona.webp",
     "subtype": "Construção – Templo",
     "isCapital": false,
     "activationType": "Fixa",
@@ -3999,12 +3999,12 @@
         },
         "type": "Melhoria",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-novo-lar.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-novo-lar.webp"
       }
     },
     "name": "Novo Lar",
     "abilityText": "Saque duas cartas e descarte duas cartas da sua mão.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-novo-lar.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-novo-lar.webp",
     "subtype": "Política – Evento",
     "isCapital": false,
     "activationType": "Ativada",
@@ -4030,12 +4030,12 @@
         },
         "type": "Melhoria",
         "cost": 4,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-minas-de-hallstatt.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-minas-de-hallstatt.webp"
       }
     },
     "name": "Minas de Hallstatt",
     "abilityText": "Descarte um trabalhador;\nGanhe 2 fichas de recurso verde.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-minas-de-hallstatt.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-minas-de-hallstatt.webp",
     "subtype": "Construção – Comércio",
     "isCapital": false,
     "activationType": "Ativada",
@@ -4060,12 +4060,12 @@
         },
         "type": "Melhoria",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-metalurgia-do-ferro.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-metalurgia-do-ferro.webp"
       }
     },
     "name": "Metalurgia do Ferro",
     "abilityText": "Aloque um trabalhador celta em uma melhoria elegível tua. Enquanto o trabalhador estiver alocado, aquela Melhoria tem: Na Renovação, ganhe uma ficha de força.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-metalurgia-do-ferro.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-metalurgia-do-ferro.webp",
     "subtype": "Especialista – Conhecimento",
     "isCapital": false,
     "activationType": "Ativada",
@@ -4090,12 +4090,12 @@
         },
         "type": "Melhoria",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-templo-de-belenos.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-templo-de-belenos.webp"
       }
     },
     "name": "Templo de Belenos",
     "abilityText": "Toda vez que você for ganhar o ponto de influência Celta ao final da Campanha, ganhe 1 ponto extra se você tiver Templo de Belenos baixado em seu território.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-templo-de-belenos.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-templo-de-belenos.webp",
     "subtype": "Construção – Templo",
     "isCapital": false,
     "activationType": "Fixa",
@@ -4120,12 +4120,12 @@
         },
         "type": "Melhoria",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-santuario-de-toutatis.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-santuario-de-toutatis.webp"
       }
     },
     "name": "Santuário de Toutatis",
     "abilityText": "Destrua um combatente de força x do seu Descanso. Receba x (ícone de ficha de força).",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-santuario-de-toutatis.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-santuario-de-toutatis.webp",
     "subtype": "Construção – Templo",
     "isCapital": false,
     "activationType": "Ativada",
@@ -4150,12 +4150,12 @@
         },
         "type": "Melhoria",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-salao-comunal.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-salao-comunal.webp"
       }
     },
     "name": "Salão Comunal",
     "abilityText": "Seus trabalhadores Celtas podem defender Melhorias e participar de batalhas em que você seja defensor valendo como força 1. Você não pode colocar fichas de força naqueles trabalhadores.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-salao-comunal.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-salao-comunal.webp",
     "subtype": "Construção – Cultura",
     "isCapital": false,
     "activationType": "Fixa",
@@ -4180,12 +4180,12 @@
         },
         "type": "Melhoria",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-economia-celta.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-economia-celta.webp"
       }
     },
     "name": "Economia Celta",
     "abilityText": "Fase de Compra; Pague -1 recurso ao comprar uma carta Celta.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-economia-celta.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-economia-celta.webp",
     "subtype": "Comércio",
     "isCapital": false,
     "activationType": "Ativada",
@@ -4210,12 +4210,12 @@
         },
         "type": "Melhoria",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-helvecios.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-helvecios.webp"
       }
     },
     "name": "Helvécios",
     "abilityText": "Fase de compra; Você pode destruir uma carta do Mercado e, após isso, comprar uma carta pagando -1 recurso.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-helvecios.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-helvecios.webp",
     "subtype": "Cidade – Tribo",
     "isCapital": false,
     "activationType": "Ativada",
@@ -4240,12 +4240,12 @@
         },
         "type": "Melhoria",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-sabedoria-druidica.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-sabedoria-druidica.webp"
       }
     },
     "name": "Sabedoria Druídica",
     "abilityText": "Toda vez que você comprar carta Celta, você pode, após a compra, buscar um trabalhador celta do seu Descanso e colocá-lo em sua Mão.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-sabedoria-druidica.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-sabedoria-druidica.webp",
     "subtype": "Conhecimento",
     "isCapital": false,
     "activationType": "Fixa",
@@ -4270,12 +4270,12 @@
         },
         "type": "Melhoria",
         "cost": 2,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-terra-arrasada.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-terra-arrasada.webp"
       }
     },
     "name": "Terra Arrasada",
     "abilityText": "Durante a Renovação, melhorias de todos os jogadores não podem gerar fichas de recurso enquanto \"Terra Arrasada\" estiver em jogo.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-terra-arrasada.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-terra-arrasada.webp",
     "subtype": "Conhecimento – Tática",
     "isCapital": false,
     "activationType": "Fixa",
@@ -4300,12 +4300,12 @@
         },
         "type": "Melhoria",
         "cost": 4,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-rotacao-de-cultura.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-rotacao-de-cultura.webp"
       }
     },
     "name": "Rotação de Cultura",
     "abilityText": "Fase de Compra; Você pode usar até 2 trabalhadores celtas que estejam no seu Descanso ao comprar neste turno.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-rotacao-de-cultura.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-rotacao-de-cultura.webp",
     "subtype": "Conhecimento",
     "isCapital": false,
     "activationType": "Ativada",
@@ -4330,12 +4330,12 @@
         },
         "type": "Melhoria",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-cultura-de-la-tene.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-cultura-de-la-tene.webp"
       }
     },
     "name": "Cultura de La Tène",
     "abilityText": "Escolha uma Melhoria alvo em jogo; aquela Melhoria será considerada celta na pontuação por influência enquanto \"Cultura de La Tène\" permanecer em jogo.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-cultura-de-la-tene.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-cultura-de-la-tene.webp",
     "subtype": "Cultura",
     "isCapital": false,
     "activationType": "Ativada",
@@ -4360,12 +4360,12 @@
         },
         "type": "Melhoria",
         "cost": 4,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-templo-de-juno-moneta.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-templo-de-juno-moneta.webp"
       }
     },
     "name": "Templo de Juno Moneta",
     "abilityText": "Coloque um recurso vermelho em cada Melhoria de Roma em seu território.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-templo-de-juno-moneta.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-templo-de-juno-moneta.webp",
     "subtype": "Construção – Templo",
     "isCapital": false,
     "activationType": "Ativada",
@@ -4390,12 +4390,12 @@
         },
         "type": "Melhoria",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-fabrica-de-armas.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-fabrica-de-armas.webp"
       }
     },
     "name": "Fábrica de Armas",
     "abilityText": "Pague -1 recurso ao comprar ficha de força.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-fabrica-de-armas.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-fabrica-de-armas.webp",
     "subtype": "Construção",
     "isCapital": false,
     "activationType": "Fixa",
@@ -4420,12 +4420,12 @@
         },
         "type": "Melhoria",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-banhos-publicos.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-banhos-publicos.webp"
       }
     },
     "name": "Banhos Públicos",
     "abilityText": "Gaste 2 recursos vermelhos, o jogador alvo saca duas cartas.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-banhos-publicos.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-banhos-publicos.webp",
     "subtype": "Construção",
     "isCapital": false,
     "activationType": "Ativada",
@@ -4450,12 +4450,12 @@
         },
         "type": "Melhoria",
         "cost": 4,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-academia.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-academia.webp"
       }
     },
     "name": "Academia",
     "abilityText": "Use a habilidade elegível de uma Melhoria ou Estratégia que esteja no Mercado.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-academia.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-academia.webp",
     "subtype": "Construção – Conhecimento",
     "isCapital": false,
     "activationType": "Ativada",
@@ -4480,12 +4480,12 @@
         },
         "type": "Melhoria",
         "cost": 4,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-marmore-de-luna.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-marmore-de-luna.webp"
       }
     },
     "name": "Mármore de Luna",
     "abilityText": "Descarte um trabalhador;\nGanhe 2 fichas de recurso vermelho.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-marmore-de-luna.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-marmore-de-luna.webp",
     "subtype": "Construção – Indestrutível",
     "isCapital": false,
     "activationType": "Ativada",
@@ -4510,12 +4510,12 @@
         },
         "type": "Melhoria",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-templo-de-esculapio.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-templo-de-esculapio.webp"
       }
     },
     "name": "Templo de Esculápio",
     "abilityText": "Você pode comprar combatentes do Desterro.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-templo-de-esculapio.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-templo-de-esculapio.webp",
     "subtype": "Construção – Templo",
     "isCapital": false,
     "activationType": "Fixa",
@@ -4540,12 +4540,12 @@
         },
         "type": "Melhoria",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-templo-de-marte.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-templo-de-marte.webp"
       }
     },
     "name": "Templo de Marte",
     "abilityText": "Toda vez que você for ganhar o ponto de influência Romana ao final da Campanha, ganhe 1 ponto extra se você tiver Templo de Marte baixado em seu território.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-templo-de-marte.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-templo-de-marte.webp",
     "subtype": "Construção – Templo",
     "isCapital": false,
     "activationType": "Fixa",
@@ -4570,12 +4570,12 @@
         },
         "type": "Melhoria",
         "cost": null,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-argentarii.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-argentarii.webp"
       }
     },
     "name": "Argentarii",
     "abilityText": "Você deve colocar uma ficha de recurso vermelha sua sobre uma carta qualquer do Mercado no início de toda Campanha. Do contrário, destrua Argentarii. Aquela carta custará +2 recursos ao ser comprada por outros jogadores. O comprador leva a ficha de recurso sobre aquela carta.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-argentarii.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-argentarii.webp",
     "subtype": "Comércio – Especialista",
     "isCapital": false,
     "activationType": "Fixa",
@@ -4600,12 +4600,12 @@
         },
         "type": "Melhoria",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-pomerium.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-pomerium.webp"
       }
     },
     "name": "Pomerium",
     "abilityText": "Suas Melhorias em jogo não podem ser atacadas por combatentes romanos.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-pomerium.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-pomerium.webp",
     "subtype": "Lugar Sagrado",
     "isCapital": false,
     "activationType": "Fixa",
@@ -4630,12 +4630,12 @@
         },
         "type": "Melhoria",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-collegia-fraborum.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-collegia-fraborum.webp"
       }
     },
     "name": "Collegia Fraborum",
     "abilityText": "Troque uma Melhoria sua em jogo (descarte recursos e trabalhadores que estejam anexados nela) por outra do Mercado de custo igual ou menor e coloque-a em sua Mão.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-collegia-fraborum.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-collegia-fraborum.webp",
     "subtype": "Conhecimento",
     "isCapital": false,
     "activationType": "Ativada",
@@ -4660,12 +4660,12 @@
         },
         "type": "Melhoria",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-economia-romana.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-economia-romana.webp"
       }
     },
     "name": "Economia Romana",
     "abilityText": "Fase de Compra; Pague -1 recurso ao comprar uma carta romana.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-economia-romana.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-economia-romana.webp",
     "subtype": "Comércio",
     "isCapital": false,
     "activationType": "Ativada",
@@ -4690,12 +4690,12 @@
         },
         "type": "Melhoria",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-estado-cliente.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-estado-cliente.webp"
       }
     },
     "name": "Estado Cliente",
     "abilityText": "Escolha uma Melhoria alvo em jogo, aquela Melhoria será considerada romana na pontuação por influência enquanto \"Estado Cliente\" permanecer em jogo.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-estado-cliente.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-estado-cliente.webp",
     "subtype": "Política",
     "isCapital": false,
     "activationType": "Ativada",
@@ -4721,12 +4721,12 @@
         },
         "type": "Melhoria",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-mare-nostrum.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-mare-nostrum.webp"
       }
     },
     "name": "Mare Nostrum",
     "abilityText": "Fase de Compra; Você pode fazer duas ações de compra seguidamente. Seu turno termina imediatamente após a segunda compra.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-mare-nostrum.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-mare-nostrum.webp",
     "subtype": "Comércio",
     "isCapital": false,
     "activationType": "Fixa",
@@ -4751,12 +4751,12 @@
         },
         "type": "Melhoria",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-castrum.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-castrum.webp"
       }
     },
     "name": "Castrum",
     "abilityText": "Suas Melhorias romanas que geram recursos podem gerar fichas de força ao invés de fichas de recursos nesta Fase de Renovação.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-castrum.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-castrum.webp",
     "subtype": "Construção",
     "isCapital": false,
     "activationType": "Fixa",
@@ -4781,12 +4781,12 @@
         },
         "type": "Melhoria",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-de-architectura.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-de-architectura.webp"
       }
     },
     "name": "De Architectura",
     "abilityText": "Aloque um trabalhador romano em uma melhoria elegível tua. Enquanto o trabalhador estiver alocado, aquela Melhoria tem: Na Renovação, construa uma muralha em uma Melhoria elegível.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-de-architectura.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-de-architectura.webp",
     "subtype": "Especialista – Conhecimento",
     "isCapital": false,
     "activationType": "Ativada",
@@ -4811,12 +4811,12 @@
         },
         "type": "Melhoria",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-aristocracia.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-aristocracia.webp"
       }
     },
     "name": "Aristocracia",
     "abilityText": "Outros jogadores devem gastar 1 recurso para cada combatente \"pesado\" que queiram colocar em jogo nesta Campanha.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-aristocracia.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-aristocracia.webp",
     "subtype": "Política",
     "isCapital": false,
     "activationType": "Fixa",
@@ -4841,12 +4841,12 @@
         },
         "type": "Melhoria",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-farol.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-farol.webp"
       }
     },
     "name": "Farol",
     "abilityText": "Após a Fase de assalto, saque uma carta para cada Melhoria sua que tiver sido assaltada.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-farol.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-farol.webp",
     "subtype": "Construção",
     "isCapital": false,
     "activationType": "Fixa",
@@ -4871,12 +4871,12 @@
         },
         "type": "Melhoria",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-navegadores-de-hanno.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-navegadores-de-hanno.webp"
       }
     },
     "name": "Navegadores de Hanno",
     "abilityText": "Fase de compra; Compre uma carta neutra do tipo Estratégia ou Melhoria sem pagar seu custo.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-navegadores-de-hanno.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-navegadores-de-hanno.webp",
     "subtype": "Comércio – Especialista",
     "isCapital": false,
     "activationType": "Ativada",
@@ -4901,12 +4901,12 @@
         },
         "type": "Melhoria",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-banqueiros-de-cartago.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-banqueiros-de-cartago.webp"
       }
     },
     "name": "Banqueiros de Cartago",
     "abilityText": "Você pode pagar -1 recurso ao comprar. Para cada carta comprada desta maneira, coloque uma carta de trabalhador de seu Descanso no topo de seu Império.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-banqueiros-de-cartago.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-banqueiros-de-cartago.webp",
     "subtype": "Comércio – Especialista",
     "isCapital": false,
     "activationType": "Fixa",
@@ -4931,12 +4931,12 @@
         },
         "type": "Melhoria",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-banqueiros-punicos.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-banqueiros-punicos.webp"
       }
     },
     "name": "Banqueiros Púnicos",
     "abilityText": "Aloque um trabalhador cartaginês em uma melhoria elegível tua. Enquanto o trabalhador estiver alocado, aquela Melhoria tem: Na Renovação, ganhe uma ficha de ouro.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-banqueiros-punicos.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-banqueiros-punicos.webp",
     "subtype": "Especialista – Comércio",
     "isCapital": false,
     "activationType": "Ativada",
@@ -4961,12 +4961,12 @@
         },
         "type": "Melhoria",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-alfabeto-fenicio.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-alfabeto-fenicio.webp"
       }
     },
     "name": "Alfabeto Fenício",
     "abilityText": "Escolha uma Melhoria alvo em jogo; aquela Melhoria será considerada cartaginesa na pontuação por influência enquanto \"Alfabeto Fenício\" permanecer em jogo.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-alfabeto-fenicio.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-alfabeto-fenicio.webp",
     "subtype": "Cultura – Comércio",
     "isCapital": false,
     "activationType": "Ativada",
@@ -4991,12 +4991,12 @@
         },
         "type": "Melhoria",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-templo-de-melcarte.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-templo-de-melcarte.webp"
       }
     },
     "name": "Templo de Melcarte",
     "abilityText": "Toda vez que você for ganhar o ponto de influência Cartaginesa ao final da Campanha, ganhe 1 ponto extra se você tiver Templo de Melcarte baixado em seu território.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-templo-de-melcarte.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-templo-de-melcarte.webp",
     "subtype": "Construção – Templo",
     "isCapital": false,
     "activationType": "Fixa",
@@ -5021,12 +5021,12 @@
         },
         "type": "Melhoria",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-templo-de-tanit.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-templo-de-tanit.webp"
       }
     },
     "name": "Templo de Tanit",
     "abilityText": "Uma vez por Campanha, quando um assalto bem sucedido fosse destruir uma Melhoria sua, destrua uma carta de sua mão ao invés daquela Melhoria.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-templo-de-tanit.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-templo-de-tanit.webp",
     "subtype": "Construção – Templo",
     "isCapital": false,
     "activationType": "Fixa",
@@ -5051,12 +5051,12 @@
         },
         "type": "Melhoria",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-economia-cartaginesa.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-economia-cartaginesa.webp"
       }
     },
     "name": "Economia Cartaginesa",
     "abilityText": "Pague -1 recurso ao comprar uma carta cartaginesa.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-economia-cartaginesa.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-economia-cartaginesa.webp",
     "subtype": "Comércio",
     "isCapital": false,
     "activationType": "Ativada",
@@ -5081,12 +5081,12 @@
         },
         "type": "Melhoria",
         "cost": 4,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-tinturaria-de-murex.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-tinturaria-de-murex.webp"
       }
     },
     "name": "Tinturaria de Murex",
     "abilityText": "Descarte um trabalhador;\nGanhe 2 fichas de recurso azul.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-tinturaria-de-murex.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-tinturaria-de-murex.webp",
     "subtype": "Construção – Indestrutível",
     "isCapital": false,
     "activationType": "Ativada",
@@ -5111,12 +5111,12 @@
         },
         "type": "Melhoria",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-manufatura.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-manufatura.webp"
       }
     },
     "name": "Manufatura",
     "abilityText": "Pague 2/4/6/8 recursos;\nGanhe 1/2/3/4 fichas de ouro.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-manufatura.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-manufatura.webp",
     "subtype": "Construção – Comércio",
     "isCapital": false,
     "activationType": "Ativada",
@@ -5141,12 +5141,12 @@
         },
         "type": "Melhoria",
         "cost": 4,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-sicilia.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-sicilia.webp"
       }
     },
     "name": "Sicília",
     "abilityText": "Renovação; Seus trabalhadores alocados geram fichas de recurso em dobro.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-sicilia.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-sicilia.webp",
     "subtype": "Construção – Cidade",
     "isCapital": false,
     "activationType": "Fixa",
@@ -5172,12 +5172,12 @@
         },
         "type": "Melhoria",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-rota-da-purpura.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-rota-da-purpura.webp"
       }
     },
     "name": "Rota da Púrpura",
     "abilityText": "Toda vez que outros jogadores usarem recursos azuis ao comprar, ganhe um recurso da cor da carta comprada.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-rota-da-purpura.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-rota-da-purpura.webp",
     "subtype": "Construção – Comércio",
     "isCapital": false,
     "activationType": "Fixa",
@@ -5202,12 +5202,12 @@
         },
         "type": "Melhoria",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-hano-o-navegador.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-hano-o-navegador.webp"
       }
     },
     "name": "Hano, o Navegador",
     "abilityText": "Toda vez você jogar duas estratégias em seguida, ganhe 2 fichas douradas.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-hano-o-navegador.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-hano-o-navegador.webp",
     "subtype": "General – Especialista",
     "isCapital": false,
     "activationType": "Fixa",
@@ -5232,12 +5232,12 @@
         },
         "type": "Melhoria",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-grandes-silos.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-grandes-silos.webp"
       }
     },
     "name": "Grandes Silos",
     "abilityText": "Anexe até 2 cartas viradas para baixo sob esta Melhoria. Você pode colocá-las em sua mão na próxima Renovação quando sacar cartas de seu Império. Se esta Melhoria for saqueada, aquelas cartas são destruídas.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-grandes-silos.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-grandes-silos.webp",
     "subtype": "Construção",
     "isCapital": false,
     "activationType": "Fixa",
@@ -5262,12 +5262,12 @@
         },
         "type": "Melhoria",
         "cost": 4,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-caravana-do-deserto.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-caravana-do-deserto.webp"
       }
     },
     "name": "Caravana do Deserto",
     "abilityText": "Descarte fichas de recurso azul que estejam sobre esta carta. Para cada ficha de recurso descartada desta maneira, saque uma carta.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-caravana-do-deserto.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-caravana-do-deserto.webp",
     "subtype": "Comércio",
     "isCapital": false,
     "activationType": "Ativada",
@@ -5292,12 +5292,12 @@
         },
         "type": "Melhoria",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-mercadores-punicos.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-mercadores-punicos.webp"
       }
     },
     "name": "Mercadores Púnicos",
     "abilityText": "Coloque uma ficha tua de recurso azul em uma Melhoria de outro jogador. Coloque duas fichas de recurso sobre Mercadores Púnicos da cor daquela Melhoria.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-mercadores-punicos.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-mercadores-punicos.webp",
     "subtype": "Comércio – Especialista",
     "isCapital": false,
     "activationType": "Ativada",
@@ -5322,12 +5322,12 @@
         },
         "type": "Melhoria",
         "cost": 4,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-comercio-maritimo.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-comercio-maritimo.webp"
       }
     },
     "name": "Comércio Marítimo",
     "abilityText": "Saque duas cartas.\nOutro jogador saca uma carta do Império dele.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-comercio-maritimo.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-comercio-maritimo.webp",
     "subtype": "Comércio",
     "isCapital": false,
     "activationType": "Ativada",
@@ -5352,12 +5352,12 @@
         },
         "type": "Melhoria",
         "cost": 4,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-porto-de-cartago.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-porto-de-cartago.webp"
       }
     },
     "name": "Porto de Cartago",
     "abilityText": "Fichas de recurso são consideradas fichas de ouro enquanto estiverem sobre Porto de Cartago. Você pode usar aquelas fichas como ouro para realizar suas ações.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-porto-de-cartago.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-porto-de-cartago.webp",
     "subtype": "Construção – Comércio",
     "isCapital": false,
     "activationType": "Fixa",
@@ -5382,12 +5382,12 @@
         },
         "type": "Melhoria",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-quartel-militar.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-quartel-militar.webp"
       }
     },
     "name": "Quartel Militar",
     "abilityText": "Você paga -1 recurso toda vez que comprar combatente do tipo infantaria média/pesada.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-quartel-militar.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-quartel-militar.webp",
     "subtype": "Construção",
     "isCapital": false,
     "activationType": "Fixa",
@@ -5412,12 +5412,12 @@
         },
         "type": "Melhoria",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-estabulos.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-estabulos.webp"
       }
     },
     "name": "Estábulos",
     "abilityText": "Você paga -1 recurso toda vez que comprar combatente do tipo cavalaria.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-estabulos.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-estabulos.webp",
     "subtype": "Construção",
     "isCapital": false,
     "activationType": "Fixa",
@@ -5442,12 +5442,12 @@
         },
         "type": "Melhoria",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-minas-de-ouro.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-minas-de-ouro.webp"
       }
     },
     "name": "Minas de Ouro",
     "abilityText": "Descarte um trabalhador.\n\nGanhe uma ficha de recurso dourada.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-minas-de-ouro.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-minas-de-ouro.webp",
     "subtype": "Construção – Indestrutível",
     "isCapital": false,
     "activationType": "Fixa",
@@ -5472,12 +5472,12 @@
         },
         "type": "Melhoria",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-campo-de-tiro.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-campo-de-tiro.webp"
       }
     },
     "name": "Campo de Tiro",
     "abilityText": "Você paga -1 recurso toda vez que comprar combatentes do tipo atirador.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-campo-de-tiro.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-campo-de-tiro.webp",
     "subtype": "Construção",
     "isCapital": false,
     "activationType": "Fixa",
@@ -5502,12 +5502,12 @@
         },
         "type": "Melhoria",
         "cost": 4,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-sentinelas-da-fortaleza.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-sentinelas-da-fortaleza.webp"
       }
     },
     "name": "Sentinelas da Fortaleza",
     "abilityText": "Quando outros jogadores forem assaltar seu Território, eles devem assaltar Sentinelas da Fortaleza primeiro antes de assaltar outras Melhorias.\nO assalto não precisa ser bem sucedido.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-sentinelas-da-fortaleza.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-sentinelas-da-fortaleza.webp",
     "subtype": "Construção",
     "isCapital": false,
     "activationType": "Fixa",
@@ -5532,12 +5532,12 @@
         },
         "type": "Melhoria",
         "cost": 3,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-torre-de-vigia.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-torre-de-vigia.webp"
       }
     },
     "name": "Torre de Vigia",
     "abilityText": "Quando outros jogadores forem assaltar tuas Melhorias, aqueles jogadores devem assaltá-las com as cartas reveladas.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-torre-de-vigia.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-torre-de-vigia.webp",
     "subtype": "Construção",
     "isCapital": false,
     "activationType": "Fixa",
@@ -5562,12 +5562,12 @@
         },
         "type": "Melhoria",
         "cost": 2,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-queda-populacional.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-queda-populacional.webp"
       }
     },
     "name": "Queda Populacional",
     "abilityText": "Todos os jogadores devem pagar +1 recurso ao comprarem combatentes.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-queda-populacional.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-queda-populacional.webp",
     "subtype": "Política",
     "isCapital": false,
     "activationType": "Fixa",
@@ -5592,12 +5592,12 @@
         },
         "type": "Melhoria",
         "cost": 2,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-templo-do-deus-inominado.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-templo-do-deus-inominado.webp"
       }
     },
     "name": "Templo do Deus Inominado",
     "abilityText": "Você não precisa pagar o soldo do combatente tipo mercenário.",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-templo-do-deus-inominado.webp",
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/melhoria-templo-do-deus-inominado.webp",
     "subtype": "Construção – Templo",
     "isCapital": false,
     "activationType": "Fixa",

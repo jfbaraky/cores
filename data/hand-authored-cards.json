@@ -15,14 +15,14 @@
         },
         "type": "Melhoria",
         "cost": 0,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/capital-pella.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/capital-pella.webp"
       }
     },
     "name": "Pella",
     "activationType": "Ativada",
     "abilityText": "Olhe a carta do topo de seu Império. Se for uma carta Helênica e você a quiser, mostre-a para os outros jogadores e coloque-a em sua mão. Do contrário, devolva-a para o topo do seu Império.\nIndestrutível.",
     "sourceFile": "MELHORIAS/Slide1.PNG",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/capital-pella.webp"
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/capital-pella.webp"
   },
   "capital-roma": {
     "id": "capital-roma",
@@ -40,14 +40,14 @@
         },
         "type": "Melhoria",
         "cost": 0,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/capital-roma.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/capital-roma.webp"
       }
     },
     "name": "Roma",
     "activationType": "Ativada",
     "abilityText": "Olhe a carta do topo de seu Império. Se for uma carta Romana e você a quiser, mostre-a para os outros jogadores e coloque-a em sua mão. Do contrário, devolva-a para o topo do seu Império.\nIndestrutível.",
     "sourceFile": "MELHORIAS/Slide34.PNG",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/capital-roma.webp"
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/capital-roma.webp"
   },
   "capital-cartago": {
     "id": "capital-cartago",
@@ -65,14 +65,14 @@
         },
         "type": "Melhoria",
         "cost": 0,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/capital-cartago.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/capital-cartago.webp"
       }
     },
     "name": "Cartago",
     "activationType": "Ativada",
     "abilityText": "Olhe a carta do topo de seu Império. Se for uma carta Fenícia e você a quiser, mostre-a para os outros jogadores e coloque-a em sua mão. Do contrário, devolva-a para o topo do seu Império.\nIndestrutível.",
     "sourceFile": "MELHORIAS/Slide52.PNG",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/capital-cartago.webp"
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/capital-cartago.webp"
   },
   "capital-avaricum": {
     "id": "capital-avaricum",
@@ -90,14 +90,14 @@
         },
         "type": "Melhoria",
         "cost": 0,
-        "image": "https://coresdaguerra.example.com/assets/cards/web/capital-avaricum.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/capital-avaricum.webp"
       }
     },
     "name": "Avaricum",
     "activationType": "Ativada",
     "abilityText": "Olhe a carta do topo de seu Império. Se for uma carta Celta e você a quiser, mostre-a para os outros jogadores e coloque-a em sua mão. Do contrário, devolva-a para o topo do seu Império.\nIndestrutível.",
     "sourceFile": "MELHORIAS/Slide16.PNG",
-    "image": "https://coresdaguerra.example.com/assets/cards/web/capital-avaricum.webp"
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/capital-avaricum.webp"
   },
   "trabalhador-helenica": {
     "id": "trabalhador-helenica",
@@ -111,12 +111,12 @@
         },
         "type": "Trabalhador",
         "cost": 0,
-        "image": "https://coresdaguerra.example.com/assets/cards/trabalhador-helenica.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/trabalhador-helenica.webp"
       }
     },
     "name": "Trabalhador Helênico",
     "abilityText": "Descarte para Trabalhar (ganhe 1 Roxo) ou Comerciar (com outro trabalhador qualquer, ganhe 1 Ouro). Pode servir de Milícia ou ser Colonizado em uma Melhoria Helênica elegível.",
-    "image": "https://coresdaguerra.example.com/assets/cards/trabalhador-helenica.webp"
+    "image": "https://jfbaraky.github.io/cores/assets/cards/trabalhador-helenica.webp"
   },
   "trabalhador-latina": {
     "id": "trabalhador-latina",
@@ -130,12 +130,12 @@
         },
         "type": "Trabalhador",
         "cost": 0,
-        "image": "https://coresdaguerra.example.com/assets/cards/trabalhador-latina.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/trabalhador-latina.webp"
       }
     },
     "name": "Trabalhador Latino",
     "abilityText": "Descarte para Trabalhar (ganhe 1 Vermelho) ou Comerciar (com outro trabalhador qualquer, ganhe 1 Ouro). Pode servir de Milícia ou ser Colonizado em uma Melhoria Latina elegível.",
-    "image": "https://coresdaguerra.example.com/assets/cards/trabalhador-latina.webp"
+    "image": "https://jfbaraky.github.io/cores/assets/cards/trabalhador-latina.webp"
   },
   "trabalhador-fenicia": {
     "id": "trabalhador-fenicia",
@@ -149,12 +149,12 @@
         },
         "type": "Trabalhador",
         "cost": 0,
-        "image": "https://coresdaguerra.example.com/assets/cards/trabalhador-fenicia.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/trabalhador-fenicia.webp"
       }
     },
     "name": "Trabalhador Fenício",
     "abilityText": "Descarte para Trabalhar (ganhe 1 Azul) ou Comerciar (com outro trabalhador qualquer, ganhe 1 Ouro). Pode servir de Milícia ou ser Colonizado em uma Melhoria Fenícia elegível.",
-    "image": "https://coresdaguerra.example.com/assets/cards/trabalhador-fenicia.webp"
+    "image": "https://jfbaraky.github.io/cores/assets/cards/trabalhador-fenicia.webp"
   },
   "trabalhador-celta": {
     "id": "trabalhador-celta",
@@ -168,11 +168,11 @@
         },
         "type": "Trabalhador",
         "cost": 0,
-        "image": "https://coresdaguerra.example.com/assets/cards/trabalhador-celta.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/trabalhador-celta.webp"
       }
     },
     "name": "Trabalhador Celta",
     "abilityText": "Descarte para Trabalhar (ganhe 1 Verde) ou Comerciar (com outro trabalhador qualquer, ganhe 1 Ouro). Pode servir de Milícia ou ser Colonizado em uma Melhoria Celta elegível.",
-    "image": "https://coresdaguerra.example.com/assets/cards/trabalhador-celta.webp"
+    "image": "https://jfbaraky.github.io/cores/assets/cards/trabalhador-celta.webp"
   }
 }
