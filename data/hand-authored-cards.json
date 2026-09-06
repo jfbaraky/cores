@@ -1,7 +1,7 @@
 {
   "capital-pella": {
     "id": "capital-pella",
-    "type": "Melhoria",
+    "type": "Capital",
     "civilization": "Helênica",
     "subtype": "Capital",
     "category": "Capital",
@@ -13,7 +13,7 @@
         "name": {
           "name": "Pella"
         },
-        "type": "Melhoria",
+        "type": "Capital",
         "cost": 0,
         "image": "https://jfbaraky.github.io/cores/assets/cards/web/capital-pella.webp"
       }
@@ -26,7 +26,7 @@
   },
   "capital-roma": {
     "id": "capital-roma",
-    "type": "Melhoria",
+    "type": "Capital",
     "civilization": "Latina",
     "subtype": "Capital",
     "category": "Capital",
@@ -38,7 +38,7 @@
         "name": {
           "name": "Roma"
         },
-        "type": "Melhoria",
+        "type": "Capital",
         "cost": 0,
         "image": "https://jfbaraky.github.io/cores/assets/cards/web/capital-roma.webp"
       }
@@ -51,7 +51,7 @@
   },
   "capital-cartago": {
     "id": "capital-cartago",
-    "type": "Melhoria",
+    "type": "Capital",
     "civilization": "Fenícia",
     "subtype": "Capital",
     "category": "Capital",
@@ -63,7 +63,7 @@
         "name": {
           "name": "Cartago"
         },
-        "type": "Melhoria",
+        "type": "Capital",
         "cost": 0,
         "image": "https://jfbaraky.github.io/cores/assets/cards/web/capital-cartago.webp"
       }
@@ -76,7 +76,7 @@
   },
   "capital-avaricum": {
     "id": "capital-avaricum",
-    "type": "Melhoria",
+    "type": "Capital",
     "civilization": "Celta",
     "subtype": "Capital",
     "category": "Capital",
@@ -88,7 +88,7 @@
         "name": {
           "name": "Avaricum"
         },
-        "type": "Melhoria",
+        "type": "Capital",
         "cost": 0,
         "image": "https://jfbaraky.github.io/cores/assets/cards/web/capital-avaricum.webp"
       }

@@ -4,7 +4,7 @@
   "customHelp": "Cores da Guerra é um jogo de construção de baralhos sobre o Mediterrâneo helenístico. Escolha sua Capital, gerencie Trabalhadores para gerar recursos, compre Combatentes, Estratégias e Melhorias no Mercado, e conquiste Hegemonia por vitória militar ou por influência.\n\nIMPORTANTE — esta implementação digital NÃO resolve Conflitos, Formações, habilidades de carta ou pontuação automaticamente. O motor oferece apenas as zonas, o estado de virado/tapado e contadores de apoio (aba 'Reserva'). Consultem sempre o Manual de Regras (Cores da Guerra — Manual de Regras v1) para resolver Assaltos, Combates e efeitos de carta.\n\nOrdem de jogo (primazia) a cada Campanha: quem jogou por último na Campanha anterior joga primeiro na próxima; os demais mantêm a ordem relativa. Passem o token 'Primazia' manualmente na Renovação.\n\nConflitos (Assalto/Combate) em partidas com 3-4 jogadores são sempre declarados 1 contra 1: quem ataca escolhe um único oponente-alvo: os demais não participam daquele Conflito.",
   "deckBuilding": {
     "mainFilters": ["type", "civilization", "cost"],
-    "costCurveIgnoredTypes": ["Trabalhador", "Melhoria"],
+    "costCurveIgnoredTypes": ["Trabalhador", "Melhoria", "Capital"],
     "formats": [
       {
         "title": "Padrão",
