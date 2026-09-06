@@ -135,17 +135,24 @@ async function placeCapital() {
 // against the manual's exact card ordering since script arrays don't carry
 // an explicit timestamp.
 //
-// setupMarket() originally guarded itself the same way the first version of
+// setupMarket() first guarded itself the same way the first version of
 // placeCapital() did — re-reading cards.Revelado to check "is this already
-// done" — and hit the exact same staleness bug, live: with 3 setup events
-// firing close together, that read kept reporting 0 revealed cards even
-// after an earlier run had already filled them, so the shuffle+reveal-4
-// sequence re-ran multiple times per pile. Confirmed live: the piles came
-// up 45/65/58 remaining instead of 53/69/70 — each short by an exact
-// multiple of 4 (12, 8, 16), matching 3/2/4 redundant full setup passes.
-// Fixed the same way as capitalPlaced: a flag claimed synchronously, before
-// any await, that's never reset — immune to `cards` staleness because it
-// never depends on re-reading `cards` at all.
+// done" — and hit a FAR worse version of the same staleness bug, live: the
+// Mercado piles came up 45/65/58 remaining instead of 53/69/70. Replacing
+// that with a synchronously-claimed, never-reset flag (the same fix that
+// worked for capitalPlaced) was NOT enough on its own, though, and that's
+// an important difference from placeCapital(): the Mercado is a genuinely
+// SHARED section, and every connected player's browser runs its own
+// separate instance of this whole script file with its own separate
+// `marketSetup` variable. A flag only stops ONE client from redoing its
+// own work — it does nothing to stop a SECOND player's client from also
+// independently passing the same guard and shuffling/drawing the same
+// shared piles again. placeCapital() never had this problem because it
+// only ever touches the calling player's OWN per-player Território/Hand/
+// Deck, so redundant per-client execution is harmless there.
+// Fixed by additionally gating on `game.isHost`: only the host's client
+// ever runs the body, so exactly one client mutates the shared Mercado
+// piles regardless of how many players' clients fire the setup events.
 const MARKET_PILES = [
   { pile: "MercadoCombatentesPilha", revealed: "MercadoCombatentesRevelado", discard: "MercadoCombatentesDescarte" },
   { pile: "MercadoEstrategiasPilha", revealed: "MercadoEstrategiasRevelado", discard: "MercadoEstrategiasDescarte" },
@@ -156,7 +163,7 @@ let marketSetup = false;
 
 // One-time setup: shuffle each hidden pile and reveal the first 4 cards.
 async function setupMarket() {
-  if (marketSetup) return;
+  if (!game.isHost || marketSetup) return;
   marketSetup = true; // claim before any await — see comment above
   for (const { pile } of MARKET_PILES) {
     await functions.shuffleSection(pile);
@@ -167,16 +174,15 @@ async function setupMarket() {
 // Tops up every Revelado row back up to MARKET_REVEALED_SIZE (4) by
 // drawing from its hidden pile. Called after setup, after advanceMarket()'s
 // discards, and once per onNewTurn (not onCardsUpdate: that fires on every
-// single card move including this function's own draws, which — combined
-// with the same `cards`-staleness risk noted above — caused a runaway
-// redraw loop live; onNewTurn is much lower-frequency, so a bought card's
-// slot gets refilled by the start of the next turn rather than instantly,
-// which is a safe tradeoff here). Not further guarded against re-entrancy:
-// unlike setup, this legitimately needs to re-run many times over a game,
-// and each pile's own `short` computation is a plain clamped top-up, not a
-// one-shot claim, so a redundant call just finds every pile already at 4
-// and no-ops.
+// single card move, which would mean every connected player's client
+// racing to top up the same shared rows on every single update — far too
+// hot a trigger for a shared-zone mutation even with the host gate below;
+// onNewTurn is much lower-frequency, so a bought card's slot gets refilled
+// by the start of the next turn rather than instantly, which is a safe
+// tradeoff here). Also host-gated, for the same cross-client reason as
+// setupMarket() — see comment above.
 async function replenishMarket() {
+  if (!game.isHost) return;
   for (const { pile, revealed } of MARKET_PILES) {
     const short = MARKET_REVEALED_SIZE - (cards?.[revealed] ?? []).length;
     if (short > 0) {
