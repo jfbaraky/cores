@@ -18,10 +18,19 @@
 //      even drawn, guaranteeing the Capital is on Território turn 1 as the
 //      manual requires, rather than only whenever it's eventually drawn.
 // Checks Sideboard first (the expected/guaranteed location), Hand as a
-// fallback (in case boardCategoriesInSideboard behaves differently than
-// expected in some client version). Idempotent: no-ops once the Capital is
-// already on Território. Called from several events (see gamefile.json) so
-// it fires whichever one actually carries this player's setup instant.
+// fallback — the docs only promise boardCategoriesInSideboard runs "before
+// any board setup [i.e. initialBoardSetup] runs", not that it precedes the
+// mulligan hand deal. Live testing confirmed it doesn't always win that
+// race: the Capital can still get shuffled into the dealt 6-card hand,
+// which (once this function pulls it back out to Território) left the
+// player with only 5 real cards. So when the Capital is found already in
+// Hand, draw one replacement card to keep the hand at its configured
+// startingHandSize (6) of actual Trabalhadores. When it's found in
+// Sideboard (the deal never touched it), the hand was already the correct
+// size and no top-up is needed.
+// Idempotent: no-ops once the Capital is already on Território. Called from
+// several events (see gamefile.json) so it fires whichever one actually
+// carries this player's setup instant.
 async function placeCapital() {
   const zones = ["Sideboard", "Hand"];
   for (const zone of zones) {
@@ -31,6 +40,10 @@ async function placeCapital() {
       if (data && data.type === "Capital") {
         await functions.moveCard(card, "Territorio");
         chatLog(`${data.name?.name ?? "Capital"} colocada em jogo automaticamente no Território.`);
+        if (zone === "Hand") {
+          await functions.draw(1);
+          chatLog("Carta de reposição sacada (a Capital saiu da mão para o Território).");
+        }
         return;
       }
     }
