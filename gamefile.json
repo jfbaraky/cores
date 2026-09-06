@@ -1255,6 +1255,7 @@
             "events": {
               "onPlayersMulligan": "await placeCapital()",
               "onPlayersReady": "await placeCapital()",
+              "onNewTurn": "await placeCapital()",
               "onCardsUpdate": "await placeCapital()"
             }
           },
