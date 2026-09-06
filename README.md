@@ -108,11 +108,17 @@ como em uma mesa física. O `gamefile.json` só define:
   para o Descanso (botão direito na carta → "To Descanso" → "Top") e ajusta o
   contador correspondente na Reserva manualmente (clique no campo numérico e
   digite o valor, ou use as setas ▲▼). Testado e funcionando ao vivo.
-- **Colocar a Capital em jogo:** a Capital está embaralhada dentro do
-  Império de 13 cartas do jogador — **não há garantia de que ela esteja na
-  mão inicial de 6 cartas** (ver "Itens de dados a revisar" abaixo). Assim
-  que for comprada (mão inicial ou depois), o jogador deve arrastá-la da Mão
-  para o Território como sua primeira ação disponível, sem custo.
+- **Colocar a Capital em jogo:** automático, via `game-scripts.js`
+  (`placeCapital()`). `beforeGameStart.boardCategoriesInSideboard:["Capital"]`
+  tira a Capital do baralho de 13 cartas e a coloca na zona Sideboard antes
+  da partida começar (a Deck é `isHidden:"yes"` e **confirmadamente
+  ilegível para scripts**, mesmo para o dono — Sideboard não tem essa
+  restrição). `placeCapital()` roda em vários eventos
+  (`onPlayersSideboardClosed`, `onPlayersMulligan`, `onPlayersReady`,
+  `onNewTurn`, `onCardsUpdate`), procura a carta de `type:"Capital"` em
+  `cards.Sideboard` (com `cards.Hand` como reserva) e a move para o
+  Território — sem custo, antes mesmo da mão inicial ser distribuída, como
+  no §7.1. **Ainda não confirmado ao vivo** (ver "Testado ao vivo" abaixo).
 
 ## Itens de dados a revisar
 
@@ -148,19 +154,11 @@ o conteúdo "fechado":
 - **Trabalhadores:** ainda usam URLs de imagem placeholder — não há arte
   própria para eles ainda (cartas simples, coloridas por civilização, sem
   nome/arte única, conforme confirmado).
-- **A Capital não é garantida na mão inicial.** O manual (§7.1) descreve a
-  Capital entrando em jogo imediatamente, sem custo, na Preparação. Como a
-  Capital está embaralhada junto com os 12 Trabalhadores no Império de 13
-  cartas (não existe, na versão atual, um jeito confiável testado de
-  extrair uma carta específica do baralho embaralhado de cada jogador antes
-  do saque inicial), ela pode não sair nas 6 cartas da mão inicial — só
-  chegará quando for sacada, natural ou numa Renovação seguinte. Isso é uma
-  simplificação assumida deste projeto (não é assim no jogo físico); se
-  quiser a garantia real, a alternativa seria não embaralhar a Capital no
-  Império e usar `initialBoardSetup` com `createCardId` para colocá-la
-  direto no Território — mas isso exigiria um `gameplay` (formato) separado
-  por civilização, já que hoje as 4 Capitais compartilham o mesmo
-  `beforeGameStart`.
+- **(Resolvido, pendente de confirmação ao vivo) Capital garantida no
+  Território desde o início.** Ver "Colocar a Capital em jogo" acima —
+  `boardCategoriesInSideboard` + `placeCapital()` tiram a Capital do
+  baralho embaralhável e a colocam em jogo antes do saque inicial, sem
+  precisar de um `gameplay` separado por civilização.
 
 ## Testado ao vivo no TCG Arena
 
