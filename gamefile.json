@@ -58,7 +58,8 @@
         0
       ],
       "mulligan": {
-        "startingHandSize": 6
+        "startingHandSize": 6,
+        "mulliganCount": { "min": 0, "max": 0 }
       },
       "newTurn": {
         "drawOnStart": false,
@@ -1253,6 +1254,7 @@
             },
             "events": {
               "onPlayersMulligan": "await placeCapital()",
+              "onPlayersReady": "await placeCapital()",
               "onCardsUpdate": "await placeCapital()"
             }
           },
