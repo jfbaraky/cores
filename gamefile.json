@@ -1,7 +1,7 @@
 {
   "name": "Cores da Guerra",
   "cardRotation": 45,
-  "customHelp": "Cores da Guerra é um jogo de construção de baralhos sobre o Mediterrâneo helenístico. Escolha sua Capital, gerencie Trabalhadores para gerar recursos, compre Combatentes, Estratégias e Melhorias no Mercado, e conquiste Hegemonia por vitória militar ou por influência.\n\nIMPORTANTE — esta implementação digital NÃO resolve Conflitos, Formações, habilidades de carta ou pontuação automaticamente. O motor oferece apenas as zonas, o estado de virado/tapado e contadores de apoio (aba 'Reserva'). Consultem sempre o Manual de Regras (Cores da Guerra — Manual de Regras v1) para resolver Assaltos, Combates e efeitos de carta.\n\nOrdem de jogo (primazia) a cada Campanha: quem jogou por último na Campanha anterior joga primeiro na próxima; os demais mantêm a ordem relativa. Passem o token 'Primazia' manualmente na Renovação.\n\nConflitos (Assalto/Combate) em partidas com 3-4 jogadores são sempre declarados 1 contra 1: quem ataca escolhe um único oponente-alvo: os demais não participam daquele Conflito.",
+  "customHelp": "Cores da Guerra é um jogo de construção de baralhos sobre o Mediterrâneo helenístico. Escolha sua Capital, gerencie Trabalhadores para gerar recursos, compre Combatentes, Estratégias e Melhorias no Mercado, e conquiste Hegemonia por vitória militar ou por influência.\n\nIMPORTANTE — esta implementação digital NÃO resolve Conflitos, Formações, habilidades de carta ou pontuação automaticamente. O motor oferece apenas as zonas, o estado de virado/tapado e contadores de apoio (aba 'Reserva'). Consultem sempre o Manual de Regras (Cores da Guerra — Manual de Regras v1) para resolver Assaltos, Combates e efeitos de carta.\n\nOrdem de jogo (primazia) a cada Campanha: quem jogou por último na Campanha anterior joga primeiro na próxima; os demais mantêm a ordem relativa. Passem o token 'Primazia' manualmente na Renovação.\n\nConflitos (Assalto/Combate) em partidas com 3-4 jogadores são sempre declarados 1 contra 1: quem ataca escolhe um único oponente-alvo: os demais não participam daquele Conflito.\n\nMONTAGEM DO BARALHO: o Império Inicial é sempre o mesmo (12 Trabalhadores + as 4 Capitais para escolher 1). Em vez de montar na mão, vá em Decks > Create deck > Import e cole:\n\n3 Trabalhador Helênico\n3 Trabalhador Latino\n3 Trabalhador Fenício\n3 Trabalhador Celta\n1 Pella\n1 Roma\n1 Cartago\n1 Avaricum\nSideboard:",
   "deckBuilding": {
     "mainFilters": ["type", "civilization", "cost"],
     "costCurveIgnoredTypes": ["Trabalhador", "Melhoria", "Capital"],
@@ -18,7 +18,7 @@
     "deckRulesets": {
       "ImperioInicial": {
         "checkCardLegality": false,
-        "general": { "min": 12, "max": 12, "maxPerCard": 3 },
+        "general": { "min": 13, "max": 13, "maxPerCard": 3 },
         "categories": [
           { "category": "Trabalhador", "min": 12, "max": 12 },
           { "category": "Capital", "min": 1, "max": 1 }
