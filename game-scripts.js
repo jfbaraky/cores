@@ -50,21 +50,30 @@
 //
 // Called from several events (see gamefile.json): onPlayersSideboardClosed,
 // onPlayersMulligan, onPlayersReady, onNewTurn, onCardsUpdate — several of
-// these can fire back-to-back at match start before the first call's
-// moveCard has landed on `cards`, so a guard that only checks
-// cards.Territorio isn't enough to stop duplicate concurrent runs (also
-// confirmed live: the placement log line appeared 3 times for one match).
-// inFlight is a plain module-level flag — this script file is loaded once
-// per client session, so it persists across calls the way any top-level
-// variable would.
+// these can fire back-to-back at match start before the first call's own
+// mutations have landed on `cards`, so a guard that re-reads cards.Territorio
+// isn't enough to stop duplicate runs: that read can itself be stale and
+// still report "empty" after the Capital has already been placed (also
+// confirmed live: with only that check, the placement log line appeared 3
+// times, and a Market-side version of the same guard shape caused a single
+// setup to redundantly re-run and over-draw the deck by a multiple of the
+// intended amount — see setupMarket()). Two flags handle this:
+// capitalInFlight is a short-lived re-entrancy guard for the async window
+// while we search for the card (reset in `finally`, so a genuinely failed
+// attempt can retry later); capitalPlaced is only claimed once we've
+// actually found the Capital and committed to moving it, and — unlike
+// capitalInFlight — is NEVER reset, so it can't be defeated by a stale
+// `cards.Territorio` read the way a check-and-reset guard can.
 const CAPITAL_SEARCH_DRAW = 7; // 13-card Império - 6-card starting hand
 const STARTING_HAND_SIZE = 6;
+let capitalPlaced = false;
 let capitalInFlight = false;
 
 async function placeCapital() {
-  if (capitalInFlight) return;
+  if (capitalPlaced || capitalInFlight) return;
   const territorio = cards?.Territorio ?? [];
   if (territorio.some((c) => functions.getCardData(c)?.type === "Capital")) {
+    capitalPlaced = true;
     return; // already placed — nothing to do
   }
 
@@ -80,8 +89,9 @@ async function placeCapital() {
       capital = handAfterDraw.find((c) => functions.getCardData(c)?.type === "Capital");
     }
 
-    if (!capital) return; // not this player's setup instant yet
+    if (!capital) return; // not this player's setup instant yet — capitalInFlight resets below, can retry
 
+    capitalPlaced = true; // committed — see comment above
     const data = functions.getCardData(capital);
     const handWithoutCapital = handAfterDraw.filter((c) => c !== capital);
 
@@ -124,51 +134,54 @@ async function placeCapital() {
 // new cards entering on one side and aging toward the other; not verified
 // against the manual's exact card ordering since script arrays don't carry
 // an explicit timestamp.
+//
+// setupMarket() originally guarded itself the same way the first version of
+// placeCapital() did — re-reading cards.Revelado to check "is this already
+// done" — and hit the exact same staleness bug, live: with 3 setup events
+// firing close together, that read kept reporting 0 revealed cards even
+// after an earlier run had already filled them, so the shuffle+reveal-4
+// sequence re-ran multiple times per pile. Confirmed live: the piles came
+// up 45/65/58 remaining instead of 53/69/70 — each short by an exact
+// multiple of 4 (12, 8, 16), matching 3/2/4 redundant full setup passes.
+// Fixed the same way as capitalPlaced: a flag claimed synchronously, before
+// any await, that's never reset — immune to `cards` staleness because it
+// never depends on re-reading `cards` at all.
 const MARKET_PILES = [
   { pile: "MercadoCombatentesPilha", revealed: "MercadoCombatentesRevelado", discard: "MercadoCombatentesDescarte" },
   { pile: "MercadoEstrategiasPilha", revealed: "MercadoEstrategiasRevelado", discard: "MercadoEstrategiasDescarte" },
   { pile: "MercadoMelhoriasPilha", revealed: "MercadoMelhoriasRevelado", discard: "MercadoMelhoriasDescarte" },
 ];
 const MARKET_REVEALED_SIZE = 4;
-let marketSetupInFlight = false;
-let marketReplenishInFlight = false;
+let marketSetup = false;
 
 // One-time setup: shuffle each hidden pile and reveal the first 4 cards.
-// Guarded by checking whether any Revelado row already has cards — the
-// Mercado is a shared zone, so every player's onPlayersReady/etc. trigger
-// fires this, and only the first one that gets there should act.
 async function setupMarket() {
-  if (marketSetupInFlight) return;
-  const alreadySet = MARKET_PILES.some(({ revealed }) => (cards?.[revealed] ?? []).length > 0);
-  if (alreadySet) return;
-
-  marketSetupInFlight = true;
-  try {
-    for (const { pile } of MARKET_PILES) {
-      await functions.shuffleSection(pile);
-    }
-    await replenishMarket();
-  } finally {
-    marketSetupInFlight = false;
+  if (marketSetup) return;
+  marketSetup = true; // claim before any await — see comment above
+  for (const { pile } of MARKET_PILES) {
+    await functions.shuffleSection(pile);
   }
+  await replenishMarket();
 }
 
 // Tops up every Revelado row back up to MARKET_REVEALED_SIZE (4) by
-// drawing from its hidden pile. Called after setup and again on every
-// onCardsUpdate, so buying a card (which removes it from Revelado) gets
-// the slot refilled automatically. Idempotent: no-ops per pile once full.
+// drawing from its hidden pile. Called after setup, after advanceMarket()'s
+// discards, and once per onNewTurn (not onCardsUpdate: that fires on every
+// single card move including this function's own draws, which — combined
+// with the same `cards`-staleness risk noted above — caused a runaway
+// redraw loop live; onNewTurn is much lower-frequency, so a bought card's
+// slot gets refilled by the start of the next turn rather than instantly,
+// which is a safe tradeoff here). Not further guarded against re-entrancy:
+// unlike setup, this legitimately needs to re-run many times over a game,
+// and each pile's own `short` computation is a plain clamped top-up, not a
+// one-shot claim, so a redundant call just finds every pile already at 4
+// and no-ops.
 async function replenishMarket() {
-  if (marketReplenishInFlight) return;
-  marketReplenishInFlight = true;
-  try {
-    for (const { pile, revealed } of MARKET_PILES) {
-      const short = MARKET_REVEALED_SIZE - (cards?.[revealed] ?? []).length;
-      if (short > 0) {
-        await functions.drawFromExtraDeck(pile, short, false, revealed);
-      }
+  for (const { pile, revealed } of MARKET_PILES) {
+    const short = MARKET_REVEALED_SIZE - (cards?.[revealed] ?? []).length;
+    if (short > 0) {
+      await functions.drawFromExtraDeck(pile, short, false, revealed);
     }
-  } finally {
-    marketReplenishInFlight = false;
   }
 }
 

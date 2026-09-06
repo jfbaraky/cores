@@ -1278,8 +1278,8 @@
               "onPlayersSideboardClosed": "await placeCapital(); await setupMarket();",
               "onPlayersMulligan": "await placeCapital(); await setupMarket();",
               "onPlayersReady": "await placeCapital(); await setupMarket();",
-              "onNewTurn": "await placeCapital();",
-              "onCardsUpdate": "await placeCapital(); await replenishMarket();"
+              "onNewTurn": "await placeCapital(); await replenishMarket();",
+              "onCardsUpdate": "await placeCapital();"
             }
           },
           "MercadoCombatentesPilha": {
