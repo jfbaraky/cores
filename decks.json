@@ -1,15 +1,26 @@
 [
   {
     "title": "Império Inicial",
-    "cards": [
-      { "id": "capital-pella", "quantity": 1, "category": "Capital" },
-      { "id": "capital-roma", "quantity": 1, "category": "Capital" },
-      { "id": "capital-cartago", "quantity": 1, "category": "Capital" },
-      { "id": "capital-avaricum", "quantity": 1, "category": "Capital" },
-      { "id": "trabalhador-helenica", "quantity": 3, "category": "Trabalhador" },
-      { "id": "trabalhador-latina", "quantity": 3, "category": "Trabalhador" },
-      { "id": "trabalhador-fenicia", "quantity": 3, "category": "Trabalhador" },
-      { "id": "trabalhador-celta", "quantity": 3, "category": "Trabalhador" }
-    ]
+    "id": "b8c7e468-c5d1-4420-9091-c2fd02b11dda",
+    "cardCount": 16,
+    "createdAt": "2026-09-06T15:41:03.441Z",
+    "lastModifiedAt": "2026-09-06T15:41:03.441Z",
+    "game": "Cores da Guerra",
+    "format": ["Padrão"],
+    "deckList": {
+      "categoriesOrder": ["Trabalhador", "Capital"],
+      "Trabalhador": [
+        { "count": 3, "id": "trabalhador-helenica" },
+        { "count": 3, "id": "trabalhador-latina" },
+        { "count": 3, "id": "trabalhador-fenicia" },
+        { "count": 3, "id": "trabalhador-celta" }
+      ],
+      "Capital": [
+        { "count": 1, "id": "capital-pella" },
+        { "count": 1, "id": "capital-roma" },
+        { "count": 1, "id": "capital-cartago" },
+        { "count": 1, "id": "capital-avaricum" }
+      ]
+    }
   }
 ]
