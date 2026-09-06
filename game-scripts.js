@@ -135,55 +135,60 @@ async function placeCapital() {
 // against the manual's exact card ordering since script arrays don't carry
 // an explicit timestamp.
 //
-// setupMarket() first guarded itself the same way the first version of
-// placeCapital() did — re-reading cards.Revelado to check "is this already
-// done" — and hit a FAR worse version of the same staleness bug, live: the
-// Mercado piles came up 45/65/58 remaining instead of 53/69/70. Replacing
-// that with a synchronously-claimed, never-reset flag (the same fix that
-// worked for capitalPlaced) was NOT enough on its own, though, and that's
-// an important difference from placeCapital(): the Mercado is a genuinely
-// SHARED section, and every connected player's browser runs its own
-// separate instance of this whole script file with its own separate
-// `marketSetup` variable. A flag only stops ONE client from redoing its
-// own work — it does nothing to stop a SECOND player's client from also
-// independently passing the same guard and shuffling/drawing the same
-// shared piles again. placeCapital() never had this problem because it
-// only ever touches the calling player's OWN per-player Território/Hand/
-// Deck, so redundant per-client execution is harmless there.
-// Fixed by additionally gating on `game.isHost`: only the host's client
-// ever runs the body, so exactly one client mutates the shared Mercado
-// piles regardless of how many players' clients fire the setup events.
+// setupMarket() and replenishMarket() were originally wired to fire
+// automatically (setup events / onNewTurn), same as placeCapital(), and
+// went through two failed fixes before landing on "manual button, same as
+// advanceMarket()":
+//   1. First guard was a re-read of cards.Revelado ("is this already
+//      done?") — hit the same staleness bug documented on placeCapital(),
+//      but far worse live: the Mercado piles came up 45/65/58 remaining
+//      instead of 53/69/70 (redundant full setup passes).
+//   2. Replaced that with a synchronously-claimed, never-reset flag (the
+//      fix that worked for capitalPlaced) plus a game.isHost gate (the
+//      Mercado is a genuinely SHARED section — every connected player's
+//      browser runs its own separate instance of this whole script with
+//      its own separate module state, so a per-client flag alone can't
+//      stop a second player's client from also mutating the same shared
+//      piles; game.isHost restricts execution to one client).
+//      Still wasn't enough: a live debug log proved the module-level flag
+//      itself doesn't reliably hold true across rapid back-to-back calls
+//      even on the SAME client — three setupMarket() calls in a row on the
+//      host all logged marketSetup=false, including the 2nd and 3rd, which
+//      should have seen true if the 1st call's synchronous assignment had
+//      taken effect before they ran. capitalPlaced happened to look
+//      reliable earlier only because placeCapital() has several real
+//      awaits in its own body before anything else could catch up, not
+//      because the underlying mechanism is actually sound — with the
+//      shorter, more rapid-firing setupMarket(), the flag lost every race.
+// Given the platform doesn't behave the way its own docs describe here
+// (module state "persisting across calls"), the reliable fix is the same
+// one already used for the esteira: a manual button. A single deliberate
+// click has no multi-event cascade to race against, so none of the above
+// applies. See the Reserva panel for "Abrir Mercado" (setupMarket) and
+// "Repor Mercado" (replenishMarket) alongside "Avançar Mercado
+// (Renovação)" (advanceMarket).
 const MARKET_PILES = [
   { pile: "MercadoCombatentesPilha", revealed: "MercadoCombatentesRevelado", discard: "MercadoCombatentesDescarte" },
   { pile: "MercadoEstrategiasPilha", revealed: "MercadoEstrategiasRevelado", discard: "MercadoEstrategiasDescarte" },
   { pile: "MercadoMelhoriasPilha", revealed: "MercadoMelhoriasRevelado", discard: "MercadoMelhoriasDescarte" },
 ];
 const MARKET_REVEALED_SIZE = 4;
-let marketSetup = false;
 
-// One-time setup: shuffle each hidden pile and reveal the first 4 cards.
+// Manual "Abrir Mercado" button (Reserva panel): shuffles each hidden pile
+// and reveals the first 4 cards. Click once, at the start of the match.
 async function setupMarket() {
-  functions.chatLog(`[debug] setupMarket called: game.isHost=${game?.isHost}, marketSetup=${marketSetup}`);
-  if (!game.isHost || marketSetup) return;
-  marketSetup = true; // claim before any await — see comment above
   for (const { pile } of MARKET_PILES) {
     await functions.shuffleSection(pile);
   }
   await replenishMarket();
 }
 
-// Tops up every Revelado row back up to MARKET_REVEALED_SIZE (4) by
-// drawing from its hidden pile. Called after setup, after advanceMarket()'s
-// discards, and once per onNewTurn (not onCardsUpdate: that fires on every
-// single card move, which would mean every connected player's client
-// racing to top up the same shared rows on every single update — far too
-// hot a trigger for a shared-zone mutation even with the host gate below;
-// onNewTurn is much lower-frequency, so a bought card's slot gets refilled
-// by the start of the next turn rather than instantly, which is a safe
-// tradeoff here). Also host-gated, for the same cross-client reason as
-// setupMarket() — see comment above.
+// Manual "Repor Mercado" button (Reserva panel): tops up every Revelado row
+// back up to MARKET_REVEALED_SIZE (4) by drawing from its hidden pile.
+// Click after buying a card. Also called by setupMarket() (initial reveal)
+// and advanceMarket() (after discarding the oldest card) — both already
+// single deliberate actions, so calling this from within them is safe.
 async function replenishMarket() {
-  if (!game.isHost) return;
   for (const { pile, revealed } of MARKET_PILES) {
     const short = MARKET_REVEALED_SIZE - (cards?.[revealed] ?? []).length;
     if (short > 0) {

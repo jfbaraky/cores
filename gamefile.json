@@ -2,7 +2,7 @@
   "name": "Cores da Guerra",
   "cardRotation": 45,
   "scriptsUrls": ["https://jfbaraky.github.io/cores/game-scripts.js"],
-  "customHelp": "Cores da Guerra é um jogo de construção de baralhos sobre o Mediterrâneo helenístico. Escolha sua Capital, gerencie Trabalhadores para gerar recursos, compre Combatentes, Estratégias e Melhorias no Mercado, e conquiste Hegemonia por vitória militar ou por influência.\n\nIMPORTANTE — esta implementação digital NÃO resolve Conflitos, Formações, habilidades de carta ou pontuação automaticamente. O motor oferece apenas as zonas, o estado de virado/tapado e contadores de apoio (aba 'Reserva'). Consultem sempre o Manual de Regras (Cores da Guerra — Manual de Regras v1) para resolver Assaltos, Combates e efeitos de carta.\n\nOrdem de jogo (primazia) a cada Campanha: quem jogou por último na Campanha anterior joga primeiro na próxima; os demais mantêm a ordem relativa. Passem o token 'Primazia' manualmente na Renovação.\n\nConflitos (Assalto/Combate) em partidas com 3-4 jogadores são sempre declarados 1 contra 1: quem ataca escolhe um único oponente-alvo: os demais não participam daquele Conflito.\n\nESCOLHA DE BARALHO: ao entrar em uma partida, escolha em 'Preconstructed decks' o Império da civilização da Capital que você quer jogar (Helênica/Latina/Fenícia/Celta) — isso já escolhe sua Capital.\n\nSUA CAPITAL: é colocada automaticamente no Território assim que a partida começa — não precisa arrastá-la manualmente. Sua mão inicial continua com exatamente 6 Trabalhadores, mesmo que a Capital tenha saído (ou não) no sorteio da mão.\n\nTELA 'Swap cards with your sideboard': ao iniciar a partida, o TCG Arena mostra essa tela padrão da plataforma para todo mundo — este jogo não usa Sideboard, então basta clicar 'Continue' sem mexer em nada (ou, melhor ainda, o anfitrião pode ligar 'Disable sideboard for all players' na tela 'Start the game' para pular essa etapa por completo).",
+  "customHelp": "Cores da Guerra é um jogo de construção de baralhos sobre o Mediterrâneo helenístico. Escolha sua Capital, gerencie Trabalhadores para gerar recursos, compre Combatentes, Estratégias e Melhorias no Mercado, e conquiste Hegemonia por vitória militar ou por influência.\n\nIMPORTANTE — esta implementação digital NÃO resolve Conflitos, Formações, habilidades de carta ou pontuação automaticamente. O motor oferece apenas as zonas, o estado de virado/tapado e contadores de apoio (aba 'Reserva'). Consultem sempre o Manual de Regras (Cores da Guerra — Manual de Regras v1) para resolver Assaltos, Combates e efeitos de carta.\n\nOrdem de jogo (primazia) a cada Campanha: quem jogou por último na Campanha anterior joga primeiro na próxima; os demais mantêm a ordem relativa. Passem o token 'Primazia' manualmente na Renovação.\n\nConflitos (Assalto/Combate) em partidas com 3-4 jogadores são sempre declarados 1 contra 1: quem ataca escolhe um único oponente-alvo: os demais não participam daquele Conflito.\n\nESCOLHA DE BARALHO: ao entrar em uma partida, escolha em 'Preconstructed decks' o Império da civilização da Capital que você quer jogar (Helênica/Latina/Fenícia/Celta) — isso já escolhe sua Capital.\n\nSUA CAPITAL: é colocada automaticamente no Território assim que a partida começa — não precisa arrastá-la manualmente. Sua mão inicial continua com exatamente 6 Trabalhadores, mesmo que a Capital tenha saído (ou não) no sorteio da mão.\n\nTELA 'Swap cards with your sideboard': ao iniciar a partida, o TCG Arena mostra essa tela padrão da plataforma para todo mundo — este jogo não usa Sideboard, então basta clicar 'Continue' sem mexer em nada (ou, melhor ainda, o anfitrião pode ligar 'Disable sideboard for all players' na tela 'Start the game' para pular essa etapa por completo).\n\nMERCADO: use os botões na aba 'Reserva' — 'Abrir Mercado' (um clique, uma vez, no início da partida: embaralha as 3 pilhas e revela 4 cartas de cada), 'Repor Mercado' (um clique depois de comprar uma carta, repõe até 4 revelados por pilha) e 'Avançar Mercado (Renovação)' (um clique na Renovação: descarta a carta mais antiga revelada de cada pilha e repõe). Qualquer jogador pode clicar; funcionam na mesma pilha/linha compartilhada para todos.",
   "deckBuilding": {
     "mainFilters": [
       "type",
@@ -1187,6 +1187,32 @@
                   "children": [
                     {
                       "type": "button",
+                      "children": "Abrir Mercado",
+                      "onClick": "await setupMarket()"
+                    }
+                  ]
+                },
+                {
+                  "type": "div",
+                  "props": {
+                    "className": "reserva-row"
+                  },
+                  "children": [
+                    {
+                      "type": "button",
+                      "children": "Repor Mercado",
+                      "onClick": "await replenishMarket()"
+                    }
+                  ]
+                },
+                {
+                  "type": "div",
+                  "props": {
+                    "className": "reserva-row"
+                  },
+                  "children": [
+                    {
+                      "type": "button",
                       "children": "Avançar Mercado (Renovação)",
                       "onClick": "await advanceMarket()"
                     }
@@ -1275,10 +1301,10 @@
               ]
             },
             "events": {
-              "onPlayersSideboardClosed": "await placeCapital(); await setupMarket();",
-              "onPlayersMulligan": "await placeCapital(); await setupMarket();",
-              "onPlayersReady": "await placeCapital(); await setupMarket();",
-              "onNewTurn": "await placeCapital(); await replenishMarket();",
+              "onPlayersSideboardClosed": "await placeCapital();",
+              "onPlayersMulligan": "await placeCapital();",
+              "onPlayersReady": "await placeCapital();",
+              "onNewTurn": "await placeCapital();",
               "onCardsUpdate": "await placeCapital();"
             }
           },

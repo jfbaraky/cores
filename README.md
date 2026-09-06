@@ -89,15 +89,45 @@ como em uma mesa física. O `gamefile.json` só define:
   Muralha — representados como tokens que os jogadores arrastam sobre as
   cartas, exatamente como as fichas físicas do jogo.
 
-## O que ainda é 100% manual (por design)
+## Mercado: automação por botão (não 100% automático)
 
-- **Esteira do Mercado:** deslocar as cartas reveladas e revelar novas a cada
-  compra/Renovação é um passo manual — o motor não tem uma "esteira" nativa.
-- **Montagem inicial do Mercado:** no início da partida, alguém precisa reunir
-  as cópias de cada Combatente/Estratégia/Melhoria (respeitando o campo
-  `copies` de cada carta em `cards.json`), embaralhar cada pilha e revelar as
-  4 cartas do topo — não há automação nativa para "popular uma pilha
-  compartilhada com N cópias de cada carta de um tipo".
+`game-scripts.js` tem 3 funções para o Mercado — `setupMarket()`,
+`replenishMarket()`, `advanceMarket()` — mas nenhuma delas dispara sozinha
+mais. Elas só rodam quando alguém clica um dos 3 botões na aba "Reserva":
+**Abrir Mercado**, **Repor Mercado**, **Avançar Mercado (Renovação)**
+(ver "Testado ao vivo" abaixo para o que cada uma faz exatamente).
+
+Isso não era o plano original — as 3 foram disparadas automaticamente por
+eventos (`onPlayersReady`, `onNewTurn`, etc.), do mesmo jeito que
+`placeCapital()`. Dois motivos concretos, confirmados ao vivo, mudaram
+isso:
+
+- **O Mercado é uma zona compartilhada.** Cada jogador conectado roda sua
+  própria cópia inteira de `game-scripts.js`, com seu próprio estado de
+  módulo — uma flag tipo `let marketSetup = false` só impede *aquele*
+  cliente de repetir o trabalho; não impede um SEGUNDO jogador de também
+  embaralhar/revelar as mesmas pilhas compartilhadas de novo.
+  `placeCapital()` nunca teve esse problema porque só mexe nas zonas
+  *daquele* jogador (Território/Mão/Império), então execução redundante
+  entre clientes é inofensiva ali.
+- **Mesmo `game.isHost` (restringir a mutação a um único cliente) não foi
+  suficiente sozinho.** Um log de depuração ao vivo mostrou 3 chamadas
+  seguidas de `setupMarket()` no MESMO cliente (host) todas lendo
+  `marketSetup=false` — inclusive a 2ª e a 3ª, que deveriam ter visto
+  `true` se a atribuição síncrona da 1ª chamada realmente "grudasse" antes
+  delas rodarem. Ou seja: variáveis de módulo não estão se mantendo de
+  forma confiável entre chamadas rápidas em sequência neste motor, ao
+  contrário do que a documentação da plataforma sugere ("scripts file is
+  loaded once per client session, so top-level variables persist"). Na
+  prática isso causou revelação de Mercado MUITO acima do esperado (o
+  pior caso ao vivo: 45/65/58 cartas restantes nas pilhas em vez de
+  53/69/70 — quase o triplo do esperado).
+
+Um clique de botão é uma ação única e deliberada — não tem a cascata de
+múltiplos eventos disparando em sequência que expôs os dois problemas
+acima, então contorna ambos por completo. O preço é que "Repor Mercado"
+não acontece sozinho no instante em que alguém compra uma carta; alguém
+(qualquer jogador) precisa clicar depois da compra.
 - **Assalto/Combate:** casamento de cartas, Formações, cavalaria vs. muralha,
   cálculo de dano, [REAÇÃO] — tudo lido e resolvido pelos jogadores nas
   próprias cartas, no Campo de Batalha.
@@ -210,9 +240,13 @@ documentação:
   não funciona..." acima. (Esse número de 6 já ficou incorretamente
   dobrado para 12/0 antes da correção de `beforeGameStart`, ver histórico
   do git.)
-- **Mercado:** as 3 pilhas (Combatentes/Estratégias/Melhorias) são
-  populadas automaticamente no início da partida com a contagem certa
-  (57/73/74 cópias, batendo com o campo `copies` de cada carta).
+- **Mercado — montagem inicial das pilhas:** as 3 pilhas ocultas
+  (Combatentes/Estratégias/Melhorias) são populadas automaticamente no
+  início da partida com a contagem certa (57/73/74 cópias, batendo com o
+  campo `copies` de cada carta) via `beforeGameStart.initialBoardSetup`.
+  Isso é só a montagem da pilha oculta — **revelar as 4 cartas do topo de
+  cada pilha é um passo separado, manual** (botão "Abrir Mercado"), ver
+  "Mercado: automação por botão" acima.
 - **Zonas e ações básicas:** "Mão" some por padrão atrás de um botão
   "Show" (clique para abrir o leque de cartas — não é um bug de
   visibilidade, é só a UI padrão do app); botão direito numa carta dá um
@@ -229,12 +263,16 @@ documentação:
 
 ## Pontos ainda não verificados
 
-- **Esteira do Mercado / revelar as 4 cartas do topo de cada pilha:** as
-  pilhas foram populadas, mas o fluxo de "revelar as 4 do topo" e "rolar a
-  esteira" ainda não foi executado numa partida de teste — deve funcionar
-  via o mesmo menu de botão direito ("To Pilha de Combatentes" → "Top"),
-  mas isso move para o TOPO da pilha, não necessariamente "revela" num
-  sentido especial; testar esse fluxo específico antes de confiar nele.
+- **Botões "Abrir Mercado" / "Repor Mercado" / "Avançar Mercado
+  (Renovação)":** implementados com `functions.drawFromExtraDeck()` /
+  `moveCard()` / `shuffleSection()` (ver `game-scripts.js`), mas a versão
+  *com botão* ainda não foi clicada numa partida de teste — só a versão
+  anterior (disparo automático por evento) foi testada ao vivo, e essa
+  versão tinha os bugs de revelação em excesso descritos acima
+  (exatamente por isso virou botão). Testar os 3 botões antes de confiar
+  neles: confirmar que "Abrir Mercado" revela exatamente 4 por pilha,
+  que "Repor Mercado" completa até 4 sem estourar, e que "Avançar
+  Mercado" descarta exatamente 1 carta por pilha (a mais antiga) e repõe.
 - **Compra de cartas (pagar com fichas de recurso)** e o bônus de "compra
   plena" — não testados ao vivo ainda.
 - **Assalto/Combate completo** (casamento de cartas, Formações, etc.) — por
