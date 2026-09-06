@@ -68,7 +68,7 @@ async function placeCapital() {
     return; // already placed — nothing to do
   }
 
-  inFlight = true;
+  capitalInFlight = true;
   try {
     const dealtHand = cards?.Hand ?? [];
     let capital = dealtHand.find((c) => functions.getCardData(c)?.type === "Capital");
