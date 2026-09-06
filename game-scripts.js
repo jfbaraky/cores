@@ -5,18 +5,27 @@
 // logic here.
 
 // §7.1 of the manual: the Capital enters play immediately, on Território, at
-// no cost — it's never part of the drawable deck. Two platform constraints,
-// both confirmed by live 2-player testing, shaped this function:
+// no cost — it's never part of the drawable deck. Platform constraints,
+// confirmed by live 2-player testing, shaped this function:
 //   1. cards.Deck returns nothing to scripts while that section is
 //      isHidden:"yes" — hidden zones aren't readable even by their own
 //      owner's scripts, so we can't just inspect the deck for the Capital.
-//   2. beforeGameStart.boardCategoriesInSideboard (which docs describe as
-//      routing a deck category to the Sideboard zone before board setup
-//      runs) turned out to be a dead end for a *preconstructed* deck: live
-//      testing showed the "swap with your sideboard" screen still listing
-//      the Capital inside Deck (13) with Sideboard staying at 0, both with
-//      the sideboard step enabled and with the host's "disable sideboard"
-//      toggle on. Nothing routes it out of the deck ahead of time.
+//   2. beforeGameStart.boardCategoriesInSideboard (docs: routes a deck
+//      category to Sideboard before board setup runs) turned out to be a
+//      dead end for a *preconstructed* deck: live testing (both with the
+//      host's "disable sideboard" toggle on and off) showed the "swap with
+//      your sideboard" screen still listing the Capital inside Deck (13)
+//      with Sideboard staying at 0. Nothing routes it out ahead of time.
+//   3. `cards.Hand` does not refresh within a single script invocation
+//      after this script's own moveCard() calls — confirmed live: reading
+//      cards.Hand again immediately after moveCard(capital, "Territorio")
+//      still returned the pre-move array including the Capital itself,
+//      which (in an earlier version of this function) got scooped up as
+//      "excess" and shipped right back into the deck, undoing the
+//      placement. (cards.Hand DOES pick up functions.draw()'s new cards
+//      when re-read — the staleness is specific to moveCard's effect not
+//      landing on `cards` synchronously.) So below, the post-move hand is
+//      tracked with a local array, never by re-reading cards.Hand.
 // So the deck is always the full 13-card Império (1 Capital + 12
 // Trabalhadores), same as the physical decklist — this function has to find
 // the Capital wherever the native deal put it and can't assume it's
@@ -33,48 +42,61 @@
 //     already dealt) into Hand — functions.draw() can pull from Deck even
 //     though the deck's *contents* aren't inspectable, so this reliably
 //     surfaces the Capital.
-// Either way, after pulling the Capital out onto Território, top the hand
-// back up to exactly startingHandSize (6): draw more if the Capital was one
-// of the original 6 (leaving only 5 real cards), or return the extra
-// Trabalhadores drawn while searching back to Deck and reshuffle if the
-// search overshot 6.
+// Either way, after pulling the Capital out onto Território, the hand is
+// corrected back to exactly startingHandSize (6) using only local
+// bookkeeping: draw more if the Capital was one of the original 6 (leaving
+// only 5 real cards), or return the extra Trabalhadores drawn while
+// searching back to Deck and reshuffle if the search overshot 6.
 //
-// Guarded at the top by checking Território for an existing Capital, so
-// this is idempotent and safe to call from every event listed in
-// gamefile.json (onPlayersSideboardClosed, onPlayersMulligan,
-// onPlayersReady, onNewTurn, onCardsUpdate) without redrawing the deck on
-// later turns once the Capital is already in play.
+// Called from several events (see gamefile.json): onPlayersSideboardClosed,
+// onPlayersMulligan, onPlayersReady, onNewTurn, onCardsUpdate — several of
+// these can fire back-to-back at match start before the first call's
+// moveCard has landed on `cards`, so a guard that only checks
+// cards.Territorio isn't enough to stop duplicate concurrent runs (also
+// confirmed live: the placement log line appeared 3 times for one match).
+// inFlight is a plain module-level flag — this script file is loaded once
+// per client session, so it persists across calls the way any top-level
+// variable would.
 const CAPITAL_SEARCH_DRAW = 7; // 13-card Império - 6-card starting hand
 const STARTING_HAND_SIZE = 6;
+let inFlight = false;
 
 async function placeCapital() {
+  if (inFlight) return;
   const territorio = cards?.Territorio ?? [];
   if (territorio.some((c) => functions.getCardData(c)?.type === "Capital")) {
     return; // already placed — nothing to do
   }
 
-  let hand = cards?.Hand ?? [];
-  let capital = hand.find((c) => functions.getCardData(c)?.type === "Capital");
+  inFlight = true;
+  try {
+    const dealtHand = cards?.Hand ?? [];
+    let capital = dealtHand.find((c) => functions.getCardData(c)?.type === "Capital");
+    let handAfterDraw = dealtHand;
 
-  if (!capital) {
-    await functions.draw(CAPITAL_SEARCH_DRAW);
-    hand = cards?.Hand ?? [];
-    capital = hand.find((c) => functions.getCardData(c)?.type === "Capital");
-  }
+    if (!capital) {
+      await functions.draw(CAPITAL_SEARCH_DRAW);
+      handAfterDraw = cards?.Hand ?? []; // fresh read: draw()'s new cards do land on `cards`
+      capital = handAfterDraw.find((c) => functions.getCardData(c)?.type === "Capital");
+    }
 
-  if (!capital) return; // not this player's setup instant yet
+    if (!capital) return; // not this player's setup instant yet
 
-  const data = functions.getCardData(capital);
-  await functions.moveCard(capital, "Territorio");
-  functions.chatLog(`${data?.name?.name ?? "Capital"} colocada em jogo automaticamente no Território.`);
+    const data = functions.getCardData(capital);
+    const handWithoutCapital = handAfterDraw.filter((c) => c !== capital);
 
-  const remaining = (cards?.Hand ?? []).length;
-  if (remaining < STARTING_HAND_SIZE) {
-    await functions.draw(STARTING_HAND_SIZE - remaining);
-  } else if (remaining > STARTING_HAND_SIZE) {
-    const rest = cards?.Hand ?? [];
-    const toReturn = rest.slice(0, remaining - STARTING_HAND_SIZE);
-    await functions.moveCards(toReturn, "Deck");
-    await functions.shuffleSection("Deck");
+    await functions.moveCard(capital, "Territorio");
+    functions.chatLog(`${data?.name?.name ?? "Capital"} colocada em jogo automaticamente no Território.`);
+
+    const size = handWithoutCapital.length;
+    if (size < STARTING_HAND_SIZE) {
+      await functions.draw(STARTING_HAND_SIZE - size);
+    } else if (size > STARTING_HAND_SIZE) {
+      const toReturn = handWithoutCapital.slice(0, size - STARTING_HAND_SIZE);
+      await functions.moveCards(toReturn, "Deck");
+      await functions.shuffleSection("Deck");
+    }
+  } finally {
+    inFlight = false;
   }
 }
