@@ -5,47 +5,76 @@
 // logic here.
 
 // §7.1 of the manual: the Capital enters play immediately, on Território, at
-// no cost — it's never part of the drawable deck. Two things confirmed live:
+// no cost — it's never part of the drawable deck. Two platform constraints,
+// both confirmed by live 2-player testing, shaped this function:
 //   1. cards.Deck returns nothing to scripts while that section is
-//      isHidden:"yes" - hidden zones aren't readable even by their own
-//      owner's scripts. Checking only Hand meant the Capital only got
-//      auto-placed if it happened to be drawn into the opening hand.
-//   2. gamefile.json's beforeGameStart.boardCategoriesInSideboard:["Capital"]
-//      routes the deck's "Capital" category card into the Sideboard zone
-//      before the match starts, instead of leaving it shuffled into Deck.
-//      Sideboard is not isHidden:"yes" the way Deck is, so (unlike Deck) it
-//      should be readable here - letting this run BEFORE the opening hand is
-//      even drawn, guaranteeing the Capital is on Território turn 1 as the
-//      manual requires, rather than only whenever it's eventually drawn.
-// Checks Sideboard first (the expected/guaranteed location), Hand as a
-// fallback — the docs only promise boardCategoriesInSideboard runs "before
-// any board setup [i.e. initialBoardSetup] runs", not that it precedes the
-// mulligan hand deal. Live testing confirmed it doesn't always win that
-// race: the Capital can still get shuffled into the dealt 6-card hand,
-// which (once this function pulls it back out to Território) left the
-// player with only 5 real cards. So when the Capital is found already in
-// Hand, draw one replacement card to keep the hand at its configured
-// startingHandSize (6) of actual Trabalhadores. When it's found in
-// Sideboard (the deal never touched it), the hand was already the correct
-// size and no top-up is needed.
-// Idempotent: no-ops once the Capital is already on Território. Called from
-// several events (see gamefile.json) so it fires whichever one actually
-// carries this player's setup instant.
+//      isHidden:"yes" — hidden zones aren't readable even by their own
+//      owner's scripts, so we can't just inspect the deck for the Capital.
+//   2. beforeGameStart.boardCategoriesInSideboard (which docs describe as
+//      routing a deck category to the Sideboard zone before board setup
+//      runs) turned out to be a dead end for a *preconstructed* deck: live
+//      testing showed the "swap with your sideboard" screen still listing
+//      the Capital inside Deck (13) with Sideboard staying at 0, both with
+//      the sideboard step enabled and with the host's "disable sideboard"
+//      toggle on. Nothing routes it out of the deck ahead of time.
+// So the deck is always the full 13-card Império (1 Capital + 12
+// Trabalhadores), same as the physical decklist — this function has to find
+// the Capital wherever the native deal put it and can't assume it's
+// somewhere pre-staged.
+//
+// Since the Capital is genuinely inside the shuffled 13-card deck, it lands
+// in the dealt 6-card opening hand only ~46% of the time (6/13). The other
+// ~54% of the time it's still buried in Deck, which the game never redraws
+// from afterwards (newTurn.drawPerTurn is 0) — so a Hand-only check would
+// leave more than half of all games with no Capital in play at all. To
+// guarantee it unconditionally:
+//   - If the Capital is already in Hand, use it.
+//   - Otherwise, draw the rest of the deck (at most 7 cards: 13 total - 6
+//     already dealt) into Hand — functions.draw() can pull from Deck even
+//     though the deck's *contents* aren't inspectable, so this reliably
+//     surfaces the Capital.
+// Either way, after pulling the Capital out onto Território, top the hand
+// back up to exactly startingHandSize (6): draw more if the Capital was one
+// of the original 6 (leaving only 5 real cards), or return the extra
+// Trabalhadores drawn while searching back to Deck and reshuffle if the
+// search overshot 6.
+//
+// Guarded at the top by checking Território for an existing Capital, so
+// this is idempotent and safe to call from every event listed in
+// gamefile.json (onPlayersSideboardClosed, onPlayersMulligan,
+// onPlayersReady, onNewTurn, onCardsUpdate) without redrawing the deck on
+// later turns once the Capital is already in play.
+const CAPITAL_SEARCH_DRAW = 7; // 13-card Império - 6-card starting hand
+const STARTING_HAND_SIZE = 6;
+
 async function placeCapital() {
-  const zones = ["Sideboard", "Hand"];
-  for (const zone of zones) {
-    const list = cards?.[zone] ?? [];
-    for (const card of list) {
-      const data = functions.getCardData(card);
-      if (data && data.type === "Capital") {
-        await functions.moveCard(card, "Territorio");
-        chatLog(`${data.name?.name ?? "Capital"} colocada em jogo automaticamente no Território.`);
-        if (zone === "Hand") {
-          await functions.draw(1);
-          chatLog("Carta de reposição sacada (a Capital saiu da mão para o Território).");
-        }
-        return;
-      }
-    }
+  const territorio = cards?.Territorio ?? [];
+  if (territorio.some((c) => functions.getCardData(c)?.type === "Capital")) {
+    return; // already placed — nothing to do
+  }
+
+  let hand = cards?.Hand ?? [];
+  let capital = hand.find((c) => functions.getCardData(c)?.type === "Capital");
+
+  if (!capital) {
+    await functions.draw(CAPITAL_SEARCH_DRAW);
+    hand = cards?.Hand ?? [];
+    capital = hand.find((c) => functions.getCardData(c)?.type === "Capital");
+  }
+
+  if (!capital) return; // not this player's setup instant yet
+
+  const data = functions.getCardData(capital);
+  await functions.moveCard(capital, "Territorio");
+  functions.chatLog(`${data?.name?.name ?? "Capital"} colocada em jogo automaticamente no Território.`);
+
+  const remaining = (cards?.Hand ?? []).length;
+  if (remaining < STARTING_HAND_SIZE) {
+    await functions.draw(STARTING_HAND_SIZE - remaining);
+  } else if (remaining > STARTING_HAND_SIZE) {
+    const rest = cards?.Hand ?? [];
+    const toReturn = rest.slice(0, remaining - STARTING_HAND_SIZE);
+    await functions.moveCards(toReturn, "Deck");
+    await functions.shuffleSection("Deck");
   }
 }

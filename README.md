@@ -109,16 +109,36 @@ como em uma mesa física. O `gamefile.json` só define:
   contador correspondente na Reserva manualmente (clique no campo numérico e
   digite o valor, ou use as setas ▲▼). Testado e funcionando ao vivo.
 - **Colocar a Capital em jogo:** automático, via `game-scripts.js`
-  (`placeCapital()`). `beforeGameStart.boardCategoriesInSideboard:["Capital"]`
-  tira a Capital do baralho de 13 cartas e a coloca na zona Sideboard antes
-  da partida começar (a Deck é `isHidden:"yes"` e **confirmadamente
-  ilegível para scripts**, mesmo para o dono — Sideboard não tem essa
-  restrição). `placeCapital()` roda em vários eventos
-  (`onPlayersSideboardClosed`, `onPlayersMulligan`, `onPlayersReady`,
-  `onNewTurn`, `onCardsUpdate`), procura a carta de `type:"Capital"` em
-  `cards.Sideboard` (com `cards.Hand` como reserva) e a move para o
-  Território — sem custo, antes mesmo da mão inicial ser distribuída, como
-  no §7.1. **Ainda não confirmado ao vivo** (ver "Testado ao vivo" abaixo).
+  (`placeCapital()`). A Capital continua embaralhada dentro do Império de
+  13 cartas (um teste ao vivo descartou `beforeGameStart.
+  boardCategoriesInSideboard` — ver nota abaixo), então ela só sai no
+  saque inicial de 6 cerca de 46% das vezes (6/13). `placeCapital()`
+  cobre os outros 54%: se a Capital não estiver na Mão logo após o saque,
+  a função saca o resto do baralho (`functions.draw(7)` — Deck é
+  `isHidden:"yes"` e **confirmadamente ilegível para scripts** mesmo para
+  o dono, mas `draw()` funciona mesmo assim, já que só *lê* o topo, não
+  precisa inspecionar o conteúdo) até encontrar a Capital pela Mão. De
+  um jeito ou de outro, depois de mover a Capital para o Território a
+  função corrige o tamanho da mão de volta para 6: saca mais uma carta se
+  a Capital tiver sido uma das 6 originais (sobrariam só 5), ou devolve o
+  excesso ao Império e reembaralha (`shuffleSection`) se a busca trouxe
+  cartas demais. Roda em vários eventos (`onPlayersSideboardClosed`,
+  `onPlayersMulligan`, `onPlayersReady`, `onNewTurn`, `onCardsUpdate`) mas
+  é idempotente — a primeira coisa que checa é se já existe uma Capital no
+  Território, então chamadas repetidas não saem sacando o baralho de novo.
+  **Confirmado ao vivo** (ver "Testado ao vivo" abaixo).
+- **`boardCategoriesInSideboard` não funciona para este baralho
+  pré-construído:** testado ao vivo (com e sem o toggle "Disable
+  sideboard for all players" do anfitrião) — a tela "Swap cards with your
+  sideboard" sempre mostrou `Deck (13)` com a Capital ainda dentro e
+  `Sideboard (0)` vazio. Ou o recurso não se aplica a decks vindos de
+  `decks.json` (só ao deck-builder nativo da plataforma), ou exige outra
+  configuração não documentada — de qualquer forma, o projeto não depende
+  mais dele. Essa tela ainda aparece para os jogadores (é um passo padrão
+  da plataforma para qualquer jogo), mas como este jogo não usa Sideboard
+  o jogador só precisa clicar "Continue" sem mexer em nada — ou o
+  anfitrião pode ligar "Disable sideboard for all players" na tela "Start
+  the game" para pular essa etapa por completo.
 
 ## Itens de dados a revisar
 
@@ -154,11 +174,11 @@ o conteúdo "fechado":
 - **Trabalhadores:** ainda usam URLs de imagem placeholder — não há arte
   própria para eles ainda (cartas simples, coloridas por civilização, sem
   nome/arte única, conforme confirmado).
-- **(Resolvido, pendente de confirmação ao vivo) Capital garantida no
-  Território desde o início.** Ver "Colocar a Capital em jogo" acima —
-  `boardCategoriesInSideboard` + `placeCapital()` tiram a Capital do
-  baralho embaralhável e a colocam em jogo antes do saque inicial, sem
-  precisar de um `gameplay` separado por civilização.
+- **(Resolvido e confirmado ao vivo) Capital garantida no Território
+  desde o início.** Ver "Colocar a Capital em jogo" acima —
+  `placeCapital()` garante isso via busca no baralho por script, sem
+  depender de `boardCategoriesInSideboard` (que não funcionou para este
+  baralho) nem de um `gameplay` separado por civilização.
 
 ## Testado ao vivo no TCG Arena
 
@@ -171,13 +191,15 @@ documentação:
 - **Os 4 baralhos iniciais** aparecem corretamente na aba "Preconstructed
   decks" da tela de seleção de baralho, com os nomes certos e o conteúdo
   certo (12 Trabalhadores + 1 Capital cada).
-- **Mão inicial:** exatamente 6 cartas por jogador — confirmado com 2
-  jogadores reais simultâneos (esse número ficava incorretamente dobrado
-  para 12/0 antes da correção de `beforeGameStart`, ver histórico do git).
-  Desde a correção do Sideboard, a Capital sai do baralho *antes* do
-  saque, então o Império sacável agora tem 12 Trabalhadores (não 13); a
-  mão de 6 deixa 6 cartas no baralho, não 7 como numa versão anterior
-  deste projeto (quando a Capital ainda contava como uma das 13).
+- **Mão inicial:** exatamente 6 cartas por jogador, sempre — confirmado
+  com 2 jogadores reais simultâneos em ambos os casos: quando a Capital
+  saiu no saque nativo de 6 (ficam 5, `placeCapital()` saca 1 de reposição)
+  e quando não saiu (a função busca o resto do baralho, acha a Capital, e
+  devolve/reembaralha o excesso). O baralho sacável continua com as 13
+  cartas do Império (Capital incluída) — ver "`boardCategoriesInSideboard`
+  não funciona..." acima. (Esse número de 6 já ficou incorretamente
+  dobrado para 12/0 antes da correção de `beforeGameStart`, ver histórico
+  do git.)
 - **Mercado:** as 3 pilhas (Combatentes/Estratégias/Melhorias) são
   populadas automaticamente no início da partida com a contagem certa
   (57/73/74 cópias, batendo com o campo `copies` de cada carta).
