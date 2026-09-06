@@ -296,9 +296,6 @@
     }
   },
   "defaultResources": {
-    "backgrounds": [
-      "https://jfbaraky.github.io/cores/assets/backgrounds/mediterraneo.jpg"
-    ],
     "decksUrl": "https://jfbaraky.github.io/cores/decks.json"
   },
   "cards": {
