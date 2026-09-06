@@ -1068,6 +1068,9 @@
                   },
                   {
                     "section": "MercadoCombatentesRevelado"
+                  },
+                  {
+                    "section": "MercadoCombatentesDescarte"
                   }
                 ]
               },
@@ -1079,6 +1082,9 @@
                   },
                   {
                     "section": "MercadoEstrategiasRevelado"
+                  },
+                  {
+                    "section": "MercadoEstrategiasDescarte"
                   }
                 ]
               },
@@ -1090,6 +1096,9 @@
                   },
                   {
                     "section": "MercadoMelhoriasRevelado"
+                  },
+                  {
+                    "section": "MercadoMelhoriasDescarte"
                   }
                 ]
               },
@@ -1166,7 +1175,20 @@
                       "props": {
                         "value": "{{ game.data.Reserva.hegemonia }}"
                       },
-                      "onChange": "game.data.Reserva.hegemonia = Number(value); chatLog(`Hegemonia agora: ${game.data.Reserva.hegemonia}`)"
+                      "onChange": "game.data.Reserva.hegemonia = Number(value); functions.chatLog(`Hegemonia agora: ${game.data.Reserva.hegemonia}`)"
+                    }
+                  ]
+                },
+                {
+                  "type": "div",
+                  "props": {
+                    "className": "reserva-row"
+                  },
+                  "children": [
+                    {
+                      "type": "button",
+                      "children": "Avançar Mercado (Renovação)",
+                      "onClick": "await advanceMarket()"
                     }
                   ]
                 },
@@ -1253,11 +1275,11 @@
               ]
             },
             "events": {
-              "onPlayersSideboardClosed": "await placeCapital()",
-              "onPlayersMulligan": "await placeCapital()",
-              "onPlayersReady": "await placeCapital()",
-              "onNewTurn": "await placeCapital()",
-              "onCardsUpdate": "await placeCapital()"
+              "onPlayersSideboardClosed": "await placeCapital(); await setupMarket();",
+              "onPlayersMulligan": "await placeCapital(); await setupMarket();",
+              "onPlayersReady": "await placeCapital(); await setupMarket();",
+              "onNewTurn": "await placeCapital();",
+              "onCardsUpdate": "await placeCapital(); await replenishMarket();"
             }
           },
           "MercadoCombatentesPilha": {
@@ -1272,6 +1294,12 @@
             "alignment": "START",
             "displayedTitle": "Combatentes"
           },
+          "MercadoCombatentesDescarte": {
+            "isHidden": "no",
+            "height": "SMALL",
+            "alignment": "DECK",
+            "displayedTitle": "Descarte de Combatentes"
+          },
           "MercadoEstrategiasPilha": {
             "isHidden": "yes",
             "height": "SMALL",
@@ -1284,6 +1312,12 @@
             "alignment": "START",
             "displayedTitle": "Estratégias"
           },
+          "MercadoEstrategiasDescarte": {
+            "isHidden": "no",
+            "height": "SMALL",
+            "alignment": "DECK",
+            "displayedTitle": "Descarte de Estratégias"
+          },
           "MercadoMelhoriasPilha": {
             "isHidden": "yes",
             "height": "SMALL",
@@ -1295,6 +1329,12 @@
             "height": "SMALL",
             "alignment": "START",
             "displayedTitle": "Melhorias"
+          },
+          "MercadoMelhoriasDescarte": {
+            "isHidden": "no",
+            "height": "SMALL",
+            "alignment": "DECK",
+            "displayedTitle": "Descarte de Melhorias"
           },
           "CampoDeBatalha": {
             "isHidden": "no",

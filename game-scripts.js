@@ -59,10 +59,10 @@
 // variable would.
 const CAPITAL_SEARCH_DRAW = 7; // 13-card Império - 6-card starting hand
 const STARTING_HAND_SIZE = 6;
-let inFlight = false;
+let capitalInFlight = false;
 
 async function placeCapital() {
-  if (inFlight) return;
+  if (capitalInFlight) return;
   const territorio = cards?.Territorio ?? [];
   if (territorio.some((c) => functions.getCardData(c)?.type === "Capital")) {
     return; // already placed — nothing to do
@@ -97,6 +97,92 @@ async function placeCapital() {
       await functions.shuffleSection("Deck");
     }
   } finally {
-    inFlight = false;
+    capitalInFlight = false;
   }
+}
+
+// --- Mercado (Market) automation ---------------------------------------
+//
+// §8 of the manual: each of the 3 Mercado piles (Combatentes/Estratégias/
+// Melhorias) keeps a hidden shuffled pile with 4 face-up "revealed" slots
+// players buy from — the "esteira" (conveyor). Two platform-specific
+// mechanisms make this scriptable at all:
+//   - functions.drawFromExtraDeck(sectionName, count, fromBottom,
+//     forceDestination) can pull from ANY named deck-like section, unlike
+//     functions.draw() which is hardcoded to the player's own "Deck". The
+//     Mercado piles are shared (not per-player) and isHidden:"yes" — same
+//     as Território's Deck, their contents aren't inspectable via `cards`,
+//     so this is the only way to move cards out of them at all.
+//   - There's no native "end of Campaign/Renovação" event to hook into, so
+//     advancing the esteira (discard the oldest revealed card, reveal a
+//     new one) is wired to a manual button in the Reserva panel
+//     ("Avançar Mercado (Renovação)") rather than an automatic trigger —
+//     same category of manual step as passing the Primazia token.
+//
+// "Oldest" is approximated as the last element of each Revelado array
+// (cards.SectionName order), matching the physical esteira's convention of
+// new cards entering on one side and aging toward the other; not verified
+// against the manual's exact card ordering since script arrays don't carry
+// an explicit timestamp.
+const MARKET_PILES = [
+  { pile: "MercadoCombatentesPilha", revealed: "MercadoCombatentesRevelado", discard: "MercadoCombatentesDescarte" },
+  { pile: "MercadoEstrategiasPilha", revealed: "MercadoEstrategiasRevelado", discard: "MercadoEstrategiasDescarte" },
+  { pile: "MercadoMelhoriasPilha", revealed: "MercadoMelhoriasRevelado", discard: "MercadoMelhoriasDescarte" },
+];
+const MARKET_REVEALED_SIZE = 4;
+let marketSetupInFlight = false;
+let marketReplenishInFlight = false;
+
+// One-time setup: shuffle each hidden pile and reveal the first 4 cards.
+// Guarded by checking whether any Revelado row already has cards — the
+// Mercado is a shared zone, so every player's onPlayersReady/etc. trigger
+// fires this, and only the first one that gets there should act.
+async function setupMarket() {
+  if (marketSetupInFlight) return;
+  const alreadySet = MARKET_PILES.some(({ revealed }) => (cards?.[revealed] ?? []).length > 0);
+  if (alreadySet) return;
+
+  marketSetupInFlight = true;
+  try {
+    for (const { pile } of MARKET_PILES) {
+      await functions.shuffleSection(pile);
+    }
+    await replenishMarket();
+  } finally {
+    marketSetupInFlight = false;
+  }
+}
+
+// Tops up every Revelado row back up to MARKET_REVEALED_SIZE (4) by
+// drawing from its hidden pile. Called after setup and again on every
+// onCardsUpdate, so buying a card (which removes it from Revelado) gets
+// the slot refilled automatically. Idempotent: no-ops per pile once full.
+async function replenishMarket() {
+  if (marketReplenishInFlight) return;
+  marketReplenishInFlight = true;
+  try {
+    for (const { pile, revealed } of MARKET_PILES) {
+      const short = MARKET_REVEALED_SIZE - (cards?.[revealed] ?? []).length;
+      if (short > 0) {
+        await functions.drawFromExtraDeck(pile, short, false, revealed);
+      }
+    }
+  } finally {
+    marketReplenishInFlight = false;
+  }
+}
+
+// Manual "Avançar Mercado (Renovação)" button (Reserva panel): discards
+// the oldest revealed card from each of the 3 piles to the matching
+// Descarte zone, then replenishes all three back to 4.
+async function advanceMarket() {
+  for (const { revealed, discard } of MARKET_PILES) {
+    const shown = cards?.[revealed] ?? [];
+    if (shown.length > 0) {
+      const oldest = shown[shown.length - 1];
+      await functions.moveCard(oldest, discard);
+      functions.chatLog(`${functions.getCardData(oldest)?.name?.name ?? "Carta"} descartada do Mercado (Renovação).`);
+    }
+  }
+  await replenishMarket();
 }
