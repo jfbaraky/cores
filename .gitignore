@@ -1,0 +1,9 @@
+# Raw card assets — working material, not what gets hosted/served.
+# cards.json points at assets/cards/web/ (compressed), which IS tracked.
+assets/cards/COMBATENTES/
+assets/cards/ESTRATÉGIAS/
+assets/cards/MELHORIAS/
+assets/cards/final/
+
+.DS_Store
+node_modules/

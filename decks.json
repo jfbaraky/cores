@@ -1,0 +1,15 @@
+[
+  {
+    "title": "Império Inicial",
+    "cards": [
+      { "id": "capital-pella", "quantity": 1, "category": "Capital" },
+      { "id": "capital-roma", "quantity": 1, "category": "Capital" },
+      { "id": "capital-cartago", "quantity": 1, "category": "Capital" },
+      { "id": "capital-avaricum", "quantity": 1, "category": "Capital" },
+      { "id": "trabalhador-helenica", "quantity": 3, "category": "Trabalhador" },
+      { "id": "trabalhador-latina", "quantity": 3, "category": "Trabalhador" },
+      { "id": "trabalhador-fenicia", "quantity": 3, "category": "Trabalhador" },
+      { "id": "trabalhador-celta", "quantity": 3, "category": "Trabalhador" }
+    ]
+  }
+]

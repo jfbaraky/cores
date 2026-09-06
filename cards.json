@@ -1,0 +1,5606 @@
+{
+  "capital-pella": {
+    "id": "capital-pella",
+    "type": "Melhoria",
+    "civilization": "Helênica",
+    "subtype": "Capital",
+    "category": "Capital",
+    "isCapital": true,
+    "producesColor": false,
+    "cost": 0,
+    "face": {
+      "front": {
+        "name": {
+          "name": "Pella"
+        },
+        "type": "Melhoria",
+        "cost": 0,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/capital-pella.webp"
+      }
+    },
+    "name": "Pella",
+    "activationType": "Ativada",
+    "abilityText": "Olhe a carta do topo de seu Império. Se for uma carta Helênica e você a quiser, mostre-a para os outros jogadores e coloque-a em sua mão. Do contrário, devolva-a para o topo do seu Império.\nIndestrutível.",
+    "sourceFile": "MELHORIAS/Slide1.PNG",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/capital-pella.webp"
+  },
+  "capital-roma": {
+    "id": "capital-roma",
+    "type": "Melhoria",
+    "civilization": "Latina",
+    "subtype": "Capital",
+    "category": "Capital",
+    "isCapital": true,
+    "producesColor": false,
+    "cost": 0,
+    "face": {
+      "front": {
+        "name": {
+          "name": "Roma"
+        },
+        "type": "Melhoria",
+        "cost": 0,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/capital-roma.webp"
+      }
+    },
+    "name": "Roma",
+    "activationType": "Ativada",
+    "abilityText": "Olhe a carta do topo de seu Império. Se for uma carta Romana e você a quiser, mostre-a para os outros jogadores e coloque-a em sua mão. Do contrário, devolva-a para o topo do seu Império.\nIndestrutível.",
+    "sourceFile": "MELHORIAS/Slide34.PNG",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/capital-roma.webp"
+  },
+  "capital-cartago": {
+    "id": "capital-cartago",
+    "type": "Melhoria",
+    "civilization": "Fenícia",
+    "subtype": "Capital",
+    "category": "Capital",
+    "isCapital": true,
+    "producesColor": false,
+    "cost": 0,
+    "face": {
+      "front": {
+        "name": {
+          "name": "Cartago"
+        },
+        "type": "Melhoria",
+        "cost": 0,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/capital-cartago.webp"
+      }
+    },
+    "name": "Cartago",
+    "activationType": "Ativada",
+    "abilityText": "Olhe a carta do topo de seu Império. Se for uma carta Fenícia e você a quiser, mostre-a para os outros jogadores e coloque-a em sua mão. Do contrário, devolva-a para o topo do seu Império.\nIndestrutível.",
+    "sourceFile": "MELHORIAS/Slide52.PNG",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/capital-cartago.webp"
+  },
+  "capital-avaricum": {
+    "id": "capital-avaricum",
+    "type": "Melhoria",
+    "civilization": "Celta",
+    "subtype": "Capital",
+    "category": "Capital",
+    "isCapital": true,
+    "producesColor": false,
+    "cost": 0,
+    "face": {
+      "front": {
+        "name": {
+          "name": "Avaricum"
+        },
+        "type": "Melhoria",
+        "cost": 0,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/capital-avaricum.webp"
+      }
+    },
+    "name": "Avaricum",
+    "activationType": "Ativada",
+    "abilityText": "Olhe a carta do topo de seu Império. Se for uma carta Celta e você a quiser, mostre-a para os outros jogadores e coloque-a em sua mão. Do contrário, devolva-a para o topo do seu Império.\nIndestrutível.",
+    "sourceFile": "MELHORIAS/Slide16.PNG",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/capital-avaricum.webp"
+  },
+  "trabalhador-helenica": {
+    "id": "trabalhador-helenica",
+    "type": "Trabalhador",
+    "civilization": "Helênica",
+    "cost": 0,
+    "face": {
+      "front": {
+        "name": {
+          "name": "Trabalhador Helênico"
+        },
+        "type": "Trabalhador",
+        "cost": 0,
+        "image": "https://coresdaguerra.example.com/assets/cards/trabalhador-helenica.webp"
+      }
+    },
+    "name": "Trabalhador Helênico",
+    "abilityText": "Descarte para Trabalhar (ganhe 1 Roxo) ou Comerciar (com outro trabalhador qualquer, ganhe 1 Ouro). Pode servir de Milícia ou ser Colonizado em uma Melhoria Helênica elegível.",
+    "image": "https://coresdaguerra.example.com/assets/cards/trabalhador-helenica.webp"
+  },
+  "trabalhador-latina": {
+    "id": "trabalhador-latina",
+    "type": "Trabalhador",
+    "civilization": "Latina",
+    "cost": 0,
+    "face": {
+      "front": {
+        "name": {
+          "name": "Trabalhador Latino"
+        },
+        "type": "Trabalhador",
+        "cost": 0,
+        "image": "https://coresdaguerra.example.com/assets/cards/trabalhador-latina.webp"
+      }
+    },
+    "name": "Trabalhador Latino",
+    "abilityText": "Descarte para Trabalhar (ganhe 1 Vermelho) ou Comerciar (com outro trabalhador qualquer, ganhe 1 Ouro). Pode servir de Milícia ou ser Colonizado em uma Melhoria Latina elegível.",
+    "image": "https://coresdaguerra.example.com/assets/cards/trabalhador-latina.webp"
+  },
+  "trabalhador-fenicia": {
+    "id": "trabalhador-fenicia",
+    "type": "Trabalhador",
+    "civilization": "Fenícia",
+    "cost": 0,
+    "face": {
+      "front": {
+        "name": {
+          "name": "Trabalhador Fenício"
+        },
+        "type": "Trabalhador",
+        "cost": 0,
+        "image": "https://coresdaguerra.example.com/assets/cards/trabalhador-fenicia.webp"
+      }
+    },
+    "name": "Trabalhador Fenício",
+    "abilityText": "Descarte para Trabalhar (ganhe 1 Azul) ou Comerciar (com outro trabalhador qualquer, ganhe 1 Ouro). Pode servir de Milícia ou ser Colonizado em uma Melhoria Fenícia elegível.",
+    "image": "https://coresdaguerra.example.com/assets/cards/trabalhador-fenicia.webp"
+  },
+  "trabalhador-celta": {
+    "id": "trabalhador-celta",
+    "type": "Trabalhador",
+    "civilization": "Celta",
+    "cost": 0,
+    "face": {
+      "front": {
+        "name": {
+          "name": "Trabalhador Celta"
+        },
+        "type": "Trabalhador",
+        "cost": 0,
+        "image": "https://coresdaguerra.example.com/assets/cards/trabalhador-celta.webp"
+      }
+    },
+    "name": "Trabalhador Celta",
+    "abilityText": "Descarte para Trabalhar (ganhe 1 Verde) ou Comerciar (com outro trabalhador qualquer, ganhe 1 Ouro). Pode servir de Milícia ou ser Colonizado em uma Melhoria Celta elegível.",
+    "image": "https://coresdaguerra.example.com/assets/cards/trabalhador-celta.webp"
+  },
+  "combatente-companheiros": {
+    "id": "combatente-companheiros",
+    "type": "Combatente",
+    "civilization": "Helênica",
+    "cost": 6,
+    "copies": 1,
+    "keywords": [
+      "LANCEAR",
+      "CARGA",
+      "ELITE",
+      "CONSAGRADA"
+    ],
+    "flavorText": "Os \"Companheiros, ou Heitaroi, eram a elite do exército macedônico e acompanhavam o próprio rei em batalha.",
+    "artist": "Felipe Malini",
+    "sourceFiles": [
+      "Slide1.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "COMPANHEIROS"
+        },
+        "type": "Combatente",
+        "cost": 6,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-companheiros.webp"
+      }
+    },
+    "name": "COMPANHEIROS",
+    "abilityText": "[LANCEAR]\n[CARGA]\n[ELITE]\n[CONSAGRADA]",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-companheiros.webp",
+    "strength": 3,
+    "weightClass": "Pesado",
+    "isCavalry": true,
+    "role": null
+  },
+  "combatente-cavalaria-tessalia": {
+    "id": "combatente-cavalaria-tessalia",
+    "type": "Combatente",
+    "civilization": "Helênica",
+    "cost": 5,
+    "copies": 1,
+    "keywords": [
+      "CARGA 2"
+    ],
+    "flavorText": "Os cavalos da Tessalia eram os melhores do mundo conhecido e seus cavaleiros só perdiam para a poderosa cavalaria Heitaroi.",
+    "artist": "Iaggo Piffero",
+    "sourceFiles": [
+      "Slide2.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "CAVALARIA TESSALIA"
+        },
+        "type": "Combatente",
+        "cost": 5,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-cavalaria-tessalia.webp"
+      }
+    },
+    "name": "CAVALARIA TESSALIA",
+    "abilityText": "[CARGA 2] descarte um combatente alvo de até força 2 (impressa)",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-cavalaria-tessalia.webp",
+    "strength": 3,
+    "weightClass": "Pesado",
+    "isCavalry": true,
+    "role": null
+  },
+  "combatente-sarisophoroi": {
+    "id": "combatente-sarisophoroi",
+    "type": "Combatente",
+    "civilization": "Helênica",
+    "cost": 3,
+    "copies": 2,
+    "keywords": [
+      "LANCEAR"
+    ],
+    "flavorText": "Cavalaria ligeira com muitas funções no exército macedônico.",
+    "artist": null,
+    "sourceFiles": [
+      "Slide3.PNG",
+      "Slide4.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "SARISOPHOROI"
+        },
+        "type": "Combatente",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-sarisophoroi.webp"
+      }
+    },
+    "name": "SARISOPHOROI",
+    "abilityText": "[LANCEAR]",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-sarisophoroi.webp",
+    "strength": 1,
+    "weightClass": "Ligeiro",
+    "isCavalry": true,
+    "role": null
+  },
+  "combatente-prodomoi": {
+    "id": "combatente-prodomoi",
+    "type": "Combatente",
+    "civilization": "Helênica",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [
+      "ATIRAR",
+      "FORRAGEAR"
+    ],
+    "flavorText": "Cavalaria ligeira com muitas funções no exército macedônico.",
+    "artist": null,
+    "sourceFiles": [
+      "Slide6.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "PRODOMOI"
+        },
+        "type": "Combatente",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-prodomoi.webp"
+      }
+    },
+    "name": "PRODOMOI",
+    "abilityText": "[ATIRAR]\n[FORRAGEAR]",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-prodomoi.webp",
+    "strength": 1,
+    "weightClass": "Ligeiro",
+    "isCavalry": true,
+    "role": "Atirador"
+  },
+  "combatente-escudos-de-prata": {
+    "id": "combatente-escudos-de-prata",
+    "type": "Combatente",
+    "civilization": "Helênica",
+    "cost": 5,
+    "copies": 1,
+    "keywords": [
+      "LANCEAR",
+      "FALANGE"
+    ],
+    "flavorText": "Esses veteranos eram escolhidos dentre os melhores Escudos de bronze, sendo uma tropa de elite formidável no campo de batalha.",
+    "artist": "Renato Rosart",
+    "sourceFiles": [
+      "Slide7.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "ESCUDOS DE PRATA"
+        },
+        "type": "Combatente",
+        "cost": 5,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-escudos-de-prata.webp"
+      }
+    },
+    "name": "ESCUDOS DE PRATA",
+    "abilityText": "[LANCEAR] a cavalaria alvo recebe -1 de força.\n[FALANGE] recebe +1 força quando em formação.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-escudos-de-prata.webp",
+    "strength": 3,
+    "weightClass": "Pesado",
+    "isCavalry": false,
+    "role": "Lanceiro"
+  },
+  "combatente-escudos-de-bronze": {
+    "id": "combatente-escudos-de-bronze",
+    "type": "Combatente",
+    "civilization": "Helênica",
+    "cost": 4,
+    "copies": 1,
+    "keywords": [
+      "LANCEAR",
+      "FALANGE"
+    ],
+    "flavorText": "Criada e aprimorada por Felipe II, a falange macedônica revolucionou os campos de batalha do mundo antigo. Seus soldados usavam a sarissa, lança de 6 metros de comprimento.",
+    "artist": "Renato Rosart",
+    "sourceFiles": [
+      "Slide8.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "ESCUDOS DE BRONZE"
+        },
+        "type": "Combatente",
+        "cost": 4,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-escudos-de-bronze.webp"
+      }
+    },
+    "name": "ESCUDOS DE BRONZE",
+    "abilityText": "[LANCEAR] a cavalaria alvo recebe -1 de força.\n[FALANGE] recebe +1 força quando em formação.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-escudos-de-bronze.webp",
+    "strength": 2,
+    "weightClass": "Pesado",
+    "isCavalry": false,
+    "role": "Lanceiro"
+  },
+  "combatente-hipaspista": {
+    "id": "combatente-hipaspista",
+    "type": "Combatente",
+    "civilization": "Helênica",
+    "cost": 4,
+    "copies": 1,
+    "keywords": [
+      "INVESTIDA",
+      "REAÇÃO"
+    ],
+    "flavorText": "Escolhidos dentre os melhores combatentes macedônicos, os Hipaspistas desempenhavam vários papéis táticos no campo de batalha. Atuando até como infantaria ligeira, se necessário.",
+    "artist": "Renato Rosart",
+    "sourceFiles": [
+      "Slide9.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "HIPASPISTA"
+        },
+        "type": "Combatente",
+        "cost": 4,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-hipaspista.webp"
+      }
+    },
+    "name": "HIPASPISTA",
+    "abilityText": "[INVESTIDA]\n[REAÇÃO]: anula a habilidade [carga] do combatente ativo.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-hipaspista.webp",
+    "strength": 2,
+    "weightClass": "Médio",
+    "isCavalry": false,
+    "role": "Espachim"
+  },
+  "combatente-thureophoroi": {
+    "id": "combatente-thureophoroi",
+    "type": "Combatente",
+    "civilization": "Helênica",
+    "cost": 3,
+    "copies": 2,
+    "keywords": [
+      "INVESTIDA"
+    ],
+    "flavorText": "Tropas flexíveis, aptas a escaramuças e também capazes de manter formação em combate se necessário.",
+    "artist": "Inácio Alba",
+    "sourceFiles": [
+      "Slide10.PNG",
+      "Slide11.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "THUREOPHOROI"
+        },
+        "type": "Combatente",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-thureophoroi.webp"
+      }
+    },
+    "name": "THUREOPHOROI",
+    "abilityText": "[INVESTIDA]",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-thureophoroi.webp",
+    "strength": 1,
+    "weightClass": "Ligeiro",
+    "isCavalry": false,
+    "role": "Espachim"
+  },
+  "combatente-arqueiro-cretense": {
+    "id": "combatente-arqueiro-cretense",
+    "type": "Combatente",
+    "civilization": "Helênica",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [
+      "ATIRAR",
+      "REAÇÃO",
+      "ASSALTANTE"
+    ],
+    "flavorText": "Os melhores arqueiros do mundo antigo.",
+    "artist": "Renato Rosart",
+    "sourceFiles": [
+      "Slide12.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "ARQUEIRO CRETENSE"
+        },
+        "type": "Combatente",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-arqueiro-cretense.webp"
+      }
+    },
+    "name": "ARQUEIRO CRETENSE",
+    "abilityText": "[ATIRAR]\n[REAÇÃO] : Anule a habilidade [atirar] ou [investida] do combatente ativo.\n[ASSALTANTE]",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-arqueiro-cretense.webp",
+    "strength": 1,
+    "weightClass": "Ligeiro",
+    "isCavalry": false,
+    "role": "Atirador"
+  },
+  "combatente-akontistai": {
+    "id": "combatente-akontistai",
+    "type": "Combatente",
+    "civilization": "Helênica",
+    "cost": 2,
+    "copies": 2,
+    "keywords": [
+      "ATIRAR",
+      "REAÇÃO"
+    ],
+    "flavorText": "Os akontistai corriam diante dos inimigos jogando saraivadas de dardos, recuando logo em seguida para suas próprias linhas.",
+    "artist": "Renato Rosart",
+    "sourceFiles": [
+      "Slide13.PNG",
+      "Slide14.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "AKONTISTAI"
+        },
+        "type": "Combatente",
+        "cost": 2,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-akontistai.webp"
+      }
+    },
+    "name": "AKONTISTAI",
+    "abilityText": "[ATIRAR]\n[REAÇÃO]: Anule a habilidade [atirar] ou [investida] do combatente ativo.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-akontistai.webp",
+    "strength": 1,
+    "weightClass": "Ligeiro",
+    "isCavalry": false,
+    "role": "Atirador"
+  },
+  "combatente-lithoboloi": {
+    "id": "combatente-lithoboloi",
+    "type": "Combatente",
+    "civilization": "Helênica",
+    "cost": 2,
+    "copies": 2,
+    "keywords": [
+      "CONSCRITO"
+    ],
+    "flavorText": "Recrutados das camadas miseráveis, esses \"combatentes\" lutavam literalmente à pedradas.",
+    "artist": null,
+    "sourceFiles": [
+      "Slide15.PNG",
+      "Slide16.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "LITHOBOLOI"
+        },
+        "type": "Combatente",
+        "cost": 2,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-lithoboloi.webp"
+      }
+    },
+    "name": "LITHOBOLOI",
+    "abilityText": "[CONSCRITO]",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-lithoboloi.webp",
+    "strength": 1,
+    "weightClass": "Ligeiro",
+    "isCavalry": false,
+    "role": "Atirador"
+  },
+  "combatente-cavalaria-celta": {
+    "id": "combatente-cavalaria-celta",
+    "type": "Combatente",
+    "civilization": "Celta",
+    "cost": 5,
+    "copies": 1,
+    "keywords": [
+      "CARGA",
+      "REAÇÃO"
+    ],
+    "flavorText": "Amados e odiados pelos grandes generais do mundo antigo. Sua visão em batalha era aterrorizante",
+    "artist": "Renato Rosart",
+    "sourceFiles": [
+      "Slide17.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "CAVALARIA CELTA"
+        },
+        "type": "Combatente",
+        "cost": 5,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-cavalaria-celta.webp"
+      }
+    },
+    "name": "CAVALARIA CELTA",
+    "abilityText": "[CARGA]\n[REAÇÃO]: anula a habilidade [carga] do combatente ativo.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-cavalaria-celta.webp",
+    "strength": 3,
+    "weightClass": "Pesado",
+    "isCavalry": true,
+    "role": null
+  },
+  "combatente-lanceiro-celtibero": {
+    "id": "combatente-lanceiro-celtibero",
+    "type": "Combatente",
+    "civilization": "Celta",
+    "cost": 4,
+    "copies": 2,
+    "keywords": [
+      "INVESTIDA",
+      "LANCEAR"
+    ],
+    "flavorText": "Espinha dorsal dos exércitos celtas.",
+    "artist": "Renato Rosart",
+    "sourceFiles": [
+      "Slide18.PNG",
+      "Slide19.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "LANCEIRO CELTIBERO"
+        },
+        "type": "Combatente",
+        "cost": 4,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-lanceiro-celtibero.webp"
+      }
+    },
+    "name": "LANCEIRO CELTIBERO",
+    "abilityText": "[INVESTIDA] recebe +1 de força quando entra em Fase de Combate como atacante.\n[LANCEAR]",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-lanceiro-celtibero.webp",
+    "strength": 2,
+    "weightClass": "Médio",
+    "isCavalry": false,
+    "role": "Lanceiro"
+  },
+  "combatente-campeao-gaules": {
+    "id": "combatente-campeao-gaules",
+    "type": "Combatente",
+    "civilization": "Celta",
+    "cost": 5,
+    "copies": 1,
+    "keywords": [
+      "INVESTIDA",
+      "ELITE",
+      "CONSAGRADA"
+    ],
+    "flavorText": "Os mais nobres das mais altas elites. Eis aí os grandes campeões!",
+    "artist": "Felipe Malini",
+    "sourceFiles": [
+      "Slide20.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "CAMPEÂO GAULÊS"
+        },
+        "type": "Combatente",
+        "cost": 5,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-campeao-gaules.webp"
+      }
+    },
+    "name": "CAMPEÂO GAULÊS",
+    "abilityText": "[INVESTIDA] [ELITE] [CONSAGRADA]",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-campeao-gaules.webp",
+    "strength": 3,
+    "weightClass": "Pesado",
+    "isCavalry": false,
+    "role": "Espadachim"
+  },
+  "combatente-cacadora-de-cabecas": {
+    "id": "combatente-cacadora-de-cabecas",
+    "type": "Combatente",
+    "civilization": "Celta",
+    "cost": 4,
+    "copies": 2,
+    "keywords": [
+      "INDISCIPLINA",
+      "CAÇADORA"
+    ],
+    "flavorText": "Cogumelos alucinógenos garantiam a essa terrível cavalaria um frenesi imbatível em batalha. O perigo era que não distinguiam aliados de inimigos.",
+    "artist": null,
+    "sourceFiles": [
+      "Slide21.PNG",
+      "Slide22.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "CAÇADORA DE CABEÇAS"
+        },
+        "type": "Combatente",
+        "cost": 4,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-cacadora-de-cabecas.webp"
+      }
+    },
+    "name": "CAÇADORA DE CABEÇAS",
+    "abilityText": "[INDISCIPLINA][CAÇADORA] Você deve destruir uma carta de seu Descanso ao final do conflito. Do contrário, destrua esta carta.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-cacadora-de-cabecas.webp",
+    "strength": 2,
+    "weightClass": "Médio",
+    "isCavalry": true,
+    "role": null
+  },
+  "combatente-cavalaria-celtiberica": {
+    "id": "combatente-cavalaria-celtiberica",
+    "type": "Combatente",
+    "civilization": "Celta",
+    "cost": 3,
+    "copies": 2,
+    "keywords": [
+      "GUERRILHA"
+    ],
+    "flavorText": "Perita em terrenos irregulares da península ibérica; esta cavalaria era crucial em emboscadas e escaramuças.",
+    "artist": null,
+    "sourceFiles": [
+      "Slide23.PNG",
+      "Slide24.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "CAVALARIA CELTIBÉRICA"
+        },
+        "type": "Combatente",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-cavalaria-celtiberica.webp"
+      }
+    },
+    "name": "CAVALARIA CELTIBÉRICA",
+    "abilityText": "[GUERRILHA] antes da verificação de dano no fim da segunda etapa da Batalha, pague 1 recurso e coloque esta carta no topo de seu império.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-cavalaria-celtiberica.webp",
+    "strength": 1,
+    "weightClass": "Ligeiro",
+    "isCavalry": true,
+    "role": null
+  },
+  "combatente-peltasta-tracio": {
+    "id": "combatente-peltasta-tracio",
+    "type": "Combatente",
+    "civilization": "Celta",
+    "cost": 3,
+    "copies": 2,
+    "keywords": [
+      "ATIRAR",
+      "INDISCIPLINA",
+      "REAÇÃO"
+    ],
+    "flavorText": "Guerreiros formidáveis das montanhas da Trácia; exímios caçadores de ursos e homens.",
+    "artist": "Renato Rosart",
+    "sourceFiles": [
+      "Slide25.PNG",
+      "Slide26.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "PELTASTA TRÁCIO"
+        },
+        "type": "Combatente",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-peltasta-tracio.webp"
+      }
+    },
+    "name": "PELTASTA TRÁCIO",
+    "abilityText": "[ATIRAR]\n[INDISCIPLINA]\n[REAÇÃO] : Anule a habilidade [atirar] ou [investida] do combatente ativo.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-peltasta-tracio.webp",
+    "strength": 2,
+    "weightClass": "Médio",
+    "isCavalry": false,
+    "role": "Atirador"
+  },
+  "combatente-gaesatae": {
+    "id": "combatente-gaesatae",
+    "type": "Combatente",
+    "civilization": "Celta",
+    "cost": 3,
+    "copies": 2,
+    "keywords": [
+      "LANCEAR",
+      "INVESTIDA",
+      "CONSAGRADA"
+    ],
+    "flavorText": "Eles simplesmente lutavam nus…",
+    "artist": "Rodolfo O'costa",
+    "sourceFiles": [
+      "Slide27.PNG",
+      "Slide28.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "GAESATAE"
+        },
+        "type": "Combatente",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-gaesatae.webp"
+      }
+    },
+    "name": "GAESATAE",
+    "abilityText": "[LANCEAR]\n[INVESTIDA]\n[CONSAGRADA]",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-gaesatae.webp",
+    "strength": 1,
+    "weightClass": "Ligeiro",
+    "isCavalry": false,
+    "role": "Lanceiro / Espadachim"
+  },
+  "combatente-escaramucador": {
+    "id": "combatente-escaramucador",
+    "type": "Combatente",
+    "civilization": "Celta",
+    "cost": 2,
+    "copies": 2,
+    "keywords": [
+      "ATIRAR"
+    ],
+    "flavorText": null,
+    "artist": null,
+    "sourceFiles": [
+      "Slide29.PNG",
+      "Slide30.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "ESCARAMUÇADOR"
+        },
+        "type": "Combatente",
+        "cost": 2,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-escaramucador.webp"
+      }
+    },
+    "name": "ESCARAMUÇADOR",
+    "abilityText": "[ATIRAR]",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-escaramucador.webp",
+    "strength": 1,
+    "weightClass": "Ligeiro",
+    "isCavalry": false,
+    "role": "Atirador"
+  },
+  "combatente-arqueiro": {
+    "id": "combatente-arqueiro",
+    "type": "Combatente",
+    "civilization": "Latina",
+    "cost": 2,
+    "copies": 2,
+    "keywords": [
+      "ATIRAR",
+      "REAÇÃO"
+    ],
+    "flavorText": null,
+    "artist": null,
+    "sourceFiles": [
+      "Slide31.PNG",
+      "Slide32.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "ARQUEIRO"
+        },
+        "type": "Combatente",
+        "cost": 2,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-arqueiro.webp"
+      }
+    },
+    "name": "ARQUEIRO",
+    "abilityText": "[ATIRAR]\n[REAÇÃO]: Anule a habilidade [atirar] ou [investida] do combatente ativo.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-arqueiro.webp",
+    "strength": 1,
+    "weightClass": "Ligeiro",
+    "isCavalry": false,
+    "role": "Atirador"
+  },
+  "combatente-rorarius": {
+    "id": "combatente-rorarius",
+    "type": "Combatente",
+    "civilization": "Latina",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [
+      "RESERVA"
+    ],
+    "flavorText": "\"Mal treinados, mal armados, mas com o dever de ocupar o lugar dos mortos — os Rorarii eram o último suspiro da velha linha romana.\"",
+    "artist": "Inácio Alba",
+    "sourceFiles": [
+      "Slide33.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "RORARIUS"
+        },
+        "type": "Combatente",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-rorarius.webp"
+      }
+    },
+    "name": "RORARIUS",
+    "abilityText": "[RESERVA] Rorarius pode entrar no início da segunda etapa do conflito.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-rorarius.webp",
+    "strength": 1,
+    "weightClass": "Ligeiro",
+    "isCavalry": false,
+    "role": "Lanceiro"
+  },
+  "combatente-veles": {
+    "id": "combatente-veles",
+    "type": "Combatente",
+    "civilization": "Latina",
+    "cost": 3,
+    "copies": 2,
+    "keywords": [
+      "ATIRAR",
+      "FORRAGEAR"
+    ],
+    "flavorText": "Recrutados dentre os mais pobres das zonas rurais, os velites não tinham condições de comprar armamentos! Sua confiança estava em sua habilidade de caça.",
+    "artist": "Iaggo Piffero",
+    "sourceFiles": [
+      "Slide34.PNG",
+      "Slide35.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "VELES"
+        },
+        "type": "Combatente",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-veles.webp"
+      }
+    },
+    "name": "VELES",
+    "abilityText": "[ATIRAR]\n[FORRAGEAR]",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-veles.webp",
+    "strength": 1,
+    "weightClass": "Ligeiro",
+    "isCavalry": false,
+    "role": "Atirador"
+  },
+  "combatente-hastatus": {
+    "id": "combatente-hastatus",
+    "type": "Combatente",
+    "civilization": "Latina",
+    "cost": 3,
+    "copies": 2,
+    "keywords": [
+      "INVESTIDA",
+      "REAÇÃO"
+    ],
+    "flavorText": "Recrutados dentre os mais novos da cidade, compunham a primeira linha da batalha!",
+    "artist": "Renato Rosart",
+    "sourceFiles": [
+      "Slide36.PNG",
+      "Slide37.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "HASTATUS"
+        },
+        "type": "Combatente",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-hastatus.webp"
+      }
+    },
+    "name": "HASTATUS",
+    "abilityText": "[INVESTIDA]\n[REAÇÃO]: anula [INVESTIDA] do combatente alvo.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-hastatus.webp",
+    "strength": 1,
+    "weightClass": "Médio",
+    "isCavalry": false,
+    "role": "Espadachim"
+  },
+  "combatente-guerreiro-samnita": {
+    "id": "combatente-guerreiro-samnita",
+    "type": "Combatente",
+    "civilization": "Latina",
+    "cost": 4,
+    "copies": 2,
+    "keywords": [
+      "ATIRAR",
+      "INVESTIDA"
+    ],
+    "flavorText": "Os samnitas foram os maiores rivais de Roma por décadas! Os guerreiros samnitas conheciam todos os caminhos da Itália.",
+    "artist": null,
+    "sourceFiles": [
+      "Slide38.PNG",
+      "Slide39.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "GUERREIRO SAMNITA"
+        },
+        "type": "Combatente",
+        "cost": 4,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-guerreiro-samnita.webp"
+      }
+    },
+    "name": "GUERREIRO SAMNITA",
+    "abilityText": "[ATIRAR]\n[INVESTIDA]",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-guerreiro-samnita.webp",
+    "strength": 2,
+    "weightClass": "Médio",
+    "isCavalry": false,
+    "role": "Atirador"
+  },
+  "combatente-princeps": {
+    "id": "combatente-princeps",
+    "type": "Combatente",
+    "civilization": "Latina",
+    "cost": 4,
+    "copies": 1,
+    "keywords": [
+      "INVESTIDA",
+      "REAÇÃO"
+    ],
+    "flavorText": "Recrutados dentre os mais ricos da cidade, compunham a segunda linha da batalha!",
+    "artist": "Renato Rosart",
+    "sourceFiles": [
+      "Slide40.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "PRINCEPS"
+        },
+        "type": "Combatente",
+        "cost": 4,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-princeps.webp"
+      }
+    },
+    "name": "PRINCEPS",
+    "abilityText": "[INVESTIDA]\n[REAÇÃO]: anula [INVESTIDA] do combatente alvo.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-princeps.webp",
+    "strength": 2,
+    "weightClass": "Pesado",
+    "isCavalry": false,
+    "role": "Espadachim"
+  },
+  "combatente-triarius": {
+    "id": "combatente-triarius",
+    "type": "Combatente",
+    "civilization": "Latina",
+    "cost": 5,
+    "copies": 1,
+    "keywords": [
+      "LANCEAR",
+      "RESERVA"
+    ],
+    "flavorText": "Quando tudo der errado, chame os triarii!",
+    "artist": "Renato Rosart",
+    "sourceFiles": [
+      "Slide41.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "TRIARIUS"
+        },
+        "type": "Combatente",
+        "cost": 5,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-triarius.webp"
+      }
+    },
+    "name": "TRIARIUS",
+    "abilityText": "[LANCEAR]\n[RESERVA] pode entrar no início da segunda etapa do conflito.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-triarius.webp",
+    "strength": 3,
+    "weightClass": "Pesado",
+    "isCavalry": false,
+    "role": "Lanceiro"
+  },
+  "combatente-cavalaria-italica": {
+    "id": "combatente-cavalaria-italica",
+    "type": "Combatente",
+    "civilization": "Latina",
+    "cost": 4,
+    "copies": 1,
+    "keywords": [
+      "CARGA"
+    ],
+    "flavorText": "Os romanos eram conhecidos por terem uma péssima cavalaria. Precisando recrutar auxiliares junto aos outros povos da Itália\"",
+    "artist": null,
+    "sourceFiles": [
+      "Slide42.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "CAVALARIA ITÁLICA"
+        },
+        "type": "Combatente",
+        "cost": 4,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-cavalaria-italica.webp"
+      }
+    },
+    "name": "CAVALARIA ITÁLICA",
+    "abilityText": "[CARGA]",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-cavalaria-italica.webp",
+    "strength": 2,
+    "weightClass": "Médio",
+    "isCavalry": true,
+    "role": null
+  },
+  "combatente-equites-auxilia": {
+    "id": "combatente-equites-auxilia",
+    "type": "Combatente",
+    "civilization": "Latina",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [
+      "ATIRAR",
+      "FORRAGEAR"
+    ],
+    "flavorText": "Os romanos eram conhecidos por terem uma péssima cavalaria. Precisando recrutar auxiliares junto aos outros povos da Italia\"",
+    "artist": null,
+    "sourceFiles": [
+      "Slide43.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "EQUITES AUXILIA"
+        },
+        "type": "Combatente",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-equites-auxilia.webp"
+      }
+    },
+    "name": "EQUITES AUXILIA",
+    "abilityText": "[ATIRAR]\n[FORRAGEAR]",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-equites-auxilia.webp",
+    "strength": 1,
+    "weightClass": "Ligeiro",
+    "isCavalry": true,
+    "role": null
+  },
+  "combatente-equites": {
+    "id": "combatente-equites",
+    "type": "Combatente",
+    "civilization": "Latina",
+    "cost": 4,
+    "copies": 1,
+    "keywords": [
+      "CARGA",
+      "ELITE"
+    ],
+    "flavorText": "Cidadãos que possuíam recursos para manter cavalos de guerra. Com os séculos, se tornaram uma classe de elite chamada \"Equestre\"",
+    "artist": "Renato Rosart",
+    "sourceFiles": [
+      "Slide44.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "EQUITES"
+        },
+        "type": "Combatente",
+        "cost": 4,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-equites.webp"
+      }
+    },
+    "name": "EQUITES",
+    "abilityText": "[CARGA]\n[ELITE]",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-equites.webp",
+    "strength": 2,
+    "weightClass": "Médio",
+    "isCavalry": true,
+    "role": null
+  },
+  "combatente-cavalaria-numida": {
+    "id": "combatente-cavalaria-numida",
+    "type": "Combatente",
+    "civilization": "Fenícia",
+    "cost": 4,
+    "copies": 1,
+    "keywords": [
+      "ATIRAR",
+      "FORRAGEAR",
+      "CARGA",
+      "VÔO DO CISNE"
+    ],
+    "flavorText": null,
+    "artist": "Iaggo Piffero",
+    "sourceFiles": [
+      "Slide45.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "CAVALARIA NÚMIDA"
+        },
+        "type": "Combatente",
+        "cost": 4,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-cavalaria-numida.webp"
+      }
+    },
+    "name": "CAVALARIA NÚMIDA",
+    "abilityText": "[ATIRAR] [FORRAGEAR] [CARGA]\n[VÔO DO CISNE] não pode ser alvo de outros combatentes em jogo.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-cavalaria-numida.webp",
+    "strength": 1,
+    "weightClass": "Ligeiro",
+    "isCavalry": true,
+    "role": "Atirador"
+  },
+  "combatente-batedor-ibero": {
+    "id": "combatente-batedor-ibero",
+    "type": "Combatente",
+    "civilization": "Fenícia",
+    "cost": 3,
+    "copies": 2,
+    "keywords": [
+      "FORRAGEAR"
+    ],
+    "flavorText": null,
+    "artist": null,
+    "sourceFiles": [
+      "Slide46.PNG",
+      "Slide47.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "BATEDOR ÍBERO"
+        },
+        "type": "Combatente",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-batedor-ibero.webp"
+      }
+    },
+    "name": "BATEDOR ÍBERO",
+    "abilityText": "[FORRAGEAR]",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-batedor-ibero.webp",
+    "strength": 1,
+    "weightClass": "Ligeiro",
+    "isCavalry": true,
+    "role": null
+  },
+  "combatente-veterano-punico": {
+    "id": "combatente-veterano-punico",
+    "type": "Combatente",
+    "civilization": "Fenícia",
+    "cost": 5,
+    "copies": 1,
+    "keywords": [
+      "LANCEAR",
+      "CONSAGRADA",
+      "ELITE"
+    ],
+    "flavorText": "Também conhecida como a Sagrada infantaria de Baal, era escolhida entre a elite cartaginesa.",
+    "artist": "Renato Rosart",
+    "sourceFiles": [
+      "Slide48.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "VETERANO PÚNICO"
+        },
+        "type": "Combatente",
+        "cost": 5,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-veterano-punico.webp"
+      }
+    },
+    "name": "VETERANO PÚNICO",
+    "abilityText": "[LANCEAR]\n[CONSAGRADA]\n[ELITE]",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-veterano-punico.webp",
+    "strength": 3,
+    "weightClass": "Pesado",
+    "isCavalry": false,
+    "role": "Lanceiro"
+  },
+  "combatente-cavalaria-sagrada": {
+    "id": "combatente-cavalaria-sagrada",
+    "type": "Combatente",
+    "civilization": "Fenícia",
+    "cost": 5,
+    "copies": 1,
+    "keywords": [
+      "CARGA",
+      "CONSAGRADA",
+      "ELITE"
+    ],
+    "flavorText": "Também conhecida como a Sagrada Cavalaria de Baal, era escolhida entre a elite cartaginesa.",
+    "artist": null,
+    "sourceFiles": [
+      "Slide49.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "CAVALARIA SAGRADA"
+        },
+        "type": "Combatente",
+        "cost": 5,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-cavalaria-sagrada.webp"
+      }
+    },
+    "name": "CAVALARIA SAGRADA",
+    "abilityText": "[CARGA]\n[CONSAGRADA]\n[ELITE]",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-cavalaria-sagrada.webp",
+    "strength": 3,
+    "weightClass": "Pesado",
+    "isCavalry": true,
+    "role": null
+  },
+  "combatente-elefante-de-guerra": {
+    "id": "combatente-elefante-de-guerra",
+    "type": "Combatente",
+    "civilization": "Fenícia",
+    "cost": 6,
+    "copies": 1,
+    "keywords": [
+      "CONSAGRADA",
+      "ELITE",
+      "PÂNICO",
+      "INDISCIPLINA"
+    ],
+    "flavorText": null,
+    "artist": null,
+    "sourceFiles": [
+      "Slide50.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "ELEFANTE DE GUERRA"
+        },
+        "type": "Combatente",
+        "cost": 6,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-elefante-de-guerra.webp"
+      }
+    },
+    "name": "ELEFANTE DE GUERRA",
+    "abilityText": "[CONSAGRADA]\n[ELITE]\n[PÂNICO] Cavalarias não podem entrar na segunda etapa.\n[INDISCIPLINA]",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-elefante-de-guerra.webp",
+    "strength": 3,
+    "weightClass": null,
+    "isCavalry": false,
+    "role": "Elefante"
+  },
+  "combatente-scutarii": {
+    "id": "combatente-scutarii",
+    "type": "Combatente",
+    "civilization": "Fenícia",
+    "cost": 3,
+    "copies": 2,
+    "keywords": [
+      "LANCEAR"
+    ],
+    "flavorText": "Espinha dorsal dos exércitos hispânicos e lusitanos. Aníbal soube aproveitá-los contra os hastatii romanos.",
+    "artist": "Renato Rosart",
+    "sourceFiles": [
+      "Slide51.PNG",
+      "Slide52.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "SCUTARII"
+        },
+        "type": "Combatente",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-scutarii.webp"
+      }
+    },
+    "name": "SCUTARII",
+    "abilityText": "[LANCEAR]",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-scutarii.webp",
+    "strength": 2,
+    "weightClass": "Médio",
+    "isCavalry": false,
+    "role": "Lanceiro"
+  },
+  "combatente-veterano-libio": {
+    "id": "combatente-veterano-libio",
+    "type": "Combatente",
+    "civilization": "Fenícia",
+    "cost": 4,
+    "copies": 1,
+    "keywords": [
+      "LANCEAR",
+      "REAÇÃO"
+    ],
+    "flavorText": "Os líbios eram um povo berbere do norte da África extremamente disciplinados. Aníbal soube aproveitá-los com maestria nas principais batalhas contra os romanos.",
+    "artist": "Ignacio Alba",
+    "sourceFiles": [
+      "Slide53.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "VETERANO LÍBIO"
+        },
+        "type": "Combatente",
+        "cost": 4,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-veterano-libio.webp"
+      }
+    },
+    "name": "VETERANO LÍBIO",
+    "abilityText": "[LANCEAR]\n[REAÇÃO]: anula a habilidade [CARGA] do combatente ativo.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-veterano-libio.webp",
+    "strength": 2,
+    "weightClass": "Médio",
+    "isCavalry": false,
+    "role": "Lanceiro"
+  },
+  "combatente-caetratus": {
+    "id": "combatente-caetratus",
+    "type": "Combatente",
+    "civilization": "Fenícia",
+    "cost": 3,
+    "copies": 2,
+    "keywords": [
+      "ATIRAR",
+      "GUERRILHA",
+      "INDISCIPLINA"
+    ],
+    "flavorText": "Esses guerreiros ferozes eram hábeis na arte de bater e correr. Costumavam lutar nos exércitos do mediterrâneo como mercenários.",
+    "artist": "Renato Rosart",
+    "sourceFiles": [
+      "Slide54.PNG",
+      "Slide55.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "CAETRATUS"
+        },
+        "type": "Combatente",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-caetratus.webp"
+      }
+    },
+    "name": "CAETRATUS",
+    "abilityText": "[ATIRAR]\n[GUERRILHA]\n[INDISCIPLINA]",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-caetratus.webp",
+    "strength": 1,
+    "weightClass": "Médio",
+    "isCavalry": false,
+    "role": "Atirador / Espadachim"
+  },
+  "combatente-fundeiro-balear": {
+    "id": "combatente-fundeiro-balear",
+    "type": "Combatente",
+    "civilization": "Fenícia",
+    "cost": 3,
+    "copies": 2,
+    "keywords": [
+      "ATIRAR",
+      "FORRAGEAR",
+      "ASSALTANTE",
+      "REAÇÃO"
+    ],
+    "flavorText": "Recrutados das ilhas baleares, esses fundeiros eram temidos em todo mundo mediterrâneo. Preferiam receber o soldo em saques, vinho e mulheres…",
+    "artist": "Renato Rosart",
+    "sourceFiles": [
+      "Slide56.PNG",
+      "Slide57.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "FUNDEIRO BALEAR"
+        },
+        "type": "Combatente",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-fundeiro-balear.webp"
+      }
+    },
+    "name": "FUNDEIRO BALEAR",
+    "abilityText": "[ATIRAR] [FORRAGEAR] [ASSALTANTE]\n[REAÇÃO]: Anule a habilidade [atirar] ou [investida] do combatente ativo.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-fundeiro-balear.webp",
+    "strength": 1,
+    "weightClass": "Ligeiro",
+    "isCavalry": false,
+    "role": "Atirador"
+  },
+  "combatente-milicia-de-tanit": {
+    "id": "combatente-milicia-de-tanit",
+    "type": "Combatente",
+    "civilization": "Fenícia",
+    "cost": 2,
+    "copies": 1,
+    "keywords": [
+      "CONSCRITO"
+    ],
+    "flavorText": "Meu corpo será consumido pelas chamas da cidade, mas o nome da Senhora de Cartago não será profanado.",
+    "artist": null,
+    "sourceFiles": [
+      "Slide58.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "MILICIA DE TANIT"
+        },
+        "type": "Combatente",
+        "cost": 2,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-milicia-de-tanit.webp"
+      }
+    },
+    "name": "MILICIA DE TANIT",
+    "abilityText": "[CONSCRITO]",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/combatente-milicia-de-tanit.webp",
+    "strength": 1,
+    "weightClass": "Ligeiro",
+    "isCavalry": false,
+    "role": "Espadachim"
+  },
+  "estrategia-alexandre-o-grande": {
+    "id": "estrategia-alexandre-o-grande",
+    "type": "Estratégia",
+    "civilization": "Helênica",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "Eu faria se fosse Parmenion, mas eu sou Alexandre...",
+    "artist": null,
+    "sourceFiles": [
+      "Slide1.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Alexandre, o Grande"
+        },
+        "type": "Estratégia",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-alexandre-o-grande.webp"
+      }
+    },
+    "name": "Alexandre, o Grande",
+    "abilityText": "Seus combatentes macedônios recebem +1⚔ durante esta Campanha.\nSe você baixar um atirador, um espadachim, um lanceiro e uma cavalaria na mesma Fase de Combate. Aqueles combatentes recebem +1⚔",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-alexandre-o-grande.webp",
+    "subtype": "General",
+    "bottomLeftIcon": "mão segurando uma carta"
+  },
+  "estrategia-ataque-noturno": {
+    "id": "estrategia-ataque-noturno",
+    "type": "Estratégia",
+    "civilization": "Helênica",
+    "cost": 4,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": null,
+    "artist": null,
+    "sourceFiles": [
+      "Slide2.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Ataque Noturno"
+        },
+        "type": "Estratégia",
+        "cost": 4,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-ataque-noturno.webp"
+      }
+    },
+    "name": "Ataque Noturno",
+    "abilityText": "O Jogador-alvo saca duas cartas.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-ataque-noturno.webp",
+    "subtype": "Tática",
+    "bottomLeftIcon": null
+  },
+  "estrategia-batedores-tracios": {
+    "id": "estrategia-batedores-tracios",
+    "type": "Estratégia",
+    "civilization": "Helênica",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "Primeiro chegam os olhos, depois os cascos. E quando o inimigo percebe, já foi avistado há dias.",
+    "artist": null,
+    "sourceFiles": [
+      "Slide3.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Batedores Trácios"
+        },
+        "type": "Estratégia",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-batedores-tracios.webp"
+      }
+    },
+    "name": "Batedores Trácios",
+    "abilityText": "No seu turno; Destrua uma carta do Mercado e saque uma carta.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-batedores-tracios.webp",
+    "subtype": "Especialista",
+    "bottomLeftIcon": null
+  },
+  "estrategia-assembleia-dos-mercadores": {
+    "id": "estrategia-assembleia-dos-mercadores",
+    "type": "Estratégia",
+    "civilization": "Helênica",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": null,
+    "artist": null,
+    "sourceFiles": [
+      "Slide4.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Assembléia dos Mercadores"
+        },
+        "type": "Estratégia",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-assembleia-dos-mercadores.webp"
+      }
+    },
+    "name": "Assembléia dos Mercadores",
+    "abilityText": "Saque uma carta para cada Melhoria Macedônia baixada em seu Território.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-assembleia-dos-mercadores.webp",
+    "subtype": "Política",
+    "bottomLeftIcon": null
+  },
+  "estrategia-ostracismo": {
+    "id": "estrategia-ostracismo",
+    "type": "Estratégia",
+    "civilization": "Helênica",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "O Ostracismo era praticado no mundo grego democrático e consistia em banir por dez anos aqueles políticos considerados perigosos ou influentes demais na Pólis.",
+    "artist": null,
+    "sourceFiles": [
+      "Slide5.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Ostracismo"
+        },
+        "type": "Estratégia",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-ostracismo.webp"
+      }
+    },
+    "name": "Ostracismo",
+    "abilityText": "Outro jogador devolve uma carta do Descanso dele para o Mercado.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-ostracismo.webp",
+    "subtype": "Política",
+    "bottomLeftIcon": null
+  },
+  "estrategia-vitoria-de-pirro": {
+    "id": "estrategia-vitoria-de-pirro",
+    "type": "Estratégia",
+    "civilization": "Helênica",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "Mais uma vitória como esta, e estou perdido.\nPirro, rei do Épiro.",
+    "artist": null,
+    "sourceFiles": [
+      "Slide6.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Vitória de Pirro"
+        },
+        "type": "Estratégia",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-vitoria-de-pirro.webp"
+      }
+    },
+    "name": "Vitória de Pirro",
+    "abilityText": "Quando o jogador alvo ganhar um ponto militar; ele deve destruir um combatente dele que tenha participado desta Fase de Combate.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-vitoria-de-pirro.webp",
+    "subtype": "Evento",
+    "bottomLeftIcon": "mão segurando uma carta"
+  },
+  "estrategia-armas-de-cerco": {
+    "id": "estrategia-armas-de-cerco",
+    "type": "Estratégia",
+    "civilization": "Helênica",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": null,
+    "artist": null,
+    "sourceFiles": [
+      "Slide7.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Armas de Cerco"
+        },
+        "type": "Estratégia",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-armas-de-cerco.webp"
+      }
+    },
+    "name": "Armas de Cerco",
+    "abilityText": "No início da fase de Assalto; declare uma civilização e destrua as muralhas daquela civilização do jogador alvo.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-armas-de-cerco.webp",
+    "subtype": "Conhecimento",
+    "bottomLeftIcon": null
+  },
+  "estrategia-marcias-de-pella": {
+    "id": "estrategia-marcias-de-pella",
+    "type": "Estratégia",
+    "civilization": "Helênica",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "E a história de todos os reis da Macedônia, desde Carano até Alexandre Magno, não foi escrita pelo Ilustre Marcias? Não está lá a nobre origem dos Argéadas?",
+    "artist": null,
+    "sourceFiles": [
+      "Slide8.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Marcias de Pella"
+        },
+        "type": "Estratégia",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-marcias-de-pella.webp"
+      }
+    },
+    "name": "Marcias de Pella",
+    "abilityText": "Toda vez que você comprar uma carta de macedônia, saque uma carta de seu Império.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-marcias-de-pella.webp",
+    "subtype": "Especialista",
+    "bottomLeftIcon": null
+  },
+  "estrategia-antigono-i-monoftalmo": {
+    "id": "estrategia-antigono-i-monoftalmo",
+    "type": "Estratégia",
+    "civilization": "Helênica",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "Homenagem ao jogador Hygor, \"O Carrasco de Novatos.\"",
+    "artist": null,
+    "sourceFiles": [
+      "Slide9.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Antígono I, Monoftalmo"
+        },
+        "type": "Estratégia",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-antigono-i-monoftalmo.webp"
+      }
+    },
+    "name": "Antígono I, Monoftalmo",
+    "abilityText": "Busque um combatente do tipo lanceiro do seu Descanso e coloque-o no topo de seu Império.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-antigono-i-monoftalmo.webp",
+    "subtype": "General",
+    "bottomLeftIcon": "mão segurando uma carta"
+  },
+  "estrategia-demetrio-i-poliocertes": {
+    "id": "estrategia-demetrio-i-poliocertes",
+    "type": "Estratégia",
+    "civilization": "Helênica",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "Demétrio Poliórcetes foi um dos maiores comandantes de cerco de seu tempo, famoso por sua engenhosidade em construir máquinas de guerra inovadoras.",
+    "artist": null,
+    "sourceFiles": [
+      "Slide10.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Demétrio I Poliocertes"
+        },
+        "type": "Estratégia",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-demetrio-i-poliocertes.webp"
+      }
+    },
+    "name": "Demétrio I Poliocertes",
+    "abilityText": "Teus combatentes ganham +1⚔ ao assaltarem Melhorias nesta Campanha.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-demetrio-i-poliocertes.webp",
+    "subtype": "General",
+    "bottomLeftIcon": "mão segurando uma carta"
+  },
+  "estrategia-batalha-de-gaugamela": {
+    "id": "estrategia-batalha-de-gaugamela",
+    "type": "Estratégia",
+    "civilization": "Helênica",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "O céu não tem dois sóis, e a Ásia não terá dois reis.",
+    "artist": null,
+    "sourceFiles": [
+      "Slide11.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Batalha de Gaugamela"
+        },
+        "type": "Estratégia",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-batalha-de-gaugamela.webp"
+      }
+    },
+    "name": "Batalha de Gaugamela",
+    "abilityText": "Você ganha pontos de vitória militar em dobro (respeitando o limite de 6) ao vencer esta Fase de Combate.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-batalha-de-gaugamela.webp",
+    "subtype": "Evento",
+    "bottomLeftIcon": "mão segurando uma carta"
+  },
+  "estrategia-jogos-olimpicos": {
+    "id": "estrategia-jogos-olimpicos",
+    "type": "Estratégia",
+    "civilization": "Helênica",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": null,
+    "artist": null,
+    "sourceFiles": [
+      "Slide12.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Jogos Olímpicos"
+        },
+        "type": "Estratégia",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-jogos-olimpicos.webp"
+      }
+    },
+    "name": "Jogos Olímpicos",
+    "abilityText": "Combatentes macedônios não podem ser usados para atacar durante esta Campanha.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-jogos-olimpicos.webp",
+    "subtype": "Cultura -- Evento",
+    "bottomLeftIcon": "mão segurando uma carta"
+  },
+  "estrategia-cavalaria-batedora": {
+    "id": "estrategia-cavalaria-batedora",
+    "type": "Estratégia",
+    "civilization": "Helênica",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": null,
+    "artist": null,
+    "sourceFiles": [
+      "Slide13.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Cavalaria Batedora"
+        },
+        "type": "Estratégia",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-cavalaria-batedora.webp"
+      }
+    },
+    "name": "Cavalaria Batedora",
+    "abilityText": "Descarte uma cavalaria ligeira ou média de custo x de sua mão e saque x cartas.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-cavalaria-batedora.webp",
+    "subtype": "Especialista",
+    "bottomLeftIcon": null
+  },
+  "estrategia-falange-macedonica": {
+    "id": "estrategia-falange-macedonica",
+    "type": "Estratégia",
+    "civilization": "Helênica",
+    "cost": 2,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": null,
+    "artist": null,
+    "sourceFiles": [
+      "Slide14.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Falange Macedônica"
+        },
+        "type": "Estratégia",
+        "cost": 2,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-falange-macedonica.webp"
+      }
+    },
+    "name": "Falange Macedônica",
+    "abilityText": "Lanceiros do jogador alvo recebem +1⚔ durante esta Campanha.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-falange-macedonica.webp",
+    "subtype": "Tática",
+    "bottomLeftIcon": null
+  },
+  "estrategia-homem-de-vime": {
+    "id": "estrategia-homem-de-vime",
+    "type": "Estratégia",
+    "civilization": "Celta",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "E então os druidas queimavam um enorme homem de palha com prisioneiros e malfeitores atados em honra aos deuses renovadores da colheita.",
+    "artist": null,
+    "sourceFiles": [
+      "Slide15.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Homem de Vime"
+        },
+        "type": "Estratégia",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-homem-de-vime.webp"
+      }
+    },
+    "name": "Homem de Vime",
+    "abilityText": "Destrua uma carta de seu Descanso.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-homem-de-vime.webp",
+    "subtype": "Cultura",
+    "bottomLeftIcon": "saco de moedas"
+  },
+  "estrategia-batedores-celtas": {
+    "id": "estrategia-batedores-celtas",
+    "type": "Estratégia",
+    "civilization": "Celta",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "Não são apenas inimigos que os batedores caçam. Às vezes, o que se deve perder... é um peso que trazemos nós mesmos.",
+    "artist": null,
+    "sourceFiles": [
+      "Slide16.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Batedores Celtas"
+        },
+        "type": "Estratégia",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-batedores-celtas.webp"
+      }
+    },
+    "name": "Batedores Celtas",
+    "abilityText": "No seu turno; Destrua uma carta do Mercado e destrua uma carta de seu Descanso.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-batedores-celtas.webp",
+    "subtype": "Especialista",
+    "bottomLeftIcon": null
+  },
+  "estrategia-breno-rei-dos-celtas": {
+    "id": "estrategia-breno-rei-dos-celtas",
+    "type": "Estratégia",
+    "civilization": "Celta",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": null,
+    "artist": null,
+    "sourceFiles": [
+      "Slide17.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Breno, Rei dos Celtas"
+        },
+        "type": "Estratégia",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-breno-rei-dos-celtas.webp"
+      }
+    },
+    "name": "Breno, Rei dos Celtas",
+    "abilityText": "Seus combatentes celtas recebem +1⚔ durante esta Campanha. Você pode buscar combatentes Celtas de até custo 3 em seu Descanso e baixá-los no Início da Fase de combate que você iniciou.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-breno-rei-dos-celtas.webp",
+    "subtype": "General",
+    "bottomLeftIcon": null
+  },
+  "estrategia-emboscada": {
+    "id": "estrategia-emboscada",
+    "type": "Estratégia",
+    "civilization": "Celta",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "Varrus, devolva minhas legiões!\nAugusto César.",
+    "artist": null,
+    "sourceFiles": [
+      "Slide18.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Emboscada"
+        },
+        "type": "Estratégia",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-emboscada.webp"
+      }
+    },
+    "name": "Emboscada",
+    "abilityText": "Descarte um combatente-alvo baixado nesta Fase de Combate.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-emboscada.webp",
+    "subtype": "Tática",
+    "bottomLeftIcon": null
+  },
+  "estrategia-cacadores-de-cabeca": {
+    "id": "estrategia-cacadores-de-cabeca",
+    "type": "Estratégia",
+    "civilization": "Celta",
+    "cost": 2,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "Eu cortarei sua cabeça e beberei no seu crânio",
+    "artist": null,
+    "sourceFiles": [
+      "Slide19.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Caçadores de Cabeça"
+        },
+        "type": "Estratégia",
+        "cost": 2,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-cacadores-de-cabeca.webp"
+      }
+    },
+    "name": "Caçadores de Cabeça",
+    "abilityText": "No início de um Conflito; Os jogadores alvo não poderão baixar combatentes atacantes do tipo ligeiro durante esta Campanha.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-cacadores-de-cabeca.webp",
+    "subtype": "Tática – Especialista",
+    "bottomLeftIcon": null
+  },
+  "estrategia-chamado-de-guerra": {
+    "id": "estrategia-chamado-de-guerra",
+    "type": "Estratégia",
+    "civilization": "Celta",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": null,
+    "artist": null,
+    "sourceFiles": [
+      "Slide20.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Chamado de Guerra"
+        },
+        "type": "Estratégia",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-chamado-de-guerra.webp"
+      }
+    },
+    "name": "Chamado de Guerra",
+    "abilityText": "Ganhe 1⚔ para cada carta Celta baixada em seu Território.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-chamado-de-guerra.webp",
+    "subtype": "Política",
+    "bottomLeftIcon": null
+  },
+  "estrategia-escolhido-dos-deuses": {
+    "id": "estrategia-escolhido-dos-deuses",
+    "type": "Estratégia",
+    "civilization": "Celta",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "Oh, supremo Belatucadros! Das florestas de nossos pais, eis que surge o grande campeão!",
+    "artist": null,
+    "sourceFiles": [
+      "Slide21.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Escolhido dos Deuses"
+        },
+        "type": "Estratégia",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-escolhido-dos-deuses.webp"
+      }
+    },
+    "name": "Escolhido dos Deuses",
+    "abilityText": "Busque no seu Descanso um combatente celta e coloque-o no topo do Império alvo.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-escolhido-dos-deuses.webp",
+    "subtype": "Cultura",
+    "bottomLeftIcon": null
+  },
+  "estrategia-investida": {
+    "id": "estrategia-investida",
+    "type": "Estratégia",
+    "civilization": "Celta",
+    "cost": 2,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "Se até mesmo a poderosa Roma das sete colinas sucumbiu às nossas espadas, não espere misericórdia sobre tua vila de porcos!",
+    "artist": null,
+    "sourceFiles": [
+      "Slide22.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Investida!"
+        },
+        "type": "Estratégia",
+        "cost": 2,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-investida.webp"
+      }
+    },
+    "name": "Investida!",
+    "abilityText": "Você pode assaltar novamente uma Melhoria alvo em jogo.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-investida.webp",
+    "subtype": "Cultura – Tática",
+    "bottomLeftIcon": "escudo com espada cruzada"
+  },
+  "estrategia-seguidores-de-acampamento": {
+    "id": "estrategia-seguidores-de-acampamento",
+    "type": "Estratégia",
+    "civilization": "Celta",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "Homenagem ao jogador Dyego Henrique",
+    "artist": null,
+    "sourceFiles": [
+      "Slide23.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Seguidores de Acampamento"
+        },
+        "type": "Estratégia",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-seguidores-de-acampamento.webp"
+      }
+    },
+    "name": "Seguidores de Acampamento",
+    "abilityText": "Desvire uma Melhoria sua. Você pode usá-la logo em seguida.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-seguidores-de-acampamento.webp",
+    "subtype": "Cultura – Evento",
+    "bottomLeftIcon": null
+  },
+  "estrategia-imigracao-celta": {
+    "id": "estrategia-imigracao-celta",
+    "type": "Estratégia",
+    "civilization": "Celta",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": null,
+    "artist": null,
+    "sourceFiles": [
+      "Slide24.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Imigração Celta"
+        },
+        "type": "Estratégia",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-imigracao-celta.webp"
+      }
+    },
+    "name": "Imigração Celta",
+    "abilityText": "Coloque uma Melhoria Celta tua no Desterro.\nSaque x cartas, onde x é igual ao custo da Melhoria colocada no Desterro.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-imigracao-celta.webp",
+    "subtype": "Política",
+    "bottomLeftIcon": null
+  },
+  "estrategia-terror-celtico": {
+    "id": "estrategia-terror-celtico",
+    "type": "Estratégia",
+    "civilization": "Celta",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "Hordas de celtas, cimbros e teutões se aproximam de nossas fronteiras como nuvens de gafanhotos devastando campos e cidades.",
+    "artist": null,
+    "sourceFiles": [
+      "Slide25.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Terror Céltico"
+        },
+        "type": "Estratégia",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-terror-celtico.webp"
+      }
+    },
+    "name": "Terror Céltico",
+    "abilityText": "Toda vez que você fizer assalto bem sucedido contra Melhoria nesta Campanha, destrua aquela Melhoria.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-terror-celtico.webp",
+    "subtype": "Cultura – Tática",
+    "bottomLeftIcon": "escudo com espada cruzada"
+  },
+  "estrategia-mercadores-celtas": {
+    "id": "estrategia-mercadores-celtas",
+    "type": "Estratégia",
+    "civilization": "Celta",
+    "cost": 4,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "Infelizmente não podemos trazer tudo o que vossa excelência nos pediu nesses barcos tão obsoletos.",
+    "artist": null,
+    "sourceFiles": [
+      "Slide26.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Mercadores Celtas"
+        },
+        "type": "Estratégia",
+        "cost": 4,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-mercadores-celtas.webp"
+      }
+    },
+    "name": "Mercadores Celtas",
+    "abilityText": "Escolha entre:\n+1⚔ ou +2💰",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-mercadores-celtas.webp",
+    "subtype": "Comércio",
+    "bottomLeftIcon": null
+  },
+  "estrategia-cavalaria-de-epona": {
+    "id": "estrategia-cavalaria-de-epona",
+    "type": "Estratégia",
+    "civilization": "Celta",
+    "cost": 4,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "Não há morte para os que marcham por Epona. Apenas o silêncio entre dois chamados.\nHomenagem ao jogador Marlos.",
+    "artist": null,
+    "sourceFiles": [
+      "Slide27.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Cavalaria de Epona"
+        },
+        "type": "Estratégia",
+        "cost": 4,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-cavalaria-de-epona.webp"
+      }
+    },
+    "name": "Cavalaria de Epona",
+    "abilityText": "Descarte uma carta celta de tua mão para cada cavalaria em teu Descanso que queira colocar no topo de teu Império.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-cavalaria-de-epona.webp",
+    "subtype": "Cultura",
+    "bottomLeftIcon": "escudo com espada cruzada"
+  },
+  "estrategia-o-ultimo-recurso": {
+    "id": "estrategia-o-ultimo-recurso",
+    "type": "Estratégia",
+    "civilization": "Celta",
+    "cost": 2,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "Os escolhidos dos deuses levantaram-se mais uma vez como javalis furiosos e deram sua última carga.",
+    "artist": null,
+    "sourceFiles": [
+      "Slide28.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "O Último Recurso"
+        },
+        "type": "Estratégia",
+        "cost": 2,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-o-ultimo-recurso.webp"
+      }
+    },
+    "name": "O Último Recurso",
+    "abilityText": "Em Conflito que você esteja perdendo; Saque 5 cartas. Coloque os combatentes do tipo infantaria em jogo e descarte as demais cartas. Após o Conflito, destrua aqueles combatentes.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-o-ultimo-recurso.webp",
+    "subtype": "Tática",
+    "bottomLeftIcon": null
+  },
+  "estrategia-negociacoes-secretas": {
+    "id": "estrategia-negociacoes-secretas",
+    "type": "Estratégia",
+    "civilization": "Latina",
+    "cost": 2,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "Nem tudo se decide consultando os Lares ou com dignitas nas assembleias.",
+    "artist": null,
+    "sourceFiles": [
+      "Slide29.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Negociações Secretas"
+        },
+        "type": "Estratégia",
+        "cost": 2,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-negociacoes-secretas.webp"
+      }
+    },
+    "name": "Negociações Secretas",
+    "abilityText": "Durante esta Campanha, outros jogadores não podem jogar Estratégias.\nQualquer jogador pode pagar 1 recurso para você para ignorar este efeito para si mesmo.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-negociacoes-secretas.webp",
+    "subtype": "Política",
+    "bottomLeftIcon": "saco de moedas"
+  },
+  "estrategia-imperium": {
+    "id": "estrategia-imperium",
+    "type": "Estratégia",
+    "civilization": "Latina",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "A mão invisível do poder chama aquilo que já era seu.",
+    "artist": null,
+    "sourceFiles": [
+      "Slide30.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Imperium"
+        },
+        "type": "Estratégia",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-imperium.webp"
+      }
+    },
+    "name": "Imperium",
+    "abilityText": "Nomeie uma carta, busque essa carta em seu Império, coloque-a em sua Mão e embaralhe o Império.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-imperium.webp",
+    "subtype": "Política",
+    "bottomLeftIcon": null
+  },
+  "estrategia-exploratores": {
+    "id": "estrategia-exploratores",
+    "type": "Estratégia",
+    "civilization": "Latina",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "Os exploratores iam a frente verificando os perigos e os melhores locais para construir as fortificações.",
+    "artist": null,
+    "sourceFiles": [
+      "Slide31.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Exploratores"
+        },
+        "type": "Estratégia",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-exploratores.webp"
+      }
+    },
+    "name": "Exploratores",
+    "abilityText": "No seu turno; Destrua uma carta no Mercado e ganhe uma ficha de força ou construa uma muralha em melhoria sua.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-exploratores.webp",
+    "subtype": "Especialista",
+    "bottomLeftIcon": null
+  },
+  "estrategia-quinto-fabio-maximo": {
+    "id": "estrategia-quinto-fabio-maximo",
+    "type": "Estratégia",
+    "civilization": "Latina",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": null,
+    "artist": null,
+    "sourceFiles": [
+      "Slide32.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Quinto Fábio Máximo"
+        },
+        "type": "Estratégia",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-quinto-fabio-maximo.webp"
+      }
+    },
+    "name": "Quinto Fábio Máximo",
+    "abilityText": "Construa 1 defesa em uma Melhoria alvo que não tenha nenhum nível de defesa.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-quinto-fabio-maximo.webp",
+    "subtype": "General",
+    "bottomLeftIcon": null
+  },
+  "estrategia-saque-de-siracusa": {
+    "id": "estrategia-saque-de-siracusa",
+    "type": "Estratégia",
+    "civilization": "Latina",
+    "cost": 2,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "Apesar do General Marcelo proibir que os legionários destruíssem Siracusa e seu mais ilustre cidadão, Arquimedes, este foi morto pela espada de um soldado, calando seu vasto conhecimento.",
+    "artist": null,
+    "sourceFiles": [
+      "Slide33.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Saque de Siracusa"
+        },
+        "type": "Estratégia",
+        "cost": 2,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-saque-de-siracusa.webp"
+      }
+    },
+    "name": "Saque de Siracusa",
+    "abilityText": "Os jogadores deverão gastar 1 recurso para cada estratégia que queiram usar durante esta Campanha.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-saque-de-siracusa.webp",
+    "subtype": "Evento",
+    "bottomLeftIcon": null
+  },
+  "estrategia-triunfo-romano": {
+    "id": "estrategia-triunfo-romano",
+    "type": "Estratégia",
+    "civilization": "Latina",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "Enquanto cada vitória de Pirro lhe custava pesadas baixas, Roma já preparava mais e mais legiões para expulsar o invasor de sua terra natal.",
+    "artist": null,
+    "sourceFiles": [
+      "Slide34.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Triunfo Romano"
+        },
+        "type": "Estratégia",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-triunfo-romano.webp"
+      }
+    },
+    "name": "Triunfo Romano",
+    "abilityText": "Se você possuir combatente romano no seu Descanso ao final desta Campanha, ganhe 1 ponto de vitória.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-triunfo-romano.webp",
+    "subtype": "Cultura",
+    "bottomLeftIcon": null
+  },
+  "estrategia-evocati": {
+    "id": "estrategia-evocati",
+    "type": "Estratégia",
+    "civilization": "Latina",
+    "cost": 4,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "Legionários que, após findar o período militar, continuavam nas legiões devido ao seu prestígio e experiência.",
+    "artist": null,
+    "sourceFiles": [
+      "Slide35.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Evocati"
+        },
+        "type": "Estratégia",
+        "cost": 4,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-evocati.webp"
+      }
+    },
+    "name": "Evocati",
+    "abilityText": "Busque do Descarte um Combatente romano e coloque-o em sua Mão.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-evocati.webp",
+    "subtype": "Especialista",
+    "bottomLeftIcon": null
+  },
+  "estrategia-circunvalacao": {
+    "id": "estrategia-circunvalacao",
+    "type": "Estratégia",
+    "civilization": "Latina",
+    "cost": 4,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": null,
+    "artist": null,
+    "sourceFiles": [
+      "Slide36.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Circunvalação"
+        },
+        "type": "Estratégia",
+        "cost": 4,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-circunvalacao.webp"
+      }
+    },
+    "name": "Circunvalação",
+    "abilityText": "Você pode assaltar duas melhorias ao mesmo tempo com as mesmas cartas.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-circunvalacao.webp",
+    "subtype": "Especialista",
+    "bottomLeftIcon": null
+  },
+  "estrategia-circunvalacao-2": {
+    "id": "estrategia-circunvalacao-2",
+    "type": "Estratégia",
+    "civilization": "Latina",
+    "cost": 4,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": null,
+    "artist": null,
+    "sourceFiles": [
+      "Slide37.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Circunvalação"
+        },
+        "type": "Estratégia",
+        "cost": 4,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-circunvalacao-2.webp"
+      }
+    },
+    "name": "Circunvalação",
+    "abilityText": "Outros jogadores deverão pagar 1 recurso para cada Melhoria sua que queiram assaltar.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-circunvalacao-2.webp",
+    "subtype": "Especialista",
+    "bottomLeftIcon": null
+  },
+  "estrategia-cartografia": {
+    "id": "estrategia-cartografia",
+    "type": "Estratégia",
+    "civilization": "Latina",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "Um mapa honesto vale mais que mil espiões.",
+    "artist": null,
+    "sourceFiles": [
+      "Slide39.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Cartografia"
+        },
+        "type": "Estratégia",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-cartografia.webp"
+      }
+    },
+    "name": "Cartografia",
+    "abilityText": "[No inicio do Conflito] Os jogadores alvo devem jogar cartas reveladas em todas as etapas dos Conflitos durante esta Campanha.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-cartografia.webp",
+    "subtype": "Conhecimento",
+    "bottomLeftIcon": null
+  },
+  "estrategia-cipiao-o-africano": {
+    "id": "estrategia-cipiao-o-africano",
+    "type": "Estratégia",
+    "civilization": "Latina",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": null,
+    "artist": null,
+    "sourceFiles": [
+      "Slide41.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Cipião, o Africano"
+        },
+        "type": "Estratégia",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-cipiao-o-africano.webp"
+      }
+    },
+    "name": "Cipião, o Africano",
+    "abilityText": "Seus combatentes de Roma recebem +1 força nesta Campanha.\nNa fase de Combate em que você seja atacante, seus combatentes não cartagineses/romanos recebem +1 força se houver Melhoria cartaginesa de outro jogador em jogo.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-cipiao-o-africano.webp",
+    "subtype": "General",
+    "bottomLeftIcon": "escudo com espada cruzada"
+  },
+  "estrategia-batalha-de-zama": {
+    "id": "estrategia-batalha-de-zama",
+    "type": "Estratégia",
+    "civilization": "Latina",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "Cipião ordenou que o manipulus desse passagem para os terríveis elefantes. Das alas surgiram singelos velites dançando em volta das feras com dardos e pedras. Os elefantes fugiram em frenesi louco contra as linhas de seu próprio exército destroçando tudo pelo caminho.",
+    "artist": null,
+    "sourceFiles": [
+      "Slide42.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Batalha de Zama"
+        },
+        "type": "Estratégia",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-batalha-de-zama.webp"
+      }
+    },
+    "name": "Batalha de Zama",
+    "abilityText": "Atiradores que você controla ganham +1⚔ até o final da Campanha.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-batalha-de-zama.webp",
+    "subtype": "Evento",
+    "bottomLeftIcon": "mão segurando uma carta"
+  },
+  "estrategia-marcha-forcada": {
+    "id": "estrategia-marcha-forcada",
+    "type": "Estratégia",
+    "civilization": "Latina",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "Oh centurião e sua vara disciplinadora! Roma não chegaria aos confins do mundo sem teus castigos!",
+    "artist": null,
+    "sourceFiles": [
+      "Slide43.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Marcha Forçada"
+        },
+        "type": "Estratégia",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-marcha-forcada.webp"
+      }
+    },
+    "name": "Marcha Forçada",
+    "abilityText": "Toda vez que você, pelo efeito desta carta, pagar +1 recurso ao comprar combatente nesta Campanha, coloque-o no topo de seu Império.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-marcha-forcada.webp",
+    "subtype": "Tática",
+    "bottomLeftIcon": null
+  },
+  "estrategia-saturnalia": {
+    "id": "estrategia-saturnalia",
+    "type": "Estratégia",
+    "civilization": "Latina",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "A Saturnalia era comemorada em Dezembro em honra ao deus Saturno, o pai da agricultura. A ordem era a diversão, farras e bebedeiras entre senhores e escravos liberados temporariamente de suas obrigações.",
+    "artist": null,
+    "sourceFiles": [
+      "Slide44.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Saturnália"
+        },
+        "type": "Estratégia",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-saturnalia.webp"
+      }
+    },
+    "name": "Saturnália",
+    "abilityText": "No início da Campanha; Escolha uma civilização. Os jogadores não podem usar trabalhadores daquela civilização da Mão para produzir recursos.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-saturnalia.webp",
+    "subtype": "Cultura",
+    "bottomLeftIcon": null
+  },
+  "estrategia-lupercalia": {
+    "id": "estrategia-lupercalia",
+    "type": "Estratégia",
+    "civilization": "Latina",
+    "cost": 2,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "A Lupercália era uma festa religiosa que ocorria em fevereiro relacionada com a purificação de Roma através de rituais e sacrifícios rememorando os irmãos míticos Rômulo e Remo.",
+    "artist": null,
+    "sourceFiles": [
+      "Slide45.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Lupercália"
+        },
+        "type": "Estratégia",
+        "cost": 2,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-lupercalia.webp"
+      }
+    },
+    "name": "Lupercália",
+    "abilityText": "Coloque seu Império em seu Descanso. Embaralhe as cartas e faça um novo Império. Saque uma carta",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-lupercalia.webp",
+    "subtype": "Cultura",
+    "bottomLeftIcon": null
+  },
+  "estrategia-taticas-de-cipiao": {
+    "id": "estrategia-taticas-de-cipiao",
+    "type": "Estratégia",
+    "civilization": "Latina",
+    "cost": 4,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "Os romanos sempre aprenderam com os próprios erros. Cipião levou Roma à vitória usando das mesmas táticas de Aníbal Barca. O aluno sobrepujara seu mestre.",
+    "artist": null,
+    "sourceFiles": [
+      "Slide46.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Táticas de Cipião"
+        },
+        "type": "Estratégia",
+        "cost": 4,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-taticas-de-cipiao.webp"
+      }
+    },
+    "name": "Táticas de Cipião",
+    "abilityText": "Copie a ação de uma Estratégia alvo jogada nesta Campanha.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-taticas-de-cipiao.webp",
+    "subtype": "Política – Tática",
+    "bottomLeftIcon": null
+  },
+  "estrategia-cursus-honorum": {
+    "id": "estrategia-cursus-honorum",
+    "type": "Estratégia",
+    "civilization": "Latina",
+    "cost": 4,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "O Cursus Honorum eram os estudos de carreira que um magistrado romano trilhava até conseguir os mais altos cargos na República Romana.",
+    "artist": null,
+    "sourceFiles": [
+      "Slide47.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Cursus Honorum"
+        },
+        "type": "Estratégia",
+        "cost": 4,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-cursus-honorum.webp"
+      }
+    },
+    "name": "Cursus Honorum",
+    "abilityText": "Fase de Compra; Você paga apenas 1 recurso ao comprar uma Estratégia neste turno.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-cursus-honorum.webp",
+    "subtype": "Política – Cultura",
+    "bottomLeftIcon": null
+  },
+  "estrategia-salarium": {
+    "id": "estrategia-salarium",
+    "type": "Estratégia",
+    "civilization": "Latina",
+    "cost": 2,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "Em fases difíceis da história romana os legionários foram pagos com sal, um recurso muito valioso no mundo Antigo usado para salgar e preservar os alimentos durante o inverno.",
+    "artist": null,
+    "sourceFiles": [
+      "Slide48.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Salarium"
+        },
+        "type": "Estratégia",
+        "cost": 2,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-salarium.webp"
+      }
+    },
+    "name": "Salarium",
+    "abilityText": "No início de um conflito; Você pode alocar 1💰 em cada combatente seu. Aqueles combatentes ganham bônus de +1 força.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-salarium.webp",
+    "subtype": "Comércio – Política",
+    "bottomLeftIcon": null
+  },
+  "estrategia-juramento-de-anibal": {
+    "id": "estrategia-juramento-de-anibal",
+    "type": "Estratégia",
+    "civilization": "Fenícia",
+    "cost": 2,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "\"Juro que enquanto a idade me permitir, empregarei o fogo e o ferro para romper o destino de Roma\"",
+    "artist": null,
+    "sourceFiles": [
+      "Slide49.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Juramento de Aníbal"
+        },
+        "type": "Estratégia",
+        "cost": 2,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-juramento-de-anibal.webp"
+      }
+    },
+    "name": "Juramento de Aníbal",
+    "abilityText": "Cada combatente cartaginês que você controla recebe +1⚔ se houver Melhorias romanas de outros jogadores em jogo.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-juramento-de-anibal.webp",
+    "subtype": "Evento",
+    "bottomLeftIcon": "saco de moedas"
+  },
+  "estrategia-decepcao-de-maharbal": {
+    "id": "estrategia-decepcao-de-maharbal",
+    "type": "Estratégia",
+    "civilization": "Fenícia",
+    "cost": 2,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "Oh Aníbal! Sabes como vencer uma batalha, mas não sabes desfrutá-la.\nMaharbal, após a vitória em Canas",
+    "artist": null,
+    "sourceFiles": [
+      "Slide50.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Decepção de Maharbal"
+        },
+        "type": "Estratégia",
+        "cost": 2,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-decepcao-de-maharbal.webp"
+      }
+    },
+    "name": "Decepção de Maharbal",
+    "abilityText": "No início da Fase de Assalto; O jogador alvo não poderá assaltar tuas Melhorias muradas durante esta Campanha.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-decepcao-de-maharbal.webp",
+    "subtype": "Evento",
+    "bottomLeftIcon": null
+  },
+  "estrategia-batedores-nubios": {
+    "id": "estrategia-batedores-nubios",
+    "type": "Estratégia",
+    "civilization": "Fenícia",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "Os batedores núbios, além de excelentes arqueiros, eram famosos por acharem água nos desertos escaldantes.",
+    "artist": null,
+    "sourceFiles": [
+      "Slide51.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Batedores Núbios"
+        },
+        "type": "Estratégia",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-batedores-nubios.webp"
+      }
+    },
+    "name": "Batedores Núbios",
+    "abilityText": "No seu turno; Destrua uma carta do Mercado e ganhe uma ficha de Ouro.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-batedores-nubios.webp",
+    "subtype": "Especialista",
+    "bottomLeftIcon": null
+  },
+  "estrategia-subterfugio": {
+    "id": "estrategia-subterfugio",
+    "type": "Estratégia",
+    "civilization": "Fenícia",
+    "cost": 4,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "Aníbal conhecia os passos de seus adversários graças a uma extensa rede de espionagem em toda península itálica e além.",
+    "artist": null,
+    "sourceFiles": [
+      "Slide52.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Subterfúgio"
+        },
+        "type": "Estratégia",
+        "cost": 4,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-subterfugio.webp"
+      }
+    },
+    "name": "Subterfúgio",
+    "abilityText": "Olhe secretamente as três primeiras cartas do Império do jogador-alvo. Descarte uma e devolva as restantes para o topo do Império dele em qualquer ordem. Após isso, saque uma carta.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-subterfugio.webp",
+    "subtype": "Tática – Política",
+    "bottomLeftIcon": null
+  },
+  "estrategia-mapas-secretos-de-hano": {
+    "id": "estrategia-mapas-secretos-de-hano",
+    "type": "Estratégia",
+    "civilization": "Fenícia",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": null,
+    "artist": null,
+    "sourceFiles": [
+      "Slide53.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Mapas Secretos de Hano"
+        },
+        "type": "Estratégia",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-mapas-secretos-de-hano.webp"
+      }
+    },
+    "name": "Mapas Secretos de Hano",
+    "abilityText": "Revele a carta do topo do Império de outro jogador. Aquele jogador deve pagar a você um recurso. Do contrário, descarte a carta que você acabou de revelar.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-mapas-secretos-de-hano.webp",
+    "subtype": "Conhecimento",
+    "bottomLeftIcon": "mão segurando uma carta"
+  },
+  "estrategia-anibal-barca": {
+    "id": "estrategia-anibal-barca",
+    "type": "Estratégia",
+    "civilization": "Fenícia",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": null,
+    "artist": null,
+    "sourceFiles": [
+      "Slide54.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Aníbal Barca"
+        },
+        "type": "Estratégia",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-anibal-barca.webp"
+      }
+    },
+    "name": "Aníbal Barca",
+    "abilityText": "Seus combatentes de Cartago e mercenários recebem +1⚔ nesta Campanha.\nSeus mercenários não precisam pagar soldo para serem descartados nesta Campanha.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-anibal-barca.webp",
+    "subtype": "General",
+    "bottomLeftIcon": "saco de moedas"
+  },
+  "estrategia-batalha-de-canas": {
+    "id": "estrategia-batalha-de-canas",
+    "type": "Estratégia",
+    "civilization": "Fenícia",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "\"Ah Romanos! Por que o luto? Por que as togas em choro? Onde estão vossos patrícios? Jazem nos campos de Canas, a batalha perfeita.\"",
+    "artist": null,
+    "sourceFiles": [
+      "Slide55.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Batalha de Canas"
+        },
+        "type": "Estratégia",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-batalha-de-canas.webp"
+      }
+    },
+    "name": "Batalha de Canas",
+    "abilityText": "Todos os combatentes médios e pesados de outros jogadores alvo que forem usados nesta Campanha recebem -1⚔.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-batalha-de-canas.webp",
+    "subtype": "Batalha Histórica",
+    "bottomLeftIcon": null
+  },
+  "estrategia-bloqueio-naval": {
+    "id": "estrategia-bloqueio-naval",
+    "type": "Estratégia",
+    "civilization": "Fenícia",
+    "cost": 1,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": null,
+    "artist": null,
+    "sourceFiles": [
+      "Slide56.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Bloqueio Naval"
+        },
+        "type": "Estratégia",
+        "cost": 1,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-bloqueio-naval.webp"
+      }
+    },
+    "name": "Bloqueio Naval",
+    "abilityText": "Pague x recursos; escolha uma Melhoria alvo em jogo e vire sua face para baixo. A Melhoria permanecerá desabilitada durante a partida até que o dono dela pague x recursos.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-bloqueio-naval.webp",
+    "subtype": "Tática",
+    "bottomLeftIcon": null
+  },
+  "estrategia-travessia-dos-alpes": {
+    "id": "estrategia-travessia-dos-alpes",
+    "type": "Estratégia",
+    "civilization": "Fenícia",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "Oh Anibal! Tu que cruzastes os terríveis Alpes invernais. Acossado por tribos bárbaras, fome, frio e desespero, perdeste quase tudo! Não te desanimes, oh abençoado! Os deuses deixaram vivos apenas os inquebrantáveis e fieis! Estes, oh Anibal!, te seguirão até a morte!.",
+    "artist": null,
+    "sourceFiles": [
+      "Slide57.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Travessia dos Alpes"
+        },
+        "type": "Estratégia",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-travessia-dos-alpes.webp"
+      }
+    },
+    "name": "Travessia dos Alpes",
+    "abilityText": "Destrua Travessia dos Alpes.\nDestrua até três cartas da sua mão, Império ou Descanso em qualquer ordem. Caso destrua cartas de seu Império, embaralhe-o em seguida.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-travessia-dos-alpes.webp",
+    "subtype": "Evento",
+    "bottomLeftIcon": null
+  },
+  "estrategia-naufragio": {
+    "id": "estrategia-naufragio",
+    "type": "Estratégia",
+    "civilization": "Fenícia",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "\"Poseidon não faz distinção daqueles que morrerão em seus domínios\"",
+    "artist": null,
+    "sourceFiles": [
+      "Slide58.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Naufrágio"
+        },
+        "type": "Estratégia",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-naufragio.webp"
+      }
+    },
+    "name": "Naufrágio",
+    "abilityText": "No início da próxima Campanha, outro jogador alvo descarta duas cartas da mão dele.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-naufragio.webp",
+    "subtype": "Evento",
+    "bottomLeftIcon": null
+  },
+  "estrategia-mercados-secretos": {
+    "id": "estrategia-mercados-secretos",
+    "type": "Estratégia",
+    "civilization": "Fenícia",
+    "cost": 2,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "E os cartagineses controlavam muitos mercados secretos, trazendo especiarias, animais exóticos, metais e pedras preciosas das mais remotas terras.",
+    "artist": null,
+    "sourceFiles": [
+      "Slide59.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Mercados Secretos"
+        },
+        "type": "Estratégia",
+        "cost": 2,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-mercados-secretos.webp"
+      }
+    },
+    "name": "Mercados Secretos",
+    "abilityText": "Compre uma carta na Fase de Compra de outro jogador.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-mercados-secretos.webp",
+    "subtype": "Comércio",
+    "bottomLeftIcon": null
+  },
+  "estrategia-contadores-de-cartago": {
+    "id": "estrategia-contadores-de-cartago",
+    "type": "Estratégia",
+    "civilization": "Fenícia",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "\"Ninguém some no silêncio em Cartago. Cada nome, cada mão, cada dívida: tudo volta, tudo é contado, tudo serve.\"",
+    "artist": null,
+    "sourceFiles": [
+      "Slide60.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Contadores de Cartago"
+        },
+        "type": "Estratégia",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-contadores-de-cartago.webp"
+      }
+    },
+    "name": "Contadores de Cartago",
+    "abilityText": "Busque até duas cartas de trabalhadores cartagineses de seu Descanso e coloque-as em sua Mão.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-contadores-de-cartago.webp",
+    "subtype": "Comércio",
+    "bottomLeftIcon": null
+  },
+  "estrategia-ouroboros": {
+    "id": "estrategia-ouroboros",
+    "type": "Estratégia",
+    "civilization": "Fenícia",
+    "cost": 4,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "\"Assim como minha boca devora minha cauda primordial, o Fim é o início do Principio, diz Leviatã.\"\nHomenagem ao jogador Lucas Dias.",
+    "artist": null,
+    "sourceFiles": [
+      "Slide61.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Ouroboros"
+        },
+        "type": "Estratégia",
+        "cost": 4,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-ouroboros.webp"
+      }
+    },
+    "name": "Ouroboros",
+    "abilityText": "Saque uma carta. Você deve destruir uma carta de seu Descanso. Do contrário, destrua Ouroboros.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-ouroboros.webp",
+    "subtype": "Cultura",
+    "bottomLeftIcon": null
+  },
+  "estrategia-o-campeao": {
+    "id": "estrategia-o-campeao",
+    "type": "Estratégia",
+    "civilization": "Neutra",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "Homenagem ao jogador Lucas (Luketa), campeão do primeiro Torneio de Duplas de Cores da Guerra.",
+    "artist": null,
+    "sourceFiles": [
+      "Slide62.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "O Campeão"
+        },
+        "type": "Estratégia",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-o-campeao.webp"
+      }
+    },
+    "name": "O Campeão",
+    "abilityText": "Trabalhadores da civilização da Melhoria em que esta carta esteja anexada geram fichas de ouro na Renovação. Ganhe uma ficha de força toda vez que alocar uma carta de trabalhadores.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-o-campeao.webp",
+    "subtype": "Especialista",
+    "bottomLeftIcon": null
+  },
+  "estrategia-crescimento-populacional": {
+    "id": "estrategia-crescimento-populacional",
+    "type": "Estratégia",
+    "civilization": "Neutra",
+    "cost": 2,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "\"Eles voltam em enxames — filhos do esquecimento e da fome. Crescer nem sempre é prosperar.\"",
+    "artist": null,
+    "sourceFiles": [
+      "Slide63.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Crescimento Populacional"
+        },
+        "type": "Estratégia",
+        "cost": 2,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-crescimento-populacional.webp"
+      }
+    },
+    "name": "Crescimento Populacional",
+    "abilityText": "Escolha uma carta de trabalhadores do Descanso ou Desterro do jogador alvo e coloque aquela carta no topo do Império daquele jogador.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-crescimento-populacional.webp",
+    "subtype": "Evento",
+    "bottomLeftIcon": null
+  },
+  "estrategia-desgaste-moral": {
+    "id": "estrategia-desgaste-moral",
+    "type": "Estratégia",
+    "civilization": "Neutra",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "\"Mesmo os grandes generais tremem quando não sabem de onde vem o próximo ataque.\"",
+    "artist": null,
+    "sourceFiles": [
+      "Slide64.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Desgaste Moral"
+        },
+        "type": "Estratégia",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-desgaste-moral.webp"
+      }
+    },
+    "name": "Desgaste Moral",
+    "abilityText": "Na próxima Campanha: o jogador alvo não poderá jogar combatentes de custo 3 ou menos.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-desgaste-moral.webp",
+    "subtype": "Evento – Tática",
+    "bottomLeftIcon": null
+  },
+  "estrategia-agatocles-de-siracusa": {
+    "id": "estrategia-agatocles-de-siracusa",
+    "type": "Estratégia",
+    "civilization": "Neutra",
+    "cost": 4,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "\"Tirano, rei pérfido. A palavra honra nunca saíra de sua boca e a Lei o desprezava.\"",
+    "artist": null,
+    "sourceFiles": [
+      "Slide65.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Agátocles de Siracusa"
+        },
+        "type": "Estratégia",
+        "cost": 4,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-agatocles-de-siracusa.webp"
+      }
+    },
+    "name": "Agátocles de Siracusa",
+    "abilityText": "Mercenários ganham +1 força em Conflitos.\nNa fase de Combate; Tome controle de um combatente alvo em jogo. Coloque-o no Descanso de seu dono após o fim do conflito.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-agatocles-de-siracusa.webp",
+    "subtype": "General – Tática",
+    "bottomLeftIcon": null
+  },
+  "estrategia-troca-de-prisioneiros": {
+    "id": "estrategia-troca-de-prisioneiros",
+    "type": "Estratégia",
+    "civilization": "Neutra",
+    "cost": 4,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": null,
+    "artist": null,
+    "sourceFiles": [
+      "Slide66.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Troca de Prisioneiros"
+        },
+        "type": "Estratégia",
+        "cost": 4,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-troca-de-prisioneiros.webp"
+      }
+    },
+    "name": "Troca de Prisioneiros",
+    "abilityText": "Troque um combatente do seu Descanso por outro de custo igual ou menor do Mercado e coloque-o no topo do seu Império.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-troca-de-prisioneiros.webp",
+    "subtype": "Política",
+    "bottomLeftIcon": null
+  },
+  "estrategia-contra-ataque": {
+    "id": "estrategia-contra-ataque",
+    "type": "Estratégia",
+    "civilization": "Neutra",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": null,
+    "artist": null,
+    "sourceFiles": [
+      "Slide67.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Contra Ataque"
+        },
+        "type": "Estratégia",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-contra-ataque.webp"
+      }
+    },
+    "name": "Contra Ataque",
+    "abilityText": "Fase de Combate; você pode inverter a ordem do Conflito e ser o atacante com os eventuais bônus da posição. Seus adversários agora são defensores.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-contra-ataque.webp",
+    "subtype": "Tática",
+    "bottomLeftIcon": null
+  },
+  "estrategia-ataque-surpresa": {
+    "id": "estrategia-ataque-surpresa",
+    "type": "Estratégia",
+    "civilization": "Neutra",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": null,
+    "artist": null,
+    "sourceFiles": [
+      "Slide68.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Ataque Surpresa"
+        },
+        "type": "Estratégia",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-ataque-surpresa.webp"
+      }
+    },
+    "name": "Ataque Surpresa",
+    "abilityText": "Declare Fase de assalto contra o jogador alvo e resolva aquele Conflito.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-ataque-surpresa.webp",
+    "subtype": "Tática",
+    "bottomLeftIcon": null
+  },
+  "estrategia-colheita-de-graos": {
+    "id": "estrategia-colheita-de-graos",
+    "type": "Estratégia",
+    "civilization": "Neutra",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": null,
+    "artist": null,
+    "sourceFiles": [
+      "Slide69.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Colheita de Grãos"
+        },
+        "type": "Estratégia",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-colheita-de-graos.webp"
+      }
+    },
+    "name": "Colheita de Grãos",
+    "abilityText": "Anexe até três cartas de trabalhadores vindas do seu Descanso em suas Melhorias elegíveis em jogo respeitando as civilizações originais.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-colheita-de-graos.webp",
+    "subtype": "Conhecimento",
+    "bottomLeftIcon": null
+  },
+  "estrategia-revolta-servil": {
+    "id": "estrategia-revolta-servil",
+    "type": "Estratégia",
+    "civilization": "Neutra",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "\"Quem vai arar os campos\"",
+    "artist": null,
+    "sourceFiles": [
+      "Slide70.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Revolta Servil"
+        },
+        "type": "Estratégia",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-revolta-servil.webp"
+      }
+    },
+    "name": "Revolta Servil",
+    "abilityText": "O jogador alvo deve descartar todos os trabalhadores anexados nas Melhorias em jogo dele.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-revolta-servil.webp",
+    "subtype": "Política – Evento",
+    "bottomLeftIcon": null
+  },
+  "estrategia-revolta-mercenaria": {
+    "id": "estrategia-revolta-mercenaria",
+    "type": "Estratégia",
+    "civilization": "Neutra",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "\"E quando findou-se a Primeira Guerra Púnica, Cartago cedera a Sicília para Roma ao mesmo tempo em que não pagou aos mercenários que ali lutaram pelo ouro Cartaginês.\"",
+    "artist": null,
+    "sourceFiles": [
+      "Slide71.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Revolta Mercenária"
+        },
+        "type": "Estratégia",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-revolta-mercenaria.webp"
+      }
+    },
+    "name": "Revolta Mercenária",
+    "abilityText": "No início de um Conflito; Os jogadores alvo não podem usar combatentes do tipo mercenário durante esta Campanha.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-revolta-mercenaria.webp",
+    "subtype": "Política – Evento",
+    "bottomLeftIcon": null
+  },
+  "estrategia-guerra-civil": {
+    "id": "estrategia-guerra-civil",
+    "type": "Estratégia",
+    "civilization": "Neutra",
+    "cost": 1,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "\"A mais sórdida das guerras não toma partido\"",
+    "artist": null,
+    "sourceFiles": [
+      "Slide72.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Guerra Civil"
+        },
+        "type": "Estratégia",
+        "cost": 1,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-guerra-civil.webp"
+      }
+    },
+    "name": "Guerra Civil",
+    "abilityText": "Destrua uma carta do Descanso de outro jogador.\nJogue esta carta no Descanso daquele jogador após usá-la.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-guerra-civil.webp",
+    "subtype": "Evento – Política",
+    "bottomLeftIcon": null
+  },
+  "estrategia-contra-ofensiva": {
+    "id": "estrategia-contra-ofensiva",
+    "type": "Estratégia",
+    "civilization": "Neutra",
+    "cost": 2,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": null,
+    "artist": null,
+    "sourceFiles": [
+      "Slide73.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Contra Ofensiva"
+        },
+        "type": "Estratégia",
+        "cost": 2,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-contra-ofensiva.webp"
+      }
+    },
+    "name": "Contra Ofensiva",
+    "abilityText": "Anule o efeito de uma estratégia antes dela ser resolvida. A carta anulada é descartada.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-contra-ofensiva.webp",
+    "subtype": "Tática",
+    "bottomLeftIcon": null
+  },
+  "estrategia-interceptacao": {
+    "id": "estrategia-interceptacao",
+    "type": "Estratégia",
+    "civilization": "Neutra",
+    "cost": 2,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": null,
+    "artist": null,
+    "sourceFiles": [
+      "Slide74.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Interceptação"
+        },
+        "type": "Estratégia",
+        "cost": 2,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-interceptacao.webp"
+      }
+    },
+    "name": "Interceptação",
+    "abilityText": "No início da segunda Etapa; nesta Campanha, os jogadores não poderão jogar cavalarias na segunda Etapa.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-interceptacao.webp",
+    "subtype": "Tática",
+    "bottomLeftIcon": null
+  },
+  "estrategia-massinissa-rei-numida": {
+    "id": "estrategia-massinissa-rei-numida",
+    "type": "Estratégia",
+    "civilization": "Neutra",
+    "cost": 4,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "Homenagem ao jogador Rodrigo, \"Mestre da Economia\"",
+    "artist": null,
+    "sourceFiles": [
+      "Slide75.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Massinissa, Rei Númida"
+        },
+        "type": "Estratégia",
+        "cost": 4,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-massinissa-rei-numida.webp"
+      }
+    },
+    "name": "Massinissa, Rei Númida",
+    "abilityText": "Na fase de Combate; tome controle de um combatente alvo em jogo. Coloque-o no Descanso de seu dono após o fim do conflito",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/estrategia-massinissa-rei-numida.webp",
+    "subtype": "General",
+    "bottomLeftIcon": null
+  },
+  "melhoria-logistica": {
+    "id": "melhoria-logistica",
+    "type": "Melhoria",
+    "civilization": "Helênica",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "Dario III esperava minar as provisões de Alexandre em poucos dias ao segurá-lo no deserto. Mas a logística macedônia já estava há vários dias adiantada e segura nas terras do Império Persa.",
+    "artist": null,
+    "sourceFiles": [
+      "Slide2.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Logística"
+        },
+        "type": "Melhoria",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-logistica.webp"
+      }
+    },
+    "name": "Logística",
+    "abilityText": "Saque +1 carta toda vez que for completar sua Mão na Renovação.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-logistica.webp",
+    "subtype": "Conhecimento",
+    "isCapital": false,
+    "activationType": "Fixa",
+    "bottomLeftIcon": null
+  },
+  "melhoria-agora-helenistica": {
+    "id": "melhoria-agora-helenistica",
+    "type": "Melhoria",
+    "civilization": "Helênica",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": null,
+    "artist": null,
+    "sourceFiles": [
+      "Slide3.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Ágora Helenística"
+        },
+        "type": "Melhoria",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-agora-helenistica.webp"
+      }
+    },
+    "name": "Ágora Helenística",
+    "abilityText": "Toda vez que você fizer uma compra limpa, saque uma carta.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-agora-helenistica.webp",
+    "subtype": "Construção – Conhecimento – Política",
+    "isCapital": false,
+    "activationType": "Fixa",
+    "bottomLeftIcon": null
+  },
+  "melhoria-moinho-d-agua": {
+    "id": "melhoria-moinho-d-agua",
+    "type": "Melhoria",
+    "civilization": "Helênica",
+    "cost": 4,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "Os gregos criaram o moinho d'água por volta do III séc. A.C.",
+    "artist": null,
+    "sourceFiles": [
+      "Slide4.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Moinho d'Água"
+        },
+        "type": "Melhoria",
+        "cost": 4,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-moinho-d-agua.webp"
+      }
+    },
+    "name": "Moinho d'Água",
+    "abilityText": "Toda vez que você comprar no Mercado, saque uma carta.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-moinho-d-agua.webp",
+    "subtype": "Conhecimento",
+    "isCapital": false,
+    "activationType": "Fixa",
+    "bottomLeftIcon": null
+  },
+  "melhoria-memorial-de-guerra": {
+    "id": "melhoria-memorial-de-guerra",
+    "type": "Melhoria",
+    "civilization": "Helênica",
+    "cost": 2,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "Alexandre exortou aos gregos para que se lembrassem dos feitos dos heróis do passado e que lutassem bravamente junto aos deuses.",
+    "artist": null,
+    "sourceFiles": [
+      "Slide5.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Memorial de Guerra"
+        },
+        "type": "Melhoria",
+        "cost": 2,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-memorial-de-guerra.webp"
+      }
+    },
+    "name": "Memorial de Guerra",
+    "abilityText": "Saque uma carta se houver combatente macedônico em seu Descanso.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-memorial-de-guerra.webp",
+    "subtype": "Construção – Cultura",
+    "isCapital": false,
+    "activationType": "Ativada",
+    "bottomLeftIcon": null
+  },
+  "melhoria-arquimedes-de-siracusa": {
+    "id": "melhoria-arquimedes-de-siracusa",
+    "type": "Melhoria",
+    "civilization": "Helênica",
+    "cost": 2,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "\"Dê-me uma alavanca e um ponto de apoio e moverei o mundo\" Arquimedes",
+    "artist": null,
+    "sourceFiles": [
+      "Slide6.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Arquimedes de Siracusa"
+        },
+        "type": "Melhoria",
+        "cost": 2,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-arquimedes-de-siracusa.webp"
+      }
+    },
+    "name": "Arquimedes de Siracusa",
+    "abilityText": "Toda vez que você pagar +1 recurso ao construir muralha em Melhoria sua, ganhe uma ficha de força.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-arquimedes-de-siracusa.webp",
+    "subtype": "Conhecimento – Especialista",
+    "isCapital": false,
+    "activationType": "Fixa",
+    "bottomLeftIcon": null
+  },
+  "melhoria-templo-de-hermes": {
+    "id": "melhoria-templo-de-hermes",
+    "type": "Melhoria",
+    "civilization": "Helênica",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": null,
+    "artist": null,
+    "sourceFiles": [
+      "Slide7.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Templo de Hermes"
+        },
+        "type": "Melhoria",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-templo-de-hermes.webp"
+      }
+    },
+    "name": "Templo de Hermes",
+    "abilityText": "Pague -1 recurso ao comprar uma Estratégia ou Melhoria neste turno.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-templo-de-hermes.webp",
+    "subtype": "Construção – Templo",
+    "isCapital": false,
+    "activationType": "Ativada",
+    "bottomLeftIcon": "saco de moedas"
+  },
+  "melhoria-templo-de-atena": {
+    "id": "melhoria-templo-de-atena",
+    "type": "Melhoria",
+    "civilization": "Helênica",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "\"Atena ou Minerva era considerada a deusa da arquitetura e engenharia na cultura greco-romana.\"",
+    "artist": null,
+    "sourceFiles": [
+      "Slide8.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Templo de Atena"
+        },
+        "type": "Melhoria",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-templo-de-atena.webp"
+      }
+    },
+    "name": "Templo de Atena",
+    "abilityText": "Fase de Compra; Você pode comprar Melhorias do Desterro.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-templo-de-atena.webp",
+    "subtype": "Construção – Templo",
+    "isCapital": false,
+    "activationType": "Fixa",
+    "bottomLeftIcon": "saco de moedas"
+  },
+  "melhoria-templo-de-zeus": {
+    "id": "melhoria-templo-de-zeus",
+    "type": "Melhoria",
+    "civilization": "Helênica",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": null,
+    "artist": null,
+    "sourceFiles": [
+      "Slide9.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Templo de Zeus"
+        },
+        "type": "Melhoria",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-templo-de-zeus.webp"
+      }
+    },
+    "name": "Templo de Zeus",
+    "abilityText": "Toda vez que você for ganhar o ponto de influência Macedônia ao final da Campanha, ganhe 1 ponto extra se você tiver Templo de Zeus baixado em seu território.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-templo-de-zeus.webp",
+    "subtype": "Construção – Templo",
+    "isCapital": false,
+    "activationType": "Fixa",
+    "bottomLeftIcon": "saco de moedas"
+  },
+  "melhoria-economia-helenica": {
+    "id": "melhoria-economia-helenica",
+    "type": "Melhoria",
+    "civilization": "Helênica",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": null,
+    "artist": null,
+    "sourceFiles": [
+      "Slide10.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Economia Helênica"
+        },
+        "type": "Melhoria",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-economia-helenica.webp"
+      }
+    },
+    "name": "Economia Helênica",
+    "abilityText": "Pague -1 recurso ao comprar uma carta macedônica.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-economia-helenica.webp",
+    "subtype": "Comércio – Conhecimento",
+    "isCapital": false,
+    "activationType": "Ativada",
+    "bottomLeftIcon": null
+  },
+  "melhoria-mestre-de-grego": {
+    "id": "melhoria-mestre-de-grego",
+    "type": "Melhoria",
+    "civilization": "Helênica",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "\"O Koiné foi a língua franca do mediterrâneo após as conquistas de Alexandre e perdurou até o fim do Império Romano.\"",
+    "artist": null,
+    "sourceFiles": [
+      "Slide11.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Mestre de Grego"
+        },
+        "type": "Melhoria",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-mestre-de-grego.webp"
+      }
+    },
+    "name": "Mestre de Grego",
+    "abilityText": "Aloque um trabalhador macedônio em uma melhoria elegível de outra civilização tua. Enquanto o trabalhador estiver alocado, aquela Melhoria tem: Na Renovação, saque +1 carta e descarte uma carta.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-mestre-de-grego.webp",
+    "subtype": "Especialista – Conhecimento",
+    "isCapital": false,
+    "activationType": "Ativada",
+    "bottomLeftIcon": null
+  },
+  "melhoria-helenismo": {
+    "id": "melhoria-helenismo",
+    "type": "Melhoria",
+    "civilization": "Helênica",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "O Helenismo expandiu-se pelo mediterrâneo após as conquistas de Alexandre e perdurou até o início do Império Romano.",
+    "artist": null,
+    "sourceFiles": [
+      "Slide12.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Helenismo"
+        },
+        "type": "Melhoria",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-helenismo.webp"
+      }
+    },
+    "name": "Helenismo",
+    "abilityText": "Escolha uma Melhoria alvo em jogo, aquela Melhoria será considerada macedônica na pontuação por influência enquanto \"Helenismo\" permanecer em jogo.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-helenismo.webp",
+    "subtype": "Cultura – Conhecimento",
+    "isCapital": false,
+    "activationType": "Ativada",
+    "bottomLeftIcon": null
+  },
+  "melhoria-arquitetura": {
+    "id": "melhoria-arquitetura",
+    "type": "Melhoria",
+    "civilization": "Helênica",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": null,
+    "artist": null,
+    "sourceFiles": [
+      "Slide13.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Arquitetura"
+        },
+        "type": "Melhoria",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-arquitetura.webp"
+      }
+    },
+    "name": "Arquitetura",
+    "abilityText": "Toda vez que você comprar Melhoria, você pode baixar aquela Melhoria imediatamente em seu Território e ativar e resolver a ação dela se elegível.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-arquitetura.webp",
+    "subtype": "Conhecimento",
+    "isCapital": false,
+    "activationType": "Fixa",
+    "bottomLeftIcon": null
+  },
+  "melhoria-cavalos-da-tessalia": {
+    "id": "melhoria-cavalos-da-tessalia",
+    "type": "Melhoria",
+    "civilization": "Helênica",
+    "cost": 4,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "Os cavalos da Tessália eram considerados os melhores do mundo mediterrâneo durante o Helenismo.",
+    "artist": null,
+    "sourceFiles": [
+      "Slide14.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Cavalos da Tessália"
+        },
+        "type": "Melhoria",
+        "cost": 4,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-cavalos-da-tessalia.webp"
+      }
+    },
+    "name": "Cavalos da Tessália",
+    "abilityText": "Descarte um trabalhador;\nGanhe 2 fichas de recurso roxo.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-cavalos-da-tessalia.webp",
+    "subtype": "Comércio",
+    "isCapital": false,
+    "activationType": "Ativada",
+    "bottomLeftIcon": null
+  },
+  "melhoria-reforma-thureophoroi": {
+    "id": "melhoria-reforma-thureophoroi",
+    "type": "Melhoria",
+    "civilization": "Helênica",
+    "cost": 4,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "\"O domínio hoplita nas batalhas chegara ao fim com a revolução de mobilidade e eficiência dos Thureophoroi\"",
+    "artist": null,
+    "sourceFiles": [
+      "Slide15.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Reforma Thureophoroi"
+        },
+        "type": "Melhoria",
+        "cost": 4,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-reforma-thureophoroi.webp"
+      }
+    },
+    "name": "Reforma Thureophoroi",
+    "abilityText": "Todas as infantarias ligeiras do jogador alvo recebem +1 força e são consideradas \"infantaria média\" durante esta Campanha.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-reforma-thureophoroi.webp",
+    "subtype": "Conhecimento – Evento",
+    "isCapital": false,
+    "activationType": "Ativada",
+    "bottomLeftIcon": null
+  },
+  "melhoria-templo-de-epona": {
+    "id": "melhoria-templo-de-epona",
+    "type": "Melhoria",
+    "civilization": "Celta",
+    "cost": 3,
+    "copies": 2,
+    "keywords": [],
+    "flavorText": "\"A sela não pesa quando a deusa conduz. Os que montam sob sua bênção marcham por menos e conquistam por mais.\"",
+    "artist": null,
+    "sourceFiles": [
+      "Slide18.PNG",
+      "Slide23.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Templo de Epona"
+        },
+        "type": "Melhoria",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-templo-de-epona.webp"
+      }
+    },
+    "name": "Templo de Epona",
+    "abilityText": "Você paga -1 recurso toda vez que comprar combatente do tipo Cavalaria.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-templo-de-epona.webp",
+    "subtype": "Construção – Templo",
+    "isCapital": false,
+    "activationType": "Fixa",
+    "bottomLeftIcon": "saco de moedas"
+  },
+  "melhoria-novo-lar": {
+    "id": "melhoria-novo-lar",
+    "type": "Melhoria",
+    "civilization": "Celta",
+    "cost": 3,
+    "copies": 2,
+    "keywords": [],
+    "flavorText": "Gallia est omnis divisa in partes tres...",
+    "artist": null,
+    "sourceFiles": [
+      "Slide19.PNG",
+      "Slide22.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Novo Lar"
+        },
+        "type": "Melhoria",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-novo-lar.webp"
+      }
+    },
+    "name": "Novo Lar",
+    "abilityText": "Saque duas cartas e descarte duas cartas da sua mão.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-novo-lar.webp",
+    "subtype": "Política – Evento",
+    "isCapital": false,
+    "activationType": "Ativada",
+    "bottomLeftIcon": null
+  },
+  "melhoria-minas-de-hallstatt": {
+    "id": "melhoria-minas-de-hallstatt",
+    "type": "Melhoria",
+    "civilization": "Celta",
+    "cost": 4,
+    "copies": 2,
+    "keywords": [],
+    "flavorText": "O sal era muito precioso no mundo antigo. A mina de Hallstatt é considerada a mais antiga do mundo.",
+    "artist": null,
+    "sourceFiles": [
+      "Slide20.PNG",
+      "Slide21.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Minas de Hallstatt"
+        },
+        "type": "Melhoria",
+        "cost": 4,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-minas-de-hallstatt.webp"
+      }
+    },
+    "name": "Minas de Hallstatt",
+    "abilityText": "Descarte um trabalhador;\nGanhe 2 fichas de recurso verde.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-minas-de-hallstatt.webp",
+    "subtype": "Construção – Comércio",
+    "isCapital": false,
+    "activationType": "Ativada",
+    "bottomLeftIcon": null
+  },
+  "melhoria-metalurgia-do-ferro": {
+    "id": "melhoria-metalurgia-do-ferro",
+    "type": "Melhoria",
+    "civilization": "Celta",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": null,
+    "artist": null,
+    "sourceFiles": [
+      "Slide24.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Metalurgia do Ferro"
+        },
+        "type": "Melhoria",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-metalurgia-do-ferro.webp"
+      }
+    },
+    "name": "Metalurgia do Ferro",
+    "abilityText": "Aloque um trabalhador celta em uma melhoria elegível tua. Enquanto o trabalhador estiver alocado, aquela Melhoria tem: Na Renovação, ganhe uma ficha de força.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-metalurgia-do-ferro.webp",
+    "subtype": "Especialista – Conhecimento",
+    "isCapital": false,
+    "activationType": "Ativada",
+    "bottomLeftIcon": null
+  },
+  "melhoria-templo-de-belenos": {
+    "id": "melhoria-templo-de-belenos",
+    "type": "Melhoria",
+    "civilization": "Celta",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": null,
+    "artist": null,
+    "sourceFiles": [
+      "Slide25.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Templo de Belenos"
+        },
+        "type": "Melhoria",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-templo-de-belenos.webp"
+      }
+    },
+    "name": "Templo de Belenos",
+    "abilityText": "Toda vez que você for ganhar o ponto de influência Celta ao final da Campanha, ganhe 1 ponto extra se você tiver Templo de Belenos baixado em seu território.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-templo-de-belenos.webp",
+    "subtype": "Construção – Templo",
+    "isCapital": false,
+    "activationType": "Fixa",
+    "bottomLeftIcon": "saco de moedas"
+  },
+  "melhoria-santuario-de-toutatis": {
+    "id": "melhoria-santuario-de-toutatis",
+    "type": "Melhoria",
+    "civilization": "Celta",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": null,
+    "artist": null,
+    "sourceFiles": [
+      "Slide26.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Santuário de Toutatis"
+        },
+        "type": "Melhoria",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-santuario-de-toutatis.webp"
+      }
+    },
+    "name": "Santuário de Toutatis",
+    "abilityText": "Destrua um combatente de força x do seu Descanso. Receba x (ícone de ficha de força).",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-santuario-de-toutatis.webp",
+    "subtype": "Construção – Templo",
+    "isCapital": false,
+    "activationType": "Ativada",
+    "bottomLeftIcon": "saco de moedas"
+  },
+  "melhoria-salao-comunal": {
+    "id": "melhoria-salao-comunal",
+    "type": "Melhoria",
+    "civilization": "Celta",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": null,
+    "artist": null,
+    "sourceFiles": [
+      "Slide27.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Salão Comunal"
+        },
+        "type": "Melhoria",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-salao-comunal.webp"
+      }
+    },
+    "name": "Salão Comunal",
+    "abilityText": "Seus trabalhadores Celtas podem defender Melhorias e participar de batalhas em que você seja defensor valendo como força 1. Você não pode colocar fichas de força naqueles trabalhadores.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-salao-comunal.webp",
+    "subtype": "Construção – Cultura",
+    "isCapital": false,
+    "activationType": "Fixa",
+    "bottomLeftIcon": null
+  },
+  "melhoria-economia-celta": {
+    "id": "melhoria-economia-celta",
+    "type": "Melhoria",
+    "civilization": "Celta",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": null,
+    "artist": null,
+    "sourceFiles": [
+      "Slide28.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Economia Celta"
+        },
+        "type": "Melhoria",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-economia-celta.webp"
+      }
+    },
+    "name": "Economia Celta",
+    "abilityText": "Fase de Compra; Pague -1 recurso ao comprar uma carta Celta.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-economia-celta.webp",
+    "subtype": "Comércio",
+    "isCapital": false,
+    "activationType": "Ativada",
+    "bottomLeftIcon": null
+  },
+  "melhoria-helvecios": {
+    "id": "melhoria-helvecios",
+    "type": "Melhoria",
+    "civilization": "Celta",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": null,
+    "artist": null,
+    "sourceFiles": [
+      "Slide29.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Helvécios"
+        },
+        "type": "Melhoria",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-helvecios.webp"
+      }
+    },
+    "name": "Helvécios",
+    "abilityText": "Fase de compra; Você pode destruir uma carta do Mercado e, após isso, comprar uma carta pagando -1 recurso.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-helvecios.webp",
+    "subtype": "Cidade – Tribo",
+    "isCapital": false,
+    "activationType": "Ativada",
+    "bottomLeftIcon": null
+  },
+  "melhoria-sabedoria-druidica": {
+    "id": "melhoria-sabedoria-druidica",
+    "type": "Melhoria",
+    "civilization": "Celta",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": null,
+    "artist": null,
+    "sourceFiles": [
+      "Slide30.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Sabedoria Druídica"
+        },
+        "type": "Melhoria",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-sabedoria-druidica.webp"
+      }
+    },
+    "name": "Sabedoria Druídica",
+    "abilityText": "Toda vez que você comprar carta Celta, você pode, após a compra, buscar um trabalhador celta do seu Descanso e colocá-lo em sua Mão.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-sabedoria-druidica.webp",
+    "subtype": "Conhecimento",
+    "isCapital": false,
+    "activationType": "Fixa",
+    "bottomLeftIcon": "saco de moedas"
+  },
+  "melhoria-terra-arrasada": {
+    "id": "melhoria-terra-arrasada",
+    "type": "Melhoria",
+    "civilization": "Celta",
+    "cost": 2,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": null,
+    "artist": null,
+    "sourceFiles": [
+      "Slide31.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Terra Arrasada"
+        },
+        "type": "Melhoria",
+        "cost": 2,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-terra-arrasada.webp"
+      }
+    },
+    "name": "Terra Arrasada",
+    "abilityText": "Durante a Renovação, melhorias de todos os jogadores não podem gerar fichas de recurso enquanto \"Terra Arrasada\" estiver em jogo.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-terra-arrasada.webp",
+    "subtype": "Conhecimento – Tática",
+    "isCapital": false,
+    "activationType": "Fixa",
+    "bottomLeftIcon": null
+  },
+  "melhoria-rotacao-de-cultura": {
+    "id": "melhoria-rotacao-de-cultura",
+    "type": "Melhoria",
+    "civilization": "Celta",
+    "cost": 4,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": null,
+    "artist": null,
+    "sourceFiles": [
+      "Slide32.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Rotação de Cultura"
+        },
+        "type": "Melhoria",
+        "cost": 4,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-rotacao-de-cultura.webp"
+      }
+    },
+    "name": "Rotação de Cultura",
+    "abilityText": "Fase de Compra; Você pode usar até 2 trabalhadores celtas que estejam no seu Descanso ao comprar neste turno.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-rotacao-de-cultura.webp",
+    "subtype": "Conhecimento",
+    "isCapital": false,
+    "activationType": "Ativada",
+    "bottomLeftIcon": null
+  },
+  "melhoria-cultura-de-la-tene": {
+    "id": "melhoria-cultura-de-la-tene",
+    "type": "Melhoria",
+    "civilization": "Celta",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "Os celtas introduziram a metalurgia do ferro na Europa e deram início à Idade do Ferro no continente.",
+    "artist": null,
+    "sourceFiles": [
+      "Slide33.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Cultura de La Tène"
+        },
+        "type": "Melhoria",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-cultura-de-la-tene.webp"
+      }
+    },
+    "name": "Cultura de La Tène",
+    "abilityText": "Escolha uma Melhoria alvo em jogo; aquela Melhoria será considerada celta na pontuação por influência enquanto \"Cultura de La Tène\" permanecer em jogo.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-cultura-de-la-tene.webp",
+    "subtype": "Cultura",
+    "isCapital": false,
+    "activationType": "Ativada",
+    "bottomLeftIcon": null
+  },
+  "melhoria-templo-de-juno-moneta": {
+    "id": "melhoria-templo-de-juno-moneta",
+    "type": "Melhoria",
+    "civilization": "Latina",
+    "cost": 4,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "\"Até os dias de hoje usamos o termo 'moeda' devido à intensa cunhagem realizada no templo dedicado a Juno no período helenístico\"",
+    "artist": null,
+    "sourceFiles": [
+      "Slide35.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Templo de Juno Moneta"
+        },
+        "type": "Melhoria",
+        "cost": 4,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-templo-de-juno-moneta.webp"
+      }
+    },
+    "name": "Templo de Juno Moneta",
+    "abilityText": "Coloque um recurso vermelho em cada Melhoria de Roma em seu território.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-templo-de-juno-moneta.webp",
+    "subtype": "Construção – Templo",
+    "isCapital": false,
+    "activationType": "Ativada",
+    "bottomLeftIcon": null
+  },
+  "melhoria-fabrica-de-armas": {
+    "id": "melhoria-fabrica-de-armas",
+    "type": "Melhoria",
+    "civilization": "Latina",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": null,
+    "artist": null,
+    "sourceFiles": [
+      "Slide36.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Fábrica de Armas"
+        },
+        "type": "Melhoria",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-fabrica-de-armas.webp"
+      }
+    },
+    "name": "Fábrica de Armas",
+    "abilityText": "Pague -1 recurso ao comprar ficha de força.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-fabrica-de-armas.webp",
+    "subtype": "Construção",
+    "isCapital": false,
+    "activationType": "Fixa",
+    "bottomLeftIcon": null
+  },
+  "melhoria-banhos-publicos": {
+    "id": "melhoria-banhos-publicos",
+    "type": "Melhoria",
+    "civilization": "Latina",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "\"Se queres total apoio em tuas empresas e guerras particulares, nada melhor que os banhos públicos com os mais dignos patrícios.\"",
+    "artist": null,
+    "sourceFiles": [
+      "Slide37.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Banhos Públicos"
+        },
+        "type": "Melhoria",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-banhos-publicos.webp"
+      }
+    },
+    "name": "Banhos Públicos",
+    "abilityText": "Gaste 2 recursos vermelhos, o jogador alvo saca duas cartas.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-banhos-publicos.webp",
+    "subtype": "Construção",
+    "isCapital": false,
+    "activationType": "Ativada",
+    "bottomLeftIcon": null
+  },
+  "melhoria-academia": {
+    "id": "melhoria-academia",
+    "type": "Melhoria",
+    "civilization": "Latina",
+    "cost": 4,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "\"A Academia realizava palestras e discussões sobre filosofia, literatura, música e história.\"",
+    "artist": null,
+    "sourceFiles": [
+      "Slide38.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Academia"
+        },
+        "type": "Melhoria",
+        "cost": 4,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-academia.webp"
+      }
+    },
+    "name": "Academia",
+    "abilityText": "Use a habilidade elegível de uma Melhoria ou Estratégia que esteja no Mercado.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-academia.webp",
+    "subtype": "Construção – Conhecimento",
+    "isCapital": false,
+    "activationType": "Ativada",
+    "bottomLeftIcon": null
+  },
+  "melhoria-marmore-de-luna": {
+    "id": "melhoria-marmore-de-luna",
+    "type": "Melhoria",
+    "civilization": "Latina",
+    "cost": 4,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "É perfeito, é divino! Esculpido em Carrara!",
+    "artist": null,
+    "sourceFiles": [
+      "Slide39.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Mármore de Luna"
+        },
+        "type": "Melhoria",
+        "cost": 4,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-marmore-de-luna.webp"
+      }
+    },
+    "name": "Mármore de Luna",
+    "abilityText": "Descarte um trabalhador;\nGanhe 2 fichas de recurso vermelho.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-marmore-de-luna.webp",
+    "subtype": "Construção – Indestrutível",
+    "isCapital": false,
+    "activationType": "Ativada",
+    "bottomLeftIcon": null
+  },
+  "melhoria-templo-de-esculapio": {
+    "id": "melhoria-templo-de-esculapio",
+    "type": "Melhoria",
+    "civilization": "Latina",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "\"Esculápio ou Asclépio era considerado o deus da Medicina nas culturas romana e grega.\"",
+    "artist": null,
+    "sourceFiles": [
+      "Slide40.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Templo de Esculápio"
+        },
+        "type": "Melhoria",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-templo-de-esculapio.webp"
+      }
+    },
+    "name": "Templo de Esculápio",
+    "abilityText": "Você pode comprar combatentes do Desterro.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-templo-de-esculapio.webp",
+    "subtype": "Construção – Templo",
+    "isCapital": false,
+    "activationType": "Fixa",
+    "bottomLeftIcon": "saco de moedas"
+  },
+  "melhoria-templo-de-marte": {
+    "id": "melhoria-templo-de-marte",
+    "type": "Melhoria",
+    "civilization": "Latina",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": null,
+    "artist": null,
+    "sourceFiles": [
+      "Slide41.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Templo de Marte"
+        },
+        "type": "Melhoria",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-templo-de-marte.webp"
+      }
+    },
+    "name": "Templo de Marte",
+    "abilityText": "Toda vez que você for ganhar o ponto de influência Romana ao final da Campanha, ganhe 1 ponto extra se você tiver Templo de Marte baixado em seu território.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-templo-de-marte.webp",
+    "subtype": "Construção – Templo",
+    "isCapital": false,
+    "activationType": "Fixa",
+    "bottomLeftIcon": "saco de moedas"
+  },
+  "melhoria-argentarii": {
+    "id": "melhoria-argentarii",
+    "type": "Melhoria",
+    "civilization": "Latina",
+    "cost": null,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": null,
+    "artist": null,
+    "sourceFiles": [
+      "Slide42.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Argentarii"
+        },
+        "type": "Melhoria",
+        "cost": null,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-argentarii.webp"
+      }
+    },
+    "name": "Argentarii",
+    "abilityText": "Você deve colocar uma ficha de recurso vermelha sua sobre uma carta qualquer do Mercado no início de toda Campanha. Do contrário, destrua Argentarii. Aquela carta custará +2 recursos ao ser comprada por outros jogadores. O comprador leva a ficha de recurso sobre aquela carta.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-argentarii.webp",
+    "subtype": "Comércio – Especialista",
+    "isCapital": false,
+    "activationType": "Fixa",
+    "bottomLeftIcon": null
+  },
+  "melhoria-pomerium": {
+    "id": "melhoria-pomerium",
+    "type": "Melhoria",
+    "civilization": "Latina",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "\"Pomerium ou post moerium (após o muro), era uma fronteira sagrada que circundava Roma e marcava seus primórdios míticos. Ninguém, nem mesmo os cônsules, poderia entrar armado neste local sagrado.\"",
+    "artist": null,
+    "sourceFiles": [
+      "Slide43.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Pomerium"
+        },
+        "type": "Melhoria",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-pomerium.webp"
+      }
+    },
+    "name": "Pomerium",
+    "abilityText": "Suas Melhorias em jogo não podem ser atacadas por combatentes romanos.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-pomerium.webp",
+    "subtype": "Lugar Sagrado",
+    "isCapital": false,
+    "activationType": "Fixa",
+    "bottomLeftIcon": null
+  },
+  "melhoria-collegia-fraborum": {
+    "id": "melhoria-collegia-fraborum",
+    "type": "Melhoria",
+    "civilization": "Latina",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "Grupo de construtores, talhadores, artistas, carpinteiros que iam atrás dos exércitos romanos reconstruindo as cidades destruídas na guerra.",
+    "artist": null,
+    "sourceFiles": [
+      "Slide44.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Collegia Fraborum"
+        },
+        "type": "Melhoria",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-collegia-fraborum.webp"
+      }
+    },
+    "name": "Collegia Fraborum",
+    "abilityText": "Troque uma Melhoria sua em jogo (descarte recursos e trabalhadores que estejam anexados nela) por outra do Mercado de custo igual ou menor e coloque-a em sua Mão.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-collegia-fraborum.webp",
+    "subtype": "Conhecimento",
+    "isCapital": false,
+    "activationType": "Ativada",
+    "bottomLeftIcon": null
+  },
+  "melhoria-economia-romana": {
+    "id": "melhoria-economia-romana",
+    "type": "Melhoria",
+    "civilization": "Latina",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": null,
+    "artist": null,
+    "sourceFiles": [
+      "Slide45.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Economia Romana"
+        },
+        "type": "Melhoria",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-economia-romana.webp"
+      }
+    },
+    "name": "Economia Romana",
+    "abilityText": "Fase de Compra; Pague -1 recurso ao comprar uma carta romana.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-economia-romana.webp",
+    "subtype": "Comércio",
+    "isCapital": false,
+    "activationType": "Ativada",
+    "bottomLeftIcon": null
+  },
+  "melhoria-estado-cliente": {
+    "id": "melhoria-estado-cliente",
+    "type": "Melhoria",
+    "civilization": "Latina",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "\"Oh dignos patrícios! Não seria Roma amiga de todos os povos e todos os povos amigos de Roma?\"",
+    "artist": null,
+    "sourceFiles": [
+      "Slide46.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Estado Cliente"
+        },
+        "type": "Melhoria",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-estado-cliente.webp"
+      }
+    },
+    "name": "Estado Cliente",
+    "abilityText": "Escolha uma Melhoria alvo em jogo, aquela Melhoria será considerada romana na pontuação por influência enquanto \"Estado Cliente\" permanecer em jogo.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-estado-cliente.webp",
+    "subtype": "Política",
+    "isCapital": false,
+    "activationType": "Ativada",
+    "bottomLeftIcon": "saco de moedas"
+  },
+  "melhoria-mare-nostrum": {
+    "id": "melhoria-mare-nostrum",
+    "type": "Melhoria",
+    "civilization": "Latina",
+    "cost": 3,
+    "copies": 2,
+    "keywords": [],
+    "flavorText": null,
+    "artist": null,
+    "sourceFiles": [
+      "Slide47.PNG",
+      "Slide48.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Mare Nostrum"
+        },
+        "type": "Melhoria",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-mare-nostrum.webp"
+      }
+    },
+    "name": "Mare Nostrum",
+    "abilityText": "Fase de Compra; Você pode fazer duas ações de compra seguidamente. Seu turno termina imediatamente após a segunda compra.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-mare-nostrum.webp",
+    "subtype": "Comércio",
+    "isCapital": false,
+    "activationType": "Fixa",
+    "bottomLeftIcon": "saco de moedas"
+  },
+  "melhoria-castrum": {
+    "id": "melhoria-castrum",
+    "type": "Melhoria",
+    "civilization": "Latina",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": null,
+    "artist": null,
+    "sourceFiles": [
+      "Slide49.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Castrum"
+        },
+        "type": "Melhoria",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-castrum.webp"
+      }
+    },
+    "name": "Castrum",
+    "abilityText": "Suas Melhorias romanas que geram recursos podem gerar fichas de força ao invés de fichas de recursos nesta Fase de Renovação.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-castrum.webp",
+    "subtype": "Construção",
+    "isCapital": false,
+    "activationType": "Fixa",
+    "bottomLeftIcon": null
+  },
+  "melhoria-de-architectura": {
+    "id": "melhoria-de-architectura",
+    "type": "Melhoria",
+    "civilization": "Latina",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": null,
+    "artist": null,
+    "sourceFiles": [
+      "Slide50.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "De Architectura"
+        },
+        "type": "Melhoria",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-de-architectura.webp"
+      }
+    },
+    "name": "De Architectura",
+    "abilityText": "Aloque um trabalhador romano em uma melhoria elegível tua. Enquanto o trabalhador estiver alocado, aquela Melhoria tem: Na Renovação, construa uma muralha em uma Melhoria elegível.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-de-architectura.webp",
+    "subtype": "Especialista – Conhecimento",
+    "isCapital": false,
+    "activationType": "Ativada",
+    "bottomLeftIcon": null
+  },
+  "melhoria-aristocracia": {
+    "id": "melhoria-aristocracia",
+    "type": "Melhoria",
+    "civilization": "Latina",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "Os Patrícios alegavam descender dos fundadores de Roma e detinha muitos privilégios como a isenção de impostos e acesso aos mais altos cargos militares e políticos.",
+    "artist": null,
+    "sourceFiles": [
+      "Slide51.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Aristocracia"
+        },
+        "type": "Melhoria",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-aristocracia.webp"
+      }
+    },
+    "name": "Aristocracia",
+    "abilityText": "Outros jogadores devem gastar 1 recurso para cada combatente \"pesado\" que queiram colocar em jogo nesta Campanha.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-aristocracia.webp",
+    "subtype": "Política",
+    "isCapital": false,
+    "activationType": "Fixa",
+    "bottomLeftIcon": "saco de moedas"
+  },
+  "melhoria-farol": {
+    "id": "melhoria-farol",
+    "type": "Melhoria",
+    "civilization": "Fenícia",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": null,
+    "artist": null,
+    "sourceFiles": [
+      "Slide53.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Farol"
+        },
+        "type": "Melhoria",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-farol.webp"
+      }
+    },
+    "name": "Farol",
+    "abilityText": "Após a Fase de assalto, saque uma carta para cada Melhoria sua que tiver sido assaltada.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-farol.webp",
+    "subtype": "Construção",
+    "isCapital": false,
+    "activationType": "Fixa",
+    "bottomLeftIcon": null
+  },
+  "melhoria-navegadores-de-hanno": {
+    "id": "melhoria-navegadores-de-hanno",
+    "type": "Melhoria",
+    "civilization": "Fenícia",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "\"Os gregos contaram lendas. Nós cartografamos o mundo material e tangível.\"",
+    "artist": null,
+    "sourceFiles": [
+      "Slide54.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Navegadores de Hanno"
+        },
+        "type": "Melhoria",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-navegadores-de-hanno.webp"
+      }
+    },
+    "name": "Navegadores de Hanno",
+    "abilityText": "Fase de compra; Compre uma carta neutra do tipo Estratégia ou Melhoria sem pagar seu custo.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-navegadores-de-hanno.webp",
+    "subtype": "Comércio – Especialista",
+    "isCapital": false,
+    "activationType": "Ativada",
+    "bottomLeftIcon": "saco de moedas"
+  },
+  "melhoria-banqueiros-de-cartago": {
+    "id": "melhoria-banqueiros-de-cartago",
+    "type": "Melhoria",
+    "civilization": "Fenícia",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "\"Não te preocupes, oh filho de Melcarte! Pague depois...\"",
+    "artist": null,
+    "sourceFiles": [
+      "Slide55.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Banqueiros de Cartago"
+        },
+        "type": "Melhoria",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-banqueiros-de-cartago.webp"
+      }
+    },
+    "name": "Banqueiros de Cartago",
+    "abilityText": "Você pode pagar -1 recurso ao comprar. Para cada carta comprada desta maneira, coloque uma carta de trabalhador de seu Descanso no topo de seu Império.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-banqueiros-de-cartago.webp",
+    "subtype": "Comércio – Especialista",
+    "isCapital": false,
+    "activationType": "Fixa",
+    "bottomLeftIcon": "saco de moedas"
+  },
+  "melhoria-banqueiros-punicos": {
+    "id": "melhoria-banqueiros-punicos",
+    "type": "Melhoria",
+    "civilization": "Fenícia",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "\"Governada por mercadores ricos e influentes, Cartago não se preocupava com exércitos nacionais, pois um homem mais valia fazendo dinheiro do que empunhando uma espada.\"",
+    "artist": null,
+    "sourceFiles": [
+      "Slide56.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Banqueiros Púnicos"
+        },
+        "type": "Melhoria",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-banqueiros-punicos.webp"
+      }
+    },
+    "name": "Banqueiros Púnicos",
+    "abilityText": "Aloque um trabalhador cartaginês em uma melhoria elegível tua. Enquanto o trabalhador estiver alocado, aquela Melhoria tem: Na Renovação, ganhe uma ficha de ouro.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-banqueiros-punicos.webp",
+    "subtype": "Especialista – Comércio",
+    "isCapital": false,
+    "activationType": "Ativada",
+    "bottomLeftIcon": null
+  },
+  "melhoria-alfabeto-fenicio": {
+    "id": "melhoria-alfabeto-fenicio",
+    "type": "Melhoria",
+    "civilization": "Fenícia",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": null,
+    "artist": null,
+    "sourceFiles": [
+      "Slide57.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Alfabeto Fenício"
+        },
+        "type": "Melhoria",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-alfabeto-fenicio.webp"
+      }
+    },
+    "name": "Alfabeto Fenício",
+    "abilityText": "Escolha uma Melhoria alvo em jogo; aquela Melhoria será considerada cartaginesa na pontuação por influência enquanto \"Alfabeto Fenício\" permanecer em jogo.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-alfabeto-fenicio.webp",
+    "subtype": "Cultura – Comércio",
+    "isCapital": false,
+    "activationType": "Ativada",
+    "bottomLeftIcon": null
+  },
+  "melhoria-templo-de-melcarte": {
+    "id": "melhoria-templo-de-melcarte",
+    "type": "Melhoria",
+    "civilization": "Fenícia",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": null,
+    "artist": null,
+    "sourceFiles": [
+      "Slide58.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Templo de Melcarte"
+        },
+        "type": "Melhoria",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-templo-de-melcarte.webp"
+      }
+    },
+    "name": "Templo de Melcarte",
+    "abilityText": "Toda vez que você for ganhar o ponto de influência Cartaginesa ao final da Campanha, ganhe 1 ponto extra se você tiver Templo de Melcarte baixado em seu território.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-templo-de-melcarte.webp",
+    "subtype": "Construção – Templo",
+    "isCapital": false,
+    "activationType": "Fixa",
+    "bottomLeftIcon": "saco de moedas"
+  },
+  "melhoria-templo-de-tanit": {
+    "id": "melhoria-templo-de-tanit",
+    "type": "Melhoria",
+    "civilization": "Fenícia",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": null,
+    "artist": null,
+    "sourceFiles": [
+      "Slide59.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Templo de Tanit"
+        },
+        "type": "Melhoria",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-templo-de-tanit.webp"
+      }
+    },
+    "name": "Templo de Tanit",
+    "abilityText": "Uma vez por Campanha, quando um assalto bem sucedido fosse destruir uma Melhoria sua, destrua uma carta de sua mão ao invés daquela Melhoria.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-templo-de-tanit.webp",
+    "subtype": "Construção – Templo",
+    "isCapital": false,
+    "activationType": "Fixa",
+    "bottomLeftIcon": "saco de moedas"
+  },
+  "melhoria-economia-cartaginesa": {
+    "id": "melhoria-economia-cartaginesa",
+    "type": "Melhoria",
+    "civilization": "Fenícia",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": null,
+    "artist": null,
+    "sourceFiles": [
+      "Slide60.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Economia Cartaginesa"
+        },
+        "type": "Melhoria",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-economia-cartaginesa.webp"
+      }
+    },
+    "name": "Economia Cartaginesa",
+    "abilityText": "Pague -1 recurso ao comprar uma carta cartaginesa.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-economia-cartaginesa.webp",
+    "subtype": "Comércio",
+    "isCapital": false,
+    "activationType": "Ativada",
+    "bottomLeftIcon": null
+  },
+  "melhoria-tinturaria-de-murex": {
+    "id": "melhoria-tinturaria-de-murex",
+    "type": "Melhoria",
+    "civilization": "Fenícia",
+    "cost": 4,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "\"E a cor púrpura, mais valiosa que o ouro, das vestes dos reis e maiores magistrados do Mediterrâneo, era produzida pelos fenícios através de um caramujo marinho chamado murex.\"",
+    "artist": null,
+    "sourceFiles": [
+      "Slide61.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Tinturaria de Murex"
+        },
+        "type": "Melhoria",
+        "cost": 4,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-tinturaria-de-murex.webp"
+      }
+    },
+    "name": "Tinturaria de Murex",
+    "abilityText": "Descarte um trabalhador;\nGanhe 2 fichas de recurso azul.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-tinturaria-de-murex.webp",
+    "subtype": "Construção – Indestrutível",
+    "isCapital": false,
+    "activationType": "Ativada",
+    "bottomLeftIcon": null
+  },
+  "melhoria-manufatura": {
+    "id": "melhoria-manufatura",
+    "type": "Melhoria",
+    "civilization": "Fenícia",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "\"Mais cobiçados que o próprio ouro, eram tecidos coloridos, como a famosa púrpura de Tiro, o vidro e a cerâmica.\"",
+    "artist": null,
+    "sourceFiles": [
+      "Slide62.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Manufatura"
+        },
+        "type": "Melhoria",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-manufatura.webp"
+      }
+    },
+    "name": "Manufatura",
+    "abilityText": "Pague 2/4/6/8 recursos;\nGanhe 1/2/3/4 fichas de ouro.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-manufatura.webp",
+    "subtype": "Construção – Comércio",
+    "isCapital": false,
+    "activationType": "Ativada",
+    "bottomLeftIcon": null
+  },
+  "melhoria-sicilia": {
+    "id": "melhoria-sicilia",
+    "type": "Melhoria",
+    "civilization": "Fenícia",
+    "cost": 4,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "A Sicília era considera o celeiro do Mediterrâneo Ocidental, sendo disputada por gregos, Romanos e Cartagineses. A civilização que a controlasse não passaria fome.",
+    "artist": null,
+    "sourceFiles": [
+      "Slide63.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Sicília"
+        },
+        "type": "Melhoria",
+        "cost": 4,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-sicilia.webp"
+      }
+    },
+    "name": "Sicília",
+    "abilityText": "Renovação; Seus trabalhadores alocados geram fichas de recurso em dobro.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-sicilia.webp",
+    "subtype": "Construção – Cidade",
+    "isCapital": false,
+    "activationType": "Fixa",
+    "bottomLeftIcon": null
+  },
+  "melhoria-rota-da-purpura": {
+    "id": "melhoria-rota-da-purpura",
+    "type": "Melhoria",
+    "civilization": "Fenícia",
+    "cost": 3,
+    "copies": 2,
+    "keywords": [],
+    "flavorText": "\"Mais cobiçados que o próprio ouro, eram tecidos coloridos, como a famosa púrpura de Tiro, o vidro e a cerâmica.\"",
+    "artist": null,
+    "sourceFiles": [
+      "Slide64.PNG",
+      "Slide65.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Rota da Púrpura"
+        },
+        "type": "Melhoria",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-rota-da-purpura.webp"
+      }
+    },
+    "name": "Rota da Púrpura",
+    "abilityText": "Toda vez que outros jogadores usarem recursos azuis ao comprar, ganhe um recurso da cor da carta comprada.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-rota-da-purpura.webp",
+    "subtype": "Construção – Comércio",
+    "isCapital": false,
+    "activationType": "Fixa",
+    "bottomLeftIcon": null
+  },
+  "melhoria-hano-o-navegador": {
+    "id": "melhoria-hano-o-navegador",
+    "type": "Melhoria",
+    "civilization": "Fenícia",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "Homenagem ao jogador Alan Roza",
+    "artist": null,
+    "sourceFiles": [
+      "Slide66.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Hano, o Navegador"
+        },
+        "type": "Melhoria",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-hano-o-navegador.webp"
+      }
+    },
+    "name": "Hano, o Navegador",
+    "abilityText": "Toda vez você jogar duas estratégias em seguida, ganhe 2 fichas douradas.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-hano-o-navegador.webp",
+    "subtype": "General – Especialista",
+    "isCapital": false,
+    "activationType": "Fixa",
+    "bottomLeftIcon": null
+  },
+  "melhoria-grandes-silos": {
+    "id": "melhoria-grandes-silos",
+    "type": "Melhoria",
+    "civilization": "Fenícia",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "\"Por Melcarte! Vá em paz, oh Sufete! Juro que vossas mercadorias estarão seguras para o carregamento dos próximos navios\"",
+    "artist": null,
+    "sourceFiles": [
+      "Slide67.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Grandes Silos"
+        },
+        "type": "Melhoria",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-grandes-silos.webp"
+      }
+    },
+    "name": "Grandes Silos",
+    "abilityText": "Anexe até 2 cartas viradas para baixo sob esta Melhoria. Você pode colocá-las em sua mão na próxima Renovação quando sacar cartas de seu Império. Se esta Melhoria for saqueada, aquelas cartas são destruídas.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-grandes-silos.webp",
+    "subtype": "Construção",
+    "isCapital": false,
+    "activationType": "Fixa",
+    "bottomLeftIcon": null
+  },
+  "melhoria-caravana-do-deserto": {
+    "id": "melhoria-caravana-do-deserto",
+    "type": "Melhoria",
+    "civilization": "Fenícia",
+    "cost": 4,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": null,
+    "artist": null,
+    "sourceFiles": [
+      "Slide68.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Caravana do Deserto"
+        },
+        "type": "Melhoria",
+        "cost": 4,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-caravana-do-deserto.webp"
+      }
+    },
+    "name": "Caravana do Deserto",
+    "abilityText": "Descarte fichas de recurso azul que estejam sobre esta carta. Para cada ficha de recurso descartada desta maneira, saque uma carta.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-caravana-do-deserto.webp",
+    "subtype": "Comércio",
+    "isCapital": false,
+    "activationType": "Ativada",
+    "bottomLeftIcon": null
+  },
+  "melhoria-mercadores-punicos": {
+    "id": "melhoria-mercadores-punicos",
+    "type": "Melhoria",
+    "civilization": "Fenícia",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "\"Os púnicos faziam comércio desde a África Saariana até os confins da Bretanha.\"",
+    "artist": null,
+    "sourceFiles": [
+      "Slide69.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Mercadores Púnicos"
+        },
+        "type": "Melhoria",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-mercadores-punicos.webp"
+      }
+    },
+    "name": "Mercadores Púnicos",
+    "abilityText": "Coloque uma ficha tua de recurso azul em uma Melhoria de outro jogador. Coloque duas fichas de recurso sobre Mercadores Púnicos da cor daquela Melhoria.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-mercadores-punicos.webp",
+    "subtype": "Comércio – Especialista",
+    "isCapital": false,
+    "activationType": "Ativada",
+    "bottomLeftIcon": null
+  },
+  "melhoria-comercio-maritimo": {
+    "id": "melhoria-comercio-maritimo",
+    "type": "Melhoria",
+    "civilization": "Fenícia",
+    "cost": 4,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": "Por Melcarte! Trago tantas especiarias de terras tão distantes, oh Sufete!, que teus súditos lhe farão oferendas como se fosses um deus!",
+    "artist": null,
+    "sourceFiles": [
+      "Slide70.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Comércio Marítimo"
+        },
+        "type": "Melhoria",
+        "cost": 4,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-comercio-maritimo.webp"
+      }
+    },
+    "name": "Comércio Marítimo",
+    "abilityText": "Saque duas cartas.\nOutro jogador saca uma carta do Império dele.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-comercio-maritimo.webp",
+    "subtype": "Comércio",
+    "isCapital": false,
+    "activationType": "Ativada",
+    "bottomLeftIcon": null
+  },
+  "melhoria-porto-de-cartago": {
+    "id": "melhoria-porto-de-cartago",
+    "type": "Melhoria",
+    "civilization": "Fenícia",
+    "cost": 4,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": null,
+    "artist": null,
+    "sourceFiles": [
+      "Slide71.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Porto de Cartago"
+        },
+        "type": "Melhoria",
+        "cost": 4,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-porto-de-cartago.webp"
+      }
+    },
+    "name": "Porto de Cartago",
+    "abilityText": "Fichas de recurso são consideradas fichas de ouro enquanto estiverem sobre Porto de Cartago. Você pode usar aquelas fichas como ouro para realizar suas ações.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-porto-de-cartago.webp",
+    "subtype": "Construção – Comércio",
+    "isCapital": false,
+    "activationType": "Fixa",
+    "bottomLeftIcon": null
+  },
+  "melhoria-quartel-militar": {
+    "id": "melhoria-quartel-militar",
+    "type": "Melhoria",
+    "civilization": "Neutra",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": null,
+    "artist": null,
+    "sourceFiles": [
+      "Slide72.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Quartel Militar"
+        },
+        "type": "Melhoria",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-quartel-militar.webp"
+      }
+    },
+    "name": "Quartel Militar",
+    "abilityText": "Você paga -1 recurso toda vez que comprar combatente do tipo infantaria média/pesada.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-quartel-militar.webp",
+    "subtype": "Construção",
+    "isCapital": false,
+    "activationType": "Fixa",
+    "bottomLeftIcon": null
+  },
+  "melhoria-estabulos": {
+    "id": "melhoria-estabulos",
+    "type": "Melhoria",
+    "civilization": "Neutra",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": null,
+    "artist": null,
+    "sourceFiles": [
+      "Slide73.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Estábulos"
+        },
+        "type": "Melhoria",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-estabulos.webp"
+      }
+    },
+    "name": "Estábulos",
+    "abilityText": "Você paga -1 recurso toda vez que comprar combatente do tipo cavalaria.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-estabulos.webp",
+    "subtype": "Construção",
+    "isCapital": false,
+    "activationType": "Fixa",
+    "bottomLeftIcon": null
+  },
+  "melhoria-minas-de-ouro": {
+    "id": "melhoria-minas-de-ouro",
+    "type": "Melhoria",
+    "civilization": "Neutra",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": null,
+    "artist": null,
+    "sourceFiles": [
+      "Slide74.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Minas de Ouro"
+        },
+        "type": "Melhoria",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-minas-de-ouro.webp"
+      }
+    },
+    "name": "Minas de Ouro",
+    "abilityText": "Descarte um trabalhador.\n\nGanhe uma ficha de recurso dourada.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-minas-de-ouro.webp",
+    "subtype": "Construção – Indestrutível",
+    "isCapital": false,
+    "activationType": "Fixa",
+    "bottomLeftIcon": null
+  },
+  "melhoria-campo-de-tiro": {
+    "id": "melhoria-campo-de-tiro",
+    "type": "Melhoria",
+    "civilization": "Neutra",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": null,
+    "artist": null,
+    "sourceFiles": [
+      "Slide75.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Campo de Tiro"
+        },
+        "type": "Melhoria",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-campo-de-tiro.webp"
+      }
+    },
+    "name": "Campo de Tiro",
+    "abilityText": "Você paga -1 recurso toda vez que comprar combatentes do tipo atirador.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-campo-de-tiro.webp",
+    "subtype": "Construção",
+    "isCapital": false,
+    "activationType": "Fixa",
+    "bottomLeftIcon": null
+  },
+  "melhoria-sentinelas-da-fortaleza": {
+    "id": "melhoria-sentinelas-da-fortaleza",
+    "type": "Melhoria",
+    "civilization": "Neutra",
+    "cost": 4,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": null,
+    "artist": null,
+    "sourceFiles": [
+      "Slide76.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Sentinelas da Fortaleza"
+        },
+        "type": "Melhoria",
+        "cost": 4,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-sentinelas-da-fortaleza.webp"
+      }
+    },
+    "name": "Sentinelas da Fortaleza",
+    "abilityText": "Quando outros jogadores forem assaltar seu Território, eles devem assaltar Sentinelas da Fortaleza primeiro antes de assaltar outras Melhorias.\nO assalto não precisa ser bem sucedido.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-sentinelas-da-fortaleza.webp",
+    "subtype": "Construção",
+    "isCapital": false,
+    "activationType": "Fixa",
+    "bottomLeftIcon": null
+  },
+  "melhoria-torre-de-vigia": {
+    "id": "melhoria-torre-de-vigia",
+    "type": "Melhoria",
+    "civilization": "Neutra",
+    "cost": 3,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": null,
+    "artist": null,
+    "sourceFiles": [
+      "Slide77.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Torre de Vigia"
+        },
+        "type": "Melhoria",
+        "cost": 3,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-torre-de-vigia.webp"
+      }
+    },
+    "name": "Torre de Vigia",
+    "abilityText": "Quando outros jogadores forem assaltar tuas Melhorias, aqueles jogadores devem assaltá-las com as cartas reveladas.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-torre-de-vigia.webp",
+    "subtype": "Construção",
+    "isCapital": false,
+    "activationType": "Fixa",
+    "bottomLeftIcon": null
+  },
+  "melhoria-queda-populacional": {
+    "id": "melhoria-queda-populacional",
+    "type": "Melhoria",
+    "civilization": "Neutra",
+    "cost": 2,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": null,
+    "artist": null,
+    "sourceFiles": [
+      "Slide78.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Queda Populacional"
+        },
+        "type": "Melhoria",
+        "cost": 2,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-queda-populacional.webp"
+      }
+    },
+    "name": "Queda Populacional",
+    "abilityText": "Todos os jogadores devem pagar +1 recurso ao comprarem combatentes.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-queda-populacional.webp",
+    "subtype": "Política",
+    "isCapital": false,
+    "activationType": "Fixa",
+    "bottomLeftIcon": null
+  },
+  "melhoria-templo-do-deus-inominado": {
+    "id": "melhoria-templo-do-deus-inominado",
+    "type": "Melhoria",
+    "civilization": "Neutra",
+    "cost": 2,
+    "copies": 1,
+    "keywords": [],
+    "flavorText": null,
+    "artist": null,
+    "sourceFiles": [
+      "Slide79.PNG"
+    ],
+    "face": {
+      "front": {
+        "name": {
+          "name": "Templo do Deus Inominado"
+        },
+        "type": "Melhoria",
+        "cost": 2,
+        "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-templo-do-deus-inominado.webp"
+      }
+    },
+    "name": "Templo do Deus Inominado",
+    "abilityText": "Você não precisa pagar o soldo do combatente tipo mercenário.",
+    "image": "https://coresdaguerra.example.com/assets/cards/web/melhoria-templo-do-deus-inominado.webp",
+    "subtype": "Construção – Templo",
+    "isCapital": false,
+    "activationType": "Fixa",
+    "bottomLeftIcon": null
+  }
+}

@@ -1,0 +1,3732 @@
+[
+  {
+    "id": "combatente-companheiros",
+    "sourceFile": "Slide1.PNG",
+    "name": "COMPANHEIROS",
+    "type": "Combatente",
+    "civilization": "Helênica",
+    "cost": 6,
+    "strength": 3,
+    "weightClass": "Pesado",
+    "isCavalry": true,
+    "role": null,
+    "abilityText": "[LANCEAR]\n[CARGA]\n[ELITE]\n[CONSAGRADA]",
+    "keywords": [
+      "LANCEAR",
+      "CARGA",
+      "ELITE",
+      "CONSAGRADA"
+    ],
+    "flavorText": "Os \"Companheiros, ou Heitaroi, eram a elite do exército macedônico e acompanhavam o próprio rei em batalha.",
+    "artist": "Felipe Malini",
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide1.PNG"
+    ]
+  },
+  {
+    "id": "combatente-cavalaria-tessalia",
+    "sourceFile": "Slide2.PNG",
+    "name": "CAVALARIA TESSALIA",
+    "type": "Combatente",
+    "civilization": "Helênica",
+    "cost": 5,
+    "strength": 3,
+    "weightClass": "Pesado",
+    "isCavalry": true,
+    "role": null,
+    "abilityText": "[CARGA 2] descarte um combatente alvo de até força 2 (impressa)",
+    "keywords": [
+      "CARGA 2"
+    ],
+    "flavorText": "Os cavalos da Tessalia eram os melhores do mundo conhecido e seus cavaleiros só perdiam para a poderosa cavalaria Heitaroi.",
+    "artist": "Iaggo Piffero",
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide2.PNG"
+    ]
+  },
+  {
+    "id": "combatente-sarisophoroi",
+    "sourceFile": "Slide3.PNG",
+    "name": "SARISOPHOROI",
+    "type": "Combatente",
+    "civilization": "Helênica",
+    "cost": 3,
+    "strength": 1,
+    "weightClass": "Ligeiro",
+    "isCavalry": true,
+    "role": null,
+    "abilityText": "[LANCEAR]",
+    "keywords": [
+      "LANCEAR"
+    ],
+    "flavorText": "Cavalaria ligeira com muitas funções no exército macedônico.",
+    "artist": null,
+    "isDraft": false,
+    "copies": 2,
+    "sourceFiles": [
+      "Slide3.PNG",
+      "Slide4.PNG"
+    ]
+  },
+  {
+    "id": "combatente-prodomoi",
+    "sourceFile": "Slide6.PNG",
+    "name": "PRODOMOI",
+    "type": "Combatente",
+    "civilization": "Helênica",
+    "cost": 3,
+    "strength": 1,
+    "weightClass": "Ligeiro",
+    "isCavalry": true,
+    "role": "Atirador",
+    "abilityText": "[ATIRAR]\n[FORRAGEAR]",
+    "keywords": [
+      "ATIRAR",
+      "FORRAGEAR"
+    ],
+    "flavorText": "Cavalaria ligeira com muitas funções no exército macedônico.",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide6.PNG"
+    ]
+  },
+  {
+    "id": "combatente-escudos-de-prata",
+    "sourceFile": "Slide7.PNG",
+    "name": "ESCUDOS DE PRATA",
+    "type": "Combatente",
+    "civilization": "Helênica",
+    "cost": 5,
+    "strength": 3,
+    "weightClass": "Pesado",
+    "isCavalry": false,
+    "role": "Lanceiro",
+    "abilityText": "[LANCEAR] a cavalaria alvo recebe -1 de força.\n[FALANGE] recebe +1 força quando em formação.",
+    "keywords": [
+      "LANCEAR",
+      "FALANGE"
+    ],
+    "flavorText": "Esses veteranos eram escolhidos dentre os melhores Escudos de bronze, sendo uma tropa de elite formidável no campo de batalha.",
+    "artist": "Renato Rosart",
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide7.PNG"
+    ]
+  },
+  {
+    "id": "combatente-escudos-de-bronze",
+    "sourceFile": "Slide8.PNG",
+    "name": "ESCUDOS DE BRONZE",
+    "type": "Combatente",
+    "civilization": "Helênica",
+    "cost": 4,
+    "strength": 2,
+    "weightClass": "Pesado",
+    "isCavalry": false,
+    "role": "Lanceiro",
+    "abilityText": "[LANCEAR] a cavalaria alvo recebe -1 de força.\n[FALANGE] recebe +1 força quando em formação.",
+    "keywords": [
+      "LANCEAR",
+      "FALANGE"
+    ],
+    "flavorText": "Criada e aprimorada por Felipe II, a falange macedônica revolucionou os campos de batalha do mundo antigo. Seus soldados usavam a sarissa, lança de 6 metros de comprimento.",
+    "artist": "Renato Rosart",
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide8.PNG"
+    ]
+  },
+  {
+    "id": "combatente-hipaspista",
+    "sourceFile": "Slide9.PNG",
+    "name": "HIPASPISTA",
+    "type": "Combatente",
+    "civilization": "Helênica",
+    "cost": 4,
+    "strength": 2,
+    "weightClass": "Médio",
+    "isCavalry": false,
+    "role": "Espachim",
+    "abilityText": "[INVESTIDA]\n[REAÇÃO]: anula a habilidade [carga] do combatente ativo.",
+    "keywords": [
+      "INVESTIDA",
+      "REAÇÃO"
+    ],
+    "flavorText": "Escolhidos dentre os melhores combatentes macedônicos, os Hipaspistas desempenhavam vários papéis táticos no campo de batalha. Atuando até como infantaria ligeira, se necessário.",
+    "artist": "Renato Rosart",
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide9.PNG"
+    ]
+  },
+  {
+    "id": "combatente-thureophoroi",
+    "sourceFile": "Slide10.PNG",
+    "name": "THUREOPHOROI",
+    "type": "Combatente",
+    "civilization": "Helênica",
+    "cost": 3,
+    "strength": 1,
+    "weightClass": "Ligeiro",
+    "isCavalry": false,
+    "role": "Espachim",
+    "abilityText": "[INVESTIDA]",
+    "keywords": [
+      "INVESTIDA"
+    ],
+    "flavorText": "Tropas flexíveis, aptas a escaramuças e também capazes de manter formação em combate se necessário.",
+    "artist": "Inácio Alba",
+    "isDraft": false,
+    "copies": 2,
+    "sourceFiles": [
+      "Slide10.PNG",
+      "Slide11.PNG"
+    ]
+  },
+  {
+    "id": "combatente-arqueiro-cretense",
+    "sourceFile": "Slide12.PNG",
+    "name": "ARQUEIRO CRETENSE",
+    "type": "Combatente",
+    "civilization": "Helênica",
+    "cost": 3,
+    "strength": 1,
+    "weightClass": "Ligeiro",
+    "isCavalry": false,
+    "role": "Atirador",
+    "abilityText": "[ATIRAR]\n[REAÇÃO] : Anule a habilidade [atirar] ou [investida] do combatente ativo.\n[ASSALTANTE]",
+    "keywords": [
+      "ATIRAR",
+      "REAÇÃO",
+      "ASSALTANTE"
+    ],
+    "flavorText": "Os melhores arqueiros do mundo antigo.",
+    "artist": "Renato Rosart",
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide12.PNG"
+    ]
+  },
+  {
+    "id": "combatente-akontistai",
+    "sourceFile": "Slide13.PNG",
+    "name": "AKONTISTAI",
+    "type": "Combatente",
+    "civilization": "Helênica",
+    "cost": 2,
+    "strength": 1,
+    "weightClass": "Ligeiro",
+    "isCavalry": false,
+    "role": "Atirador",
+    "abilityText": "[ATIRAR]\n[REAÇÃO]: Anule a habilidade [atirar] ou [investida] do combatente ativo.",
+    "keywords": [
+      "ATIRAR",
+      "REAÇÃO"
+    ],
+    "flavorText": "Os akontistai corriam diante dos inimigos jogando saraivadas de dardos, recuando logo em seguida para suas próprias linhas.",
+    "artist": "Renato Rosart",
+    "isDraft": false,
+    "copies": 2,
+    "sourceFiles": [
+      "Slide13.PNG",
+      "Slide14.PNG"
+    ]
+  },
+  {
+    "id": "combatente-lithoboloi",
+    "sourceFile": "Slide15.PNG",
+    "name": "LITHOBOLOI",
+    "type": "Combatente",
+    "civilization": "Helênica",
+    "cost": 2,
+    "strength": 1,
+    "weightClass": "Ligeiro",
+    "isCavalry": false,
+    "role": "Atirador",
+    "abilityText": "[CONSCRITO]",
+    "keywords": [
+      "CONSCRITO"
+    ],
+    "flavorText": "Recrutados das camadas miseráveis, esses \"combatentes\" lutavam literalmente à pedradas.",
+    "artist": null,
+    "isDraft": false,
+    "copies": 2,
+    "sourceFiles": [
+      "Slide15.PNG",
+      "Slide16.PNG"
+    ]
+  },
+  {
+    "id": "combatente-cavalaria-celta",
+    "sourceFile": "Slide17.PNG",
+    "name": "CAVALARIA CELTA",
+    "type": "Combatente",
+    "civilization": "Celta",
+    "cost": 5,
+    "strength": 3,
+    "weightClass": "Pesado",
+    "isCavalry": true,
+    "role": null,
+    "abilityText": "[CARGA]\n[REAÇÃO]: anula a habilidade [carga] do combatente ativo.",
+    "keywords": [
+      "CARGA",
+      "REAÇÃO"
+    ],
+    "flavorText": "Amados e odiados pelos grandes generais do mundo antigo. Sua visão em batalha era aterrorizante",
+    "artist": "Renato Rosart",
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide17.PNG"
+    ]
+  },
+  {
+    "id": "combatente-lanceiro-celtibero",
+    "sourceFile": "Slide18.PNG",
+    "name": "LANCEIRO CELTIBERO",
+    "type": "Combatente",
+    "civilization": "Celta",
+    "cost": 4,
+    "strength": 2,
+    "weightClass": "Médio",
+    "isCavalry": false,
+    "role": "Lanceiro",
+    "abilityText": "[INVESTIDA] recebe +1 de força quando entra em Fase de Combate como atacante.\n[LANCEAR]",
+    "keywords": [
+      "INVESTIDA",
+      "LANCEAR"
+    ],
+    "flavorText": "Espinha dorsal dos exércitos celtas.",
+    "artist": "Renato Rosart",
+    "isDraft": false,
+    "copies": 2,
+    "sourceFiles": [
+      "Slide18.PNG",
+      "Slide19.PNG"
+    ]
+  },
+  {
+    "id": "combatente-campeao-gaules",
+    "sourceFile": "Slide20.PNG",
+    "name": "CAMPEÂO GAULÊS",
+    "type": "Combatente",
+    "civilization": "Celta",
+    "cost": 5,
+    "strength": 3,
+    "weightClass": "Pesado",
+    "isCavalry": false,
+    "role": "Espadachim",
+    "abilityText": "[INVESTIDA] [ELITE] [CONSAGRADA]",
+    "keywords": [
+      "INVESTIDA",
+      "ELITE",
+      "CONSAGRADA"
+    ],
+    "flavorText": "Os mais nobres das mais altas elites. Eis aí os grandes campeões!",
+    "artist": "Felipe Malini",
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide20.PNG"
+    ]
+  },
+  {
+    "id": "combatente-cacadora-de-cabecas",
+    "sourceFile": "Slide21.PNG",
+    "name": "CAÇADORA DE CABEÇAS",
+    "type": "Combatente",
+    "civilization": "Celta",
+    "cost": 4,
+    "strength": 2,
+    "weightClass": "Médio",
+    "isCavalry": true,
+    "role": null,
+    "abilityText": "[INDISCIPLINA][CAÇADORA] Você deve destruir uma carta de seu Descanso ao final do conflito. Do contrário, destrua esta carta.",
+    "keywords": [
+      "INDISCIPLINA",
+      "CAÇADORA"
+    ],
+    "flavorText": "Cogumelos alucinógenos garantiam a essa terrível cavalaria um frenesi imbatível em batalha. O perigo era que não distinguiam aliados de inimigos.",
+    "artist": null,
+    "isDraft": false,
+    "copies": 2,
+    "sourceFiles": [
+      "Slide21.PNG",
+      "Slide22.PNG"
+    ]
+  },
+  {
+    "id": "combatente-cavalaria-celtiberica",
+    "sourceFile": "Slide23.PNG",
+    "name": "CAVALARIA CELTIBÉRICA",
+    "type": "Combatente",
+    "civilization": "Celta",
+    "cost": 3,
+    "strength": 1,
+    "weightClass": "Ligeiro",
+    "isCavalry": true,
+    "role": null,
+    "abilityText": "[GUERRILHA] antes da verificação de dano no fim da segunda etapa da Batalha, pague 1 recurso e coloque esta carta no topo de seu império.",
+    "keywords": [
+      "GUERRILHA"
+    ],
+    "flavorText": "Perita em terrenos irregulares da península ibérica; esta cavalaria era crucial em emboscadas e escaramuças.",
+    "artist": null,
+    "isDraft": false,
+    "copies": 2,
+    "sourceFiles": [
+      "Slide23.PNG",
+      "Slide24.PNG"
+    ]
+  },
+  {
+    "id": "combatente-peltasta-tracio",
+    "sourceFile": "Slide25.PNG",
+    "name": "PELTASTA TRÁCIO",
+    "type": "Combatente",
+    "civilization": "Celta",
+    "cost": 3,
+    "strength": 2,
+    "weightClass": "Médio",
+    "isCavalry": false,
+    "role": "Atirador",
+    "abilityText": "[ATIRAR]\n[INDISCIPLINA]\n[REAÇÃO] : Anule a habilidade [atirar] ou [investida] do combatente ativo.",
+    "keywords": [
+      "ATIRAR",
+      "INDISCIPLINA",
+      "REAÇÃO"
+    ],
+    "flavorText": "Guerreiros formidáveis das montanhas da Trácia; exímios caçadores de ursos e homens.",
+    "artist": "Renato Rosart",
+    "isDraft": false,
+    "copies": 2,
+    "sourceFiles": [
+      "Slide25.PNG",
+      "Slide26.PNG"
+    ]
+  },
+  {
+    "id": "combatente-gaesatae",
+    "sourceFile": "Slide27.PNG",
+    "name": "GAESATAE",
+    "type": "Combatente",
+    "civilization": "Celta",
+    "cost": 3,
+    "strength": 1,
+    "weightClass": "Ligeiro",
+    "isCavalry": false,
+    "role": "Lanceiro / Espadachim",
+    "abilityText": "[LANCEAR]\n[INVESTIDA]\n[CONSAGRADA]",
+    "keywords": [
+      "LANCEAR",
+      "INVESTIDA",
+      "CONSAGRADA"
+    ],
+    "flavorText": "Eles simplesmente lutavam nus…",
+    "artist": "Rodolfo O'costa",
+    "isDraft": false,
+    "copies": 2,
+    "sourceFiles": [
+      "Slide27.PNG",
+      "Slide28.PNG"
+    ]
+  },
+  {
+    "id": "combatente-escaramucador",
+    "sourceFile": "Slide29.PNG",
+    "name": "ESCARAMUÇADOR",
+    "type": "Combatente",
+    "civilization": "Celta",
+    "cost": 2,
+    "strength": 1,
+    "weightClass": "Ligeiro",
+    "isCavalry": false,
+    "role": "Atirador",
+    "abilityText": "[ATIRAR]",
+    "keywords": [
+      "ATIRAR"
+    ],
+    "flavorText": null,
+    "artist": null,
+    "isDraft": false,
+    "copies": 2,
+    "sourceFiles": [
+      "Slide29.PNG",
+      "Slide30.PNG"
+    ]
+  },
+  {
+    "id": "combatente-arqueiro",
+    "sourceFile": "Slide31.PNG",
+    "name": "ARQUEIRO",
+    "type": "Combatente",
+    "civilization": "Latina",
+    "cost": 2,
+    "strength": 1,
+    "weightClass": "Ligeiro",
+    "isCavalry": false,
+    "role": "Atirador",
+    "abilityText": "[ATIRAR]\n[REAÇÃO]: Anule a habilidade [atirar] ou [investida] do combatente ativo.",
+    "keywords": [
+      "ATIRAR",
+      "REAÇÃO"
+    ],
+    "flavorText": null,
+    "artist": null,
+    "isDraft": false,
+    "copies": 2,
+    "sourceFiles": [
+      "Slide31.PNG",
+      "Slide32.PNG"
+    ]
+  },
+  {
+    "id": "combatente-rorarius",
+    "sourceFile": "Slide33.PNG",
+    "name": "RORARIUS",
+    "type": "Combatente",
+    "civilization": "Latina",
+    "cost": 3,
+    "strength": 1,
+    "weightClass": "Ligeiro",
+    "isCavalry": false,
+    "role": "Lanceiro",
+    "abilityText": "[RESERVA] Rorarius pode entrar no início da segunda etapa do conflito.",
+    "keywords": [
+      "RESERVA"
+    ],
+    "flavorText": "\"Mal treinados, mal armados, mas com o dever de ocupar o lugar dos mortos — os Rorarii eram o último suspiro da velha linha romana.\"",
+    "artist": "Inácio Alba",
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide33.PNG"
+    ]
+  },
+  {
+    "id": "combatente-veles",
+    "sourceFile": "Slide34.PNG",
+    "name": "VELES",
+    "type": "Combatente",
+    "civilization": "Latina",
+    "cost": 3,
+    "strength": 1,
+    "weightClass": "Ligeiro",
+    "isCavalry": false,
+    "role": "Atirador",
+    "abilityText": "[ATIRAR]\n[FORRAGEAR]",
+    "keywords": [
+      "ATIRAR",
+      "FORRAGEAR"
+    ],
+    "flavorText": "Recrutados dentre os mais pobres das zonas rurais, os velites não tinham condições de comprar armamentos! Sua confiança estava em sua habilidade de caça.",
+    "artist": "Iaggo Piffero",
+    "isDraft": false,
+    "copies": 2,
+    "sourceFiles": [
+      "Slide34.PNG",
+      "Slide35.PNG"
+    ]
+  },
+  {
+    "id": "combatente-hastatus",
+    "sourceFile": "Slide36.PNG",
+    "name": "HASTATUS",
+    "type": "Combatente",
+    "civilization": "Latina",
+    "cost": 3,
+    "strength": 1,
+    "weightClass": "Médio",
+    "isCavalry": false,
+    "role": "Espadachim",
+    "abilityText": "[INVESTIDA]\n[REAÇÃO]: anula [INVESTIDA] do combatente alvo.",
+    "keywords": [
+      "INVESTIDA",
+      "REAÇÃO"
+    ],
+    "flavorText": "Recrutados dentre os mais novos da cidade, compunham a primeira linha da batalha!",
+    "artist": "Renato Rosart",
+    "isDraft": false,
+    "copies": 2,
+    "sourceFiles": [
+      "Slide36.PNG",
+      "Slide37.PNG"
+    ]
+  },
+  {
+    "id": "combatente-guerreiro-samnita",
+    "sourceFile": "Slide38.PNG",
+    "name": "GUERREIRO SAMNITA",
+    "type": "Combatente",
+    "civilization": "Latina",
+    "cost": 4,
+    "strength": 2,
+    "weightClass": "Médio",
+    "isCavalry": false,
+    "role": "Atirador",
+    "abilityText": "[ATIRAR]\n[INVESTIDA]",
+    "keywords": [
+      "ATIRAR",
+      "INVESTIDA"
+    ],
+    "flavorText": "Os samnitas foram os maiores rivais de Roma por décadas! Os guerreiros samnitas conheciam todos os caminhos da Itália.",
+    "artist": null,
+    "isDraft": false,
+    "copies": 2,
+    "sourceFiles": [
+      "Slide38.PNG",
+      "Slide39.PNG"
+    ]
+  },
+  {
+    "id": "combatente-princeps",
+    "sourceFile": "Slide40.PNG",
+    "name": "PRINCEPS",
+    "type": "Combatente",
+    "civilization": "Latina",
+    "cost": 4,
+    "strength": 2,
+    "weightClass": "Pesado",
+    "isCavalry": false,
+    "role": "Espadachim",
+    "abilityText": "[INVESTIDA]\n[REAÇÃO]: anula [INVESTIDA] do combatente alvo.",
+    "keywords": [
+      "INVESTIDA",
+      "REAÇÃO"
+    ],
+    "flavorText": "Recrutados dentre os mais ricos da cidade, compunham a segunda linha da batalha!",
+    "artist": "Renato Rosart",
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide40.PNG"
+    ]
+  },
+  {
+    "id": "combatente-triarius",
+    "sourceFile": "Slide41.PNG",
+    "name": "TRIARIUS",
+    "type": "Combatente",
+    "civilization": "Latina",
+    "cost": 5,
+    "strength": 3,
+    "weightClass": "Pesado",
+    "isCavalry": false,
+    "role": "Lanceiro",
+    "abilityText": "[LANCEAR]\n[RESERVA] pode entrar no início da segunda etapa do conflito.",
+    "keywords": [
+      "LANCEAR",
+      "RESERVA"
+    ],
+    "flavorText": "Quando tudo der errado, chame os triarii!",
+    "artist": "Renato Rosart",
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide41.PNG"
+    ]
+  },
+  {
+    "id": "combatente-cavalaria-italica",
+    "sourceFile": "Slide42.PNG",
+    "name": "CAVALARIA ITÁLICA",
+    "type": "Combatente",
+    "civilization": "Latina",
+    "cost": 4,
+    "strength": 2,
+    "weightClass": "Médio",
+    "isCavalry": true,
+    "role": null,
+    "abilityText": "[CARGA]",
+    "keywords": [
+      "CARGA"
+    ],
+    "flavorText": "Os romanos eram conhecidos por terem uma péssima cavalaria. Precisando recrutar auxiliares junto aos outros povos da Itália\"",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide42.PNG"
+    ]
+  },
+  {
+    "id": "combatente-equites-auxilia",
+    "sourceFile": "Slide43.PNG",
+    "name": "EQUITES AUXILIA",
+    "type": "Combatente",
+    "civilization": "Latina",
+    "cost": 3,
+    "strength": 1,
+    "weightClass": "Ligeiro",
+    "isCavalry": true,
+    "role": null,
+    "abilityText": "[ATIRAR]\n[FORRAGEAR]",
+    "keywords": [
+      "ATIRAR",
+      "FORRAGEAR"
+    ],
+    "flavorText": "Os romanos eram conhecidos por terem uma péssima cavalaria. Precisando recrutar auxiliares junto aos outros povos da Italia\"",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide43.PNG"
+    ]
+  },
+  {
+    "id": "combatente-equites",
+    "sourceFile": "Slide44.PNG",
+    "name": "EQUITES",
+    "type": "Combatente",
+    "civilization": "Latina",
+    "cost": 4,
+    "strength": 2,
+    "weightClass": "Médio",
+    "isCavalry": true,
+    "role": null,
+    "abilityText": "[CARGA]\n[ELITE]",
+    "keywords": [
+      "CARGA",
+      "ELITE"
+    ],
+    "flavorText": "Cidadãos que possuíam recursos para manter cavalos de guerra. Com os séculos, se tornaram uma classe de elite chamada \"Equestre\"",
+    "artist": "Renato Rosart",
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide44.PNG"
+    ]
+  },
+  {
+    "id": "combatente-cavalaria-numida",
+    "sourceFile": "Slide45.PNG",
+    "name": "CAVALARIA NÚMIDA",
+    "type": "Combatente",
+    "civilization": "Fenícia",
+    "cost": 4,
+    "strength": 1,
+    "weightClass": "Ligeiro",
+    "isCavalry": true,
+    "role": "Atirador",
+    "abilityText": "[ATIRAR] [FORRAGEAR] [CARGA]\n[VÔO DO CISNE] não pode ser alvo de outros combatentes em jogo.",
+    "keywords": [
+      "ATIRAR",
+      "FORRAGEAR",
+      "CARGA",
+      "VÔO DO CISNE"
+    ],
+    "flavorText": null,
+    "artist": "Iaggo Piffero",
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide45.PNG"
+    ]
+  },
+  {
+    "id": "combatente-batedor-ibero",
+    "sourceFile": "Slide46.PNG",
+    "name": "BATEDOR ÍBERO",
+    "type": "Combatente",
+    "civilization": "Fenícia",
+    "cost": 3,
+    "strength": 1,
+    "weightClass": "Ligeiro",
+    "isCavalry": true,
+    "role": null,
+    "abilityText": "[FORRAGEAR]",
+    "keywords": [
+      "FORRAGEAR"
+    ],
+    "flavorText": null,
+    "artist": null,
+    "isDraft": false,
+    "copies": 2,
+    "sourceFiles": [
+      "Slide46.PNG",
+      "Slide47.PNG"
+    ]
+  },
+  {
+    "id": "combatente-veterano-punico",
+    "sourceFile": "Slide48.PNG",
+    "name": "VETERANO PÚNICO",
+    "type": "Combatente",
+    "civilization": "Fenícia",
+    "cost": 5,
+    "strength": 3,
+    "weightClass": "Pesado",
+    "isCavalry": false,
+    "role": "Lanceiro",
+    "abilityText": "[LANCEAR]\n[CONSAGRADA]\n[ELITE]",
+    "keywords": [
+      "LANCEAR",
+      "CONSAGRADA",
+      "ELITE"
+    ],
+    "flavorText": "Também conhecida como a Sagrada infantaria de Baal, era escolhida entre a elite cartaginesa.",
+    "artist": "Renato Rosart",
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide48.PNG"
+    ]
+  },
+  {
+    "id": "combatente-cavalaria-sagrada",
+    "sourceFile": "Slide49.PNG",
+    "name": "CAVALARIA SAGRADA",
+    "type": "Combatente",
+    "civilization": "Fenícia",
+    "cost": 5,
+    "strength": 3,
+    "weightClass": "Pesado",
+    "isCavalry": true,
+    "role": null,
+    "abilityText": "[CARGA]\n[CONSAGRADA]\n[ELITE]",
+    "keywords": [
+      "CARGA",
+      "CONSAGRADA",
+      "ELITE"
+    ],
+    "flavorText": "Também conhecida como a Sagrada Cavalaria de Baal, era escolhida entre a elite cartaginesa.",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide49.PNG"
+    ]
+  },
+  {
+    "id": "combatente-elefante-de-guerra",
+    "sourceFile": "Slide50.PNG",
+    "name": "ELEFANTE DE GUERRA",
+    "type": "Combatente",
+    "civilization": "Fenícia",
+    "cost": 6,
+    "strength": 3,
+    "weightClass": null,
+    "isCavalry": false,
+    "role": "Elefante",
+    "abilityText": "[CONSAGRADA]\n[ELITE]\n[PÂNICO] Cavalarias não podem entrar na segunda etapa.\n[INDISCIPLINA]",
+    "keywords": [
+      "CONSAGRADA",
+      "ELITE",
+      "PÂNICO",
+      "INDISCIPLINA"
+    ],
+    "flavorText": null,
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide50.PNG"
+    ]
+  },
+  {
+    "id": "combatente-scutarii",
+    "sourceFile": "Slide51.PNG",
+    "name": "SCUTARII",
+    "type": "Combatente",
+    "civilization": "Fenícia",
+    "cost": 3,
+    "strength": 2,
+    "weightClass": "Médio",
+    "isCavalry": false,
+    "role": "Lanceiro",
+    "abilityText": "[LANCEAR]",
+    "keywords": [
+      "LANCEAR"
+    ],
+    "flavorText": "Espinha dorsal dos exércitos hispânicos e lusitanos. Aníbal soube aproveitá-los contra os hastatii romanos.",
+    "artist": "Renato Rosart",
+    "isDraft": false,
+    "copies": 2,
+    "sourceFiles": [
+      "Slide51.PNG",
+      "Slide52.PNG"
+    ]
+  },
+  {
+    "id": "combatente-veterano-libio",
+    "sourceFile": "Slide53.PNG",
+    "name": "VETERANO LÍBIO",
+    "type": "Combatente",
+    "civilization": "Fenícia",
+    "cost": 4,
+    "strength": 2,
+    "weightClass": "Médio",
+    "isCavalry": false,
+    "role": "Lanceiro",
+    "abilityText": "[LANCEAR]\n[REAÇÃO]: anula a habilidade [CARGA] do combatente ativo.",
+    "keywords": [
+      "LANCEAR",
+      "REAÇÃO"
+    ],
+    "flavorText": "Os líbios eram um povo berbere do norte da África extremamente disciplinados. Aníbal soube aproveitá-los com maestria nas principais batalhas contra os romanos.",
+    "artist": "Ignacio Alba",
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide53.PNG"
+    ]
+  },
+  {
+    "id": "combatente-caetratus",
+    "sourceFile": "Slide54.PNG",
+    "name": "CAETRATUS",
+    "type": "Combatente",
+    "civilization": "Fenícia",
+    "cost": 3,
+    "strength": 1,
+    "weightClass": "Médio",
+    "isCavalry": false,
+    "role": "Atirador / Espadachim",
+    "abilityText": "[ATIRAR]\n[GUERRILHA]\n[INDISCIPLINA]",
+    "keywords": [
+      "ATIRAR",
+      "GUERRILHA",
+      "INDISCIPLINA"
+    ],
+    "flavorText": "Esses guerreiros ferozes eram hábeis na arte de bater e correr. Costumavam lutar nos exércitos do mediterrâneo como mercenários.",
+    "artist": "Renato Rosart",
+    "isDraft": false,
+    "copies": 2,
+    "sourceFiles": [
+      "Slide54.PNG",
+      "Slide55.PNG"
+    ]
+  },
+  {
+    "id": "combatente-fundeiro-balear",
+    "sourceFile": "Slide56.PNG",
+    "name": "FUNDEIRO BALEAR",
+    "type": "Combatente",
+    "civilization": "Fenícia",
+    "cost": 3,
+    "strength": 1,
+    "weightClass": "Ligeiro",
+    "isCavalry": false,
+    "role": "Atirador",
+    "abilityText": "[ATIRAR] [FORRAGEAR] [ASSALTANTE]\n[REAÇÃO]: Anule a habilidade [atirar] ou [investida] do combatente ativo.",
+    "keywords": [
+      "ATIRAR",
+      "FORRAGEAR",
+      "ASSALTANTE",
+      "REAÇÃO"
+    ],
+    "flavorText": "Recrutados das ilhas baleares, esses fundeiros eram temidos em todo mundo mediterrâneo. Preferiam receber o soldo em saques, vinho e mulheres…",
+    "artist": "Renato Rosart",
+    "isDraft": false,
+    "copies": 2,
+    "sourceFiles": [
+      "Slide56.PNG",
+      "Slide57.PNG"
+    ]
+  },
+  {
+    "id": "combatente-milicia-de-tanit",
+    "sourceFile": "Slide58.PNG",
+    "name": "MILICIA DE TANIT",
+    "type": "Combatente",
+    "civilization": "Fenícia",
+    "cost": 2,
+    "strength": 1,
+    "weightClass": "Ligeiro",
+    "isCavalry": false,
+    "role": "Espadachim",
+    "abilityText": "[CONSCRITO]",
+    "keywords": [
+      "CONSCRITO"
+    ],
+    "flavorText": "Meu corpo será consumido pelas chamas da cidade, mas o nome da Senhora de Cartago não será profanado.",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide58.PNG"
+    ]
+  },
+  {
+    "id": "estrategia-alexandre-o-grande",
+    "sourceFile": "Slide1.PNG",
+    "name": "Alexandre, o Grande",
+    "type": "Estratégia",
+    "civilization": "Helênica",
+    "cost": 3,
+    "subtype": "General",
+    "abilityText": "Seus combatentes macedônios recebem +1⚔ durante esta Campanha.\nSe você baixar um atirador, um espadachim, um lanceiro e uma cavalaria na mesma Fase de Combate. Aqueles combatentes recebem +1⚔",
+    "keywords": [],
+    "bottomLeftIcon": "mão segurando uma carta",
+    "flavorText": "Eu faria se fosse Parmenion, mas eu sou Alexandre...",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide1.PNG"
+    ]
+  },
+  {
+    "id": "estrategia-ataque-noturno",
+    "sourceFile": "Slide2.PNG",
+    "name": "Ataque Noturno",
+    "type": "Estratégia",
+    "civilization": "Helênica",
+    "cost": 4,
+    "subtype": "Tática",
+    "abilityText": "O Jogador-alvo saca duas cartas.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": null,
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide2.PNG"
+    ]
+  },
+  {
+    "id": "estrategia-batedores-tracios",
+    "sourceFile": "Slide3.PNG",
+    "name": "Batedores Trácios",
+    "type": "Estratégia",
+    "civilization": "Helênica",
+    "cost": 3,
+    "subtype": "Especialista",
+    "abilityText": "No seu turno; Destrua uma carta do Mercado e saque uma carta.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": "Primeiro chegam os olhos, depois os cascos. E quando o inimigo percebe, já foi avistado há dias.",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide3.PNG"
+    ]
+  },
+  {
+    "id": "estrategia-assembleia-dos-mercadores",
+    "sourceFile": "Slide4.PNG",
+    "name": "Assembléia dos Mercadores",
+    "type": "Estratégia",
+    "civilization": "Helênica",
+    "cost": 3,
+    "subtype": "Política",
+    "abilityText": "Saque uma carta para cada Melhoria Macedônia baixada em seu Território.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": null,
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide4.PNG"
+    ]
+  },
+  {
+    "id": "estrategia-ostracismo",
+    "sourceFile": "Slide5.PNG",
+    "name": "Ostracismo",
+    "type": "Estratégia",
+    "civilization": "Helênica",
+    "cost": 3,
+    "subtype": "Política",
+    "abilityText": "Outro jogador devolve uma carta do Descanso dele para o Mercado.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": "O Ostracismo era praticado no mundo grego democrático e consistia em banir por dez anos aqueles políticos considerados perigosos ou influentes demais na Pólis.",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide5.PNG"
+    ]
+  },
+  {
+    "id": "estrategia-vitoria-de-pirro",
+    "sourceFile": "Slide6.PNG",
+    "name": "Vitória de Pirro",
+    "type": "Estratégia",
+    "civilization": "Helênica",
+    "cost": 3,
+    "subtype": "Evento",
+    "abilityText": "Quando o jogador alvo ganhar um ponto militar; ele deve destruir um combatente dele que tenha participado desta Fase de Combate.",
+    "keywords": [],
+    "bottomLeftIcon": "mão segurando uma carta",
+    "flavorText": "Mais uma vitória como esta, e estou perdido.\nPirro, rei do Épiro.",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide6.PNG"
+    ]
+  },
+  {
+    "id": "estrategia-armas-de-cerco",
+    "sourceFile": "Slide7.PNG",
+    "name": "Armas de Cerco",
+    "type": "Estratégia",
+    "civilization": "Helênica",
+    "cost": 3,
+    "subtype": "Conhecimento",
+    "abilityText": "No início da fase de Assalto; declare uma civilização e destrua as muralhas daquela civilização do jogador alvo.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": null,
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide7.PNG"
+    ]
+  },
+  {
+    "id": "estrategia-marcias-de-pella",
+    "sourceFile": "Slide8.PNG",
+    "name": "Marcias de Pella",
+    "type": "Estratégia",
+    "civilization": "Helênica",
+    "cost": 3,
+    "subtype": "Especialista",
+    "abilityText": "Toda vez que você comprar uma carta de macedônia, saque uma carta de seu Império.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": "E a história de todos os reis da Macedônia, desde Carano até Alexandre Magno, não foi escrita pelo Ilustre Marcias? Não está lá a nobre origem dos Argéadas?",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide8.PNG"
+    ]
+  },
+  {
+    "id": "estrategia-antigono-i-monoftalmo",
+    "sourceFile": "Slide9.PNG",
+    "name": "Antígono I, Monoftalmo",
+    "type": "Estratégia",
+    "civilization": "Helênica",
+    "cost": 3,
+    "subtype": "General",
+    "abilityText": "Busque um combatente do tipo lanceiro do seu Descanso e coloque-o no topo de seu Império.",
+    "keywords": [],
+    "bottomLeftIcon": "mão segurando uma carta",
+    "flavorText": "Homenagem ao jogador Hygor, \"O Carrasco de Novatos.\"",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide9.PNG"
+    ]
+  },
+  {
+    "id": "estrategia-demetrio-i-poliocertes",
+    "sourceFile": "Slide10.PNG",
+    "name": "Demétrio I Poliocertes",
+    "type": "Estratégia",
+    "civilization": "Helênica",
+    "cost": 3,
+    "subtype": "General",
+    "abilityText": "Teus combatentes ganham +1⚔ ao assaltarem Melhorias nesta Campanha.",
+    "keywords": [],
+    "bottomLeftIcon": "mão segurando uma carta",
+    "flavorText": "Demétrio Poliórcetes foi um dos maiores comandantes de cerco de seu tempo, famoso por sua engenhosidade em construir máquinas de guerra inovadoras.",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide10.PNG"
+    ]
+  },
+  {
+    "id": "estrategia-batalha-de-gaugamela",
+    "sourceFile": "Slide11.PNG",
+    "name": "Batalha de Gaugamela",
+    "type": "Estratégia",
+    "civilization": "Helênica",
+    "cost": 3,
+    "subtype": "Evento",
+    "abilityText": "Você ganha pontos de vitória militar em dobro (respeitando o limite de 6) ao vencer esta Fase de Combate.",
+    "keywords": [],
+    "bottomLeftIcon": "mão segurando uma carta",
+    "flavorText": "O céu não tem dois sóis, e a Ásia não terá dois reis.",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide11.PNG"
+    ]
+  },
+  {
+    "id": "estrategia-jogos-olimpicos",
+    "sourceFile": "Slide12.PNG",
+    "name": "Jogos Olímpicos",
+    "type": "Estratégia",
+    "civilization": "Helênica",
+    "cost": 3,
+    "subtype": "Cultura -- Evento",
+    "abilityText": "Combatentes macedônios não podem ser usados para atacar durante esta Campanha.",
+    "keywords": [],
+    "bottomLeftIcon": "mão segurando uma carta",
+    "flavorText": null,
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide12.PNG"
+    ]
+  },
+  {
+    "id": "estrategia-cavalaria-batedora",
+    "sourceFile": "Slide13.PNG",
+    "name": "Cavalaria Batedora",
+    "type": "Estratégia",
+    "civilization": "Helênica",
+    "cost": 3,
+    "subtype": "Especialista",
+    "abilityText": "Descarte uma cavalaria ligeira ou média de custo x de sua mão e saque x cartas.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": null,
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide13.PNG"
+    ]
+  },
+  {
+    "id": "estrategia-falange-macedonica",
+    "sourceFile": "Slide14.PNG",
+    "name": "Falange Macedônica",
+    "type": "Estratégia",
+    "civilization": "Helênica",
+    "cost": 2,
+    "subtype": "Tática",
+    "abilityText": "Lanceiros do jogador alvo recebem +1⚔ durante esta Campanha.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": null,
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide14.PNG"
+    ]
+  },
+  {
+    "id": "estrategia-homem-de-vime",
+    "sourceFile": "Slide15.PNG",
+    "name": "Homem de Vime",
+    "type": "Estratégia",
+    "civilization": "Celta",
+    "cost": 3,
+    "subtype": "Cultura",
+    "abilityText": "Destrua uma carta de seu Descanso.",
+    "keywords": [],
+    "bottomLeftIcon": "saco de moedas",
+    "flavorText": "E então os druidas queimavam um enorme homem de palha com prisioneiros e malfeitores atados em honra aos deuses renovadores da colheita.",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide15.PNG"
+    ]
+  },
+  {
+    "id": "estrategia-batedores-celtas",
+    "sourceFile": "Slide16.PNG",
+    "name": "Batedores Celtas",
+    "type": "Estratégia",
+    "civilization": "Celta",
+    "cost": 3,
+    "subtype": "Especialista",
+    "abilityText": "No seu turno; Destrua uma carta do Mercado e destrua uma carta de seu Descanso.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": "Não são apenas inimigos que os batedores caçam. Às vezes, o que se deve perder... é um peso que trazemos nós mesmos.",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide16.PNG"
+    ]
+  },
+  {
+    "id": "estrategia-breno-rei-dos-celtas",
+    "sourceFile": "Slide17.PNG",
+    "name": "Breno, Rei dos Celtas",
+    "type": "Estratégia",
+    "civilization": "Celta",
+    "cost": 3,
+    "subtype": "General",
+    "abilityText": "Seus combatentes celtas recebem +1⚔ durante esta Campanha. Você pode buscar combatentes Celtas de até custo 3 em seu Descanso e baixá-los no Início da Fase de combate que você iniciou.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": null,
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide17.PNG"
+    ]
+  },
+  {
+    "id": "estrategia-emboscada",
+    "sourceFile": "Slide18.PNG",
+    "name": "Emboscada",
+    "type": "Estratégia",
+    "civilization": "Celta",
+    "cost": 3,
+    "subtype": "Tática",
+    "abilityText": "Descarte um combatente-alvo baixado nesta Fase de Combate.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": "Varrus, devolva minhas legiões!\nAugusto César.",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide18.PNG"
+    ]
+  },
+  {
+    "id": "estrategia-cacadores-de-cabeca",
+    "sourceFile": "Slide19.PNG",
+    "name": "Caçadores de Cabeça",
+    "type": "Estratégia",
+    "civilization": "Celta",
+    "cost": 2,
+    "subtype": "Tática – Especialista",
+    "abilityText": "No início de um Conflito; Os jogadores alvo não poderão baixar combatentes atacantes do tipo ligeiro durante esta Campanha.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": "Eu cortarei sua cabeça e beberei no seu crânio",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide19.PNG"
+    ]
+  },
+  {
+    "id": "estrategia-chamado-de-guerra",
+    "sourceFile": "Slide20.PNG",
+    "name": "Chamado de Guerra",
+    "type": "Estratégia",
+    "civilization": "Celta",
+    "cost": 3,
+    "subtype": "Política",
+    "abilityText": "Ganhe 1⚔ para cada carta Celta baixada em seu Território.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": null,
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide20.PNG"
+    ]
+  },
+  {
+    "id": "estrategia-escolhido-dos-deuses",
+    "sourceFile": "Slide21.PNG",
+    "name": "Escolhido dos Deuses",
+    "type": "Estratégia",
+    "civilization": "Celta",
+    "cost": 3,
+    "subtype": "Cultura",
+    "abilityText": "Busque no seu Descanso um combatente celta e coloque-o no topo do Império alvo.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": "Oh, supremo Belatucadros! Das florestas de nossos pais, eis que surge o grande campeão!",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide21.PNG"
+    ]
+  },
+  {
+    "id": "estrategia-investida",
+    "sourceFile": "Slide22.PNG",
+    "name": "Investida!",
+    "type": "Estratégia",
+    "civilization": "Celta",
+    "cost": 2,
+    "subtype": "Cultura – Tática",
+    "abilityText": "Você pode assaltar novamente uma Melhoria alvo em jogo.",
+    "keywords": [],
+    "bottomLeftIcon": "escudo com espada cruzada",
+    "flavorText": "Se até mesmo a poderosa Roma das sete colinas sucumbiu às nossas espadas, não espere misericórdia sobre tua vila de porcos!",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide22.PNG"
+    ]
+  },
+  {
+    "id": "estrategia-seguidores-de-acampamento",
+    "sourceFile": "Slide23.PNG",
+    "name": "Seguidores de Acampamento",
+    "type": "Estratégia",
+    "civilization": "Celta",
+    "cost": 3,
+    "subtype": "Cultura – Evento",
+    "abilityText": "Desvire uma Melhoria sua. Você pode usá-la logo em seguida.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": "Homenagem ao jogador Dyego Henrique",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide23.PNG"
+    ]
+  },
+  {
+    "id": "estrategia-imigracao-celta",
+    "sourceFile": "Slide24.PNG",
+    "name": "Imigração Celta",
+    "type": "Estratégia",
+    "civilization": "Celta",
+    "cost": 3,
+    "subtype": "Política",
+    "abilityText": "Coloque uma Melhoria Celta tua no Desterro.\nSaque x cartas, onde x é igual ao custo da Melhoria colocada no Desterro.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": null,
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide24.PNG"
+    ]
+  },
+  {
+    "id": "estrategia-terror-celtico",
+    "sourceFile": "Slide25.PNG",
+    "name": "Terror Céltico",
+    "type": "Estratégia",
+    "civilization": "Celta",
+    "cost": 3,
+    "subtype": "Cultura – Tática",
+    "abilityText": "Toda vez que você fizer assalto bem sucedido contra Melhoria nesta Campanha, destrua aquela Melhoria.",
+    "keywords": [],
+    "bottomLeftIcon": "escudo com espada cruzada",
+    "flavorText": "Hordas de celtas, cimbros e teutões se aproximam de nossas fronteiras como nuvens de gafanhotos devastando campos e cidades.",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide25.PNG"
+    ]
+  },
+  {
+    "id": "estrategia-mercadores-celtas",
+    "sourceFile": "Slide26.PNG",
+    "name": "Mercadores Celtas",
+    "type": "Estratégia",
+    "civilization": "Celta",
+    "cost": 4,
+    "subtype": "Comércio",
+    "abilityText": "Escolha entre:\n+1⚔ ou +2💰",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": "Infelizmente não podemos trazer tudo o que vossa excelência nos pediu nesses barcos tão obsoletos.",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide26.PNG"
+    ]
+  },
+  {
+    "id": "estrategia-cavalaria-de-epona",
+    "sourceFile": "Slide27.PNG",
+    "name": "Cavalaria de Epona",
+    "type": "Estratégia",
+    "civilization": "Celta",
+    "cost": 4,
+    "subtype": "Cultura",
+    "abilityText": "Descarte uma carta celta de tua mão para cada cavalaria em teu Descanso que queira colocar no topo de teu Império.",
+    "keywords": [],
+    "bottomLeftIcon": "escudo com espada cruzada",
+    "flavorText": "Não há morte para os que marcham por Epona. Apenas o silêncio entre dois chamados.\nHomenagem ao jogador Marlos.",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide27.PNG"
+    ]
+  },
+  {
+    "id": "estrategia-o-ultimo-recurso",
+    "sourceFile": "Slide28.PNG",
+    "name": "O Último Recurso",
+    "type": "Estratégia",
+    "civilization": "Celta",
+    "cost": 2,
+    "subtype": "Tática",
+    "abilityText": "Em Conflito que você esteja perdendo; Saque 5 cartas. Coloque os combatentes do tipo infantaria em jogo e descarte as demais cartas. Após o Conflito, destrua aqueles combatentes.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": "Os escolhidos dos deuses levantaram-se mais uma vez como javalis furiosos e deram sua última carga.",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide28.PNG"
+    ]
+  },
+  {
+    "id": "estrategia-negociacoes-secretas",
+    "sourceFile": "Slide29.PNG",
+    "name": "Negociações Secretas",
+    "type": "Estratégia",
+    "civilization": "Latina",
+    "cost": 2,
+    "subtype": "Política",
+    "abilityText": "Durante esta Campanha, outros jogadores não podem jogar Estratégias.\nQualquer jogador pode pagar 1 recurso para você para ignorar este efeito para si mesmo.",
+    "keywords": [],
+    "bottomLeftIcon": "saco de moedas",
+    "flavorText": "Nem tudo se decide consultando os Lares ou com dignitas nas assembleias.",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide29.PNG"
+    ]
+  },
+  {
+    "id": "estrategia-imperium",
+    "sourceFile": "Slide30.PNG",
+    "name": "Imperium",
+    "type": "Estratégia",
+    "civilization": "Latina",
+    "cost": 3,
+    "subtype": "Política",
+    "abilityText": "Nomeie uma carta, busque essa carta em seu Império, coloque-a em sua Mão e embaralhe o Império.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": "A mão invisível do poder chama aquilo que já era seu.",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide30.PNG"
+    ]
+  },
+  {
+    "id": "estrategia-exploratores",
+    "sourceFile": "Slide31.PNG",
+    "name": "Exploratores",
+    "type": "Estratégia",
+    "civilization": "Latina",
+    "cost": 3,
+    "subtype": "Especialista",
+    "abilityText": "No seu turno; Destrua uma carta no Mercado e ganhe uma ficha de força ou construa uma muralha em melhoria sua.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": "Os exploratores iam a frente verificando os perigos e os melhores locais para construir as fortificações.",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide31.PNG"
+    ]
+  },
+  {
+    "id": "estrategia-quinto-fabio-maximo",
+    "sourceFile": "Slide32.PNG",
+    "name": "Quinto Fábio Máximo",
+    "type": "Estratégia",
+    "civilization": "Latina",
+    "cost": 3,
+    "subtype": "General",
+    "abilityText": "Construa 1 defesa em uma Melhoria alvo que não tenha nenhum nível de defesa.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": null,
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide32.PNG"
+    ]
+  },
+  {
+    "id": "estrategia-saque-de-siracusa",
+    "sourceFile": "Slide33.PNG",
+    "name": "Saque de Siracusa",
+    "type": "Estratégia",
+    "civilization": "Latina",
+    "cost": 2,
+    "subtype": "Evento",
+    "abilityText": "Os jogadores deverão gastar 1 recurso para cada estratégia que queiram usar durante esta Campanha.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": "Apesar do General Marcelo proibir que os legionários destruíssem Siracusa e seu mais ilustre cidadão, Arquimedes, este foi morto pela espada de um soldado, calando seu vasto conhecimento.",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide33.PNG"
+    ]
+  },
+  {
+    "id": "estrategia-triunfo-romano",
+    "sourceFile": "Slide34.PNG",
+    "name": "Triunfo Romano",
+    "type": "Estratégia",
+    "civilization": "Latina",
+    "cost": 3,
+    "subtype": "Cultura",
+    "abilityText": "Se você possuir combatente romano no seu Descanso ao final desta Campanha, ganhe 1 ponto de vitória.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": "Enquanto cada vitória de Pirro lhe custava pesadas baixas, Roma já preparava mais e mais legiões para expulsar o invasor de sua terra natal.",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide34.PNG"
+    ]
+  },
+  {
+    "id": "estrategia-evocati",
+    "sourceFile": "Slide35.PNG",
+    "name": "Evocati",
+    "type": "Estratégia",
+    "civilization": "Latina",
+    "cost": 4,
+    "subtype": "Especialista",
+    "abilityText": "Busque do Descarte um Combatente romano e coloque-o em sua Mão.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": "Legionários que, após findar o período militar, continuavam nas legiões devido ao seu prestígio e experiência.",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide35.PNG"
+    ]
+  },
+  {
+    "id": "estrategia-circunvalacao",
+    "sourceFile": "Slide36.PNG",
+    "name": "Circunvalação",
+    "type": "Estratégia",
+    "civilization": "Latina",
+    "cost": 4,
+    "subtype": "Especialista",
+    "abilityText": "Você pode assaltar duas melhorias ao mesmo tempo com as mesmas cartas.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": null,
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide36.PNG"
+    ]
+  },
+  {
+    "id": "estrategia-circunvalacao-2",
+    "sourceFile": "Slide37.PNG",
+    "name": "Circunvalação",
+    "type": "Estratégia",
+    "civilization": "Latina",
+    "cost": 4,
+    "subtype": "Especialista",
+    "abilityText": "Outros jogadores deverão pagar 1 recurso para cada Melhoria sua que queiram assaltar.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": null,
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide37.PNG"
+    ]
+  },
+  {
+    "id": "estrategia-cartografia",
+    "sourceFile": "Slide39.PNG",
+    "name": "Cartografia",
+    "type": "Estratégia",
+    "civilization": "Latina",
+    "cost": 3,
+    "subtype": "Conhecimento",
+    "abilityText": "[No inicio do Conflito] Os jogadores alvo devem jogar cartas reveladas em todas as etapas dos Conflitos durante esta Campanha.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": "Um mapa honesto vale mais que mil espiões.",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide39.PNG"
+    ]
+  },
+  {
+    "id": "estrategia-cipiao-o-africano",
+    "sourceFile": "Slide41.PNG",
+    "name": "Cipião, o Africano",
+    "type": "Estratégia",
+    "civilization": "Latina",
+    "cost": 3,
+    "subtype": "General",
+    "abilityText": "Seus combatentes de Roma recebem +1 força nesta Campanha.\nNa fase de Combate em que você seja atacante, seus combatentes não cartagineses/romanos recebem +1 força se houver Melhoria cartaginesa de outro jogador em jogo.",
+    "keywords": [],
+    "bottomLeftIcon": "escudo com espada cruzada",
+    "flavorText": null,
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide41.PNG"
+    ]
+  },
+  {
+    "id": "estrategia-batalha-de-zama",
+    "sourceFile": "Slide42.PNG",
+    "name": "Batalha de Zama",
+    "type": "Estratégia",
+    "civilization": "Latina",
+    "cost": 3,
+    "subtype": "Evento",
+    "abilityText": "Atiradores que você controla ganham +1⚔ até o final da Campanha.",
+    "keywords": [],
+    "bottomLeftIcon": "mão segurando uma carta",
+    "flavorText": "Cipião ordenou que o manipulus desse passagem para os terríveis elefantes. Das alas surgiram singelos velites dançando em volta das feras com dardos e pedras. Os elefantes fugiram em frenesi louco contra as linhas de seu próprio exército destroçando tudo pelo caminho.",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide42.PNG"
+    ]
+  },
+  {
+    "id": "estrategia-marcha-forcada",
+    "sourceFile": "Slide43.PNG",
+    "name": "Marcha Forçada",
+    "type": "Estratégia",
+    "civilization": "Latina",
+    "cost": 3,
+    "subtype": "Tática",
+    "abilityText": "Toda vez que você, pelo efeito desta carta, pagar +1 recurso ao comprar combatente nesta Campanha, coloque-o no topo de seu Império.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": "Oh centurião e sua vara disciplinadora! Roma não chegaria aos confins do mundo sem teus castigos!",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide43.PNG"
+    ]
+  },
+  {
+    "id": "estrategia-saturnalia",
+    "sourceFile": "Slide44.PNG",
+    "name": "Saturnália",
+    "type": "Estratégia",
+    "civilization": "Latina",
+    "cost": 3,
+    "subtype": "Cultura",
+    "abilityText": "No início da Campanha; Escolha uma civilização. Os jogadores não podem usar trabalhadores daquela civilização da Mão para produzir recursos.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": "A Saturnalia era comemorada em Dezembro em honra ao deus Saturno, o pai da agricultura. A ordem era a diversão, farras e bebedeiras entre senhores e escravos liberados temporariamente de suas obrigações.",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide44.PNG"
+    ]
+  },
+  {
+    "id": "estrategia-lupercalia",
+    "sourceFile": "Slide45.PNG",
+    "name": "Lupercália",
+    "type": "Estratégia",
+    "civilization": "Latina",
+    "cost": 2,
+    "subtype": "Cultura",
+    "abilityText": "Coloque seu Império em seu Descanso. Embaralhe as cartas e faça um novo Império. Saque uma carta",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": "A Lupercália era uma festa religiosa que ocorria em fevereiro relacionada com a purificação de Roma através de rituais e sacrifícios rememorando os irmãos míticos Rômulo e Remo.",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide45.PNG"
+    ]
+  },
+  {
+    "id": "estrategia-taticas-de-cipiao",
+    "sourceFile": "Slide46.PNG",
+    "name": "Táticas de Cipião",
+    "type": "Estratégia",
+    "civilization": "Latina",
+    "cost": 4,
+    "subtype": "Política – Tática",
+    "abilityText": "Copie a ação de uma Estratégia alvo jogada nesta Campanha.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": "Os romanos sempre aprenderam com os próprios erros. Cipião levou Roma à vitória usando das mesmas táticas de Aníbal Barca. O aluno sobrepujara seu mestre.",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide46.PNG"
+    ]
+  },
+  {
+    "id": "estrategia-cursus-honorum",
+    "sourceFile": "Slide47.PNG",
+    "name": "Cursus Honorum",
+    "type": "Estratégia",
+    "civilization": "Latina",
+    "cost": 4,
+    "subtype": "Política – Cultura",
+    "abilityText": "Fase de Compra; Você paga apenas 1 recurso ao comprar uma Estratégia neste turno.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": "O Cursus Honorum eram os estudos de carreira que um magistrado romano trilhava até conseguir os mais altos cargos na República Romana.",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide47.PNG"
+    ]
+  },
+  {
+    "id": "estrategia-salarium",
+    "sourceFile": "Slide48.PNG",
+    "name": "Salarium",
+    "type": "Estratégia",
+    "civilization": "Latina",
+    "cost": 2,
+    "subtype": "Comércio – Política",
+    "abilityText": "No início de um conflito; Você pode alocar 1💰 em cada combatente seu. Aqueles combatentes ganham bônus de +1 força.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": "Em fases difíceis da história romana os legionários foram pagos com sal, um recurso muito valioso no mundo Antigo usado para salgar e preservar os alimentos durante o inverno.",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide48.PNG"
+    ]
+  },
+  {
+    "id": "estrategia-juramento-de-anibal",
+    "sourceFile": "Slide49.PNG",
+    "name": "Juramento de Aníbal",
+    "type": "Estratégia",
+    "civilization": "Fenícia",
+    "cost": 2,
+    "subtype": "Evento",
+    "abilityText": "Cada combatente cartaginês que você controla recebe +1⚔ se houver Melhorias romanas de outros jogadores em jogo.",
+    "keywords": [],
+    "bottomLeftIcon": "saco de moedas",
+    "flavorText": "\"Juro que enquanto a idade me permitir, empregarei o fogo e o ferro para romper o destino de Roma\"",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide49.PNG"
+    ]
+  },
+  {
+    "id": "estrategia-decepcao-de-maharbal",
+    "sourceFile": "Slide50.PNG",
+    "name": "Decepção de Maharbal",
+    "type": "Estratégia",
+    "civilization": "Fenícia",
+    "cost": 2,
+    "subtype": "Evento",
+    "abilityText": "No início da Fase de Assalto; O jogador alvo não poderá assaltar tuas Melhorias muradas durante esta Campanha.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": "Oh Aníbal! Sabes como vencer uma batalha, mas não sabes desfrutá-la.\nMaharbal, após a vitória em Canas",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide50.PNG"
+    ]
+  },
+  {
+    "id": "estrategia-batedores-nubios",
+    "sourceFile": "Slide51.PNG",
+    "name": "Batedores Núbios",
+    "type": "Estratégia",
+    "civilization": "Fenícia",
+    "cost": 3,
+    "subtype": "Especialista",
+    "abilityText": "No seu turno; Destrua uma carta do Mercado e ganhe uma ficha de Ouro.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": "Os batedores núbios, além de excelentes arqueiros, eram famosos por acharem água nos desertos escaldantes.",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide51.PNG"
+    ]
+  },
+  {
+    "id": "estrategia-subterfugio",
+    "sourceFile": "Slide52.PNG",
+    "name": "Subterfúgio",
+    "type": "Estratégia",
+    "civilization": "Fenícia",
+    "cost": 4,
+    "subtype": "Tática – Política",
+    "abilityText": "Olhe secretamente as três primeiras cartas do Império do jogador-alvo. Descarte uma e devolva as restantes para o topo do Império dele em qualquer ordem. Após isso, saque uma carta.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": "Aníbal conhecia os passos de seus adversários graças a uma extensa rede de espionagem em toda península itálica e além.",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide52.PNG"
+    ]
+  },
+  {
+    "id": "estrategia-mapas-secretos-de-hano",
+    "sourceFile": "Slide53.PNG",
+    "name": "Mapas Secretos de Hano",
+    "type": "Estratégia",
+    "civilization": "Fenícia",
+    "cost": 3,
+    "subtype": "Conhecimento",
+    "abilityText": "Revele a carta do topo do Império de outro jogador. Aquele jogador deve pagar a você um recurso. Do contrário, descarte a carta que você acabou de revelar.",
+    "keywords": [],
+    "bottomLeftIcon": "mão segurando uma carta",
+    "flavorText": null,
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide53.PNG"
+    ]
+  },
+  {
+    "id": "estrategia-anibal-barca",
+    "sourceFile": "Slide54.PNG",
+    "name": "Aníbal Barca",
+    "type": "Estratégia",
+    "civilization": "Fenícia",
+    "cost": 3,
+    "subtype": "General",
+    "abilityText": "Seus combatentes de Cartago e mercenários recebem +1⚔ nesta Campanha.\nSeus mercenários não precisam pagar soldo para serem descartados nesta Campanha.",
+    "keywords": [],
+    "bottomLeftIcon": "saco de moedas",
+    "flavorText": null,
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide54.PNG"
+    ]
+  },
+  {
+    "id": "estrategia-batalha-de-canas",
+    "sourceFile": "Slide55.PNG",
+    "name": "Batalha de Canas",
+    "type": "Estratégia",
+    "civilization": "Fenícia",
+    "cost": 3,
+    "subtype": "Batalha Histórica",
+    "abilityText": "Todos os combatentes médios e pesados de outros jogadores alvo que forem usados nesta Campanha recebem -1⚔.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": "\"Ah Romanos! Por que o luto? Por que as togas em choro? Onde estão vossos patrícios? Jazem nos campos de Canas, a batalha perfeita.\"",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide55.PNG"
+    ]
+  },
+  {
+    "id": "estrategia-bloqueio-naval",
+    "sourceFile": "Slide56.PNG",
+    "name": "Bloqueio Naval",
+    "type": "Estratégia",
+    "civilization": "Fenícia",
+    "cost": 1,
+    "subtype": "Tática",
+    "abilityText": "Pague x recursos; escolha uma Melhoria alvo em jogo e vire sua face para baixo. A Melhoria permanecerá desabilitada durante a partida até que o dono dela pague x recursos.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": null,
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide56.PNG"
+    ]
+  },
+  {
+    "id": "estrategia-travessia-dos-alpes",
+    "sourceFile": "Slide57.PNG",
+    "name": "Travessia dos Alpes",
+    "type": "Estratégia",
+    "civilization": "Fenícia",
+    "cost": 3,
+    "subtype": "Evento",
+    "abilityText": "Destrua Travessia dos Alpes.\nDestrua até três cartas da sua mão, Império ou Descanso em qualquer ordem. Caso destrua cartas de seu Império, embaralhe-o em seguida.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": "Oh Anibal! Tu que cruzastes os terríveis Alpes invernais. Acossado por tribos bárbaras, fome, frio e desespero, perdeste quase tudo! Não te desanimes, oh abençoado! Os deuses deixaram vivos apenas os inquebrantáveis e fieis! Estes, oh Anibal!, te seguirão até a morte!.",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide57.PNG"
+    ]
+  },
+  {
+    "id": "estrategia-naufragio",
+    "sourceFile": "Slide58.PNG",
+    "name": "Naufrágio",
+    "type": "Estratégia",
+    "civilization": "Fenícia",
+    "cost": 3,
+    "subtype": "Evento",
+    "abilityText": "No início da próxima Campanha, outro jogador alvo descarta duas cartas da mão dele.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": "\"Poseidon não faz distinção daqueles que morrerão em seus domínios\"",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide58.PNG"
+    ]
+  },
+  {
+    "id": "estrategia-mercados-secretos",
+    "sourceFile": "Slide59.PNG",
+    "name": "Mercados Secretos",
+    "type": "Estratégia",
+    "civilization": "Fenícia",
+    "cost": 2,
+    "subtype": "Comércio",
+    "abilityText": "Compre uma carta na Fase de Compra de outro jogador.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": "E os cartagineses controlavam muitos mercados secretos, trazendo especiarias, animais exóticos, metais e pedras preciosas das mais remotas terras.",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide59.PNG"
+    ]
+  },
+  {
+    "id": "estrategia-contadores-de-cartago",
+    "sourceFile": "Slide60.PNG",
+    "name": "Contadores de Cartago",
+    "type": "Estratégia",
+    "civilization": "Fenícia",
+    "cost": 3,
+    "subtype": "Comércio",
+    "abilityText": "Busque até duas cartas de trabalhadores cartagineses de seu Descanso e coloque-as em sua Mão.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": "\"Ninguém some no silêncio em Cartago. Cada nome, cada mão, cada dívida: tudo volta, tudo é contado, tudo serve.\"",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide60.PNG"
+    ]
+  },
+  {
+    "id": "estrategia-ouroboros",
+    "sourceFile": "Slide61.PNG",
+    "name": "Ouroboros",
+    "type": "Estratégia",
+    "civilization": "Fenícia",
+    "cost": 4,
+    "subtype": "Cultura",
+    "abilityText": "Saque uma carta. Você deve destruir uma carta de seu Descanso. Do contrário, destrua Ouroboros.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": "\"Assim como minha boca devora minha cauda primordial, o Fim é o início do Principio, diz Leviatã.\"\nHomenagem ao jogador Lucas Dias.",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide61.PNG"
+    ]
+  },
+  {
+    "id": "estrategia-o-campeao",
+    "sourceFile": "Slide62.PNG",
+    "name": "O Campeão",
+    "type": "Estratégia",
+    "civilization": "Neutra",
+    "cost": 3,
+    "subtype": "Especialista",
+    "abilityText": "Trabalhadores da civilização da Melhoria em que esta carta esteja anexada geram fichas de ouro na Renovação. Ganhe uma ficha de força toda vez que alocar uma carta de trabalhadores.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": "Homenagem ao jogador Lucas (Luketa), campeão do primeiro Torneio de Duplas de Cores da Guerra.",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide62.PNG"
+    ]
+  },
+  {
+    "id": "estrategia-crescimento-populacional",
+    "sourceFile": "Slide63.PNG",
+    "name": "Crescimento Populacional",
+    "type": "Estratégia",
+    "civilization": "Neutra",
+    "cost": 2,
+    "subtype": "Evento",
+    "abilityText": "Escolha uma carta de trabalhadores do Descanso ou Desterro do jogador alvo e coloque aquela carta no topo do Império daquele jogador.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": "\"Eles voltam em enxames — filhos do esquecimento e da fome. Crescer nem sempre é prosperar.\"",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide63.PNG"
+    ]
+  },
+  {
+    "id": "estrategia-desgaste-moral",
+    "sourceFile": "Slide64.PNG",
+    "name": "Desgaste Moral",
+    "type": "Estratégia",
+    "civilization": "Neutra",
+    "cost": 3,
+    "subtype": "Evento – Tática",
+    "abilityText": "Na próxima Campanha: o jogador alvo não poderá jogar combatentes de custo 3 ou menos.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": "\"Mesmo os grandes generais tremem quando não sabem de onde vem o próximo ataque.\"",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide64.PNG"
+    ]
+  },
+  {
+    "id": "estrategia-agatocles-de-siracusa",
+    "sourceFile": "Slide65.PNG",
+    "name": "Agátocles de Siracusa",
+    "type": "Estratégia",
+    "civilization": "Neutra",
+    "cost": 4,
+    "subtype": "General – Tática",
+    "abilityText": "Mercenários ganham +1 força em Conflitos.\nNa fase de Combate; Tome controle de um combatente alvo em jogo. Coloque-o no Descanso de seu dono após o fim do conflito.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": "\"Tirano, rei pérfido. A palavra honra nunca saíra de sua boca e a Lei o desprezava.\"",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide65.PNG"
+    ]
+  },
+  {
+    "id": "estrategia-troca-de-prisioneiros",
+    "sourceFile": "Slide66.PNG",
+    "name": "Troca de Prisioneiros",
+    "type": "Estratégia",
+    "civilization": "Neutra",
+    "cost": 4,
+    "subtype": "Política",
+    "abilityText": "Troque um combatente do seu Descanso por outro de custo igual ou menor do Mercado e coloque-o no topo do seu Império.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": null,
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide66.PNG"
+    ]
+  },
+  {
+    "id": "estrategia-contra-ataque",
+    "sourceFile": "Slide67.PNG",
+    "name": "Contra Ataque",
+    "type": "Estratégia",
+    "civilization": "Neutra",
+    "cost": 3,
+    "subtype": "Tática",
+    "abilityText": "Fase de Combate; você pode inverter a ordem do Conflito e ser o atacante com os eventuais bônus da posição. Seus adversários agora são defensores.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": null,
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide67.PNG"
+    ]
+  },
+  {
+    "id": "estrategia-ataque-surpresa",
+    "sourceFile": "Slide68.PNG",
+    "name": "Ataque Surpresa",
+    "type": "Estratégia",
+    "civilization": "Neutra",
+    "cost": 3,
+    "subtype": "Tática",
+    "abilityText": "Declare Fase de assalto contra o jogador alvo e resolva aquele Conflito.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": null,
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide68.PNG"
+    ]
+  },
+  {
+    "id": "estrategia-colheita-de-graos",
+    "sourceFile": "Slide69.PNG",
+    "name": "Colheita de Grãos",
+    "type": "Estratégia",
+    "civilization": "Neutra",
+    "cost": 3,
+    "subtype": "Conhecimento",
+    "abilityText": "Anexe até três cartas de trabalhadores vindas do seu Descanso em suas Melhorias elegíveis em jogo respeitando as civilizações originais.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": null,
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide69.PNG"
+    ]
+  },
+  {
+    "id": "estrategia-revolta-servil",
+    "sourceFile": "Slide70.PNG",
+    "name": "Revolta Servil",
+    "type": "Estratégia",
+    "civilization": "Neutra",
+    "cost": 3,
+    "subtype": "Política – Evento",
+    "abilityText": "O jogador alvo deve descartar todos os trabalhadores anexados nas Melhorias em jogo dele.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": "\"Quem vai arar os campos\"",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide70.PNG"
+    ]
+  },
+  {
+    "id": "estrategia-revolta-mercenaria",
+    "sourceFile": "Slide71.PNG",
+    "name": "Revolta Mercenária",
+    "type": "Estratégia",
+    "civilization": "Neutra",
+    "cost": 3,
+    "subtype": "Política – Evento",
+    "abilityText": "No início de um Conflito; Os jogadores alvo não podem usar combatentes do tipo mercenário durante esta Campanha.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": "\"E quando findou-se a Primeira Guerra Púnica, Cartago cedera a Sicília para Roma ao mesmo tempo em que não pagou aos mercenários que ali lutaram pelo ouro Cartaginês.\"",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide71.PNG"
+    ]
+  },
+  {
+    "id": "estrategia-guerra-civil",
+    "sourceFile": "Slide72.PNG",
+    "name": "Guerra Civil",
+    "type": "Estratégia",
+    "civilization": "Neutra",
+    "cost": 1,
+    "subtype": "Evento – Política",
+    "abilityText": "Destrua uma carta do Descanso de outro jogador.\nJogue esta carta no Descanso daquele jogador após usá-la.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": "\"A mais sórdida das guerras não toma partido\"",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide72.PNG"
+    ]
+  },
+  {
+    "id": "estrategia-contra-ofensiva",
+    "sourceFile": "Slide73.PNG",
+    "name": "Contra Ofensiva",
+    "type": "Estratégia",
+    "civilization": "Neutra",
+    "cost": 2,
+    "subtype": "Tática",
+    "abilityText": "Anule o efeito de uma estratégia antes dela ser resolvida. A carta anulada é descartada.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": null,
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide73.PNG"
+    ]
+  },
+  {
+    "id": "estrategia-interceptacao",
+    "sourceFile": "Slide74.PNG",
+    "name": "Interceptação",
+    "type": "Estratégia",
+    "civilization": "Neutra",
+    "cost": 2,
+    "subtype": "Tática",
+    "abilityText": "No início da segunda Etapa; nesta Campanha, os jogadores não poderão jogar cavalarias na segunda Etapa.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": null,
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide74.PNG"
+    ]
+  },
+  {
+    "id": "estrategia-massinissa-rei-numida",
+    "sourceFile": "Slide75.PNG",
+    "name": "Massinissa, Rei Númida",
+    "type": "Estratégia",
+    "civilization": "Neutra",
+    "cost": 4,
+    "subtype": "General",
+    "abilityText": "Na fase de Combate; tome controle de um combatente alvo em jogo. Coloque-o no Descanso de seu dono após o fim do conflito",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": "Homenagem ao jogador Rodrigo, \"Mestre da Economia\"",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide75.PNG"
+    ]
+  },
+  {
+    "id": "melhoria-logistica",
+    "sourceFile": "Slide2.PNG",
+    "name": "Logística",
+    "type": "Melhoria",
+    "civilization": "Helênica",
+    "cost": 3,
+    "subtype": "Conhecimento",
+    "activationType": "Fixa",
+    "abilityText": "Saque +1 carta toda vez que for completar sua Mão na Renovação.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": "Dario III esperava minar as provisões de Alexandre em poucos dias ao segurá-lo no deserto. Mas a logística macedônia já estava há vários dias adiantada e segura nas terras do Império Persa.",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide2.PNG"
+    ]
+  },
+  {
+    "id": "melhoria-agora-helenistica",
+    "sourceFile": "Slide3.PNG",
+    "name": "Ágora Helenística",
+    "type": "Melhoria",
+    "civilization": "Helênica",
+    "cost": 3,
+    "subtype": "Construção – Conhecimento – Política",
+    "activationType": "Fixa",
+    "abilityText": "Toda vez que você fizer uma compra limpa, saque uma carta.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": null,
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide3.PNG"
+    ]
+  },
+  {
+    "id": "melhoria-moinho-d-agua",
+    "sourceFile": "Slide4.PNG",
+    "name": "Moinho d'Água",
+    "type": "Melhoria",
+    "civilization": "Helênica",
+    "cost": 4,
+    "subtype": "Conhecimento",
+    "activationType": "Fixa",
+    "abilityText": "Toda vez que você comprar no Mercado, saque uma carta.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": "Os gregos criaram o moinho d'água por volta do III séc. A.C.",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide4.PNG"
+    ]
+  },
+  {
+    "id": "melhoria-memorial-de-guerra",
+    "sourceFile": "Slide5.PNG",
+    "name": "Memorial de Guerra",
+    "type": "Melhoria",
+    "civilization": "Helênica",
+    "cost": 2,
+    "subtype": "Construção – Cultura",
+    "activationType": "Ativada",
+    "abilityText": "Saque uma carta se houver combatente macedônico em seu Descanso.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": "Alexandre exortou aos gregos para que se lembrassem dos feitos dos heróis do passado e que lutassem bravamente junto aos deuses.",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide5.PNG"
+    ]
+  },
+  {
+    "id": "melhoria-arquimedes-de-siracusa",
+    "sourceFile": "Slide6.PNG",
+    "name": "Arquimedes de Siracusa",
+    "type": "Melhoria",
+    "civilization": "Helênica",
+    "cost": 2,
+    "subtype": "Conhecimento – Especialista",
+    "activationType": "Fixa",
+    "abilityText": "Toda vez que você pagar +1 recurso ao construir muralha em Melhoria sua, ganhe uma ficha de força.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": "\"Dê-me uma alavanca e um ponto de apoio e moverei o mundo\" Arquimedes",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide6.PNG"
+    ]
+  },
+  {
+    "id": "melhoria-templo-de-hermes",
+    "sourceFile": "Slide7.PNG",
+    "name": "Templo de Hermes",
+    "type": "Melhoria",
+    "civilization": "Helênica",
+    "cost": 3,
+    "subtype": "Construção – Templo",
+    "activationType": "Ativada",
+    "abilityText": "Pague -1 recurso ao comprar uma Estratégia ou Melhoria neste turno.",
+    "keywords": [],
+    "bottomLeftIcon": "saco de moedas",
+    "flavorText": null,
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide7.PNG"
+    ]
+  },
+  {
+    "id": "melhoria-templo-de-atena",
+    "sourceFile": "Slide8.PNG",
+    "name": "Templo de Atena",
+    "type": "Melhoria",
+    "civilization": "Helênica",
+    "cost": 3,
+    "subtype": "Construção – Templo",
+    "activationType": "Fixa",
+    "abilityText": "Fase de Compra; Você pode comprar Melhorias do Desterro.",
+    "keywords": [],
+    "bottomLeftIcon": "saco de moedas",
+    "flavorText": "\"Atena ou Minerva era considerada a deusa da arquitetura e engenharia na cultura greco-romana.\"",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide8.PNG"
+    ]
+  },
+  {
+    "id": "melhoria-templo-de-zeus",
+    "sourceFile": "Slide9.PNG",
+    "name": "Templo de Zeus",
+    "type": "Melhoria",
+    "civilization": "Helênica",
+    "cost": 3,
+    "subtype": "Construção – Templo",
+    "activationType": "Fixa",
+    "abilityText": "Toda vez que você for ganhar o ponto de influência Macedônia ao final da Campanha, ganhe 1 ponto extra se você tiver Templo de Zeus baixado em seu território.",
+    "keywords": [],
+    "bottomLeftIcon": "saco de moedas",
+    "flavorText": null,
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide9.PNG"
+    ]
+  },
+  {
+    "id": "melhoria-economia-helenica",
+    "sourceFile": "Slide10.PNG",
+    "name": "Economia Helênica",
+    "type": "Melhoria",
+    "civilization": "Helênica",
+    "cost": 3,
+    "subtype": "Comércio – Conhecimento",
+    "activationType": "Ativada",
+    "abilityText": "Pague -1 recurso ao comprar uma carta macedônica.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": null,
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide10.PNG"
+    ]
+  },
+  {
+    "id": "melhoria-mestre-de-grego",
+    "sourceFile": "Slide11.PNG",
+    "name": "Mestre de Grego",
+    "type": "Melhoria",
+    "civilization": "Helênica",
+    "cost": 3,
+    "subtype": "Especialista – Conhecimento",
+    "activationType": "Ativada",
+    "abilityText": "Aloque um trabalhador macedônio em uma melhoria elegível de outra civilização tua. Enquanto o trabalhador estiver alocado, aquela Melhoria tem: Na Renovação, saque +1 carta e descarte uma carta.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": "\"O Koiné foi a língua franca do mediterrâneo após as conquistas de Alexandre e perdurou até o fim do Império Romano.\"",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide11.PNG"
+    ]
+  },
+  {
+    "id": "melhoria-helenismo",
+    "sourceFile": "Slide12.PNG",
+    "name": "Helenismo",
+    "type": "Melhoria",
+    "civilization": "Helênica",
+    "cost": 3,
+    "subtype": "Cultura – Conhecimento",
+    "activationType": "Ativada",
+    "abilityText": "Escolha uma Melhoria alvo em jogo, aquela Melhoria será considerada macedônica na pontuação por influência enquanto \"Helenismo\" permanecer em jogo.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": "O Helenismo expandiu-se pelo mediterrâneo após as conquistas de Alexandre e perdurou até o início do Império Romano.",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide12.PNG"
+    ]
+  },
+  {
+    "id": "melhoria-arquitetura",
+    "sourceFile": "Slide13.PNG",
+    "name": "Arquitetura",
+    "type": "Melhoria",
+    "civilization": "Helênica",
+    "cost": 3,
+    "subtype": "Conhecimento",
+    "activationType": "Fixa",
+    "abilityText": "Toda vez que você comprar Melhoria, você pode baixar aquela Melhoria imediatamente em seu Território e ativar e resolver a ação dela se elegível.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": null,
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide13.PNG"
+    ]
+  },
+  {
+    "id": "melhoria-cavalos-da-tessalia",
+    "sourceFile": "Slide14.PNG",
+    "name": "Cavalos da Tessália",
+    "type": "Melhoria",
+    "civilization": "Helênica",
+    "cost": 4,
+    "subtype": "Comércio",
+    "activationType": "Ativada",
+    "abilityText": "Descarte um trabalhador;\nGanhe 2 fichas de recurso roxo.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": "Os cavalos da Tessália eram considerados os melhores do mundo mediterrâneo durante o Helenismo.",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide14.PNG"
+    ]
+  },
+  {
+    "id": "melhoria-reforma-thureophoroi",
+    "sourceFile": "Slide15.PNG",
+    "name": "Reforma Thureophoroi",
+    "type": "Melhoria",
+    "civilization": "Helênica",
+    "cost": 4,
+    "subtype": "Conhecimento – Evento",
+    "activationType": "Ativada",
+    "abilityText": "Todas as infantarias ligeiras do jogador alvo recebem +1 força e são consideradas \"infantaria média\" durante esta Campanha.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": "\"O domínio hoplita nas batalhas chegara ao fim com a revolução de mobilidade e eficiência dos Thureophoroi\"",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide15.PNG"
+    ]
+  },
+  {
+    "id": "melhoria-templo-de-epona",
+    "sourceFile": "Slide18.PNG",
+    "name": "Templo de Epona",
+    "type": "Melhoria",
+    "civilization": "Celta",
+    "cost": 3,
+    "subtype": "Construção – Templo",
+    "activationType": "Fixa",
+    "abilityText": "Você paga -1 recurso toda vez que comprar combatente do tipo Cavalaria.",
+    "keywords": [],
+    "bottomLeftIcon": "saco de moedas",
+    "flavorText": "\"A sela não pesa quando a deusa conduz. Os que montam sob sua bênção marcham por menos e conquistam por mais.\"",
+    "artist": null,
+    "isDraft": false,
+    "copies": 2,
+    "sourceFiles": [
+      "Slide18.PNG",
+      "Slide23.PNG"
+    ]
+  },
+  {
+    "id": "melhoria-novo-lar",
+    "sourceFile": "Slide19.PNG",
+    "name": "Novo Lar",
+    "type": "Melhoria",
+    "civilization": "Celta",
+    "cost": 3,
+    "subtype": "Política – Evento",
+    "activationType": "Ativada",
+    "abilityText": "Saque duas cartas e descarte duas cartas da sua mão.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": "Gallia est omnis divisa in partes tres...",
+    "artist": null,
+    "isDraft": false,
+    "copies": 2,
+    "sourceFiles": [
+      "Slide19.PNG",
+      "Slide22.PNG"
+    ]
+  },
+  {
+    "id": "melhoria-minas-de-hallstatt",
+    "sourceFile": "Slide20.PNG",
+    "name": "Minas de Hallstatt",
+    "type": "Melhoria",
+    "civilization": "Celta",
+    "cost": 4,
+    "subtype": "Construção – Comércio",
+    "activationType": "Ativada",
+    "abilityText": "Descarte um trabalhador;\nGanhe 2 fichas de recurso verde.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": "O sal era muito precioso no mundo antigo. A mina de Hallstatt é considerada a mais antiga do mundo.",
+    "artist": null,
+    "isDraft": false,
+    "copies": 2,
+    "sourceFiles": [
+      "Slide20.PNG",
+      "Slide21.PNG"
+    ]
+  },
+  {
+    "id": "melhoria-metalurgia-do-ferro",
+    "sourceFile": "Slide24.PNG",
+    "name": "Metalurgia do Ferro",
+    "type": "Melhoria",
+    "civilization": "Celta",
+    "cost": 3,
+    "subtype": "Especialista – Conhecimento",
+    "activationType": "Ativada",
+    "abilityText": "Aloque um trabalhador celta em uma melhoria elegível tua. Enquanto o trabalhador estiver alocado, aquela Melhoria tem: Na Renovação, ganhe uma ficha de força.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": null,
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide24.PNG"
+    ]
+  },
+  {
+    "id": "melhoria-templo-de-belenos",
+    "sourceFile": "Slide25.PNG",
+    "name": "Templo de Belenos",
+    "type": "Melhoria",
+    "civilization": "Celta",
+    "cost": 3,
+    "subtype": "Construção – Templo",
+    "activationType": "Fixa",
+    "abilityText": "Toda vez que você for ganhar o ponto de influência Celta ao final da Campanha, ganhe 1 ponto extra se você tiver Templo de Belenos baixado em seu território.",
+    "keywords": [],
+    "bottomLeftIcon": "saco de moedas",
+    "flavorText": null,
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide25.PNG"
+    ]
+  },
+  {
+    "id": "melhoria-santuario-de-toutatis",
+    "sourceFile": "Slide26.PNG",
+    "name": "Santuário de Toutatis",
+    "type": "Melhoria",
+    "civilization": "Celta",
+    "cost": 3,
+    "subtype": "Construção – Templo",
+    "activationType": "Ativada",
+    "abilityText": "Destrua um combatente de força x do seu Descanso. Receba x (ícone de ficha de força).",
+    "keywords": [],
+    "bottomLeftIcon": "saco de moedas",
+    "flavorText": null,
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide26.PNG"
+    ]
+  },
+  {
+    "id": "melhoria-salao-comunal",
+    "sourceFile": "Slide27.PNG",
+    "name": "Salão Comunal",
+    "type": "Melhoria",
+    "civilization": "Celta",
+    "cost": 3,
+    "subtype": "Construção – Cultura",
+    "activationType": "Fixa",
+    "abilityText": "Seus trabalhadores Celtas podem defender Melhorias e participar de batalhas em que você seja defensor valendo como força 1. Você não pode colocar fichas de força naqueles trabalhadores.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": null,
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide27.PNG"
+    ]
+  },
+  {
+    "id": "melhoria-economia-celta",
+    "sourceFile": "Slide28.PNG",
+    "name": "Economia Celta",
+    "type": "Melhoria",
+    "civilization": "Celta",
+    "cost": 3,
+    "subtype": "Comércio",
+    "activationType": "Ativada",
+    "abilityText": "Fase de Compra; Pague -1 recurso ao comprar uma carta Celta.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": null,
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide28.PNG"
+    ]
+  },
+  {
+    "id": "melhoria-helvecios",
+    "sourceFile": "Slide29.PNG",
+    "name": "Helvécios",
+    "type": "Melhoria",
+    "civilization": "Celta",
+    "cost": 3,
+    "subtype": "Cidade – Tribo",
+    "activationType": "Ativada",
+    "abilityText": "Fase de compra; Você pode destruir uma carta do Mercado e, após isso, comprar uma carta pagando -1 recurso.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": null,
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide29.PNG"
+    ]
+  },
+  {
+    "id": "melhoria-sabedoria-druidica",
+    "sourceFile": "Slide30.PNG",
+    "name": "Sabedoria Druídica",
+    "type": "Melhoria",
+    "civilization": "Celta",
+    "cost": 3,
+    "subtype": "Conhecimento",
+    "activationType": "Fixa",
+    "abilityText": "Toda vez que você comprar carta Celta, você pode, após a compra, buscar um trabalhador celta do seu Descanso e colocá-lo em sua Mão.",
+    "keywords": [],
+    "bottomLeftIcon": "saco de moedas",
+    "flavorText": null,
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide30.PNG"
+    ]
+  },
+  {
+    "id": "melhoria-terra-arrasada",
+    "sourceFile": "Slide31.PNG",
+    "name": "Terra Arrasada",
+    "type": "Melhoria",
+    "civilization": "Celta",
+    "cost": 2,
+    "subtype": "Conhecimento – Tática",
+    "activationType": "Fixa",
+    "abilityText": "Durante a Renovação, melhorias de todos os jogadores não podem gerar fichas de recurso enquanto \"Terra Arrasada\" estiver em jogo.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": null,
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide31.PNG"
+    ]
+  },
+  {
+    "id": "melhoria-rotacao-de-cultura",
+    "sourceFile": "Slide32.PNG",
+    "name": "Rotação de Cultura",
+    "type": "Melhoria",
+    "civilization": "Celta",
+    "cost": 4,
+    "subtype": "Conhecimento",
+    "activationType": "Ativada",
+    "abilityText": "Fase de Compra; Você pode usar até 2 trabalhadores celtas que estejam no seu Descanso ao comprar neste turno.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": null,
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide32.PNG"
+    ]
+  },
+  {
+    "id": "melhoria-cultura-de-la-tene",
+    "sourceFile": "Slide33.PNG",
+    "name": "Cultura de La Tène",
+    "type": "Melhoria",
+    "civilization": "Celta",
+    "cost": 3,
+    "subtype": "Cultura",
+    "activationType": "Ativada",
+    "abilityText": "Escolha uma Melhoria alvo em jogo; aquela Melhoria será considerada celta na pontuação por influência enquanto \"Cultura de La Tène\" permanecer em jogo.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": "Os celtas introduziram a metalurgia do ferro na Europa e deram início à Idade do Ferro no continente.",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide33.PNG"
+    ]
+  },
+  {
+    "id": "melhoria-templo-de-juno-moneta",
+    "sourceFile": "Slide35.PNG",
+    "name": "Templo de Juno Moneta",
+    "type": "Melhoria",
+    "civilization": "Latina",
+    "cost": 4,
+    "subtype": "Construção – Templo",
+    "activationType": "Ativada",
+    "abilityText": "Coloque um recurso vermelho em cada Melhoria de Roma em seu território.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": "\"Até os dias de hoje usamos o termo 'moeda' devido à intensa cunhagem realizada no templo dedicado a Juno no período helenístico\"",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide35.PNG"
+    ]
+  },
+  {
+    "id": "melhoria-fabrica-de-armas",
+    "sourceFile": "Slide36.PNG",
+    "name": "Fábrica de Armas",
+    "type": "Melhoria",
+    "civilization": "Latina",
+    "cost": 3,
+    "subtype": "Construção",
+    "activationType": "Fixa",
+    "abilityText": "Pague -1 recurso ao comprar ficha de força.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": null,
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide36.PNG"
+    ]
+  },
+  {
+    "id": "melhoria-banhos-publicos",
+    "sourceFile": "Slide37.PNG",
+    "name": "Banhos Públicos",
+    "type": "Melhoria",
+    "civilization": "Latina",
+    "cost": 3,
+    "subtype": "Construção",
+    "activationType": "Ativada",
+    "abilityText": "Gaste 2 recursos vermelhos, o jogador alvo saca duas cartas.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": "\"Se queres total apoio em tuas empresas e guerras particulares, nada melhor que os banhos públicos com os mais dignos patrícios.\"",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide37.PNG"
+    ]
+  },
+  {
+    "id": "melhoria-academia",
+    "sourceFile": "Slide38.PNG",
+    "name": "Academia",
+    "type": "Melhoria",
+    "civilization": "Latina",
+    "cost": 4,
+    "subtype": "Construção – Conhecimento",
+    "activationType": "Ativada",
+    "abilityText": "Use a habilidade elegível de uma Melhoria ou Estratégia que esteja no Mercado.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": "\"A Academia realizava palestras e discussões sobre filosofia, literatura, música e história.\"",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide38.PNG"
+    ]
+  },
+  {
+    "id": "melhoria-marmore-de-luna",
+    "sourceFile": "Slide39.PNG",
+    "name": "Mármore de Luna",
+    "type": "Melhoria",
+    "civilization": "Latina",
+    "cost": 4,
+    "subtype": "Construção – Indestrutível",
+    "activationType": "Ativada",
+    "abilityText": "Descarte um trabalhador;\nGanhe 2 fichas de recurso vermelho.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": "É perfeito, é divino! Esculpido em Carrara!",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide39.PNG"
+    ]
+  },
+  {
+    "id": "melhoria-templo-de-esculapio",
+    "sourceFile": "Slide40.PNG",
+    "name": "Templo de Esculápio",
+    "type": "Melhoria",
+    "civilization": "Latina",
+    "cost": 3,
+    "subtype": "Construção – Templo",
+    "activationType": "Fixa",
+    "abilityText": "Você pode comprar combatentes do Desterro.",
+    "keywords": [],
+    "bottomLeftIcon": "saco de moedas",
+    "flavorText": "\"Esculápio ou Asclépio era considerado o deus da Medicina nas culturas romana e grega.\"",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide40.PNG"
+    ]
+  },
+  {
+    "id": "melhoria-templo-de-marte",
+    "sourceFile": "Slide41.PNG",
+    "name": "Templo de Marte",
+    "type": "Melhoria",
+    "civilization": "Latina",
+    "cost": 3,
+    "subtype": "Construção – Templo",
+    "activationType": "Fixa",
+    "abilityText": "Toda vez que você for ganhar o ponto de influência Romana ao final da Campanha, ganhe 1 ponto extra se você tiver Templo de Marte baixado em seu território.",
+    "keywords": [],
+    "bottomLeftIcon": "saco de moedas",
+    "flavorText": null,
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide41.PNG"
+    ]
+  },
+  {
+    "id": "melhoria-argentarii",
+    "sourceFile": "Slide42.PNG",
+    "name": "Argentarii",
+    "type": "Melhoria",
+    "civilization": "Latina",
+    "cost": null,
+    "subtype": "Comércio – Especialista",
+    "activationType": "Fixa",
+    "abilityText": "Você deve colocar uma ficha de recurso vermelha sua sobre uma carta qualquer do Mercado no início de toda Campanha. Do contrário, destrua Argentarii. Aquela carta custará +2 recursos ao ser comprada por outros jogadores. O comprador leva a ficha de recurso sobre aquela carta.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": null,
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide42.PNG"
+    ]
+  },
+  {
+    "id": "melhoria-pomerium",
+    "sourceFile": "Slide43.PNG",
+    "name": "Pomerium",
+    "type": "Melhoria",
+    "civilization": "Latina",
+    "cost": 3,
+    "subtype": "Lugar Sagrado",
+    "activationType": "Fixa",
+    "abilityText": "Suas Melhorias em jogo não podem ser atacadas por combatentes romanos.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": "\"Pomerium ou post moerium (após o muro), era uma fronteira sagrada que circundava Roma e marcava seus primórdios míticos. Ninguém, nem mesmo os cônsules, poderia entrar armado neste local sagrado.\"",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide43.PNG"
+    ]
+  },
+  {
+    "id": "melhoria-collegia-fraborum",
+    "sourceFile": "Slide44.PNG",
+    "name": "Collegia Fraborum",
+    "type": "Melhoria",
+    "civilization": "Latina",
+    "cost": 3,
+    "subtype": "Conhecimento",
+    "activationType": "Ativada",
+    "abilityText": "Troque uma Melhoria sua em jogo (descarte recursos e trabalhadores que estejam anexados nela) por outra do Mercado de custo igual ou menor e coloque-a em sua Mão.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": "Grupo de construtores, talhadores, artistas, carpinteiros que iam atrás dos exércitos romanos reconstruindo as cidades destruídas na guerra.",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide44.PNG"
+    ]
+  },
+  {
+    "id": "melhoria-economia-romana",
+    "sourceFile": "Slide45.PNG",
+    "name": "Economia Romana",
+    "type": "Melhoria",
+    "civilization": "Latina",
+    "cost": 3,
+    "subtype": "Comércio",
+    "activationType": "Ativada",
+    "abilityText": "Fase de Compra; Pague -1 recurso ao comprar uma carta romana.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": null,
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide45.PNG"
+    ]
+  },
+  {
+    "id": "melhoria-estado-cliente",
+    "sourceFile": "Slide46.PNG",
+    "name": "Estado Cliente",
+    "type": "Melhoria",
+    "civilization": "Latina",
+    "cost": 3,
+    "subtype": "Política",
+    "activationType": "Ativada",
+    "abilityText": "Escolha uma Melhoria alvo em jogo, aquela Melhoria será considerada romana na pontuação por influência enquanto \"Estado Cliente\" permanecer em jogo.",
+    "keywords": [],
+    "bottomLeftIcon": "saco de moedas",
+    "flavorText": "\"Oh dignos patrícios! Não seria Roma amiga de todos os povos e todos os povos amigos de Roma?\"",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide46.PNG"
+    ]
+  },
+  {
+    "id": "melhoria-mare-nostrum",
+    "sourceFile": "Slide47.PNG",
+    "name": "Mare Nostrum",
+    "type": "Melhoria",
+    "civilization": "Latina",
+    "cost": 3,
+    "subtype": "Comércio",
+    "activationType": "Fixa",
+    "abilityText": "Fase de Compra; Você pode fazer duas ações de compra seguidamente. Seu turno termina imediatamente após a segunda compra.",
+    "keywords": [],
+    "bottomLeftIcon": "saco de moedas",
+    "flavorText": null,
+    "artist": null,
+    "isDraft": false,
+    "copies": 2,
+    "sourceFiles": [
+      "Slide47.PNG",
+      "Slide48.PNG"
+    ]
+  },
+  {
+    "id": "melhoria-castrum",
+    "sourceFile": "Slide49.PNG",
+    "name": "Castrum",
+    "type": "Melhoria",
+    "civilization": "Latina",
+    "cost": 3,
+    "subtype": "Construção",
+    "activationType": "Fixa",
+    "abilityText": "Suas Melhorias romanas que geram recursos podem gerar fichas de força ao invés de fichas de recursos nesta Fase de Renovação.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": null,
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide49.PNG"
+    ]
+  },
+  {
+    "id": "melhoria-de-architectura",
+    "sourceFile": "Slide50.PNG",
+    "name": "De Architectura",
+    "type": "Melhoria",
+    "civilization": "Latina",
+    "cost": 3,
+    "subtype": "Especialista – Conhecimento",
+    "activationType": "Ativada",
+    "abilityText": "Aloque um trabalhador romano em uma melhoria elegível tua. Enquanto o trabalhador estiver alocado, aquela Melhoria tem: Na Renovação, construa uma muralha em uma Melhoria elegível.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": null,
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide50.PNG"
+    ]
+  },
+  {
+    "id": "melhoria-aristocracia",
+    "sourceFile": "Slide51.PNG",
+    "name": "Aristocracia",
+    "type": "Melhoria",
+    "civilization": "Latina",
+    "cost": 3,
+    "subtype": "Política",
+    "activationType": "Fixa",
+    "abilityText": "Outros jogadores devem gastar 1 recurso para cada combatente \"pesado\" que queiram colocar em jogo nesta Campanha.",
+    "keywords": [],
+    "bottomLeftIcon": "saco de moedas",
+    "flavorText": "Os Patrícios alegavam descender dos fundadores de Roma e detinha muitos privilégios como a isenção de impostos e acesso aos mais altos cargos militares e políticos.",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide51.PNG"
+    ]
+  },
+  {
+    "id": "melhoria-farol",
+    "sourceFile": "Slide53.PNG",
+    "name": "Farol",
+    "type": "Melhoria",
+    "civilization": "Fenícia",
+    "cost": 3,
+    "subtype": "Construção",
+    "activationType": "Fixa",
+    "abilityText": "Após a Fase de assalto, saque uma carta para cada Melhoria sua que tiver sido assaltada.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": null,
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide53.PNG"
+    ]
+  },
+  {
+    "id": "melhoria-navegadores-de-hanno",
+    "sourceFile": "Slide54.PNG",
+    "name": "Navegadores de Hanno",
+    "type": "Melhoria",
+    "civilization": "Fenícia",
+    "cost": 3,
+    "subtype": "Comércio – Especialista",
+    "activationType": "Ativada",
+    "abilityText": "Fase de compra; Compre uma carta neutra do tipo Estratégia ou Melhoria sem pagar seu custo.",
+    "keywords": [],
+    "bottomLeftIcon": "saco de moedas",
+    "flavorText": "\"Os gregos contaram lendas. Nós cartografamos o mundo material e tangível.\"",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide54.PNG"
+    ]
+  },
+  {
+    "id": "melhoria-banqueiros-de-cartago",
+    "sourceFile": "Slide55.PNG",
+    "name": "Banqueiros de Cartago",
+    "type": "Melhoria",
+    "civilization": "Fenícia",
+    "cost": 3,
+    "subtype": "Comércio – Especialista",
+    "activationType": "Fixa",
+    "abilityText": "Você pode pagar -1 recurso ao comprar. Para cada carta comprada desta maneira, coloque uma carta de trabalhador de seu Descanso no topo de seu Império.",
+    "keywords": [],
+    "bottomLeftIcon": "saco de moedas",
+    "flavorText": "\"Não te preocupes, oh filho de Melcarte! Pague depois...\"",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide55.PNG"
+    ]
+  },
+  {
+    "id": "melhoria-banqueiros-punicos",
+    "sourceFile": "Slide56.PNG",
+    "name": "Banqueiros Púnicos",
+    "type": "Melhoria",
+    "civilization": "Fenícia",
+    "cost": 3,
+    "subtype": "Especialista – Comércio",
+    "activationType": "Ativada",
+    "abilityText": "Aloque um trabalhador cartaginês em uma melhoria elegível tua. Enquanto o trabalhador estiver alocado, aquela Melhoria tem: Na Renovação, ganhe uma ficha de ouro.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": "\"Governada por mercadores ricos e influentes, Cartago não se preocupava com exércitos nacionais, pois um homem mais valia fazendo dinheiro do que empunhando uma espada.\"",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide56.PNG"
+    ]
+  },
+  {
+    "id": "melhoria-alfabeto-fenicio",
+    "sourceFile": "Slide57.PNG",
+    "name": "Alfabeto Fenício",
+    "type": "Melhoria",
+    "civilization": "Fenícia",
+    "cost": 3,
+    "subtype": "Cultura – Comércio",
+    "activationType": "Ativada",
+    "abilityText": "Escolha uma Melhoria alvo em jogo; aquela Melhoria será considerada cartaginesa na pontuação por influência enquanto \"Alfabeto Fenício\" permanecer em jogo.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": null,
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide57.PNG"
+    ]
+  },
+  {
+    "id": "melhoria-templo-de-melcarte",
+    "sourceFile": "Slide58.PNG",
+    "name": "Templo de Melcarte",
+    "type": "Melhoria",
+    "civilization": "Fenícia",
+    "cost": 3,
+    "subtype": "Construção – Templo",
+    "activationType": "Fixa",
+    "abilityText": "Toda vez que você for ganhar o ponto de influência Cartaginesa ao final da Campanha, ganhe 1 ponto extra se você tiver Templo de Melcarte baixado em seu território.",
+    "keywords": [],
+    "bottomLeftIcon": "saco de moedas",
+    "flavorText": null,
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide58.PNG"
+    ]
+  },
+  {
+    "id": "melhoria-templo-de-tanit",
+    "sourceFile": "Slide59.PNG",
+    "name": "Templo de Tanit",
+    "type": "Melhoria",
+    "civilization": "Fenícia",
+    "cost": 3,
+    "subtype": "Construção – Templo",
+    "activationType": "Fixa",
+    "abilityText": "Uma vez por Campanha, quando um assalto bem sucedido fosse destruir uma Melhoria sua, destrua uma carta de sua mão ao invés daquela Melhoria.",
+    "keywords": [],
+    "bottomLeftIcon": "saco de moedas",
+    "flavorText": null,
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide59.PNG"
+    ]
+  },
+  {
+    "id": "melhoria-economia-cartaginesa",
+    "sourceFile": "Slide60.PNG",
+    "name": "Economia Cartaginesa",
+    "type": "Melhoria",
+    "civilization": "Fenícia",
+    "cost": 3,
+    "subtype": "Comércio",
+    "activationType": "Ativada",
+    "abilityText": "Pague -1 recurso ao comprar uma carta cartaginesa.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": null,
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide60.PNG"
+    ]
+  },
+  {
+    "id": "melhoria-tinturaria-de-murex",
+    "sourceFile": "Slide61.PNG",
+    "name": "Tinturaria de Murex",
+    "type": "Melhoria",
+    "civilization": "Fenícia",
+    "cost": 4,
+    "subtype": "Construção – Indestrutível",
+    "activationType": "Ativada",
+    "abilityText": "Descarte um trabalhador;\nGanhe 2 fichas de recurso azul.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": "\"E a cor púrpura, mais valiosa que o ouro, das vestes dos reis e maiores magistrados do Mediterrâneo, era produzida pelos fenícios através de um caramujo marinho chamado murex.\"",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide61.PNG"
+    ]
+  },
+  {
+    "id": "melhoria-manufatura",
+    "sourceFile": "Slide62.PNG",
+    "name": "Manufatura",
+    "type": "Melhoria",
+    "civilization": "Fenícia",
+    "cost": 3,
+    "subtype": "Construção – Comércio",
+    "activationType": "Ativada",
+    "abilityText": "Pague 2/4/6/8 recursos;\nGanhe 1/2/3/4 fichas de ouro.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": "\"Mais cobiçados que o próprio ouro, eram tecidos coloridos, como a famosa púrpura de Tiro, o vidro e a cerâmica.\"",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide62.PNG"
+    ]
+  },
+  {
+    "id": "melhoria-sicilia",
+    "sourceFile": "Slide63.PNG",
+    "name": "Sicília",
+    "type": "Melhoria",
+    "civilization": "Fenícia",
+    "cost": 4,
+    "subtype": "Construção – Cidade",
+    "activationType": "Fixa",
+    "abilityText": "Renovação; Seus trabalhadores alocados geram fichas de recurso em dobro.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": "A Sicília era considera o celeiro do Mediterrâneo Ocidental, sendo disputada por gregos, Romanos e Cartagineses. A civilização que a controlasse não passaria fome.",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide63.PNG"
+    ]
+  },
+  {
+    "id": "melhoria-rota-da-purpura",
+    "sourceFile": "Slide64.PNG",
+    "name": "Rota da Púrpura",
+    "type": "Melhoria",
+    "civilization": "Fenícia",
+    "cost": 3,
+    "subtype": "Construção – Comércio",
+    "activationType": "Fixa",
+    "abilityText": "Toda vez que outros jogadores usarem recursos azuis ao comprar, ganhe um recurso da cor da carta comprada.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": "\"Mais cobiçados que o próprio ouro, eram tecidos coloridos, como a famosa púrpura de Tiro, o vidro e a cerâmica.\"",
+    "artist": null,
+    "isDraft": false,
+    "copies": 2,
+    "sourceFiles": [
+      "Slide64.PNG",
+      "Slide65.PNG"
+    ]
+  },
+  {
+    "id": "melhoria-hano-o-navegador",
+    "sourceFile": "Slide66.PNG",
+    "name": "Hano, o Navegador",
+    "type": "Melhoria",
+    "civilization": "Fenícia",
+    "cost": 3,
+    "subtype": "General – Especialista",
+    "activationType": "Fixa",
+    "abilityText": "Toda vez você jogar duas estratégias em seguida, ganhe 2 fichas douradas.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": "Homenagem ao jogador Alan Roza",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide66.PNG"
+    ]
+  },
+  {
+    "id": "melhoria-grandes-silos",
+    "sourceFile": "Slide67.PNG",
+    "name": "Grandes Silos",
+    "type": "Melhoria",
+    "civilization": "Fenícia",
+    "cost": 3,
+    "subtype": "Construção",
+    "activationType": "Fixa",
+    "abilityText": "Anexe até 2 cartas viradas para baixo sob esta Melhoria. Você pode colocá-las em sua mão na próxima Renovação quando sacar cartas de seu Império. Se esta Melhoria for saqueada, aquelas cartas são destruídas.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": "\"Por Melcarte! Vá em paz, oh Sufete! Juro que vossas mercadorias estarão seguras para o carregamento dos próximos navios\"",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide67.PNG"
+    ]
+  },
+  {
+    "id": "melhoria-caravana-do-deserto",
+    "sourceFile": "Slide68.PNG",
+    "name": "Caravana do Deserto",
+    "type": "Melhoria",
+    "civilization": "Fenícia",
+    "cost": 4,
+    "subtype": "Comércio",
+    "activationType": "Ativada",
+    "abilityText": "Descarte fichas de recurso azul que estejam sobre esta carta. Para cada ficha de recurso descartada desta maneira, saque uma carta.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": null,
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide68.PNG"
+    ]
+  },
+  {
+    "id": "melhoria-mercadores-punicos",
+    "sourceFile": "Slide69.PNG",
+    "name": "Mercadores Púnicos",
+    "type": "Melhoria",
+    "civilization": "Fenícia",
+    "cost": 3,
+    "subtype": "Comércio – Especialista",
+    "activationType": "Ativada",
+    "abilityText": "Coloque uma ficha tua de recurso azul em uma Melhoria de outro jogador. Coloque duas fichas de recurso sobre Mercadores Púnicos da cor daquela Melhoria.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": "\"Os púnicos faziam comércio desde a África Saariana até os confins da Bretanha.\"",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide69.PNG"
+    ]
+  },
+  {
+    "id": "melhoria-comercio-maritimo",
+    "sourceFile": "Slide70.PNG",
+    "name": "Comércio Marítimo",
+    "type": "Melhoria",
+    "civilization": "Fenícia",
+    "cost": 4,
+    "subtype": "Comércio",
+    "activationType": "Ativada",
+    "abilityText": "Saque duas cartas.\nOutro jogador saca uma carta do Império dele.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": "Por Melcarte! Trago tantas especiarias de terras tão distantes, oh Sufete!, que teus súditos lhe farão oferendas como se fosses um deus!",
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide70.PNG"
+    ]
+  },
+  {
+    "id": "melhoria-porto-de-cartago",
+    "sourceFile": "Slide71.PNG",
+    "name": "Porto de Cartago",
+    "type": "Melhoria",
+    "civilization": "Fenícia",
+    "cost": 4,
+    "subtype": "Construção – Comércio",
+    "activationType": "Fixa",
+    "abilityText": "Fichas de recurso são consideradas fichas de ouro enquanto estiverem sobre Porto de Cartago. Você pode usar aquelas fichas como ouro para realizar suas ações.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": null,
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide71.PNG"
+    ]
+  },
+  {
+    "id": "melhoria-quartel-militar",
+    "sourceFile": "Slide72.PNG",
+    "name": "Quartel Militar",
+    "type": "Melhoria",
+    "civilization": "Neutra",
+    "cost": 3,
+    "subtype": "Construção",
+    "activationType": "Fixa",
+    "abilityText": "Você paga -1 recurso toda vez que comprar combatente do tipo infantaria média/pesada.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": null,
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide72.PNG"
+    ]
+  },
+  {
+    "id": "melhoria-estabulos",
+    "sourceFile": "Slide73.PNG",
+    "name": "Estábulos",
+    "type": "Melhoria",
+    "civilization": "Neutra",
+    "cost": 3,
+    "subtype": "Construção",
+    "activationType": "Fixa",
+    "abilityText": "Você paga -1 recurso toda vez que comprar combatente do tipo cavalaria.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": null,
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide73.PNG"
+    ]
+  },
+  {
+    "id": "melhoria-minas-de-ouro",
+    "sourceFile": "Slide74.PNG",
+    "name": "Minas de Ouro",
+    "type": "Melhoria",
+    "civilization": "Neutra",
+    "cost": 3,
+    "subtype": "Construção – Indestrutível",
+    "activationType": "Fixa",
+    "abilityText": "Descarte um trabalhador.\n\nGanhe uma ficha de recurso dourada.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": null,
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide74.PNG"
+    ]
+  },
+  {
+    "id": "melhoria-campo-de-tiro",
+    "sourceFile": "Slide75.PNG",
+    "name": "Campo de Tiro",
+    "type": "Melhoria",
+    "civilization": "Neutra",
+    "cost": 3,
+    "subtype": "Construção",
+    "activationType": "Fixa",
+    "abilityText": "Você paga -1 recurso toda vez que comprar combatentes do tipo atirador.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": null,
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide75.PNG"
+    ]
+  },
+  {
+    "id": "melhoria-sentinelas-da-fortaleza",
+    "sourceFile": "Slide76.PNG",
+    "name": "Sentinelas da Fortaleza",
+    "type": "Melhoria",
+    "civilization": "Neutra",
+    "cost": 4,
+    "subtype": "Construção",
+    "activationType": "Fixa",
+    "abilityText": "Quando outros jogadores forem assaltar seu Território, eles devem assaltar Sentinelas da Fortaleza primeiro antes de assaltar outras Melhorias.\nO assalto não precisa ser bem sucedido.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": null,
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide76.PNG"
+    ]
+  },
+  {
+    "id": "melhoria-torre-de-vigia",
+    "sourceFile": "Slide77.PNG",
+    "name": "Torre de Vigia",
+    "type": "Melhoria",
+    "civilization": "Neutra",
+    "cost": 3,
+    "subtype": "Construção",
+    "activationType": "Fixa",
+    "abilityText": "Quando outros jogadores forem assaltar tuas Melhorias, aqueles jogadores devem assaltá-las com as cartas reveladas.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": null,
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide77.PNG"
+    ]
+  },
+  {
+    "id": "melhoria-queda-populacional",
+    "sourceFile": "Slide78.PNG",
+    "name": "Queda Populacional",
+    "type": "Melhoria",
+    "civilization": "Neutra",
+    "cost": 2,
+    "subtype": "Política",
+    "activationType": "Fixa",
+    "abilityText": "Todos os jogadores devem pagar +1 recurso ao comprarem combatentes.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": null,
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide78.PNG"
+    ]
+  },
+  {
+    "id": "melhoria-templo-do-deus-inominado",
+    "sourceFile": "Slide79.PNG",
+    "name": "Templo do Deus Inominado",
+    "type": "Melhoria",
+    "civilization": "Neutra",
+    "cost": 2,
+    "subtype": "Construção – Templo",
+    "activationType": "Fixa",
+    "abilityText": "Você não precisa pagar o soldo do combatente tipo mercenário.",
+    "keywords": [],
+    "bottomLeftIcon": null,
+    "flavorText": null,
+    "artist": null,
+    "isDraft": false,
+    "copies": 1,
+    "sourceFiles": [
+      "Slide79.PNG"
+    ]
+  }
+]

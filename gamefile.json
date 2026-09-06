@@ -1,0 +1,308 @@
+{
+  "name": "Cores da Guerra",
+  "cardRotation": 45,
+  "customHelp": "Cores da Guerra é um jogo de construção de baralhos sobre o Mediterrâneo helenístico. Escolha sua Capital, gerencie Trabalhadores para gerar recursos, compre Combatentes, Estratégias e Melhorias no Mercado, e conquiste Hegemonia por vitória militar ou por influência.\n\nIMPORTANTE — esta implementação digital NÃO resolve Conflitos, Formações, habilidades de carta ou pontuação automaticamente. O motor oferece apenas as zonas, o estado de virado/tapado e contadores de apoio (aba 'Reserva'). Consultem sempre o Manual de Regras (Cores da Guerra — Manual de Regras v1) para resolver Assaltos, Combates e efeitos de carta.\n\nOrdem de jogo (primazia) a cada Campanha: quem jogou por último na Campanha anterior joga primeiro na próxima; os demais mantêm a ordem relativa. Passem o token 'Primazia' manualmente na Renovação.\n\nConflitos (Assalto/Combate) em partidas com 3-4 jogadores são sempre declarados 1 contra 1: quem ataca escolhe um único oponente-alvo: os demais não participam daquele Conflito.",
+  "deckBuilding": {
+    "mainFilters": ["type", "civilization", "cost"],
+    "costCurveIgnoredTypes": ["Trabalhador", "Melhoria"],
+    "formats": [
+      {
+        "title": "Padrão",
+        "gameplay": "Padrao",
+        "deckRuleset": "ImperioInicial",
+        "customCategories": [
+          { "category": "Capital", "min": 1, "max": 1 }
+        ]
+      }
+    ],
+    "deckRulesets": {
+      "ImperioInicial": {
+        "checkCardLegality": false,
+        "general": { "min": 12, "max": 12, "maxPerCard": 3 },
+        "categories": [
+          { "category": "Trabalhador", "min": 12, "max": 12 },
+          { "category": "Capital", "min": 1, "max": 1 }
+        ]
+      }
+    }
+  },
+  "gameplay": {
+    "Padrao": {
+      "defaultNotes": "Hegemonia: 0\nRoxo: 0 | Vermelho: 0 | Azul: 0 | Verde: 0 | Ouro: 0",
+      "countersStartingValues": [0],
+      "mulligan": {
+        "startingHandSize": 6
+      },
+      "newTurn": {
+        "drawOnStart": false,
+        "drawPerTurn": 0,
+        "sharedTurn": false,
+        "turnOrder": "default",
+        "firstPlayerTokenName": "Primazia"
+      },
+      "tokens": {
+        "player": [
+          {
+            "name": "Primazia",
+            "image": "https://coresdaguerra.example.com/assets/tokens/primazia.png",
+            "isUnique": true
+          }
+        ],
+        "draggable": [
+          { "id": "recurso-roxo", "name": "Recurso Helênico (Roxo)", "image": "https://coresdaguerra.example.com/assets/tokens/roxo.png" },
+          { "id": "recurso-vermelho", "name": "Recurso Latino (Vermelho)", "image": "https://coresdaguerra.example.com/assets/tokens/vermelho.png" },
+          { "id": "recurso-azul", "name": "Recurso Fenício (Azul)", "image": "https://coresdaguerra.example.com/assets/tokens/azul.png" },
+          { "id": "recurso-verde", "name": "Recurso Celta (Verde)", "image": "https://coresdaguerra.example.com/assets/tokens/verde.png" },
+          { "id": "ouro", "name": "Ouro", "image": "https://coresdaguerra.example.com/assets/tokens/ouro.png" },
+          { "id": "forca", "name": "Ficha de Força (Panóplia)", "image": "https://coresdaguerra.example.com/assets/tokens/forca.png" },
+          { "id": "muralha", "name": "Ficha de Muralha", "image": "https://coresdaguerra.example.com/assets/tokens/muralha.png" }
+        ]
+      },
+      "beforeGameStart": {
+        "boardCategoriesInSideboard": ["Capital"],
+        "boardCardSelection": [
+          {
+            "category": "Capital",
+            "min": 1,
+            "max": 1,
+            "unselectedDestination": "Remove"
+          }
+        ],
+        "initialBoardSetup": [
+          { "drawFromTop": "Deck", "count": 6, "destination": "Hand" }
+        ]
+      },
+      "sections": {
+        "layout": {
+          "direction": "column",
+          "isSymmetricalForOpponents": true,
+          "content": [
+            { "section": "Territorio" },
+            {
+              "direction": "row",
+              "content": [
+                { "section": "Reserva" },
+                { "section": "Deck" },
+                { "section": "Discard" },
+                { "section": "Remove" }
+              ]
+            },
+            { "section": "Hand" }
+          ]
+        },
+        "sharedZone": {
+          "height": 34,
+          "layout": {
+            "direction": "column",
+            "content": [
+              {
+                "direction": "row",
+                "content": [
+                  { "section": "MercadoCombatentesPilha" },
+                  { "section": "MercadoCombatentesRevelado" }
+                ]
+              },
+              {
+                "direction": "row",
+                "content": [
+                  { "section": "MercadoEstrategiasPilha" },
+                  { "section": "MercadoEstrategiasRevelado" }
+                ]
+              },
+              {
+                "direction": "row",
+                "content": [
+                  { "section": "MercadoMelhoriasPilha" },
+                  { "section": "MercadoMelhoriasRevelado" }
+                ]
+              },
+              { "section": "CampoDeBatalha" }
+            ]
+          }
+        },
+        "sectionsDict": {
+          "Hand": {
+            "isHidden": "opponent-only",
+            "height": "MEDIUM",
+            "alignment": "CENTER",
+            "displayedTitle": "Mão"
+          },
+          "Deck": {
+            "isHidden": "yes",
+            "height": "MEDIUM",
+            "alignment": "DECK",
+            "displayedTitle": "Império"
+          },
+          "Discard": {
+            "isHidden": "opponent-only",
+            "height": "MEDIUM",
+            "alignment": "DECK",
+            "displayedTitle": "Descanso"
+          },
+          "Remove": {
+            "isHidden": "no",
+            "height": "SMALL",
+            "alignment": "DECK",
+            "displayedTitle": "Desterro"
+          },
+          "Territorio": {
+            "isHidden": "no",
+            "height": "DEFAULT",
+            "alignment": "CENTER",
+            "displayedTitle": "Território",
+            "isHorizontalAllowed": true,
+            "keepTappedNewTurn": false,
+            "logWhenPlayed": true
+          },
+          "Reserva": {
+            "type": "custom",
+            "isHidden": "no",
+            "height": "SMALL",
+            "alignment": "NONE",
+            "displayedTitle": "Reserva & Hegemonia",
+            "isShared": false,
+            "defaultValue": {
+              "roxo": 0,
+              "vermelho": 0,
+              "azul": 0,
+              "verde": 0,
+              "ouro": 0,
+              "hegemonia": 0
+            },
+            "blueprint": {
+              "type": "div",
+              "props": { "className": "reserva-panel" },
+              "children": [
+                {
+                  "type": "div",
+                  "props": { "className": "reserva-row reserva-hegemonia" },
+                  "children": [
+                    "Hegemonia",
+                    {
+                      "type": "input-number",
+                      "props": { "value": "{{ game.data.Reserva.hegemonia }}" },
+                      "onChange": "game.data.Reserva.hegemonia = Number(value); chatLog(`Hegemonia agora: ${game.data.Reserva.hegemonia}`)"
+                    }
+                  ]
+                },
+                {
+                  "type": "div",
+                  "props": { "className": "reserva-row" },
+                  "children": [
+                    "Roxo (Helênica)",
+                    {
+                      "type": "input-number",
+                      "props": { "value": "{{ game.data.Reserva.roxo }}" },
+                      "onChange": "game.data.Reserva.roxo = Number(value)"
+                    }
+                  ]
+                },
+                {
+                  "type": "div",
+                  "props": { "className": "reserva-row" },
+                  "children": [
+                    "Vermelho (Latina)",
+                    {
+                      "type": "input-number",
+                      "props": { "value": "{{ game.data.Reserva.vermelho }}" },
+                      "onChange": "game.data.Reserva.vermelho = Number(value)"
+                    }
+                  ]
+                },
+                {
+                  "type": "div",
+                  "props": { "className": "reserva-row" },
+                  "children": [
+                    "Azul (Fenícia)",
+                    {
+                      "type": "input-number",
+                      "props": { "value": "{{ game.data.Reserva.azul }}" },
+                      "onChange": "game.data.Reserva.azul = Number(value)"
+                    }
+                  ]
+                },
+                {
+                  "type": "div",
+                  "props": { "className": "reserva-row" },
+                  "children": [
+                    "Verde (Celta)",
+                    {
+                      "type": "input-number",
+                      "props": { "value": "{{ game.data.Reserva.verde }}" },
+                      "onChange": "game.data.Reserva.verde = Number(value)"
+                    }
+                  ]
+                },
+                {
+                  "type": "div",
+                  "props": { "className": "reserva-row" },
+                  "children": [
+                    "Ouro",
+                    {
+                      "type": "input-number",
+                      "props": { "value": "{{ game.data.Reserva.ouro }}" },
+                      "onChange": "game.data.Reserva.ouro = Number(value)"
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "MercadoCombatentesPilha": {
+            "isHidden": "yes",
+            "height": "SMALL",
+            "alignment": "DECK",
+            "displayedTitle": "Pilha de Combatentes"
+          },
+          "MercadoCombatentesRevelado": {
+            "isHidden": "no",
+            "height": "SMALL",
+            "alignment": "START",
+            "displayedTitle": "Combatentes"
+          },
+          "MercadoEstrategiasPilha": {
+            "isHidden": "yes",
+            "height": "SMALL",
+            "alignment": "DECK",
+            "displayedTitle": "Pilha de Estratégias"
+          },
+          "MercadoEstrategiasRevelado": {
+            "isHidden": "no",
+            "height": "SMALL",
+            "alignment": "START",
+            "displayedTitle": "Estratégias"
+          },
+          "MercadoMelhoriasPilha": {
+            "isHidden": "yes",
+            "height": "SMALL",
+            "alignment": "DECK",
+            "displayedTitle": "Pilha de Melhorias"
+          },
+          "MercadoMelhoriasRevelado": {
+            "isHidden": "no",
+            "height": "SMALL",
+            "alignment": "START",
+            "displayedTitle": "Melhorias"
+          },
+          "CampoDeBatalha": {
+            "isHidden": "no",
+            "height": "MEDIUM",
+            "alignment": "CENTER",
+            "displayedTitle": "Campo de Batalha",
+            "isGroupForbidden": true
+          }
+        }
+      }
+    }
+  },
+  "defaultResources": {
+    "backgrounds": [
+      "https://coresdaguerra.example.com/assets/backgrounds/mediterraneo.jpg"
+    ],
+    "decksUrl": "https://coresdaguerra.example.com/decks.json"
+  },
+  "cards": {
+    "dataUrl": "https://coresdaguerra.example.com/cards.json",
+    "cardBack": "https://coresdaguerra.example.com/assets/cardback.jpg"
+  }
+}
