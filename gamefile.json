@@ -54,9 +54,6 @@
   "gameplay": {
     "Padrao": {
       "defaultNotes": "Hegemonia: 0\nRoxo: 0 | Vermelho: 0 | Azul: 0 | Verde: 0 | Ouro: 0",
-      "countersStartingValues": [
-        0
-      ],
       "mulligan": {
         "startingHandSize": 6,
         "mulliganCount": { "min": 0, "max": 0 }
