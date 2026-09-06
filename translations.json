@@ -1,0 +1,11 @@
+{
+  "en": {
+    "Card types": {
+      "Capital": "Capital",
+      "Trabalhador": "Trabalhador",
+      "Combatente": "Combatente",
+      "Estratégia": "Estratégia",
+      "Melhoria": "Melhoria"
+    }
+  }
+}

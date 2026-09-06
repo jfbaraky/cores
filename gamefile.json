@@ -68,52 +68,50 @@
         "turnOrder": "default",
         "firstPlayerTokenName": "Primazia"
       },
-      "tokens": {
-        "player": [
-          {
-            "name": "Primazia",
-            "image": "https://jfbaraky.github.io/cores/assets/tokens/primazia.png",
-            "isUnique": true
-          }
-        ],
-        "draggable": [
-          {
-            "id": "recurso-roxo",
-            "name": "Recurso Helênico (Roxo)",
-            "image": "https://jfbaraky.github.io/cores/assets/tokens/roxo.png"
-          },
-          {
-            "id": "recurso-vermelho",
-            "name": "Recurso Latino (Vermelho)",
-            "image": "https://jfbaraky.github.io/cores/assets/tokens/vermelho.png"
-          },
-          {
-            "id": "recurso-azul",
-            "name": "Recurso Fenício (Azul)",
-            "image": "https://jfbaraky.github.io/cores/assets/tokens/azul.png"
-          },
-          {
-            "id": "recurso-verde",
-            "name": "Recurso Celta (Verde)",
-            "image": "https://jfbaraky.github.io/cores/assets/tokens/verde.png"
-          },
-          {
-            "id": "ouro",
-            "name": "Ouro",
-            "image": "https://jfbaraky.github.io/cores/assets/tokens/ouro.png"
-          },
-          {
-            "id": "forca",
-            "name": "Ficha de Força (Panóplia)",
-            "image": "https://jfbaraky.github.io/cores/assets/tokens/forca.png"
-          },
-          {
-            "id": "muralha",
-            "name": "Ficha de Muralha",
-            "image": "https://jfbaraky.github.io/cores/assets/tokens/muralha.png"
-          }
-        ]
-      },
+      "tokens": [
+        {
+          "name": "Primazia",
+          "image": "https://jfbaraky.github.io/cores/assets/tokens/primazia.png",
+          "isUnique": true
+        }
+      ],
+      "draggableTokens": [
+        {
+          "id": "recurso-roxo",
+          "name": "Recurso Helênico (Roxo)",
+          "image": "https://jfbaraky.github.io/cores/assets/tokens/roxo.png"
+        },
+        {
+          "id": "recurso-vermelho",
+          "name": "Recurso Latino (Vermelho)",
+          "image": "https://jfbaraky.github.io/cores/assets/tokens/vermelho.png"
+        },
+        {
+          "id": "recurso-azul",
+          "name": "Recurso Fenício (Azul)",
+          "image": "https://jfbaraky.github.io/cores/assets/tokens/azul.png"
+        },
+        {
+          "id": "recurso-verde",
+          "name": "Recurso Celta (Verde)",
+          "image": "https://jfbaraky.github.io/cores/assets/tokens/verde.png"
+        },
+        {
+          "id": "ouro",
+          "name": "Ouro",
+          "image": "https://jfbaraky.github.io/cores/assets/tokens/ouro.png"
+        },
+        {
+          "id": "forca",
+          "name": "Ficha de Força (Panóplia)",
+          "image": "https://jfbaraky.github.io/cores/assets/tokens/forca.png"
+        },
+        {
+          "id": "muralha",
+          "name": "Ficha de Muralha",
+          "image": "https://jfbaraky.github.io/cores/assets/tokens/muralha.png"
+        }
+      ],
       "beforeGameStart": {
         "initialBoardSetup": {
           "0": [
@@ -1113,7 +1111,12 @@
             "isHidden": "opponent-only",
             "height": "MEDIUM",
             "alignment": "CENTER",
-            "displayedTitle": "Mão"
+            "displayedTitle": "Mão",
+            "autoPlayFromHand": {
+              "Combatente": "Territorio",
+              "Estratégia": "Territorio",
+              "Melhoria": "Territorio"
+            }
           },
           "Deck": {
             "isHidden": "yes",
@@ -1140,7 +1143,8 @@
             "displayedTitle": "Território",
             "isHorizontalAllowed": true,
             "keepTappedNewTurn": false,
-            "logWhenPlayed": true
+            "logWhenPlayed": true,
+            "noAutoPayTo": true
           },
           "Reserva": {
             "type": "custom",
@@ -1318,7 +1322,11 @@
             "isHidden": "no",
             "height": "SMALL",
             "alignment": "START",
-            "displayedTitle": "Combatentes"
+            "displayedTitle": "Combatentes",
+            "cardActionShortcut": {
+              "action": "MOVE",
+              "actionData": { "destination": "Hand" }
+            }
           },
           "MercadoCombatentesDescarte": {
             "isHidden": "no",
@@ -1336,7 +1344,11 @@
             "isHidden": "no",
             "height": "SMALL",
             "alignment": "START",
-            "displayedTitle": "Estratégias"
+            "displayedTitle": "Estratégias",
+            "cardActionShortcut": {
+              "action": "MOVE",
+              "actionData": { "destination": "Hand" }
+            }
           },
           "MercadoEstrategiasDescarte": {
             "isHidden": "no",
@@ -1354,7 +1366,11 @@
             "isHidden": "no",
             "height": "SMALL",
             "alignment": "START",
-            "displayedTitle": "Melhorias"
+            "displayedTitle": "Melhorias",
+            "cardActionShortcut": {
+              "action": "MOVE",
+              "actionData": { "destination": "Hand" }
+            }
           },
           "MercadoMelhoriasDescarte": {
             "isHidden": "no",
@@ -1376,6 +1392,7 @@
   "defaultRessources": {
     "decksUrl": "https://jfbaraky.github.io/cores/decks.json"
   },
+  "translationsUrl": "https://jfbaraky.github.io/cores/translations.json",
   "cards": {
     "dataUrl": "https://jfbaraky.github.io/cores/cards.json",
     "cardBack": "https://jfbaraky.github.io/cores/assets/cardback.jpg"
