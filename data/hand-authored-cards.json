@@ -111,12 +111,12 @@
         },
         "type": "Trabalhador",
         "cost": 0,
-        "image": "https://jfbaraky.github.io/cores/assets/cards/trabalhador-helenica.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/trabalhador-helenica.webp"
       }
     },
     "name": "Trabalhador Helênico",
     "abilityText": "Descarte para Trabalhar (ganhe 1 Roxo) ou Comerciar (com outro trabalhador qualquer, ganhe 1 Ouro). Pode servir de Milícia ou ser Colonizado em uma Melhoria Helênica elegível.",
-    "image": "https://jfbaraky.github.io/cores/assets/cards/trabalhador-helenica.webp"
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/trabalhador-helenica.webp"
   },
   "trabalhador-latina": {
     "id": "trabalhador-latina",
@@ -130,12 +130,12 @@
         },
         "type": "Trabalhador",
         "cost": 0,
-        "image": "https://jfbaraky.github.io/cores/assets/cards/trabalhador-latina.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/trabalhador-latina.webp"
       }
     },
     "name": "Trabalhador Latino",
     "abilityText": "Descarte para Trabalhar (ganhe 1 Vermelho) ou Comerciar (com outro trabalhador qualquer, ganhe 1 Ouro). Pode servir de Milícia ou ser Colonizado em uma Melhoria Latina elegível.",
-    "image": "https://jfbaraky.github.io/cores/assets/cards/trabalhador-latina.webp"
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/trabalhador-latina.webp"
   },
   "trabalhador-fenicia": {
     "id": "trabalhador-fenicia",
@@ -149,12 +149,12 @@
         },
         "type": "Trabalhador",
         "cost": 0,
-        "image": "https://jfbaraky.github.io/cores/assets/cards/trabalhador-fenicia.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/trabalhador-fenicia.webp"
       }
     },
     "name": "Trabalhador Fenício",
     "abilityText": "Descarte para Trabalhar (ganhe 1 Azul) ou Comerciar (com outro trabalhador qualquer, ganhe 1 Ouro). Pode servir de Milícia ou ser Colonizado em uma Melhoria Fenícia elegível.",
-    "image": "https://jfbaraky.github.io/cores/assets/cards/trabalhador-fenicia.webp"
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/trabalhador-fenicia.webp"
   },
   "trabalhador-celta": {
     "id": "trabalhador-celta",
@@ -168,11 +168,11 @@
         },
         "type": "Trabalhador",
         "cost": 0,
-        "image": "https://jfbaraky.github.io/cores/assets/cards/trabalhador-celta.webp"
+        "image": "https://jfbaraky.github.io/cores/assets/cards/web/trabalhador-celta.webp"
       }
     },
     "name": "Trabalhador Celta",
     "abilityText": "Descarte para Trabalhar (ganhe 1 Verde) ou Comerciar (com outro trabalhador qualquer, ganhe 1 Ouro). Pode servir de Milícia ou ser Colonizado em uma Melhoria Celta elegível.",
-    "image": "https://jfbaraky.github.io/cores/assets/cards/trabalhador-celta.webp"
+    "image": "https://jfbaraky.github.io/cores/assets/cards/web/trabalhador-celta.webp"
   }
 }
