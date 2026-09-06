@@ -163,6 +163,7 @@ let marketSetup = false;
 
 // One-time setup: shuffle each hidden pile and reveal the first 4 cards.
 async function setupMarket() {
+  functions.chatLog(`[debug] setupMarket called: game.isHost=${game?.isHost}, marketSetup=${marketSetup}`);
   if (!game.isHost || marketSetup) return;
   marketSetup = true; // claim before any await — see comment above
   for (const { pile } of MARKET_PILES) {
