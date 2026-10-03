@@ -1,5 +1,6 @@
 {
   "name": "Cores da Guerra",
+  "menuBackgroundImage": "https://jfbaraky.github.io/cores/assets/cardback.jpg",
   "cardRotation": 45,
   "scriptsUrls": [
     "https://jfbaraky.github.io/cores/game-scripts.js"
@@ -1176,8 +1177,7 @@
               "azul": 0,
               "verde": 0,
               "ouro": 0,
-              "hegemonia": 0,
-              "myTurn": false
+              "hegemonia": 0
             },
             "blueprint": {
               "type": "div",
@@ -1512,8 +1512,7 @@
             "cardActionShortcut": {
               "action": "MOVE",
               "actionData": {
-                "destination": "Deck",
-                "position": "BOTTOM"
+                "destination": "Deck"
               }
             }
           },

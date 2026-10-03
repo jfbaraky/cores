@@ -9,9 +9,8 @@
 async function debugBoard(tag) {
   const deck = await functions.getDeck();
   const types = (list) => (list ?? []).map((c) => functions.getCardData(c)?.type?.[0]).join("");
-  const name = (c) => functions.getCardData(c)?.name?.name ?? "-";
   functions.chatLog(
-    `[debug ${tag ?? ""}] host=${game.isHost} deckBottom=${name(deck[0])} deckTop=${name(deck[deck.length - 1])} hand=${(cards?.Hand ?? []).length}(${types(cards?.Hand)}) deck=${deck.length}(${types(deck)}) ` +
+    `[debug ${tag ?? ""}] host=${game.isHost} hand=${(cards?.Hand ?? []).length}(${types(cards?.Hand)}) deck=${deck.length}(${types(deck)}) ` +
       `terr=${(cards?.Territorio ?? []).length}(${types(cards?.Territorio)}) descanso=${(cards?.Discard ?? []).length} ` +
       `rev=${MARKET_PILES.map(({ revealed }) => (cards?.[revealed] ?? []).length).join("/")} ` +
       `descartes=${MARKET_PILES.map(({ discard }) => (cards?.[discard] ?? []).length).join("/")}`,
@@ -60,12 +59,13 @@ async function setupMarket() {
 }
 
 // Renovação: the oldest revealed card of each row goes to its discard; keepMarketFull then refills
-// the rows (fillMarket is not called here to avoid a double refill).
+// the rows (fillMarket is not called here to avoid a double refill). New cards are appended on the
+// RIGHT of a row, so the oldest is the LEFTMOST (the manual's conveyor runs the other way round).
 async function advanceMarket() {
   for (const { revealed, discard } of MARKET_PILES) {
     const shown = cards?.[revealed] ?? [];
     if (shown.length === 0) continue;
-    const oldest = shown[shown.length - 1];
+    const oldest = [...shown].sort((a, b) => a.position.index - b.position.index)[0];
     await functions.moveCard(oldest, discard);
     functions.chatLog(`${functions.getCardData(oldest)?.name?.name ?? "Carta"} descartada do Mercado (Renovação).`);
   }
@@ -75,16 +75,13 @@ async function advanceMarket() {
 const RESOURCE_KEYS = ["roxo", "vermelho", "azul", "verde", "ouro"];
 
 // Reserva.onNewTurn: runs on every client at every turn change. §10.3: resources not stored on
-// Melhorias are discarded when *your* turn ends. `myTurn` (Reserva data, per player) remembers that
-// the turn that just ended was this player's, so off-turn gains are kept until the end of your own turn.
+// Melhorias are discarded when *your* turn ends. Observed live: inside this handler
+// `game.turn.isMyTurn` still describes the turn that has just ENDED (the snapshot is taken before the
+// engine switches turn), so `true` here means "my turn just ended".
 function endOfTurnCleanup() {
+  functions.chatLog(`[turn] count=${game.turn.count} justEndedWasMine=${game.turn.isMyTurn}`); // TEMP diagnostic
+  if (!game.turn.isMyTurn) return;
   const reserva = game.data.Reserva;
-  if (game.turn.isMyTurn) {
-    reserva.myTurn = true;
-    return;
-  }
-  if (!reserva.myTurn) return;
-  reserva.myTurn = false;
   const lost = RESOURCE_KEYS.filter((k) => reserva[k] > 0).map((k) => `${reserva[k]} ${k}`);
   RESOURCE_KEYS.forEach((k) => { reserva[k] = 0; });
   functions.chatLog(
