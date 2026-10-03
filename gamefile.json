@@ -1131,7 +1131,10 @@
             "isHidden": "opponent-only",
             "height": 12,
             "alignment": "CENTER",
-            "displayedTitle": "Mão"
+            "displayedTitle": "Mão",
+            "events": {
+              "onCardsEnter": "await placeCapital()"
+            }
           },
           "Deck": {
             "isHidden": "yes",
