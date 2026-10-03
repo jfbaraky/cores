@@ -1499,7 +1499,7 @@
               }
             },
             "events": {
-              "onCardsLeave": "await replenishMarket()"
+              "onCardsLeave": "await replenishRow('MercadoCombatentesPilha', 'MercadoCombatentesRevelado')"
             }
           },
           "MercadoCombatentesDescarte": {
@@ -1526,7 +1526,7 @@
               }
             },
             "events": {
-              "onCardsLeave": "await replenishMarket()"
+              "onCardsLeave": "await replenishRow('MercadoEstrategiasPilha', 'MercadoEstrategiasRevelado')"
             }
           },
           "MercadoEstrategiasDescarte": {
@@ -1553,7 +1553,7 @@
               }
             },
             "events": {
-              "onCardsLeave": "await replenishMarket()"
+              "onCardsLeave": "await replenishRow('MercadoMelhoriasPilha', 'MercadoMelhoriasRevelado')"
             }
           },
           "MercadoMelhoriasDescarte": {

@@ -31,14 +31,18 @@ const MARKET_PILES = [
 ];
 const MARKET_REVEALED_SIZE = 4;
 
-// Tops every revealed row back up to 4. Called by the rows' own onCardsLeave event (so
-// buying a card refills its slot), after setup, and by the "Repor Mercado" button.
-async function replenishMarket() {
+// Tops one revealed row back up to 4. Each row's own onCardsLeave event calls this for that row
+// only: a row-wide refill from every event would use a stale snapshot of the other rows and
+// over-draw (Renovação fired 3 events and left 6/6/6 revealed).
+async function replenishRow(pile, revealed) {
   if (!game.isHost) return;
-  for (const { pile, revealed } of MARKET_PILES) {
-    const short = MARKET_REVEALED_SIZE - (cards?.[revealed] ?? []).length;
-    if (short > 0) await functions.drawFromExtraDeck(pile, short, false, revealed);
-  }
+  const short = MARKET_REVEALED_SIZE - (cards?.[revealed] ?? []).length;
+  if (short > 0) await functions.drawFromExtraDeck(pile, short, false, revealed);
+}
+
+// Tops every row up to 4 (setup and the "Repor Mercado" button).
+async function replenishMarket() {
+  for (const { pile, revealed } of MARKET_PILES) await replenishRow(pile, revealed);
 }
 
 // Shuffles each pile and reveals the first 4. No-op once any row already has cards.
@@ -50,7 +54,7 @@ async function setupMarket() {
 }
 
 // Renovação: the oldest revealed card of each row goes to its discard; the rows' onCardsLeave
-// event then refills them (replenishMarket is not called here to avoid a double refill).
+// events then refill each row (replenishMarket is not called here to avoid a double refill).
 async function advanceMarket() {
   for (const { revealed, discard } of MARKET_PILES) {
     const shown = cards?.[revealed] ?? [];
