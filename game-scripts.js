@@ -1,32 +1,25 @@
 // Cores da Guerra — TCG Arena scripts.
-// Only native building blocks are used (see docs/TCGA-REFERENCE.md): functions.getDeck,
-// moveCard, draw, drawFromExtraDeck, shuffleSection, chatLog and the cards/game globals.
+// Only native building blocks are used (see docs/TCGA-REFERENCE.md): moveCard,
+// drawFromExtraDeck, shuffleSection, getDeck, chatLog and the cards/game globals.
 // No module-level flags: scripts run in a sandbox and module state does not persist.
 // Every function below is idempotent by construction (it inspects the board first).
 
-const isCapital = (card) => functions.getCardData(card)?.type === "Capital";
-
-// §7.1: the Capital enters play at no cost and is never part of the hand.
-// Runs at onPlayersDeckPicked (deck is still whole and the hand not dealt yet, so the
-// Capital is found in the deck and the opening hand stays 6 Trabalhadores) and again at
-// onPlayersReady as a safety net (e.g. if the Capital was dealt into the hand).
+// Diagnostics (see docs/DIAGNOSTICS.md): one log line with what the script sandbox sees.
+// Runs from the DEBUG button in the Reserva panel; safe to call from anywhere.
 async function debugBoard(tag) {
   const deck = await functions.getDeck();
-  functions.chatLog(`[debug ${tag ?? ""}] hand=${(cards?.Hand ?? []).length} deck=${deck.length} terr=${(cards?.Territorio ?? []).length} deckKeys=${JSON.stringify(Object.keys(deck[0] ?? {}))} deckTypes=${deck.slice(0, 13).map((c) => functions.getCardData(c)?.type?.[0]).join("")} handTypes=${(cards?.Hand ?? []).map((c) => functions.getCardData(c)?.type?.[0]).join("")}`);
+  const types = (list) => (list ?? []).map((c) => functions.getCardData(c)?.type?.[0]).join("");
+  functions.chatLog(
+    `[debug ${tag ?? ""}] host=${game.isHost} hand=${(cards?.Hand ?? []).length}(${types(cards?.Hand)}) deck=${deck.length}(${types(deck)}) ` +
+      `terr=${(cards?.Territorio ?? []).length}(${types(cards?.Territorio)}) descanso=${(cards?.Discard ?? []).length} ` +
+      `rev=${MARKET_PILES.map(({ revealed }) => (cards?.[revealed] ?? []).length).join("/")} ` +
+      `descartes=${MARKET_PILES.map(({ discard }) => (cards?.[discard] ?? []).length).join("/")}`,
+  );
 }
 
-async function placeCapital() {
-  await debugBoard("placeCapital");
-  if ((cards?.Territorio ?? []).some(isCapital)) return;
-
-  const inHand = (cards?.Hand ?? []).find(isCapital);
-  const capital = inHand ?? (await functions.getDeck()).find(isCapital);
-  if (!capital) return;
-
-  await functions.moveCard(capital, "Territorio");
-  functions.chatLog(`${functions.getCardData(capital)?.name?.name ?? "Capital"} colocada em jogo automaticamente no Território.`);
-  if (inHand) await functions.draw(1); // keep the hand at its starting size
-}
+// The Capital needs no script: gamefile.json sets sections.categoriesAlreadyOnBoard to
+// ["Capital->Territorio"], so the engine puts the deck's Capital category straight onto the
+// Território and the 6-card opening hand is dealt from the 12 Trabalhadores.
 
 // --- Mercado -------------------------------------------------------------
 // Each category has a hidden pile, a face-up row of 4 and a discard. The piles are shared

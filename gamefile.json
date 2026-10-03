@@ -1131,10 +1131,7 @@
             "isHidden": "opponent-only",
             "height": 12,
             "alignment": "CENTER",
-            "displayedTitle": "Mão",
-            "events": {
-              "onCardsEnter": "await placeCapital()"
-            }
+            "displayedTitle": "Mão"
           },
           "Deck": {
             "isHidden": "yes",
@@ -1417,8 +1414,7 @@
               ]
             },
             "events": {
-              "onPlayersDeckPicked": "await placeCapital()",
-              "onPlayersReady": "await placeCapital(); await setupMarket()"
+              "onPlayersReady": "await setupMarket()"
             }
           },
           "MercadoCombatentesPilha": {
@@ -1517,7 +1513,10 @@
           "Melhoria": "Territorio",
           "Trabalhador": "Discard"
         },
-        "autoPlayFromStack": {}
+        "autoPlayFromStack": {},
+        "categoriesAlreadyOnBoard": [
+          "Capital->Territorio"
+        ]
       }
     }
   },
