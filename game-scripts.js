@@ -10,7 +10,13 @@ const isCapital = (card) => functions.getCardData(card)?.type === "Capital";
 // Runs at onPlayersDeckPicked (deck is still whole and the hand not dealt yet, so the
 // Capital is found in the deck and the opening hand stays 6 Trabalhadores) and again at
 // onPlayersReady as a safety net (e.g. if the Capital was dealt into the hand).
+async function debugBoard(tag) {
+  const deck = await functions.getDeck();
+  functions.chatLog(`[debug ${tag ?? ""}] hand=${(cards?.Hand ?? []).length} deck=${deck.length} terr=${(cards?.Territorio ?? []).length} deckKeys=${JSON.stringify(Object.keys(deck[0] ?? {}))} deckTypes=${deck.slice(0, 13).map((c) => functions.getCardData(c)?.type?.[0]).join("")} handTypes=${(cards?.Hand ?? []).map((c) => functions.getCardData(c)?.type?.[0]).join("")}`);
+}
+
 async function placeCapital() {
+  await debugBoard("placeCapital");
   if ((cards?.Territorio ?? []).some(isCapital)) return;
 
   const inHand = (cards?.Hand ?? []).find(isCapital);

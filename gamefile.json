@@ -1400,6 +1400,16 @@
                   },
                   "children": "Avançar Mercado (Renovação)",
                   "onClick": "await advanceMarket()"
+                },
+                {
+                  "type": "button",
+                  "props": {
+                    "style": {
+                      "fontSize": "1.2vh"
+                    }
+                  },
+                  "children": "DEBUG",
+                  "onClick": "await debugBoard('button')"
                 }
               ]
             },
