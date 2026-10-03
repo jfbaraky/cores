@@ -89,98 +89,39 @@ como em uma mesa física. O `gamefile.json` só define:
   Muralha — representados como tokens que os jogadores arrastam sobre as
   cartas, exatamente como as fichas físicas do jogo.
 
-## Mercado: automação por botão (não 100% automático)
+## Como o jogo roda no TCG Arena (estado atual)
 
-`game-scripts.js` tem 3 funções para o Mercado — `setupMarket()`,
-`replenishMarket()`, `advanceMarket()` — mas nenhuma delas dispara sozinha
-mais. Elas só rodam quando alguém clica um dos 3 botões na aba "Reserva":
-**Abrir Mercado**, **Repor Mercado**, **Avançar Mercado (Renovação)**
-(ver "Testado ao vivo" abaixo para o que cada uma faz exatamente).
+Tudo abaixo usa só recursos nativos do motor (ver `docs/TCGA-REFERENCE.md`);
+o que cada decisão custou em tentativas está em `docs/DIAGNOSTICS.md`.
 
-Isso não era o plano original — as 3 foram disparadas automaticamente por
-eventos (`onPlayersReady`, `onNewTurn`, etc.), do mesmo jeito que
-`placeCapital()`. Dois motivos concretos, confirmados ao vivo, mudaram
-isso:
-
-- **O Mercado é uma zona compartilhada.** Cada jogador conectado roda sua
-  própria cópia inteira de `game-scripts.js`, com seu próprio estado de
-  módulo — uma flag tipo `let marketSetup = false` só impede *aquele*
-  cliente de repetir o trabalho; não impede um SEGUNDO jogador de também
-  embaralhar/revelar as mesmas pilhas compartilhadas de novo.
-  `placeCapital()` nunca teve esse problema porque só mexe nas zonas
-  *daquele* jogador (Território/Mão/Império), então execução redundante
-  entre clientes é inofensiva ali.
-- **Mesmo `game.isHost` (restringir a mutação a um único cliente) não foi
-  suficiente sozinho.** Um log de depuração ao vivo mostrou 3 chamadas
-  seguidas de `setupMarket()` no MESMO cliente (host) todas lendo
-  `marketSetup=false` — inclusive a 2ª e a 3ª, que deveriam ter visto
-  `true` se a atribuição síncrona da 1ª chamada realmente "grudasse" antes
-  delas rodarem. Ou seja: variáveis de módulo não estão se mantendo de
-  forma confiável entre chamadas rápidas em sequência neste motor. (A
-  documentação da plataforma não promete persistência — uma versão anterior
-  deste README citava uma frase "top-level variables persist" que não
-  existe nas páginas; os scripts rodam num sandbox, e o estado documentado
-  é `game.data`, ver `docs/TCGA-REFERENCE.md`.) Na
-  prática isso causou revelação de Mercado MUITO acima do esperado (o
-  pior caso ao vivo: 45/65/58 cartas restantes nas pilhas em vez de
-  53/69/70 — quase o triplo do esperado).
-
-Um clique de botão é uma ação única e deliberada — não tem a cascata de
-múltiplos eventos disparando em sequência que expôs os dois problemas
-acima, então contorna ambos por completo. O preço é que "Repor Mercado"
-não acontece sozinho no instante em que alguém compra uma carta; alguém
-(qualquer jogador) precisa clicar depois da compra.
-- **Assalto/Combate:** casamento de cartas, Formações, cavalaria vs. muralha,
-  cálculo de dano, [REAÇÃO] — tudo lido e resolvido pelos jogadores nas
-  próprias cartas, no Campo de Batalha.
-- **Primazia (ordem de turno):** o token "Primazia" é passado manualmente a
-  cada Renovação, seguindo a regra combinada (quem jogou por último vira o
-  primeiro).
-- **"Trabalhar"/"Comerciar":** o jogador arrasta o(s) Trabalhador(es) da Mão
-  para o Descanso (botão direito na carta → "To Descanso" → "Top") e ajusta o
-  contador correspondente na Reserva manualmente (clique no campo numérico e
-  digite o valor, ou use as setas ▲▼). Testado e funcionando ao vivo.
-- **Colocar a Capital em jogo:** automático, via `game-scripts.js`
-  (`placeCapital()`). A Capital continua embaralhada dentro do Império de
-  13 cartas (um teste ao vivo descartou `beforeGameStart.
-  boardCategoriesInSideboard` — ver nota abaixo), então ela só sai no
-  saque inicial de 6 cerca de 46% das vezes (6/13). `placeCapital()`
-  cobre os outros 54%: se a Capital não estiver na Mão logo após o saque,
-  a função saca o resto do baralho (`functions.draw(7)` — Deck é
-  `isHidden:"yes"` e **confirmadamente ilegível para scripts** mesmo para
-  o dono, mas `draw()` funciona mesmo assim, já que só *lê* o topo, não
-  precisa inspecionar o conteúdo) até encontrar a Capital pela Mão. De
-  um jeito ou de outro, depois de mover a Capital para o Território a
-  função corrige o tamanho da mão de volta para 6: saca mais uma carta se
-  a Capital tiver sido uma das 6 originais (sobrariam só 5), ou devolve o
-  excesso ao Império e reembaralha (`shuffleSection`) se a busca trouxe
-  cartas demais. Roda em vários eventos (`onPlayersSideboardClosed`,
-  `onPlayersMulligan`, `onPlayersReady`, `onNewTurn`, `onCardsUpdate`) e
-  tenta ser idempotente — a primeira coisa que checa é se já existe uma
-  Capital no Território, mais uma flag `inFlight` em memória — mas testado
-  ao vivo, a busca+correção completa ainda roda **duas vezes seguidas**
-  para o mesmo jogador em alguns jogos (provavelmente dois desses eventos
-  disparando próximos o bastante para cada um ler `cards` antes do outro
-  terminar). Isso é inofensivo — o resultado final observado (Capital no
-  Território, mão com exatamente 6) foi o mesmo com uma ou duas execuções,
-  já que cada rodada só mexe em cartas que ela mesma já sabe que são
-  seguras — mas gera linhas duplicadas no chat/log de partida e um
-  reembaralhamento a mais. **Confirmado ao vivo, com o resultado final
-  correto em todos os testes** (ver "Testado ao vivo" abaixo) — a
-  duplicação ocasional fica registrada aqui como um item cosmético, não
-  uma correção pendente.
-- **`boardCategoriesInSideboard` não funciona para este baralho
-  pré-construído:** testado ao vivo (com e sem o toggle "Disable
-  sideboard for all players" do anfitrião) — a tela "Swap cards with your
-  sideboard" sempre mostrou `Deck (13)` com a Capital ainda dentro e
-  `Sideboard (0)` vazio. Ou o recurso não se aplica a decks vindos de
-  `decks.json` (só ao deck-builder nativo da plataforma), ou exige outra
-  configuração não documentada — de qualquer forma, o projeto não depende
-  mais dele. Essa tela ainda aparece para os jogadores (é um passo padrão
-  da plataforma para qualquer jogo), mas como este jogo não usa Sideboard
-  o jogador só precisa clicar "Continue" sem mexer em nada — ou o
-  anfitrião pode ligar "Disable sideboard for all players" na tela "Start
-  the game" para pular essa etapa por completo.
+- **Capital em jogo:** `sections.categoriesAlreadyOnBoard: ["Capital->Territorio"]`.
+  O motor coloca a Capital direto no Território, fora do Império, e a mão
+  inicial de 6 cartas sai dos 12 Trabalhadores. Não há script (o antigo
+  `placeCapital()` e a busca no baralho foram removidos).
+- **Mercado abre sozinho:** a seção "Reserva" tem `onPlayersReady` →
+  `setupMarket()` (só o host embaralha as 3 pilhas e revela 4 por fileira).
+- **Comprar:** passe o mouse sobre uma carta revelada e clique no ícone do
+  canto (`cardActionShortcut` → Mão). A fileira se reabastece sozinha: cada
+  fileira tem `onCardsLeave` → `replenishRow()` (só o host).
+- **Jogar da mão:** clique na carta (`autoPlayFromHand`): Capital, Combatente,
+  Estratégia e Melhoria vão para o Território; Trabalhador vai para o Descanso
+  ("Trabalhar").
+- **Renovação:** botão "Avançar Mercado (Renovação)" descarta a carta mais
+  antiga de cada fileira (as fileiras se repõem pelo evento acima).
+  "Repor Mercado" completa fileiras até 4; "Abrir Mercado" é a montagem
+  inicial (idempotente). "DEBUG" escreve no log o que o script enxerga.
+- **As cartas do Mercado são *tokens* para o motor** e o padrão do motor apaga
+  tokens movidos para Mão/Descanso/Desterro; por isso `gamefile.json` define
+  `tokenForbiddenSections` e `ownerOnlySections` com essas seções em `false`
+  (sem isso a compra "logava" mas a carta nunca saía da fileira).
+- **Continua manual:** Assalto/Combate (casamento de cartas, Formações, cavalaria
+  vs. muralha, dano, [REAÇÃO]) no Campo de Batalha; passar o token Primazia a
+  cada Renovação (quem jogou por último vira o primeiro); ajustar os contadores
+  da Reserva ao Trabalhar/Comerciar e ao pagar custos (campo numérico ou ▲▼).
+- **`boardCategoriesInSideboard` não é usado:** testado ao vivo, a tela de
+  Sideboard continuou mostrando a Capital dentro do baralho. A tela ainda
+  aparece (passo padrão da plataforma): basta "Continue", ou ligar "Disable
+  sideboard for all players" em "Start the game".
 
 ## Itens de dados a revisar
 
@@ -217,10 +158,8 @@ o conteúdo "fechado":
   própria para eles ainda (cartas simples, coloridas por civilização, sem
   nome/arte única, conforme confirmado).
 - **(Resolvido e confirmado ao vivo) Capital garantida no Território
-  desde o início.** Ver "Colocar a Capital em jogo" acima —
-  `placeCapital()` garante isso via busca no baralho por script, sem
-  depender de `boardCategoriesInSideboard` (que não funcionou para este
-  baralho) nem de um `gameplay` separado por civilização.
+  desde o início**, via `categoriesAlreadyOnBoard` (ver "Como o jogo roda"
+  acima).
 
 ## Testado ao vivo no TCG Arena
 
@@ -233,22 +172,15 @@ documentação:
 - **Os 4 baralhos iniciais** aparecem corretamente na aba "Preconstructed
   decks" da tela de seleção de baralho, com os nomes certos e o conteúdo
   certo (12 Trabalhadores + 1 Capital cada).
-- **Mão inicial:** exatamente 6 cartas por jogador, sempre — confirmado
-  com 2 jogadores reais simultâneos em ambos os casos: quando a Capital
-  saiu no saque nativo de 6 (ficam 5, `placeCapital()` saca 1 de reposição)
-  e quando não saiu (a função busca o resto do baralho, acha a Capital, e
-  devolve/reembaralha o excesso). O baralho sacável continua com as 13
-  cartas do Império (Capital incluída) — ver "`boardCategoriesInSideboard`
-  não funciona..." acima. (Esse número de 6 já ficou incorretamente
-  dobrado para 12/0 antes da correção de `beforeGameStart`, ver histórico
-  do git.)
-- **Mercado — montagem inicial das pilhas:** as 3 pilhas ocultas
-  (Combatentes/Estratégias/Melhorias) são populadas automaticamente no
-  início da partida com a contagem certa (57/73/74 cópias, batendo com o
-  campo `copies` de cada carta) via `beforeGameStart.initialBoardSetup`.
-  Isso é só a montagem da pilha oculta — **revelar as 4 cartas do topo de
-  cada pilha é um passo separado, manual** (botão "Abrir Mercado"), ver
-  "Mercado: automação por botão" acima.
+- **Mão inicial:** exatamente 6 Trabalhadores, com a Capital já no
+  Território (`categoriesAlreadyOnBoard`; verificado em ~8 partidas solo). O
+  Império começa com 12 cartas.
+- **Mercado — montagem e reposição (solo, ao vivo):** as 3 pilhas ocultas são
+  populadas por `beforeGameStart.initialBoardSetup` (57/73/74 cartas) e abrem
+  4/4/4 sozinhas; comprar uma carta leva-a à Mão e repõe a fileira (pilha
+  53→52); clicar a carta comprada a joga no Território; "Avançar Mercado
+  (Renovação)" deixa 4/4/4 reveladas, 1 carta em cada Descarte e as pilhas
+  −1 cada (52/68/69).
 - **Zonas e ações básicas:** "Mão" some por padrão atrás de um botão
   "Show" (clique para abrir o leque de cartas — não é um bug de
   visibilidade, é só a UI padrão do app); botão direito numa carta dá um
@@ -265,21 +197,16 @@ documentação:
 
 ## Pontos ainda não verificados
 
-- **Botões "Abrir Mercado" / "Repor Mercado" / "Avançar Mercado
-  (Renovação)":** implementados com `functions.drawFromExtraDeck()` /
-  `moveCard()` / `shuffleSection()` (ver `game-scripts.js`), mas a versão
-  *com botão* ainda não foi clicada numa partida de teste — só a versão
-  anterior (disparo automático por evento) foi testada ao vivo, e essa
-  versão tinha os bugs de revelação em excesso descritos acima
-  (exatamente por isso virou botão). Testar os 3 botões antes de confiar
-  neles: confirmar que "Abrir Mercado" revela exatamente 4 por pilha,
-  que "Repor Mercado" completa até 4 sem estourar, e que "Avançar
-  Mercado" descarta exatamente 1 carta por pilha (a mais antiga) e repõe.
-- **Compra de cartas (pagar com fichas de recurso)** e o bônus de "compra
-  plena" — não testados ao vivo ainda.
-- **Assalto/Combate completo** (casamento de cartas, Formações, etc.) — por
-  natureza é 100% manual/lido pelos jogadores; a zona "Campo de Batalha"
-  existe mas o fluxo completo de um Conflito não foi executado neste teste.
+- **Partida com 2 jogadores na versão nativa atual:** convidado comprando do
+  Mercado (as cartas pertencem ao host: `ownerOnlySections` foi relaxado para
+  isso), reposição só pelo host (`game.isHost`), e a caixa nativa do jogador
+  (◇◇◇) sobre a Mão. A versão anterior com scripts foi testada com 2 abas;
+  a atual só foi testada solo.
+- **Pagar custos com as fichas da Reserva** e o bônus de "compra plena" — só
+  manual, não testados ao vivo.
+- **Assalto/Combate completo** — 100% manual por natureza; o fluxo completo de
+  um Conflito não foi executado.
+- **Uma rodada completa** (Preparação → turno → Renovação).
 
 ## Próximos passos
 
