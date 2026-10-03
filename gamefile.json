@@ -1445,7 +1445,7 @@
                     }
                   },
                   "children": "Repor Mercado",
-                  "onClick": "await replenishMarket()"
+                  "onClick": "await fillMarket()"
                 },
                 {
                   "type": "button",
@@ -1478,7 +1478,8 @@
               ]
             },
             "events": {
-              "onPlayersReady": "await setupMarket()"
+              "onPlayersReady": "await setupMarket()",
+              "onCardsUpdate": "await keepMarketFull()"
             }
           },
           "MercadoCombatentesPilha": {
@@ -1497,9 +1498,6 @@
               "actionData": {
                 "destination": "Hand"
               }
-            },
-            "events": {
-              "onCardsLeave": "await replenishRow('MercadoCombatentesPilha', 'MercadoCombatentesRevelado')"
             }
           },
           "MercadoCombatentesDescarte": {
@@ -1524,9 +1522,6 @@
               "actionData": {
                 "destination": "Hand"
               }
-            },
-            "events": {
-              "onCardsLeave": "await replenishRow('MercadoEstrategiasPilha', 'MercadoEstrategiasRevelado')"
             }
           },
           "MercadoEstrategiasDescarte": {
@@ -1551,9 +1546,6 @@
               "actionData": {
                 "destination": "Hand"
               }
-            },
-            "events": {
-              "onCardsLeave": "await replenishRow('MercadoMelhoriasPilha', 'MercadoMelhoriasRevelado')"
             }
           },
           "MercadoMelhoriasDescarte": {

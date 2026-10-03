@@ -31,18 +31,23 @@ const MARKET_PILES = [
 ];
 const MARKET_REVEALED_SIZE = 4;
 
-// Tops one revealed row back up to 4. Each row's own onCardsLeave event calls this for that row
-// only: a row-wide refill from every event would use a stale snapshot of the other rows and
-// over-draw (Renovação fired 3 events and left 6/6/6 revealed).
-async function replenishRow(pile, revealed) {
-  if (!game.isHost) return;
-  const short = MARKET_REVEALED_SIZE - (cards?.[revealed] ?? []).length;
-  if (short > 0) await functions.drawFromExtraDeck(pile, short, false, revealed);
+// Draws each revealed row back up to 4 (shortfall computed from the snapshot of `cards`).
+async function fillMarket() {
+  for (const { pile, revealed } of MARKET_PILES) {
+    const short = MARKET_REVEALED_SIZE - (cards?.[revealed] ?? []).length;
+    if (short > 0) await functions.drawFromExtraDeck(pile, short, false, revealed);
+  }
 }
 
-// Tops every row up to 4 (setup and the "Repor Mercado" button).
-async function replenishMarket() {
-  for (const { pile, revealed } of MARKET_PILES) await replenishRow(pile, revealed);
+// Self-healing refill, run by the Reserva's onCardsUpdate (fires ~500 ms after the last card
+// change, so its snapshot is settled): buying a card, Renovação and a row that was reverted at
+// start-up (seen with 2 players: the first row's reveal was overwritten) all end up topped up
+// exactly once. Per-row onCardsLeave events were dropped because each used a stale snapshot of
+// the other rows and over-drew. Does nothing until the market has been opened once.
+async function keepMarketFull() {
+  if (!game.isHost) return;
+  if (MARKET_PILES.every(({ revealed }) => (cards?.[revealed] ?? []).length === 0)) return;
+  await fillMarket();
 }
 
 // Shuffles each pile and reveals the first 4. No-op once any row already has cards.
@@ -50,11 +55,11 @@ async function setupMarket() {
   if (!game.isHost) return;
   if (MARKET_PILES.some(({ revealed }) => (cards?.[revealed] ?? []).length > 0)) return;
   for (const { pile } of MARKET_PILES) await functions.shuffleSection(pile);
-  await replenishMarket();
+  await fillMarket();
 }
 
-// Renovação: the oldest revealed card of each row goes to its discard; the rows' onCardsLeave
-// events then refill each row (replenishMarket is not called here to avoid a double refill).
+// Renovação: the oldest revealed card of each row goes to its discard; keepMarketFull then refills
+// the rows (fillMarket is not called here to avoid a double refill).
 async function advanceMarket() {
   for (const { revealed, discard } of MARKET_PILES) {
     const shown = cards?.[revealed] ?? [];
