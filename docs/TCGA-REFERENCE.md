@@ -89,7 +89,7 @@ Rules: `formats[].gameplay` must match a key in `gameplay`; `formats[].deckRules
 | `enterTapped` | B\|{type:B} | O | |
 | `keepTappedNewTurn` | B | O | |
 | `noAutoPayTo` | B | O | Only matters with autopay (see §7); we don't use it |
-| `cardActionShortcut` | {} | O | One-click corner button: `{ "action":"MOVE", "actionData":{ "destination":"Hand" } }` |
+| `cardActionShortcut` | {} | O | One-click corner button (16px, `img[alt="shortcut"]`, **visible only while the card is hovered**; a click on the card without hovering first just taps it): `{ "action":"MOVE", "actionData":{ "destination":"Hand" } }`. `MOVE` calls the same `moveCard` as a drag, so every rule in §4.5 applies |
 | `drawDestinations` | {} | O | For `DECK` sections: where a drawn card goes, keyed by type; `_default` for the rest |
 | `events` | {} | O | Not in this table in the docs; the scripting page says `onCardsEnter` / `onCardsLeave` can be added to a **regular** section (see §6.3) |
 
@@ -111,6 +111,13 @@ Click on a hand card → `autoPlayFromHand[type]`; **[engine] if the object is m
 
 Blueprint node: `{ type, props, children, onClick, onChange, iterable, template }`. `type` is `button`, `IMG`, `input-number`, `loop`, or any HTML tag.
 `{{ expr }}` in strings: read-only, evaluated against `game`, cannot call `functions`. `onClick`/`onChange` run as scripts with `game`, `cards`, `functions`, plus `value`, `delta`, `deltaDisplay` (onChange). Use `functions.chatLog(...)` (bare `chatLog` is not defined in the script sandbox).
+
+### 4.5 Undocumented `sections` keys (read from the engine bundle)
+| Key | Notes |
+|---|---|
+| `categoriesAlreadyOnBoard` | `["Capital->Territorio"]`: deck cards of that category are **not** put in the deck; they start in the named section (target = category name when `->` is omitted). Live-verified; replaces any "find the Capital and play it" script. The opening hand is then dealt from what is left. |
+| `ownerOnlySections` | Default `{Deck,Hand,Discard,Sideboard,EXTRADECKS: true}`; entries you give are merged over it. A card moved into such a section by someone who is not its `startOwner` (and the card is not `UNOWNED`) is bounced back to the owner. Set `false` for `Hand`/`Discard` so a guest can take market cards (live: the merged value is applied; the bounce itself was not exercised, solo only). |
+| `tokenForbiddenSections` | Default `{Remove,RemoveHidden,Deck,Hand,Discard,Sideboard: true}`, merged the same way. **A token (`isToken: true`) moved into one of these is deleted from the board.** Cards created for a `sharedZone`/extra-deck pile (our Mercado) are tokens, so the Mercado shortcut to `Hand` "worked" (log line, owner set) but the card never left the row until `Hand`/`Discard`/`Remove` were set `false`. |
 
 ## 5. Data files
 **`cards.json`** — object keyed by card id. Required: `id`, `type`, `cost` (**number**), `face.front{name:{name}, type, cost, image}`, flat `name`. Optional: `face.back`, `isHorizontal`, `isToken`, `tokens[]` (ids creatable by right-click), `_legal{code: B|N}`, any extra field (becomes a deck-builder filter). `cost` may be a mana string like `"{2}{W}"`; `_mana[]` makes a card produce mana. `type` must stay a plain string (can't be translated inline).
@@ -161,14 +168,20 @@ Blueprint node: `{ type, props, children, onClick, onChange, iterable, template 
 - GitHub Pages sends `Cache-Control: max-age=600`: browsers can keep serving a previous `gamefile.json` for ~10 min after a push; force with a `cache:'reload'` fetch or wait.
 - Direct loads of `/play` render blank here; enter via the home page, and the first Play render can take 10–30 s.
 - `Start the game` → "Disable sideboard for all players" skips the sideboard screen. `Restart with the same decks` skips deck picking.
+- **Cards in a shared extra-deck pile are tokens** (`isToken`, `tokenCount: 1`, shown with a "1" badge): see `tokenForbiddenSections` in §4.5. Inspect with the React fiber (`el.__reactFiber$…` → `memoizedProps.card`).
+- `functions.getDeck()` returns **read-only** copies: `moveCard` on them is a silent no-op. Use `categoriesAlreadyOnBoard` instead.
+- Regular-section `events.onCardsEnter` / `onCardsLeave` **work** (300 ms debounce, `transitionCards`). One event fires per section that lost cards, each with a snapshot of `cards` taken at that moment: a handler that fixes *other* sections from its own snapshot over-draws (Renovação over-filled 6/6/6). Keep each handler scoped to its own section.
+- The app loads `gamefile.json` once per page load: refresh the HTTP cache (`fetch(url,{cache:'reload'})`) **before** reloading the page, not after.
+- `input-number` spreads `props` onto the real `<input>`; size it with `props.style`.
+- Hand/Território cards are drawn inside the section's rect: if the board is taller than 100vh the Hand is off-screen. Budget the layout in vh (ours: Território 10, Reserva 9, Deck/Discard/Remove 9, Hand 11, market rows 11, Campo 13 + shared 28).
+- Test harness: the Browser pane must be *displayed* (hidden ⇒ blank renders and 45 s script timeouts); a synthetic or real-looking drag from the market to the Hand crashed the app once (`Cannot read properties of undefined (reading 'clients')`), so use the shortcut buttons.
 - Share link: `https://tcg-arena.fr/load/` + base64(encodeURIComponent(gamefile URL)) (or the Custom games page).
 
-## 8. Open items for this repo (each is a hypothesis until re-tested)
-1. **`autoPlayFromHand` is in the wrong place** (inside `sectionsDict.Hand`); move it to `sections`, add `autoPlayFromStack: {}`, and decide Trabalhador (e.g. → `Discard` = "Trabalhar").
-2. **Capital search** can use `functions.getDeck()` + `moveCard` instead of draw-everything-and-trim. Verify `getDeck()` returns movable card objects.
-3. **Market ownership:** cards created by `initialBoardSetup` may belong to one player, so others can't move them. Try `giveCardTo(card, "UNOWNED", section)`; then `onCardsLeave` on the Revelado sections (+ `game.isHost` gate) is the native trigger for auto-replenish.
-4. **Idempotency:** replace module flags with a `game.data.<SharedSection>` flag (`isShared:true`).
-5. **Overlap:** custom `Reserva` section should be last in `layout`; the ◇◇◇ player box is the native player/counter panel (not `countersStartingValues`).
-6. `melhoria-argentarii` has `cost: null` but `cost` is a required number.
-7. `translations.json` / `translationsUrl` and `noAutoPayTo` were added on a wrong diagnosis; harmless, can be removed.
-8. Set `defaultRessources.backgrounds` (or accept the stray `/undefined` request).
+## 8. Status of earlier hypotheses
+Done and live-verified (see [DIAGNOSTICS.md](DIAGNOSTICS.md)): `autoPlayFromHand` moved to `sections`; Capital via `categoriesAlreadyOnBoard`; market ownership/refill via `onCardsLeave` + `game.isHost`; module flags removed; Reserva compact and last in `layout`; `translations.json` / `noAutoPayTo` removed.
+
+Still open:
+1. `melhoria-argentarii` has `cost: null` but `cost` is a required number (data fix; see README "Itens de dados a revisar").
+2. Set `defaultRessources.backgrounds` (or accept the stray `/undefined` request).
+3. Two-player behavior (guest buying, ownership of tokens, native player box vs Hand) is untested.
+4. Remove the `debugBoard` helper and DEBUG button once play-testing is finished.

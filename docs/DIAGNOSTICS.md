@@ -7,10 +7,18 @@ Companion to [TCGA-REFERENCE.md](TCGA-REFERENCE.md) (what the platform offers) �
 
 | Tool | Where | What it does |
 |---|---|---|
-| `[debug <tag>]` log line | `debugBoard(tag)` in `game-scripts.js`, called at the start of `placeCapital()` | Writes one chat/log line: hand/deck/Território counts **as the script sandbox sees them**, the key names of a card returned by `getDeck()`, and the card-type initials of the deck and hand (`T`=Trabalhador, `C`=Capital/Combatente…). |
+| `[debug <tag>]` log line | `debugBoard(tag)` in `game-scripts.js`, run by the DEBUG button | Writes one chat/log line: counts of Hand/Deck/Território/Descanso and of every Mercado row/discard **as the script sandbox sees them**, plus card-type initials (`T`=Trabalhador, `C`=Capital/Combatente…). |
 | **DEBUG** button | Last button of the Reserva panel (`gamefile.json`) | Runs `debugBoard('button')` on demand, so the sandbox's view can be sampled at any moment of a match. |
 | Timeline poller | Snippet below (paste in the page console / test harness) | Records every change of "how many cards sit in each section" with a millisecond timestamp, tagging the Capital. Shows the *UI* state over time, to compare with what the log claims. |
+| React-fiber card probe | Snippet below | Reads the **engine's own card objects** (`section`, `owner`, `startOwner`, `isToken`, `isTapped`) straight from the DOM element's React fiber. This is what exposed the token problem (E11) — the DOM class alone only shows the section. |
 | Source inspection | `curl https://tcg-arena.fr/assets/index-*.js` then grep (e.g. `autoPlayFromHand`, `onCardsLeave`) | The app is unminified enough to read how a field is really consumed. Used to settle every docs ambiguity so far. |
+
+Card probe (works in the page console; `g` is any `.game-card` element):
+```js
+function cardOf(el){ const k = Object.keys(el).find(x => x.startsWith('__reactFiber$')); let f = el[k];
+  for (let i=0; f && i<40; i++, f=f.return) { const p = f.memoizedProps; if (p && p.card && p.card.startOwner !== undefined) return p.card; } return null; }
+// live format options (merged defaults): same walk, looking for memoizedProps.gameOptions.format.sections
+```
 
 Timeline poller:
 ```js
@@ -26,18 +34,22 @@ setInterval(() => {
   if (!last || last.key !== key) __tl.push({ t: Math.round(performance.now() - t0), key });
 }, 100);
 ```
-Remove `debugBoard`, its call and the DEBUG button once the Capital flow is stable.
+Remove `debugBoard` and the DEBUG button once play-testing is finished.
 
 ## 2. Test-harness recipe and quirks (browser automation)
 
 - **Refresh the HTTP-cached config before every test:** GitHub Pages sends `max-age=600`, and the browser keeps serving an old `gamefile.json`
-  for ~10 min. In the page: `await fetch('https://jfbaraky.github.io/cores/gamefile.json', {cache:'reload'})`, then reload. The `.js` file is
-  fetched with a `?_t=` cache-buster by the app and needs nothing.
+  for ~10 min. In the page: `await fetch('https://jfbaraky.github.io/cores/gamefile.json', {cache:'reload'})`, **then** reload (navigating first and refreshing
+  after leaves the old config in memory — this cost one wasted round). Verify the live config from the fiber (`gameOptions.format.sections`). Wait for the deploy
+  from the shell: `curl -s "https://jfbaraky.github.io/cores/gamefile.json?x=$RANDOM" | grep …`.
 - Enter the game through the home page → **Play**. Loading `/play` directly renders nothing.
-- The first Play render can take 10–60 s in the harness (the pane is often "hidden", which throttles rendering); resources themselves load in
-  milliseconds. This is a harness artifact, not a game problem.
+- The Browser pane must be **displayed**: while hidden, renders are blank/slow, screenshots time out and in-page polling stops after 45 s. `preview_start` with a `url` reopens it (new tab id).
 - Do not resize the viewport once a match is running (it reloads the page and drops the match). Set it once, before starting.
-- Synthetic (JS-dispatched) drag events are ignored by the app; use the click-based shortcuts (`autoPlayFromHand`, `cardActionShortcut`) instead.
+- Synthetic (JS-dispatched) drag events are ignored by the app, and a real `left_click_drag` from the market to the Hand once crashed the app
+  (`Cannot read properties of undefined (reading 'clients')`, later `…'clientX'` in the console); use the click-based shortcuts (`autoPlayFromHand`, `cardActionShortcut`).
+- A `cardActionShortcut` button is `visibility:hidden` until its card is hovered: `hover` the card, read the button's rect from the DOM, then click it. Clicking
+  the same spot without hovering taps the card instead (that is how the first buy attempt "tapped" a Combatente).
+- Match start in the harness: home → Play → ▶ → Start → *Preconstructed decks* → Continue (viewport 1280x800 ⇒ screenshot frame 800x500, scale 0.625).
 - Section of a card in the UI: `document.querySelector('.game-card').className` starts with `game-card <SectionName>`.
 
 ## 3. Experiment log
@@ -94,6 +106,35 @@ Remove `debugBoard`, its call and the DEBUG button once the Capital flow is stab
   `autoPlayFromHand`/`autoPlayFromStack`/`customSections`/`layout`/`sectionsDict`, inside `sections`. It is **not in the public docs**.
 - **Why it matters:** this is the intended way to start with the Capital in play. It removed the whole Capital script (and `boardCategoriesInSideboard` is not needed).
 - **Config:** `"categoriesAlreadyOnBoard": ["Capital->Territorio"]` under `gameplay.Padrao.sections`.
-- **Result:** *(see E10)*
+- **Result:** see E10.
 
-*(next entries: Market refill on `onCardsLeave`, click-to-play/buy, layout fit, two-player ownership.)*
+### E10 — `categoriesAlreadyOnBoard` works
+- **Result (solo, Helênica/Celta/Latina decks):** the Capital sits on Território before the deal, the opening hand is exactly 6 Trabalhadores, the Capital script and
+  the `getDeck()` hack are gone, no `placeCapital` race. Hand count 6 on every restart tried (≈8 matches).
+
+### E11 — Buying from the Mercado: log says "returned X to hand", card never leaves the row
+- **Symptom:** clicking the corner shortcut (`MOVE → Hand`) printed `returned PRINCEPS to hand`, the card kept `owner = me` but stayed in `MercadoCombatentesRevelado`
+  (and the row did not refill). Reproduced 4×, also via right-click → *To Descanso → Top* (`sent X to the top of their discard`, card still in the row).
+- **Ruled out (A/B in live matches):**
+  1. the `onCardsLeave` refill script reverting the move — same result with the event removed from that row;
+  2. `ownerOnlySections` bounce — `Hand: false` confirmed in the live format, same result;
+  3. the shortcut itself — `MOVE → Território` (Estratégias) and `MOVE → CampoDeBatalha` (Melhorias) worked, **and the rows refilled to 4**.
+- **Cause:** the React-fiber probe showed the Mercado cards have `isToken: true, tokenCount: 1`. Moving a token into a section listed in
+  `sections.tokenForbiddenSections` (engine default: Remove, RemoveHidden, Deck, **Hand**, **Discard**, Sideboard) deletes it; the move is logged first, so the log looks successful.
+  Exactly the failing destinations (Hand, Descanso) are the forbidden ones.
+- **Fix:** `tokenForbiddenSections: {Hand:false, Discard:false, Remove:false, RemoveHidden:false}` and `ownerOnlySections: {Hand:false, Discard:false}`
+  (the latter so a guest can take cards whose `startOwner` is the host). After a **proper reload** (see harness note): buy → `returned ESCARAMUÇADOR to hand`,
+  Hand 6→7, row back to 4, pile 53→52. Click on the bought token in Hand → `played ESCARAMUÇADOR from hand to território`.
+
+### E12 — Renovação over-filled the Mercado (6/6/6)
+- **Symptom:** *Avançar Mercado (Renovação)* moved one card per row to its Descarte, then every row ended with 6 revealed (piles 49/66/67).
+- **Cause:** each row that lost a card fires its own `onCardsLeave`; all three called `replenishMarket()` (all rows), each from a snapshot where the other rows were still at 3
+  → 3 events × +1 per row.
+- **Fix:** `replenishRow(pile, revealed)`; each row's event refills only that row (`gamefile.json` `events.onCardsLeave`). `replenishMarket()` (setup / *Repor Mercado*) loops over the rows.
+- **Result:** Renovação → revealed 4/4/4, discards 1/1/1, piles 52/68/69 (= 53/69/70 − 1 each); a single buy → exactly one refill.
+
+### Summary of the current playable state (solo, 1280×800)
+Capital auto-placed · 6-card hand visible · Mercado auto-opens 4/4/4 · buy → Hand → click → Território works for tokens · worker click → Descanso · Renovação · no console errors from game code.
+**Not yet tested:** two players (guest buying, ownership, native player box vs Hand), paying costs with the Reserva counters (manual), a full round.
+
+*(next entries: two-player ownership, a full round.)*
