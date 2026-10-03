@@ -130,11 +130,22 @@ Remove `debugBoard` and the DEBUG button once play-testing is finished.
 - **Symptom:** *Avançar Mercado (Renovação)* moved one card per row to its Descarte, then every row ended with 6 revealed (piles 49/66/67).
 - **Cause:** each row that lost a card fires its own `onCardsLeave`; all three called `replenishMarket()` (all rows), each from a snapshot where the other rows were still at 3
   → 3 events × +1 per row.
-- **Fix:** `replenishRow(pile, revealed)`; each row's event refills only that row (`gamefile.json` `events.onCardsLeave`). `replenishMarket()` (setup / *Repor Mercado*) loops over the rows.
-- **Result:** Renovação → revealed 4/4/4, discards 1/1/1, piles 52/68/69 (= 53/69/70 − 1 each); a single buy → exactly one refill.
+- **First fix (intermediate):** per-row `onCardsLeave` → `replenishRow(pile, revealed)`. Renovação then gave 4/4/4, discards 1/1/1, piles 52/68/69 (= 53/69/70 − 1 each) in solo.
+- **Final design:** see E13 — one self-healing refill (`keepMarketFull`) on the Reserva's `onCardsUpdate`, no per-row events.
+
+### E13 — Two players (host tab + guest tab, same browser pane)
+- **Setup:** host opens Play and reads its room id from `span.real`; the guest tab (Play → Direct connect → paste id → Connect) joins; host ▶ → Start; each picks *Preconstructed decks*.
+  Both players get the same display name; sides are told apart by `card.position.playerSide`.
+- **Layout:** each tab shows its own board at the bottom (Hand fully visible) and the mirrored opponent board on top, the Mercado in between; everything fits 1280×800. The native ◇◇◇ player box sits left of the Hand and overlaps nothing.
+- **Ownership:** all Mercado cards were created by player "0" (`initialBoardSetup` key `"0"`) — here the *guest* (`startOwner` = guest, `owner = UNOWNED`, tokens). The host could still shuffle and draw them.
+- **Bug seen once:** the first run's Combatentes reveal was logged (`played …` ×4) and then reverted — row empty, pile back at 57 — while Estratégias/Melhorias stayed open; "Repor Mercado" fixed it (row 4, pile 53). Not reproduced in the next run (opened 4/4/4 within 0.5 s of the guest confirming the deck).
+  Likely a start-up sync race (the first section touched is overwritten by state still in flight from the creating player). Not proven.
+- **Fix/hardening:** the refill now lives in the Reserva's `onCardsUpdate` → `keepMarketFull()` (host only; a no-op until at least one row has cards). That event fires ~500 ms after the *last* card change, so its snapshot is settled and every shortfall is filled exactly once; it also repairs a reverted row by itself. Per-row `onCardsLeave` handlers were removed (they used stale snapshots of the other rows).
+- **Verified (2 players):** guest buys a Combatente → guest Hand 6→7, row 3→4, pile 53→52, host sees the same counts; guest presses *Avançar Mercado (Renovação)* → rows 3/3/3 → 4/4/4 within 1 s, discards 1/1/1, piles −1 each.
+- **Not yet done:** host-side buy/play in the same match, paying costs with the Reserva counters, a full round.
 
 ### Summary of the current playable state (solo, 1280×800)
-Capital auto-placed · 6-card hand visible · Mercado auto-opens 4/4/4 · buy → Hand → click → Território works for tokens · worker click → Descanso · Renovação · no console errors from game code.
-**Not yet tested:** two players (guest buying, ownership, native player box vs Hand), paying costs with the Reserva counters (manual), a full round.
+Capital auto-placed · 6-card hand visible · Mercado auto-opens 4/4/4 · buy → Hand → click → Território works for tokens · worker click → Descanso · Renovação · works with 2 players (guest buy + guest Renovação) · no console errors from game code.
+**Not yet tested:** paying costs with the Reserva counters (manual), a full round, host-side buy in a 2-player match.
 
-*(next entries: two-player ownership, a full round.)*
+*(next entries: a full round.)*

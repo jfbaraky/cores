@@ -170,7 +170,7 @@ Blueprint node: `{ type, props, children, onClick, onChange, iterable, template 
 - `Start the game` → "Disable sideboard for all players" skips the sideboard screen. `Restart with the same decks` skips deck picking.
 - **Cards in a shared extra-deck pile are tokens** (`isToken`, `tokenCount: 1`, shown with a "1" badge): see `tokenForbiddenSections` in §4.5. Inspect with the React fiber (`el.__reactFiber$…` → `memoizedProps.card`).
 - `functions.getDeck()` returns **read-only** copies: `moveCard` on them is a silent no-op. Use `categoriesAlreadyOnBoard` instead.
-- Regular-section `events.onCardsEnter` / `onCardsLeave` **work** (300 ms debounce, `transitionCards`). One event fires per section that lost cards, each with a snapshot of `cards` taken at that moment: a handler that fixes *other* sections from its own snapshot over-draws (Renovação over-filled 6/6/6). Keep each handler scoped to its own section.
+- Regular-section `events.onCardsEnter` / `onCardsLeave` **work** (300 ms debounce, `transitionCards`). One event fires per section that lost cards, each with a snapshot of `cards` taken at that moment: a handler that fixes *other* sections from its own snapshot over-draws (Renovação over-filled 6/6/6). For "keep a shared pool topped up" prefer one custom-section `onCardsUpdate` (fires ~500 ms after the *last* card change, snapshot settled) over per-section `onCardsLeave`.
 - The app loads `gamefile.json` once per page load: refresh the HTTP cache (`fetch(url,{cache:'reload'})`) **before** reloading the page, not after.
 - `input-number` spreads `props` onto the real `<input>`; size it with `props.style`.
 - Hand/Território cards are drawn inside the section's rect: if the board is taller than 100vh the Hand is off-screen. Budget the layout in vh (ours: Território 10, Reserva 9, Deck/Discard/Remove 9, Hand 11, market rows 11, Campo 13 + shared 28).
@@ -183,5 +183,5 @@ Done and live-verified (see [DIAGNOSTICS.md](DIAGNOSTICS.md)): `autoPlayFromHand
 Still open:
 1. `melhoria-argentarii` has `cost: null` but `cost` is a required number (data fix; see README "Itens de dados a revisar").
 2. Set `defaultRessources.backgrounds` (or accept the stray `/undefined` request).
-3. Two-player behavior (guest buying, ownership of tokens, native player box vs Hand) is untested.
+3. Two-player: guest buying and guest Renovação verified; host-side buy and a full round are not.
 4. Remove the `debugBoard` helper and DEBUG button once play-testing is finished.

@@ -101,14 +101,15 @@ o que cada decisão custou em tentativas está em `docs/DIAGNOSTICS.md`.
 - **Mercado abre sozinho:** a seção "Reserva" tem `onPlayersReady` →
   `setupMarket()` (só o host embaralha as 3 pilhas e revela 4 por fileira).
 - **Comprar:** passe o mouse sobre uma carta revelada e clique no ícone do
-  canto (`cardActionShortcut` → Mão). A fileira se reabastece sozinha: cada
-  fileira tem `onCardsLeave` → `replenishRow()` (só o host).
+  canto (`cardActionShortcut` → Mão). A fileira se reabastece sozinha: a
+  seção Reserva tem `onCardsUpdate` → `keepMarketFull()` (só o host; roda ~0,5 s
+  depois da última mudança de cartas e completa cada fileira até 4).
 - **Jogar da mão:** clique na carta (`autoPlayFromHand`): Capital, Combatente,
   Estratégia e Melhoria vão para o Território; Trabalhador vai para o Descanso
   ("Trabalhar").
 - **Renovação:** botão "Avançar Mercado (Renovação)" descarta a carta mais
   antiga de cada fileira (as fileiras se repõem pelo evento acima).
-  "Repor Mercado" completa fileiras até 4; "Abrir Mercado" é a montagem
+  "Repor Mercado" completa fileiras até 4 na hora (útil se algo falhar); "Abrir Mercado" é a montagem
   inicial (idempotente). "DEBUG" escreve no log o que o script enxerga.
 - **As cartas do Mercado são *tokens* para o motor** e o padrão do motor apaga
   tokens movidos para Mão/Descanso/Desterro; por isso `gamefile.json` define
@@ -175,7 +176,7 @@ documentação:
 - **Mão inicial:** exatamente 6 Trabalhadores, com a Capital já no
   Território (`categoriesAlreadyOnBoard`; verificado em ~8 partidas solo). O
   Império começa com 12 cartas.
-- **Mercado — montagem e reposição (solo, ao vivo):** as 3 pilhas ocultas são
+- **Mercado — montagem e reposição (ao vivo, solo e 2 jogadores):** as 3 pilhas ocultas são
   populadas por `beforeGameStart.initialBoardSetup` (57/73/74 cartas) e abrem
   4/4/4 sozinhas; comprar uma carta leva-a à Mão e repõe a fileira (pilha
   53→52); clicar a carta comprada a joga no Território; "Avançar Mercado
@@ -197,11 +198,11 @@ documentação:
 
 ## Pontos ainda não verificados
 
-- **Partida com 2 jogadores na versão nativa atual:** convidado comprando do
-  Mercado (as cartas pertencem ao host: `ownerOnlySections` foi relaxado para
-  isso), reposição só pelo host (`game.isHost`), e a caixa nativa do jogador
-  (◇◇◇) sobre a Mão. A versão anterior com scripts foi testada com 2 abas;
-  a atual só foi testada solo.
+- **Partida com 2 jogadores:** testado ao vivo (2 abas): o Mercado abre 4/4/4,
+  o convidado compra uma carta (vai para a Mão dele) e aperta Renovação, e o
+  host repõe as fileiras. Ainda falta: compra feita pelo host nessa mesma
+  partida. Uma vez a fileira de Combatentes foi revertida no início (voltou
+  vazia); "Repor Mercado" corrige e o refil por `onCardsUpdate` também.
 - **Pagar custos com as fichas da Reserva** e o bônus de "compra plena" — só
   manual, não testados ao vivo.
 - **Assalto/Combate completo** — 100% manual por natureza; o fluxo completo de
