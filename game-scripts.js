@@ -160,8 +160,9 @@ async function placeCapital() {
 //      awaits in its own body before anything else could catch up, not
 //      because the underlying mechanism is actually sound — with the
 //      shorter, more rapid-firing setupMarket(), the flag lost every race.
-// Given the platform doesn't behave the way its own docs describe here
-// (module state "persisting across calls"), the reliable fix is the same
+// Module-level state turned out not to persist across calls (the docs never
+// promised it; scripts run in a sandbox, and the documented store is
+// game.data - see docs/TCGA-REFERENCE.md), so the reliable fix is the same
 // one already used for the esteira: a manual button. A single deliberate
 // click has no multi-event cascade to race against, so none of the above
 // applies. See the Reserva panel for "Abrir Mercado" (setupMarket) and

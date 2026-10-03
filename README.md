@@ -116,9 +116,11 @@ isso:
   `marketSetup=false` — inclusive a 2ª e a 3ª, que deveriam ter visto
   `true` se a atribuição síncrona da 1ª chamada realmente "grudasse" antes
   delas rodarem. Ou seja: variáveis de módulo não estão se mantendo de
-  forma confiável entre chamadas rápidas em sequência neste motor, ao
-  contrário do que a documentação da plataforma sugere ("scripts file is
-  loaded once per client session, so top-level variables persist"). Na
+  forma confiável entre chamadas rápidas em sequência neste motor. (A
+  documentação da plataforma não promete persistência — uma versão anterior
+  deste README citava uma frase "top-level variables persist" que não
+  existe nas páginas; os scripts rodam num sandbox, e o estado documentado
+  é `game.data`, ver `docs/TCGA-REFERENCE.md`.) Na
   prática isso causou revelação de Mercado MUITO acima do esperado (o
   pior caso ao vivo: 45/65/58 cartas restantes nas pilhas em vez de
   53/69/70 — quase o triplo do esperado).
