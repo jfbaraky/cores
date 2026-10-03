@@ -1049,13 +1049,16 @@
                 {
                   "section": "Reserva",
                   "style": {
-                    "width": "58%"
+                    "width": "78%"
                   }
                 }
               ]
             },
             {
-              "section": "Hand"
+              "section": "Hand",
+              "style": {
+                "marginLeft": "18vh"
+              }
             }
           ]
         },
@@ -1129,7 +1132,7 @@
         "sectionsDict": {
           "Hand": {
             "isHidden": "opponent-only",
-            "height": 12,
+            "height": 11,
             "alignment": "CENTER",
             "displayedTitle": "Mão"
           },
@@ -1153,7 +1156,7 @@
           },
           "Territorio": {
             "isHidden": "no",
-            "height": 11,
+            "height": 10,
             "alignment": "CENTER",
             "displayedTitle": "Território",
             "isHorizontalAllowed": true,
@@ -1182,9 +1185,9 @@
                   "display": "flex",
                   "flexWrap": "wrap",
                   "alignItems": "center",
-                  "gap": "0.4vh 1.2vh",
-                  "padding": "0.4vh",
-                  "fontSize": "1.3vh"
+                  "gap": "0.4vh 1vh",
+                  "padding": "0.3vh",
+                  "lineHeight": "1"
                 }
               },
               "children": [
@@ -1194,7 +1197,7 @@
                     "style": {
                       "display": "flex",
                       "alignItems": "center",
-                      "gap": "0.5vh"
+                      "gap": "0.4vh"
                     }
                   },
                   "children": [
@@ -1204,7 +1207,8 @@
                         "style": {
                           "color": "#f5d76e",
                           "fontWeight": "bold",
-                          "fontSize": "1.3vh"
+                          "fontSize": "1.3vh",
+                          "whiteSpace": "nowrap"
                         }
                       },
                       "children": "Hegemonia"
@@ -1212,7 +1216,14 @@
                     {
                       "type": "input-number",
                       "props": {
-                        "value": "{{ game.data.Reserva.hegemonia }}"
+                        "value": "{{ game.data.Reserva.hegemonia }}",
+                        "style": {
+                          "width": "5.5vh",
+                          "height": "2.6vh",
+                          "fontSize": "1.4vh",
+                          "padding": "0 0.3vh",
+                          "textAlign": "center"
+                        }
                       },
                       "onChange": "game.data.Reserva.hegemonia = Number(value); functions.chatLog(`Hegemonia agora: ${game.data.Reserva.hegemonia}`)"
                     }
@@ -1224,7 +1235,7 @@
                     "style": {
                       "display": "flex",
                       "alignItems": "center",
-                      "gap": "0.5vh"
+                      "gap": "0.4vh"
                     }
                   },
                   "children": [
@@ -1234,7 +1245,8 @@
                         "style": {
                           "color": "#b48cff",
                           "fontWeight": "bold",
-                          "fontSize": "1.3vh"
+                          "fontSize": "1.3vh",
+                          "whiteSpace": "nowrap"
                         }
                       },
                       "children": "Roxo"
@@ -1242,7 +1254,14 @@
                     {
                       "type": "input-number",
                       "props": {
-                        "value": "{{ game.data.Reserva.roxo }}"
+                        "value": "{{ game.data.Reserva.roxo }}",
+                        "style": {
+                          "width": "5.5vh",
+                          "height": "2.6vh",
+                          "fontSize": "1.4vh",
+                          "padding": "0 0.3vh",
+                          "textAlign": "center"
+                        }
                       },
                       "onChange": "game.data.Reserva.roxo = Number(value)"
                     }
@@ -1254,7 +1273,7 @@
                     "style": {
                       "display": "flex",
                       "alignItems": "center",
-                      "gap": "0.5vh"
+                      "gap": "0.4vh"
                     }
                   },
                   "children": [
@@ -1264,7 +1283,8 @@
                         "style": {
                           "color": "#ff7b7b",
                           "fontWeight": "bold",
-                          "fontSize": "1.3vh"
+                          "fontSize": "1.3vh",
+                          "whiteSpace": "nowrap"
                         }
                       },
                       "children": "Vermelho"
@@ -1272,7 +1292,14 @@
                     {
                       "type": "input-number",
                       "props": {
-                        "value": "{{ game.data.Reserva.vermelho }}"
+                        "value": "{{ game.data.Reserva.vermelho }}",
+                        "style": {
+                          "width": "5.5vh",
+                          "height": "2.6vh",
+                          "fontSize": "1.4vh",
+                          "padding": "0 0.3vh",
+                          "textAlign": "center"
+                        }
                       },
                       "onChange": "game.data.Reserva.vermelho = Number(value)"
                     }
@@ -1284,7 +1311,7 @@
                     "style": {
                       "display": "flex",
                       "alignItems": "center",
-                      "gap": "0.5vh"
+                      "gap": "0.4vh"
                     }
                   },
                   "children": [
@@ -1294,7 +1321,8 @@
                         "style": {
                           "color": "#7bb6ff",
                           "fontWeight": "bold",
-                          "fontSize": "1.3vh"
+                          "fontSize": "1.3vh",
+                          "whiteSpace": "nowrap"
                         }
                       },
                       "children": "Azul"
@@ -1302,7 +1330,14 @@
                     {
                       "type": "input-number",
                       "props": {
-                        "value": "{{ game.data.Reserva.azul }}"
+                        "value": "{{ game.data.Reserva.azul }}",
+                        "style": {
+                          "width": "5.5vh",
+                          "height": "2.6vh",
+                          "fontSize": "1.4vh",
+                          "padding": "0 0.3vh",
+                          "textAlign": "center"
+                        }
                       },
                       "onChange": "game.data.Reserva.azul = Number(value)"
                     }
@@ -1314,7 +1349,7 @@
                     "style": {
                       "display": "flex",
                       "alignItems": "center",
-                      "gap": "0.5vh"
+                      "gap": "0.4vh"
                     }
                   },
                   "children": [
@@ -1324,7 +1359,8 @@
                         "style": {
                           "color": "#7bff9a",
                           "fontWeight": "bold",
-                          "fontSize": "1.3vh"
+                          "fontSize": "1.3vh",
+                          "whiteSpace": "nowrap"
                         }
                       },
                       "children": "Verde"
@@ -1332,7 +1368,14 @@
                     {
                       "type": "input-number",
                       "props": {
-                        "value": "{{ game.data.Reserva.verde }}"
+                        "value": "{{ game.data.Reserva.verde }}",
+                        "style": {
+                          "width": "5.5vh",
+                          "height": "2.6vh",
+                          "fontSize": "1.4vh",
+                          "padding": "0 0.3vh",
+                          "textAlign": "center"
+                        }
                       },
                       "onChange": "game.data.Reserva.verde = Number(value)"
                     }
@@ -1344,7 +1387,7 @@
                     "style": {
                       "display": "flex",
                       "alignItems": "center",
-                      "gap": "0.5vh"
+                      "gap": "0.4vh"
                     }
                   },
                   "children": [
@@ -1354,7 +1397,8 @@
                         "style": {
                           "color": "#ffd24a",
                           "fontWeight": "bold",
-                          "fontSize": "1.3vh"
+                          "fontSize": "1.3vh",
+                          "whiteSpace": "nowrap"
                         }
                       },
                       "children": "Ouro"
@@ -1362,7 +1406,14 @@
                     {
                       "type": "input-number",
                       "props": {
-                        "value": "{{ game.data.Reserva.ouro }}"
+                        "value": "{{ game.data.Reserva.ouro }}",
+                        "style": {
+                          "width": "5.5vh",
+                          "height": "2.6vh",
+                          "fontSize": "1.4vh",
+                          "padding": "0 0.3vh",
+                          "textAlign": "center"
+                        }
                       },
                       "onChange": "game.data.Reserva.ouro = Number(value)"
                     }
@@ -1373,7 +1424,10 @@
                   "props": {
                     "style": {
                       "fontSize": "1.2vh",
-                      "padding": "0.2vh 0.8vh"
+                      "padding": "0 0.7vh",
+                      "height": "2.6vh",
+                      "whiteSpace": "nowrap",
+                      "lineHeight": "1"
                     }
                   },
                   "children": "Abrir Mercado",
@@ -1384,7 +1438,10 @@
                   "props": {
                     "style": {
                       "fontSize": "1.2vh",
-                      "padding": "0.2vh 0.8vh"
+                      "padding": "0 0.7vh",
+                      "height": "2.6vh",
+                      "whiteSpace": "nowrap",
+                      "lineHeight": "1"
                     }
                   },
                   "children": "Repor Mercado",
@@ -1395,7 +1452,10 @@
                   "props": {
                     "style": {
                       "fontSize": "1.2vh",
-                      "padding": "0.2vh 0.8vh"
+                      "padding": "0 0.7vh",
+                      "height": "2.6vh",
+                      "whiteSpace": "nowrap",
+                      "lineHeight": "1"
                     }
                   },
                   "children": "Avançar Mercado (Renovação)",
@@ -1405,7 +1465,11 @@
                   "type": "button",
                   "props": {
                     "style": {
-                      "fontSize": "1.2vh"
+                      "fontSize": "1.2vh",
+                      "padding": "0 0.7vh",
+                      "height": "2.6vh",
+                      "whiteSpace": "nowrap",
+                      "lineHeight": "1"
                     }
                   },
                   "children": "DEBUG",

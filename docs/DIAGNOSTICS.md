@@ -81,4 +81,19 @@ Remove `debugBoard`, its call and the DEBUG button once the Capital flow is stab
 - `getDeck()` returns card objects with keys `id, position, hiddenTo, isTapped, isFlipped, counters, notes, owner, cardData, isHorizontal, startOwner`.
 - **Conclusion:** the deck path alone is not enough; the hand must be inspected once the dealt cards have landed → `onCardsEnter` on `Hand` (300 ms debounce).
 
-*(next entries: result of the Hand `onCardsEnter` trigger, `getDeck()` + `moveCard` from the deck, Market refill on `onCardsLeave`, layout fit, two-player ownership.)*
+### E8 — `getDeck()` cards cannot be moved
+- **Method:** with the Capital in the deck (`deckTypes=CTTTTTT`), `placeCapital()` called `moveCard(capital, "Territorio")` on the object from `getDeck()` (twice, from two triggers).
+- **Result:** my own log line printed, but there was **no native "played … to território" line, no state change** (no Capital image anywhere in the UI; hand correctly 6 workers).
+  `moveCard` on a `getDeck()` object is a **silent no-op** (the docs say the deck is returned "in read-only mode").
+- **Conclusion:** `getDeck()` is for reading only. Don't build placement on it.
+
+### E9 — Native placement of a deck category: `sections.categoriesAlreadyOnBoard`
+- **Source:** the deck-loading code in the bundle splits each entry on `->` (`"Capital->Territorio"`); a listed category is **not** put in the deck but placed
+  directly in that section (target defaults to the category name when `->` is omitted). The engine's built-in editor schema describes it as
+  *"Deck categories that start the game on board. The deck category should match the section in which they are placed"* and lists it, together with
+  `autoPlayFromHand`/`autoPlayFromStack`/`customSections`/`layout`/`sectionsDict`, inside `sections`. It is **not in the public docs**.
+- **Why it matters:** this is the intended way to start with the Capital in play. It removed the whole Capital script (and `boardCategoriesInSideboard` is not needed).
+- **Config:** `"categoriesAlreadyOnBoard": ["Capital->Territorio"]` under `gameplay.Padrao.sections`.
+- **Result:** *(see E10)*
+
+*(next entries: Market refill on `onCardsLeave`, click-to-play/buy, layout fit, two-player ownership.)*
