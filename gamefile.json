@@ -1,7 +1,9 @@
 {
   "name": "Cores da Guerra",
   "cardRotation": 45,
-  "scriptsUrls": ["https://jfbaraky.github.io/cores/game-scripts.js"],
+  "scriptsUrls": [
+    "https://jfbaraky.github.io/cores/game-scripts.js"
+  ],
   "customHelp": "Cores da Guerra é um jogo de construção de baralhos sobre o Mediterrâneo helenístico. Escolha sua Capital, gerencie Trabalhadores para gerar recursos, compre Combatentes, Estratégias e Melhorias no Mercado, e conquiste Hegemonia por vitória militar ou por influência.\n\nIMPORTANTE — esta implementação digital NÃO resolve Conflitos, Formações, habilidades de carta ou pontuação automaticamente. O motor oferece apenas as zonas, o estado de virado/tapado e contadores de apoio (aba 'Reserva'). Consultem sempre o Manual de Regras (Cores da Guerra — Manual de Regras v1) para resolver Assaltos, Combates e efeitos de carta.\n\nOrdem de jogo (primazia) a cada Campanha: quem jogou por último na Campanha anterior joga primeiro na próxima; os demais mantêm a ordem relativa. Passem o token 'Primazia' manualmente na Renovação.\n\nConflitos (Assalto/Combate) em partidas com 3-4 jogadores são sempre declarados 1 contra 1: quem ataca escolhe um único oponente-alvo: os demais não participam daquele Conflito.\n\nESCOLHA DE BARALHO: ao entrar em uma partida, escolha em 'Preconstructed decks' o Império da civilização da Capital que você quer jogar (Helênica/Latina/Fenícia/Celta) — isso já escolhe sua Capital.\n\nSUA CAPITAL: é colocada automaticamente no Território assim que a partida começa — não precisa arrastá-la manualmente. Sua mão inicial continua com exatamente 6 Trabalhadores, mesmo que a Capital tenha saído (ou não) no sorteio da mão.\n\nTELA 'Swap cards with your sideboard': ao iniciar a partida, o TCG Arena mostra essa tela padrão da plataforma para todo mundo — este jogo não usa Sideboard, então basta clicar 'Continue' sem mexer em nada (ou, melhor ainda, o anfitrião pode ligar 'Disable sideboard for all players' na tela 'Start the game' para pular essa etapa por completo).\n\nMERCADO: use os botões na aba 'Reserva' — 'Abrir Mercado' (um clique, uma vez, no início da partida: embaralha as 3 pilhas e revela 4 cartas de cada), 'Repor Mercado' (um clique depois de comprar uma carta, repõe até 4 revelados por pilha) e 'Avançar Mercado (Renovação)' (um clique na Renovação: descarta a carta mais antiga revelada de cada pilha e repõe). Qualquer jogador pode clicar; funcionam na mesma pilha/linha compartilhada para todos.",
   "deckBuilding": {
     "mainFilters": [
@@ -57,7 +59,10 @@
       "countersStartingValues": [],
       "mulligan": {
         "startingHandSize": 6,
-        "mulliganCount": { "min": 0, "max": 0 }
+        "mulliganCount": {
+          "min": 0,
+          "max": 0
+        }
       },
       "newTurn": {
         "drawOnStart": false,
@@ -1033,9 +1038,6 @@
               "direction": "row",
               "content": [
                 {
-                  "section": "Reserva"
-                },
-                {
                   "section": "Deck"
                 },
                 {
@@ -1043,6 +1045,12 @@
                 },
                 {
                   "section": "Remove"
+                },
+                {
+                  "section": "Reserva",
+                  "style": {
+                    "width": "58%"
+                  }
                 }
               ]
             },
@@ -1052,7 +1060,7 @@
           ]
         },
         "sharedZone": {
-          "height": 34,
+          "height": 28,
           "layout": {
             "direction": "column",
             "content": [
@@ -1060,41 +1068,55 @@
                 "direction": "row",
                 "content": [
                   {
-                    "section": "MercadoCombatentesPilha"
+                    "direction": "row",
+                    "style": {
+                      "width": "33.3%"
+                    },
+                    "content": [
+                      {
+                        "section": "MercadoCombatentesPilha"
+                      },
+                      {
+                        "section": "MercadoCombatentesRevelado"
+                      },
+                      {
+                        "section": "MercadoCombatentesDescarte"
+                      }
+                    ]
                   },
                   {
-                    "section": "MercadoCombatentesRevelado"
+                    "direction": "row",
+                    "style": {
+                      "width": "33.3%"
+                    },
+                    "content": [
+                      {
+                        "section": "MercadoEstrategiasPilha"
+                      },
+                      {
+                        "section": "MercadoEstrategiasRevelado"
+                      },
+                      {
+                        "section": "MercadoEstrategiasDescarte"
+                      }
+                    ]
                   },
                   {
-                    "section": "MercadoCombatentesDescarte"
-                  }
-                ]
-              },
-              {
-                "direction": "row",
-                "content": [
-                  {
-                    "section": "MercadoEstrategiasPilha"
-                  },
-                  {
-                    "section": "MercadoEstrategiasRevelado"
-                  },
-                  {
-                    "section": "MercadoEstrategiasDescarte"
-                  }
-                ]
-              },
-              {
-                "direction": "row",
-                "content": [
-                  {
-                    "section": "MercadoMelhoriasPilha"
-                  },
-                  {
-                    "section": "MercadoMelhoriasRevelado"
-                  },
-                  {
-                    "section": "MercadoMelhoriasDescarte"
+                    "direction": "row",
+                    "style": {
+                      "width": "33.3%"
+                    },
+                    "content": [
+                      {
+                        "section": "MercadoMelhoriasPilha"
+                      },
+                      {
+                        "section": "MercadoMelhoriasRevelado"
+                      },
+                      {
+                        "section": "MercadoMelhoriasDescarte"
+                      }
+                    ]
                   }
                 ]
               },
@@ -1107,47 +1129,41 @@
         "sectionsDict": {
           "Hand": {
             "isHidden": "opponent-only",
-            "height": "MEDIUM",
+            "height": 12,
             "alignment": "CENTER",
-            "displayedTitle": "Mão",
-            "autoPlayFromHand": {
-              "Combatente": "Territorio",
-              "Estratégia": "Territorio",
-              "Melhoria": "Territorio"
-            }
+            "displayedTitle": "Mão"
           },
           "Deck": {
             "isHidden": "yes",
-            "height": "MEDIUM",
+            "height": 9,
             "alignment": "DECK",
             "displayedTitle": "Império"
           },
           "Discard": {
             "isHidden": "opponent-only",
-            "height": "MEDIUM",
+            "height": 9,
             "alignment": "DECK",
             "displayedTitle": "Descanso"
           },
           "Remove": {
             "isHidden": "no",
-            "height": "SMALL",
+            "height": 9,
             "alignment": "DECK",
             "displayedTitle": "Desterro"
           },
           "Territorio": {
             "isHidden": "no",
-            "height": "DEFAULT",
+            "height": 11,
             "alignment": "CENTER",
             "displayedTitle": "Território",
             "isHorizontalAllowed": true,
             "keepTappedNewTurn": false,
-            "logWhenPlayed": true,
-            "noAutoPayTo": true
+            "logWhenPlayed": true
           },
           "Reserva": {
             "type": "custom",
             "isHidden": "no",
-            "height": "SMALL",
+            "height": 9,
             "alignment": "NONE",
             "displayedTitle": "Reserva & Hegemonia",
             "isShared": false,
@@ -1162,16 +1178,37 @@
             "blueprint": {
               "type": "div",
               "props": {
-                "className": "reserva-panel"
+                "style": {
+                  "display": "flex",
+                  "flexWrap": "wrap",
+                  "alignItems": "center",
+                  "gap": "0.4vh 1.2vh",
+                  "padding": "0.4vh",
+                  "fontSize": "1.3vh"
+                }
               },
               "children": [
                 {
                   "type": "div",
                   "props": {
-                    "className": "reserva-row reserva-hegemonia"
+                    "style": {
+                      "display": "flex",
+                      "alignItems": "center",
+                      "gap": "0.5vh"
+                    }
                   },
                   "children": [
-                    "Hegemonia",
+                    {
+                      "type": "span",
+                      "props": {
+                        "style": {
+                          "color": "#f5d76e",
+                          "fontWeight": "bold",
+                          "fontSize": "1.3vh"
+                        }
+                      },
+                      "children": "Hegemonia"
+                    },
                     {
                       "type": "input-number",
                       "props": {
@@ -1184,49 +1221,24 @@
                 {
                   "type": "div",
                   "props": {
-                    "className": "reserva-row"
+                    "style": {
+                      "display": "flex",
+                      "alignItems": "center",
+                      "gap": "0.5vh"
+                    }
                   },
                   "children": [
                     {
-                      "type": "button",
-                      "children": "Abrir Mercado",
-                      "onClick": "await setupMarket()"
-                    }
-                  ]
-                },
-                {
-                  "type": "div",
-                  "props": {
-                    "className": "reserva-row"
-                  },
-                  "children": [
-                    {
-                      "type": "button",
-                      "children": "Repor Mercado",
-                      "onClick": "await replenishMarket()"
-                    }
-                  ]
-                },
-                {
-                  "type": "div",
-                  "props": {
-                    "className": "reserva-row"
-                  },
-                  "children": [
-                    {
-                      "type": "button",
-                      "children": "Avançar Mercado (Renovação)",
-                      "onClick": "await advanceMarket()"
-                    }
-                  ]
-                },
-                {
-                  "type": "div",
-                  "props": {
-                    "className": "reserva-row"
-                  },
-                  "children": [
-                    "Roxo (Helênica)",
+                      "type": "span",
+                      "props": {
+                        "style": {
+                          "color": "#b48cff",
+                          "fontWeight": "bold",
+                          "fontSize": "1.3vh"
+                        }
+                      },
+                      "children": "Roxo"
+                    },
                     {
                       "type": "input-number",
                       "props": {
@@ -1239,10 +1251,24 @@
                 {
                   "type": "div",
                   "props": {
-                    "className": "reserva-row"
+                    "style": {
+                      "display": "flex",
+                      "alignItems": "center",
+                      "gap": "0.5vh"
+                    }
                   },
                   "children": [
-                    "Vermelho (Latina)",
+                    {
+                      "type": "span",
+                      "props": {
+                        "style": {
+                          "color": "#ff7b7b",
+                          "fontWeight": "bold",
+                          "fontSize": "1.3vh"
+                        }
+                      },
+                      "children": "Vermelho"
+                    },
                     {
                       "type": "input-number",
                       "props": {
@@ -1255,10 +1281,24 @@
                 {
                   "type": "div",
                   "props": {
-                    "className": "reserva-row"
+                    "style": {
+                      "display": "flex",
+                      "alignItems": "center",
+                      "gap": "0.5vh"
+                    }
                   },
                   "children": [
-                    "Azul (Fenícia)",
+                    {
+                      "type": "span",
+                      "props": {
+                        "style": {
+                          "color": "#7bb6ff",
+                          "fontWeight": "bold",
+                          "fontSize": "1.3vh"
+                        }
+                      },
+                      "children": "Azul"
+                    },
                     {
                       "type": "input-number",
                       "props": {
@@ -1271,10 +1311,24 @@
                 {
                   "type": "div",
                   "props": {
-                    "className": "reserva-row"
+                    "style": {
+                      "display": "flex",
+                      "alignItems": "center",
+                      "gap": "0.5vh"
+                    }
                   },
                   "children": [
-                    "Verde (Celta)",
+                    {
+                      "type": "span",
+                      "props": {
+                        "style": {
+                          "color": "#7bff9a",
+                          "fontWeight": "bold",
+                          "fontSize": "1.3vh"
+                        }
+                      },
+                      "children": "Verde"
+                    },
                     {
                       "type": "input-number",
                       "props": {
@@ -1287,10 +1341,24 @@
                 {
                   "type": "div",
                   "props": {
-                    "className": "reserva-row"
+                    "style": {
+                      "display": "flex",
+                      "alignItems": "center",
+                      "gap": "0.5vh"
+                    }
                   },
                   "children": [
-                    "Ouro",
+                    {
+                      "type": "span",
+                      "props": {
+                        "style": {
+                          "color": "#ffd24a",
+                          "fontWeight": "bold",
+                          "fontSize": "1.3vh"
+                        }
+                      },
+                      "children": "Ouro"
+                    },
                     {
                       "type": "input-number",
                       "props": {
@@ -1299,98 +1367,150 @@
                       "onChange": "game.data.Reserva.ouro = Number(value)"
                     }
                   ]
+                },
+                {
+                  "type": "button",
+                  "props": {
+                    "style": {
+                      "fontSize": "1.2vh",
+                      "padding": "0.2vh 0.8vh"
+                    }
+                  },
+                  "children": "Abrir Mercado",
+                  "onClick": "await setupMarket()"
+                },
+                {
+                  "type": "button",
+                  "props": {
+                    "style": {
+                      "fontSize": "1.2vh",
+                      "padding": "0.2vh 0.8vh"
+                    }
+                  },
+                  "children": "Repor Mercado",
+                  "onClick": "await replenishMarket()"
+                },
+                {
+                  "type": "button",
+                  "props": {
+                    "style": {
+                      "fontSize": "1.2vh",
+                      "padding": "0.2vh 0.8vh"
+                    }
+                  },
+                  "children": "Avançar Mercado (Renovação)",
+                  "onClick": "await advanceMarket()"
                 }
               ]
             },
             "events": {
-              "onPlayersSideboardClosed": "await placeCapital();",
-              "onPlayersMulligan": "await placeCapital();",
-              "onPlayersReady": "await placeCapital();",
-              "onNewTurn": "await placeCapital();",
-              "onCardsUpdate": "await placeCapital();"
+              "onPlayersDeckPicked": "await placeCapital()",
+              "onPlayersReady": "await placeCapital(); await setupMarket()"
             }
           },
           "MercadoCombatentesPilha": {
             "isHidden": "yes",
-            "height": "SMALL",
+            "height": 11,
             "alignment": "DECK",
             "displayedTitle": "Pilha de Combatentes"
           },
           "MercadoCombatentesRevelado": {
             "isHidden": "no",
-            "height": "SMALL",
+            "height": 11,
             "alignment": "START",
             "displayedTitle": "Combatentes",
             "cardActionShortcut": {
               "action": "MOVE",
-              "actionData": { "destination": "Hand" }
+              "actionData": {
+                "destination": "Hand"
+              }
+            },
+            "events": {
+              "onCardsLeave": "await replenishMarket()"
             }
           },
           "MercadoCombatentesDescarte": {
             "isHidden": "no",
-            "height": "SMALL",
+            "height": 11,
             "alignment": "DECK",
             "displayedTitle": "Descarte de Combatentes"
           },
           "MercadoEstrategiasPilha": {
             "isHidden": "yes",
-            "height": "SMALL",
+            "height": 11,
             "alignment": "DECK",
             "displayedTitle": "Pilha de Estratégias"
           },
           "MercadoEstrategiasRevelado": {
             "isHidden": "no",
-            "height": "SMALL",
+            "height": 11,
             "alignment": "START",
             "displayedTitle": "Estratégias",
             "cardActionShortcut": {
               "action": "MOVE",
-              "actionData": { "destination": "Hand" }
+              "actionData": {
+                "destination": "Hand"
+              }
+            },
+            "events": {
+              "onCardsLeave": "await replenishMarket()"
             }
           },
           "MercadoEstrategiasDescarte": {
             "isHidden": "no",
-            "height": "SMALL",
+            "height": 11,
             "alignment": "DECK",
             "displayedTitle": "Descarte de Estratégias"
           },
           "MercadoMelhoriasPilha": {
             "isHidden": "yes",
-            "height": "SMALL",
+            "height": 11,
             "alignment": "DECK",
             "displayedTitle": "Pilha de Melhorias"
           },
           "MercadoMelhoriasRevelado": {
             "isHidden": "no",
-            "height": "SMALL",
+            "height": 11,
             "alignment": "START",
             "displayedTitle": "Melhorias",
             "cardActionShortcut": {
               "action": "MOVE",
-              "actionData": { "destination": "Hand" }
+              "actionData": {
+                "destination": "Hand"
+              }
+            },
+            "events": {
+              "onCardsLeave": "await replenishMarket()"
             }
           },
           "MercadoMelhoriasDescarte": {
             "isHidden": "no",
-            "height": "SMALL",
+            "height": 11,
             "alignment": "DECK",
             "displayedTitle": "Descarte de Melhorias"
           },
           "CampoDeBatalha": {
             "isHidden": "no",
-            "height": "MEDIUM",
+            "height": 13,
             "alignment": "CENTER",
             "displayedTitle": "Campo de Batalha",
             "isGroupForbidden": true
           }
-        }
+        },
+        "autoPlayFromHand": {
+          "Capital": "Territorio",
+          "Combatente": "Territorio",
+          "Estratégia": "Territorio",
+          "Melhoria": "Territorio",
+          "Trabalhador": "Discard"
+        },
+        "autoPlayFromStack": {}
       }
     }
   },
   "defaultRessources": {
     "decksUrl": "https://jfbaraky.github.io/cores/decks.json"
   },
-  "translationsUrl": "https://jfbaraky.github.io/cores/translations.json",
   "cards": {
     "dataUrl": "https://jfbaraky.github.io/cores/cards.json",
     "cardBack": "https://jfbaraky.github.io/cores/assets/cardback.jpg"
