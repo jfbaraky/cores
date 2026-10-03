@@ -1497,6 +1497,9 @@
               "actionData": {
                 "destination": "Hand"
               }
+            },
+            "events": {
+              "onCardsLeave": "await replenishMarket()"
             }
           },
           "MercadoCombatentesDescarte": {
@@ -1519,7 +1522,7 @@
             "cardActionShortcut": {
               "action": "MOVE",
               "actionData": {
-                "destination": "Territorio"
+                "destination": "Hand"
               }
             },
             "events": {
@@ -1546,7 +1549,7 @@
             "cardActionShortcut": {
               "action": "MOVE",
               "actionData": {
-                "destination": "CampoDeBatalha"
+                "destination": "Hand"
               }
             },
             "events": {
@@ -1579,7 +1582,14 @@
           "Capital->Territorio"
         ],
         "ownerOnlySections": {
-          "Hand": false
+          "Hand": false,
+          "Discard": false
+        },
+        "tokenForbiddenSections": {
+          "Hand": false,
+          "Discard": false,
+          "Remove": false,
+          "RemoveHidden": false
         }
       }
     }
