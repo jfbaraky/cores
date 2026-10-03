@@ -1497,9 +1497,6 @@
               "actionData": {
                 "destination": "Hand"
               }
-            },
-            "events": {
-              "onCardsLeave": "await replenishMarket()"
             }
           },
           "MercadoCombatentesDescarte": {
