@@ -1519,7 +1519,7 @@
             "cardActionShortcut": {
               "action": "MOVE",
               "actionData": {
-                "destination": "Hand"
+                "destination": "Territorio"
               }
             },
             "events": {
@@ -1546,7 +1546,7 @@
             "cardActionShortcut": {
               "action": "MOVE",
               "actionData": {
-                "destination": "Hand"
+                "destination": "CampoDeBatalha"
               }
             },
             "events": {
@@ -1577,7 +1577,10 @@
         "autoPlayFromStack": {},
         "categoriesAlreadyOnBoard": [
           "Capital->Territorio"
-        ]
+        ],
+        "ownerOnlySections": {
+          "Hand": false
+        }
       }
     }
   },
