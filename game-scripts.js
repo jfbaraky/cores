@@ -9,8 +9,9 @@
 async function debugBoard(tag) {
   const deck = await functions.getDeck();
   const types = (list) => (list ?? []).map((c) => functions.getCardData(c)?.type?.[0]).join("");
+  const name = (c) => functions.getCardData(c)?.name?.name ?? "-";
   functions.chatLog(
-    `[debug ${tag ?? ""}] host=${game.isHost} hand=${(cards?.Hand ?? []).length}(${types(cards?.Hand)}) deck=${deck.length}(${types(deck)}) ` +
+    `[debug ${tag ?? ""}] host=${game.isHost} deckBottom=${name(deck[0])} deckTop=${name(deck[deck.length - 1])} hand=${(cards?.Hand ?? []).length}(${types(cards?.Hand)}) deck=${deck.length}(${types(deck)}) ` +
       `terr=${(cards?.Territorio ?? []).length}(${types(cards?.Territorio)}) descanso=${(cards?.Discard ?? []).length} ` +
       `rev=${MARKET_PILES.map(({ revealed }) => (cards?.[revealed] ?? []).length).join("/")} ` +
       `descartes=${MARKET_PILES.map(({ discard }) => (cards?.[discard] ?? []).length).join("/")}`,
@@ -68,4 +69,55 @@ async function advanceMarket() {
     await functions.moveCard(oldest, discard);
     functions.chatLog(`${functions.getCardData(oldest)?.name?.name ?? "Carta"} descartada do Mercado (Renovação).`);
   }
+}
+
+// --- Fim do turno e Renovação (manual §10.3, §11.4) ---------------------------
+const RESOURCE_KEYS = ["roxo", "vermelho", "azul", "verde", "ouro"];
+
+// Reserva.onNewTurn: runs on every client at every turn change. §10.3: resources not stored on
+// Melhorias are discarded when *your* turn ends. `myTurn` (Reserva data, per player) remembers that
+// the turn that just ended was this player's, so off-turn gains are kept until the end of your own turn.
+function endOfTurnCleanup() {
+  const reserva = game.data.Reserva;
+  if (game.turn.isMyTurn) {
+    reserva.myTurn = true;
+    return;
+  }
+  if (!reserva.myTurn) return;
+  reserva.myTurn = false;
+  const lost = RESOURCE_KEYS.filter((k) => reserva[k] > 0).map((k) => `${reserva[k]} ${k}`);
+  RESOURCE_KEYS.forEach((k) => { reserva[k] = 0; });
+  functions.chatLog(
+    lost.length
+      ? `Fim do turno: reserva descartada (${lost.join(", ")}). Só ficam os recursos armazenados nas Melhorias.`
+      : "Fim do turno: reserva vazia.",
+  );
+}
+
+// Draws `count` cards. §11.4: the Império is only rebuilt at the moment you must draw from an empty
+// one, by shuffling the Descanso into it.
+async function drawWithReshuffle(count) {
+  const inDeck = (await functions.getDeck()).length;
+  const first = Math.min(count, inDeck);
+  if (first > 0) await functions.draw(first);
+  const missing = count - first;
+  if (missing <= 0) return;
+  const discarded = cards?.Discard ?? [];
+  if (discarded.length === 0) return;
+  for (const card of discarded) await functions.moveCard(card, "Deck");
+  await functions.shuffleSection("Deck");
+  await functions.draw(Math.min(missing, discarded.length));
+  functions.chatLog("Império esgotado: Descanso embaralhado para formar o novo Império.");
+}
+
+// "Renovação (minha parte)": each player runs this once per Renovação. Untaps the Território and
+// brings the hand to exactly 6 (draws if short; the player chooses what to discard if over).
+// Colonist income and the Mercado roll are separate (the latter is advanceMarket, once per table).
+async function renovacao() {
+  const tapped = (cards?.Territorio ?? []).filter((c) => c.isTapped);
+  if (tapped.length > 0) await functions.updateCards(tapped, { isTapped: false });
+  const hand = (cards?.Hand ?? []).length;
+  if (hand < 6) await drawWithReshuffle(6 - hand);
+  else if (hand > 6) functions.chatLog(`Renovação: descarte ${hand - 6} carta(s) da mão para o Descanso (a mão deve ter 6).`);
+  functions.chatLog("Renovação: Melhorias desviradas, mão ajustada.");
 }
