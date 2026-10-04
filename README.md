@@ -111,8 +111,13 @@ o que cada decisão custou em tentativas está em `docs/DIAGNOSTICS.md`.
 - **Renovação:** botão "Renovação (minha parte)" (cada jogador): desvira o Território, completa a mão até 6 (só
   embaralha o Descanso se precisar sacar com o Império vazio). "Avançar Mercado" (uma vez por mesa) descarta a carta
   mais antiga (a mais à esquerda) de cada fileira. As Melhorias ficam viradas entre turnos (§12.1).
-- **Compra de Combatente:** o atalho troca o token do Mercado por uma carta de verdade no Descanso (ela entra no
-  próximo Império; para uma compra plena, mova-a ao topo do Império pelo menu: botão direito › To Império › Top).
+- **Comprar (normal ou plena):** clique no atalho do canto da carta do Mercado. Abre um quadro "Comprar X (custo N)" com
+  **Compra plena / Compra normal / Cancelar** (só aparece para quem está comprando; o log da mesa registra a escolha).
+  - Combatente: o token do Mercado é trocado por uma carta de verdade. *Plena* → topo do Império; *normal* → Descanso (entra
+    no próximo Império, aproximando "fundo"). Estratégia/Melhoria: vão para a Mão; *plena* mostra na Reserva
+    "2ª compra: tipo, custo ≤ N" até o fim do turno.
+  - *Cancelar* devolve a carta ao Mercado; a carta que já tinha sido reposta vai para o descarte do Mercado.
+  - O pagamento (contadores) continua manual: a escolha é a declaração do jogador.
 - **Jogar da mão:** clique na carta (`autoPlayFromHand`): Capital, Combatente,
   Estratégia e Melhoria vão para o Território; Trabalhador vai para o Descanso
   ("Trabalhar").

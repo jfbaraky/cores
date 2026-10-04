@@ -178,4 +178,11 @@ Capital auto-placed · 6-card hand visible · Mercado auto-opens 4/4/4 · buy �
   4. Overlapped market cards: a click aimed at one card's shortcut can land on its neighbour and **tap** it (a tapped market card stays tapped). Scripted `button.click()` on the card's `.link-button` avoids it.
 - **Harness:** the space bar is flaky (needs `window.focus()` and the key event on both `window` and `document`); counters need real clicks (hover the input, then ▲/▼).
 
+### E17 — Purchase modal (Compra plena / normal / Cancelar)
+- **Modal in a script-only game:** a custom section (`Compra`, `playerRenderOnly: true` so the opponent never sees it, `defaultValue` carries the pending card) whose blueprint root is shown with `display: {{ game.data.Compra.open ? 'flex' : 'none' }}`. `Hand.onCardsEnter → comprarCarta()` opens it when a card arrives from a Mercado row; its buttons call `concluirCompra('plena'|'normal')` / `cancelarCompra()`.
+- **Positioning gotcha:** `position: fixed` inside a custom section is relative to the player's board container (it has a CSS transform), not the screen; it also draws under the Hand and the shared Mercado. Anchored with `bottom: 31vh` (+ `left: 50%`) so it sits in the free band between the Mercado and the board.
+- **`createCard` facts (read from the bundle):** it creates a *real* card (`startOwner = owner = "UNOWNED"`), puts it straight into the named section, fires **no** `onCardsEnter`, and a script can only `moveCard` cards present in its `cards` snapshot, which is not refreshed inside the same script. Hence the plena move to the top of the Império (`subirParaTopo`) runs from the Reserva's `onCardsUpdate` with a flag in `game.data.Compra.topo`. Creating a card in `"Deck"` only makes a board card, not a draw-pile card.
+- **Cancel:** moving a card *into a pile* from a script does nothing; moving it to the Mercado discard works. So cancel sends the already-refilled newest card to the discard and returns the token to its row (4 cards again).
+- **Verified (solo):** modal opens mid-screen; *Compra plena* → "sent a card to the top of their deck", `deck=7(TTTTTTC)`, token in Desterro; *Cancelar* → hand 7→6, row back to 4. Not yet re-run in a 2-player match.
+
 *(next entries: a longer game, Assalto/Combate.)*
