@@ -112,12 +112,13 @@ async function drawWithReshuffle(count) {
 async function encerrarConflito() {
   const me = cards?.Territorio?.[0]?.owner;
   const mine = (cards?.CampoDeBatalha ?? []).filter((c) => !me || c.owner === me);
-  functions.chatLog(`[dbg] encerrar: ${(cards?.CampoDeBatalha ?? []).map((c) => `${c.id}@${c.position?.section}/${c.owner}`).join(", ")} me=${me}`); // TEMP dbg
   if (mine.length === 0) {
     functions.chatLog("Encerrar conflito: não há cartas suas no Campo de Batalha.");
     return;
   }
-  await functions.moveCards(mine, "Discard", { noLogs: true });
+  // One moveCard per card: the batch moveCards does not notify the script's snapshot of `cards`, so a second click would
+  // still see the cards on the Campo.
+  for (const card of mine) await functions.moveCard(card, "Discard", { noLogs: true });
   functions.chatLog(`Conflito encerrado: ${mine.length} carta(s) foram para o Descanso.`);
 }
 
