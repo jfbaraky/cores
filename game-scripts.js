@@ -270,10 +270,10 @@ async function concluirCompra(modo) {
 async function cancelarCompra() {
   const compra = game.data.Compra;
   // The refill was held while the modal was open, so the row still has its gap. The engine appends the
-  // returned token at the end of the row, still owned by the buyer; it is given back to the shared pool
-  // and its position to the one it had (index just before its old
-  // neighbour, renumbered by repositionCards) puts it back in its slot. updateCards works by card id, so
-  // the stale snapshot of the token is enough.
+  // returned token at the end of the row, still owned by the buyer: it is given back to the shared pool
+  // (UNOWNED, so the other player can buy it) and moved to the position it had, with an index just before
+  // its old neighbour (repositionCards renumbers). updateCards works by card id, so the stale snapshot of the
+  // token is enough.
   const token = (cards?.Hand ?? []).find((c) => c.id === compra.id);
   if (token) {
     await functions.moveCard(token, compra.row);
