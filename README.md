@@ -104,6 +104,15 @@ o que cada decisão custou em tentativas está em `docs/DIAGNOSTICS.md`.
   canto (`cardActionShortcut` → Mão). A fileira se reabastece sozinha: a
   seção Reserva tem `onCardsUpdate` → `keepMarketFull()` (só o host; roda ~0,5 s
   depois da última mudança de cartas e completa cada fileira até 4).
+- **Trabalhar automático:** clicar num Trabalhador da Mão o manda ao Descanso **e soma 1 recurso da cor dele**
+  na Reserva (`Descanso.onCardsEnter`). Comerciar (2 Trabalhadores → 1 Ouro) continua manual: tire as 2 cores e some 1 Ouro.
+- **Fim do turno (barra de espaço):** a Reserva zera Roxo/Vermelho/Azul/Verde/Ouro de quem acabou de passar
+  (manual §10.3: recurso não armazenado nas Melhorias é descartado). Hegemonia não é zerada.
+- **Renovação:** botão "Renovação (minha parte)" (cada jogador): desvira o Território, completa a mão até 6 (só
+  embaralha o Descanso se precisar sacar com o Império vazio). "Avançar Mercado" (uma vez por mesa) descarta a carta
+  mais antiga (a mais à esquerda) de cada fileira. As Melhorias ficam viradas entre turnos (§12.1).
+- **Compra de Combatente:** o atalho troca o token do Mercado por uma carta de verdade no Descanso (ela entra no
+  próximo Império; para uma compra plena, mova-a ao topo do Império pelo menu: botão direito › To Império › Top).
 - **Jogar da mão:** clique na carta (`autoPlayFromHand`): Capital, Combatente,
   Estratégia e Melhoria vão para o Território; Trabalhador vai para o Descanso
   ("Trabalhar").
