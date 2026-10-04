@@ -1137,7 +1137,7 @@
             "alignment": "CENTER",
             "displayedTitle": "Mão",
             "events": {
-              "onCardsEnter": "await comprarCombatente()"
+              "onCardsEnter": "await comprarCarta()"
             }
           },
           "Deck": {
@@ -1186,7 +1186,9 @@
               "azul": 0,
               "verde": 0,
               "ouro": 0,
-              "hegemonia": 0
+              "hegemonia": 0,
+              "compra": "normal",
+              "bonus": ""
             },
             "blueprint": {
               "type": "div",
@@ -1428,6 +1430,49 @@
                       "onChange": "game.data.Reserva.ouro = Number(value)"
                     }
                   ]
+                },
+                {
+                  "type": "button",
+                  "props": {
+                    "style": {
+                      "fontSize": "1.2vh",
+                      "padding": "0 0.7vh",
+                      "height": "2.6vh",
+                      "whiteSpace": "nowrap",
+                      "lineHeight": "1",
+                      "background": "{{ game.data.Reserva.compra === 'normal' ? '#2e7d32' : '' }}",
+                      "color": "{{ game.data.Reserva.compra === 'normal' ? '#ffffff' : '' }}"
+                    }
+                  },
+                  "children": "Compra normal",
+                  "onClick": "game.data.Reserva.compra = 'normal'"
+                },
+                {
+                  "type": "button",
+                  "props": {
+                    "style": {
+                      "fontSize": "1.2vh",
+                      "padding": "0 0.7vh",
+                      "height": "2.6vh",
+                      "whiteSpace": "nowrap",
+                      "lineHeight": "1",
+                      "background": "{{ game.data.Reserva.compra === 'plena' ? '#2e7d32' : '' }}",
+                      "color": "{{ game.data.Reserva.compra === 'plena' ? '#ffffff' : '' }}"
+                    }
+                  },
+                  "children": "Compra plena",
+                  "onClick": "game.data.Reserva.compra = 'plena'"
+                },
+                {
+                  "type": "span",
+                  "props": {
+                    "style": {
+                      "fontSize": "1.2vh",
+                      "whiteSpace": "nowrap",
+                      "color": "#ffd54f"
+                    }
+                  },
+                  "children": "{{ game.data.Reserva.bonus }}"
                 },
                 {
                   "type": "button",

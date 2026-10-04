@@ -81,6 +81,8 @@ const RESOURCE_KEYS = ["roxo", "vermelho", "azul", "verde", "ouro"];
 function endOfTurnCleanup() {
   if (!game.turn.isMyTurn) return;
   const reserva = game.data.Reserva;
+  reserva.compra = "normal";
+  reserva.bonus = "";
   const lost = RESOURCE_KEYS.filter((k) => reserva[k] > 0).map((k) => `${reserva[k]} ${k}`);
   RESOURCE_KEYS.forEach((k) => { reserva[k] = 0; });
   if (lost.length > 0) {
@@ -140,20 +142,47 @@ function trabalhar() {
   if (gained.length > 0) functions.chatLog(`Trabalhar: +1 ${gained.join(", +1 ")}`);
 }
 
-// --- Compra de Combatente (manual §9.2) -------------------------------------------
-// Mercado cards are engine *tokens* and a token that goes into the Império does not survive being
-// drawn (live: the bought Combatente vanished at the next Renovação). So the Combatentes row's
-// shortcut sends the token to the Mão, and this Hand.onCardsEnter handler swaps it for a real
-// card created in the Descanso (functions.createCard into "Deck" only makes a board card, not a
-// card in the draw pile) and sends the token to the Desterro. The real card joins the Império at
-// the next reshuffle (approximates "fundo do Império"); for a compra plena move it to the top of
-// the Império by hand (right-click > To Império > Top).
-async function comprarCombatente() {
+// --- Compra normal / compra plena (manual §9.2, §9.3) ---------------------------------
+// The Reserva has two mode buttons, "Compra normal" and "Compra plena" (game.data.Reserva.compra).
+// The corner shortcut of a Mercado card moves the card to the Mão; this Hand.onCardsEnter handler
+// then applies the active mode once and falls back to "normal":
+//  - Combatente: the Mercado token is swapped for a real card (a token that enters the Império does
+//    not survive being drawn). Normal: the real card is created in the Descanso (joins the Império
+//    at the next reshuffle, approximating "fundo"). Plena: it is created in the Descanso and then
+//    moved to the top of the Império.
+//  - Estratégia / Melhoria: the card stays in the Mão; a plena purchase shows the second-purchase
+//    right ("2ª compra: mesmo tipo, custo ≤ N") in the Reserva until the turn ends.
+// The payment itself (counters) stays manual: the mode is the player's declaration, logged for both.
+const MARKET_ROW_TYPE = {
+  MercadoCombatentesRevelado: "Combatente",
+  MercadoEstrategiasRevelado: "Estratégia",
+  MercadoMelhoriasRevelado: "Melhoria",
+};
+
+async function comprarCarta() {
+  const reserva = game.data.Reserva;
+  const plena = reserva.compra === "plena";
   for (const bought of transitionCards ?? []) {
-    if (bought.position?.section !== "MercadoCombatentesRevelado") continue;
-    const token = (cards?.Hand ?? []).find((c) => c.id === bought.id);
-    if (token) await functions.moveCard(token, "Remove");
-    await functions.createCard(bought.cardData.id, "Discard");
-    functions.chatLog(`${bought.cardData?.face?.front?.name?.name ?? "Combatente"} comprado: vai para o Descanso e entra no próximo Império.`);
+    const type = MARKET_ROW_TYPE[bought.position?.section];
+    if (!type) continue;
+    const data = bought.cardData;
+    const name = data?.face?.front?.name?.name ?? type;
+    const cost = data?.cost ?? data?.face?.front?.cost ?? 0;
+    if (type === "Combatente") {
+      const token = (cards?.Hand ?? []).find((c) => c.id === bought.id);
+      if (token) await functions.moveCard(token, "Remove");
+      const created = await functions.createCard(data.id, "Discard");
+      if (plena && created) {
+        await new Promise((resolve) => setTimeout(resolve, 600));
+        await functions.moveCard(created, "Deck");
+      }
+    }
+    functions.chatLog(
+      plena
+        ? `Compra plena: ${name} (custo ${cost})${type === "Combatente" ? " vai para o topo do Império." : ". Direito a uma 2ª compra do mesmo tipo, custo ≤ " + cost + "."}`
+        : `Compra normal: ${name} (custo ${cost})${type === "Combatente" ? " vai para o Descanso e entra no próximo Império." : "."}`,
+    );
+    reserva.bonus = plena && type !== "Combatente" ? `2ª compra: ${type}, custo ≤ ${cost}` : "";
   }
+  reserva.compra = "normal";
 }
