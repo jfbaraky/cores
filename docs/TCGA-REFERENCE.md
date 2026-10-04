@@ -181,6 +181,11 @@ Blueprint node: `{ type, props, children, onClick, onChange, iterable, template 
 - **A player cannot move the other player's cards** (the opponent's card menu only has *Duplicate*; dragging onto the opponent's piles does nothing). Anything that takes or discards an opponent's card has to be done by the owner.
 - **`input-number` `onChange` fires on commit (blur), not on Enter or while typing:** the value, the chat line and the other player's view all update when the box loses focus. Values set from a script update immediately.
 - `game.data.<Section>` values created by a script (e.g. `Reserva.marcas`, `Reserva.pontuado`) work without being in `defaultValue`, but list them there so a fresh room starts clean.
+- **`functions.updateCards(cards, changes)` is `Object.assign(stateCard, changes)` by card id** (engine code): top-level fields only, so `{ position: {...} }` replaces the whole `position` object (spread the old one) and it never repositions by itself: call `repositionCards()` afterwards. The passed card objects may be stale snapshots, only their ids are used. Use an index like `i - 0.5` to slot a card before the one at `i`.
+- **A moved token keeps its new owner.** A market token bought into a Hand and returned to its row stays owned by the buyer (no shortcut button for the other player). Give it back with `functions.giveCardTo(card, "UNOWNED")` (allowed because the script's player owns it at that moment).
+- **Shared script state:** a custom section with `isShared: true` is read/written by every player (a hidden one-line section is enough); the host can read what the guest wrote, with a short delay. Used for `MercadoEstado.pendente`.
+- **Stacking order:** the shared zones and the player's own cards draw above a custom-section overlay regardless of its `z-index` (the overlay's `position: fixed` is relative to the transformed board). Keep overlays inside the free band between the Mercado and the board.
+- **Script vs gamefile reload:** a page reload + *Reconnect* picks up a new `game-scripts.js`; the layout/events stay as the room was created.
 - Chrome-extension harness: a tab that is not visible does not render new hand cards until a screenshot is taken; `tabs_close`/`navigate` hang on a pending "Leave site?" dialog.
 
 ## 8. Status of earlier hypotheses

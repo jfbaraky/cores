@@ -116,10 +116,14 @@ o que cada decisão custou em tentativas está em `docs/DIAGNOSTICS.md`.
   - Combatente: o token do Mercado é trocado por uma carta de verdade. *Plena* → topo do Império; *normal* → Descanso (entra
     no próximo Império, aproximando "fundo"). Estratégia/Melhoria: vão para a Mão; *plena* mostra na Reserva
     "2ª compra: tipo, custo ≤ N" até o fim do turno.
-  - *Cancelar* devolve a carta ao Mercado; a carta que já tinha sido reposta vai para o descarte do Mercado.
+  - A fileira só é reposta **depois** que a compra é confirmada (enquanto o quadro está aberto ela fica com 3 cartas). *Cancelar*
+    devolve a carta ao **mesmo lugar** da fileira, de novo disponível para os dois jogadores; nada vai para o descarte do Mercado.
   - O pagamento (contadores) continua manual: a escolha é a declaração do jogador.
 - **Jogar da mão:** clique na carta (`autoPlayFromHand`): Capital e Melhoria vão para o Território, Combatente para o
   Campo de Batalha, Estratégia para a Pilha (resolve e vai ao Descanso) e Trabalhador para o Descanso ("Trabalhar").
+- **Topo do Império (Capitais, [CONSCRITO]…):** botão "Olhar topo do Império" na Reserva abre um quadro só para você (o
+  oponente não vê) com a imagem, o nome, o texto e o tamanho do Império. Botões: **Mostrar aos outros** (escreve o nome no chat),
+  **Pegar para a mão** (saca a carta do topo) e **Deixar no topo** (fecha). Não há "colocar no fundo": o motor não permite por script.
 - **Final de Campanha (manual §15.3):** depois da trégua (todos passam em sequência, sem agir) cada jogador aperta
   "Final de Campanha (minha pontuação)". O script conta a civilização de cada carta do Território (a Capital conta, Melhorias
   neutras não): 3/5/7 da mesma civilização = 1/2/3 pontos; ao menos uma de cada uma das 4 = 1 ponto (política). Os pontos
