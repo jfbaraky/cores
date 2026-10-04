@@ -122,7 +122,7 @@ o que cada decisão custou em tentativas está em `docs/DIAGNOSTICS.md`.
 - **Jogar da mão:** clique na carta (`autoPlayFromHand`): Capital e Melhoria vão para o Território, Combatente para o
   Campo de Batalha, Estratégia para a Pilha (resolve e vai ao Descanso) e Trabalhador para o Descanso ("Trabalhar").
 - **Topo do Império (Capitais, [CONSCRITO]…):** botão "Olhar topo do Império" na Reserva abre um quadro só para você (o
-  oponente não vê) com a imagem, o nome, o texto e o tamanho do Império. Botões: **Mostrar aos outros** (escreve o nome no chat),
+  oponente não vê a carta; o chat só registra "Olhou a carta do topo do Império.") com a imagem, o nome, o texto e o tamanho do Império. Botões: **Mostrar aos outros** (escreve o nome no chat),
   **Pegar para a mão** (saca a carta do topo) e **Deixar no topo** (fecha). Não há "colocar no fundo": o motor não permite por script.
 - **Final de Campanha (manual §15.3):** depois da trégua (todos passam em sequência, sem agir) cada jogador aperta
   "Final de Campanha (minha pontuação)". O script conta a civilização de cada carta do Território (a Capital conta, Melhorias
@@ -133,8 +133,9 @@ o que cada decisão custou em tentativas está em `docs/DIAGNOSTICS.md`.
 - **Renovação:** "Renovação (minha parte)" (cada jogador) aplica os bônus de civilização pontuados (Fenícia +1 Ouro, Helênica
   mão de 7; Latina e Celta são avisados no chat, pois dependem de ficha física/escolha), desvira o Território e completa a mão.
   "Avançar Mercado (Renovação)" (uma vez por mesa) descarta a carta mais antiga de cada fileira (as fileiras se repõem pelo
-  evento acima). "Repor Mercado" completa fileiras até 4 na hora (útil se algo falhar); "Abrir Mercado" é a montagem
-  inicial (idempotente). "DEBUG" escreve no log o que o script enxerga.
+  evento acima). "Repor Mercado" completa fileiras até 4 na hora e libera a trava de compra pendente (só para o caso de uma
+  fileira ficar incompleta, por exemplo se alguém fechar o navegador com o quadro de compra aberto). O Mercado abre sozinho
+  (`setupMarket` no `onPlayersReady`); não há botão "Abrir Mercado" nem "DEBUG".
 - **As cartas do Mercado são *tokens* para o motor** e o padrão do motor apaga
   tokens movidos para Mão/Descanso/Desterro; por isso `gamefile.json` define
   `tokenForbiddenSections` e `ownerOnlySections` com essas seções em `false`

@@ -5,7 +5,7 @@
   "scriptsUrls": [
     "https://jfbaraky.github.io/cores/game-scripts.js"
   ],
-  "customHelp": "Cores da Guerra é um jogo de construção de baralhos sobre o Mediterrâneo helenístico. Escolha sua Capital, gerencie Trabalhadores para gerar recursos, compre Combatentes, Estratégias e Melhorias no Mercado, e conquiste Hegemonia por vitória militar ou por influência.\n\nIMPORTANTE — esta implementação digital NÃO resolve Conflitos, Formações, habilidades de carta ou pontuação automaticamente. O motor oferece apenas as zonas, o estado de virado/tapado e contadores de apoio (aba 'Reserva'). Consultem sempre o Manual de Regras (Cores da Guerra — Manual de Regras v1) para resolver Assaltos, Combates e efeitos de carta.\n\nOrdem de jogo (primazia) a cada Campanha: quem jogou por último na Campanha anterior joga primeiro na próxima; os demais mantêm a ordem relativa. Passem o token 'Primazia' manualmente na Renovação.\n\nConflitos (Assalto/Combate) em partidas com 3-4 jogadores são sempre declarados 1 contra 1: quem ataca escolhe um único oponente-alvo: os demais não participam daquele Conflito.\n\nESCOLHA DE BARALHO: ao entrar em uma partida, escolha em 'Preconstructed decks' o Império da civilização da Capital que você quer jogar (Helênica/Latina/Fenícia/Celta) — isso já escolhe sua Capital.\n\nSUA CAPITAL: é colocada automaticamente no Território assim que a partida começa — não precisa arrastá-la manualmente. Sua mão inicial continua com exatamente 6 Trabalhadores, mesmo que a Capital tenha saído (ou não) no sorteio da mão.\n\nTELA 'Swap cards with your sideboard': ao iniciar a partida, o TCG Arena mostra essa tela padrão da plataforma para todo mundo — este jogo não usa Sideboard, então basta clicar 'Continue' sem mexer em nada (ou, melhor ainda, o anfitrião pode ligar 'Disable sideboard for all players' na tela 'Start the game' para pular essa etapa por completo).\n\nMERCADO: use os botões na aba 'Reserva' — 'Abrir Mercado' (um clique, uma vez, no início da partida: embaralha as 3 pilhas e revela 4 cartas de cada), 'Repor Mercado' (um clique depois de comprar uma carta, repõe até 4 revelados por pilha) e 'Avançar Mercado (Renovação)' (um clique na Renovação: descarta a carta mais antiga revelada de cada pilha e repõe). Qualquer jogador pode clicar; funcionam na mesma pilha/linha compartilhada para todos.",
+  "customHelp": "Cores da Guerra é um jogo de construção de baralhos sobre o Mediterrâneo helenístico. Escolha sua Capital, gerencie Trabalhadores para gerar recursos, compre Combatentes, Estratégias e Melhorias no Mercado, e conquiste Hegemonia por vitória militar ou por influência.\n\nIMPORTANTE — esta implementação digital NÃO resolve Conflitos, Formações nem habilidades de carta. Automatiza: Trabalhar (soma o recurso da cor), descarte dos recursos ao passar o turno, o Mercado, a compra normal/plena, a Renovação e a pontuação de influência do Final de Campanha. Combates e pagamento de custos são manuais. Consultem sempre o Manual de Regras (Cores da Guerra — Manual de Regras v1).\n\nOrdem de jogo (primazia) a cada Campanha: o primeiro jogador alterna. O motor não controla isso: depois da trégua (todos passam em sequência sem agir), quem deve ficar sem a primazia passa uma vez a mais, para que o turno caia no outro jogador.\n\nConflitos (Assalto/Combate) em partidas com 3-4 jogadores são sempre declarados 1 contra 1: quem ataca escolhe um único oponente-alvo: os demais não participam daquele Conflito.\n\nESCOLHA DE BARALHO: ao entrar em uma partida, escolha em 'Preconstructed decks' o Império da civilização da Capital que você quer jogar (Helênica/Latina/Fenícia/Celta) — isso já escolhe sua Capital.\n\nSUA CAPITAL: é colocada automaticamente no Território assim que a partida começa — não precisa arrastá-la manualmente. Sua mão inicial continua com exatamente 6 Trabalhadores, mesmo que a Capital tenha saído (ou não) no sorteio da mão.\n\nTELA 'Swap cards with your sideboard': ao iniciar a partida, o TCG Arena mostra essa tela padrão da plataforma para todo mundo — este jogo não usa Sideboard, então basta clicar 'Continue' sem mexer em nada (ou, melhor ainda, o anfitrião pode ligar 'Disable sideboard for all players' na tela 'Start the game' para pular essa etapa por completo).\n\nMERCADO: abre sozinho no começo da partida (4 cartas por fileira). Para comprar, passe o mouse na carta e clique no ícone do canto: um quadro pergunta Compra plena, Compra normal ou Cancelar (cancelar devolve a carta ao mesmo lugar). Botões da aba 'Reserva': 'Avançar Mercado (Renovação)' (uma vez por mesa na Renovação: descarta a carta mais antiga de cada fileira e repõe), 'Final de Campanha (minha pontuação)' (cada jogador, depois da trégua), 'Renovação (minha parte)' (cada jogador), 'Olhar topo do Império' (só você vê a carta) e 'Repor Mercado' (só se alguma fileira ficar incompleta).",
   "deckBuilding": {
     "mainFilters": [
       "type",
@@ -1475,22 +1475,8 @@
                       "lineHeight": "1"
                     }
                   },
-                  "children": "Abrir Mercado",
-                  "onClick": "await setupMarket()"
-                },
-                {
-                  "type": "button",
-                  "props": {
-                    "style": {
-                      "fontSize": "1.2vh",
-                      "padding": "0 0.7vh",
-                      "height": "2.6vh",
-                      "whiteSpace": "nowrap",
-                      "lineHeight": "1"
-                    }
-                  },
                   "children": "Repor Mercado",
-                  "onClick": "await fillMarket()"
+                  "onClick": "await reporMercado()"
                 },
                 {
                   "type": "button",
@@ -1547,20 +1533,6 @@
                   },
                   "children": "Renovação (minha parte)",
                   "onClick": "await renovacao()"
-                },
-                {
-                  "type": "button",
-                  "props": {
-                    "style": {
-                      "fontSize": "1.2vh",
-                      "padding": "0 0.7vh",
-                      "height": "2.6vh",
-                      "whiteSpace": "nowrap",
-                      "lineHeight": "1"
-                    }
-                  },
-                  "children": "DEBUG",
-                  "onClick": "await debugBoard('button')"
                 }
               ]
             },

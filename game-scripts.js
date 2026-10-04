@@ -4,19 +4,6 @@
 // No module-level flags: scripts run in a sandbox and module state does not persist.
 // Every function below is idempotent by construction (it inspects the board first).
 
-// Diagnostics (see docs/DIAGNOSTICS.md): one log line with what the script sandbox sees.
-// Runs from the DEBUG button in the Reserva panel; safe to call from anywhere.
-async function debugBoard(tag) {
-  const deck = await functions.getDeck();
-  const types = (list) => (list ?? []).map((c) => functions.getCardData(c)?.type?.[0]).join("");
-  functions.chatLog(
-    `[debug ${tag ?? ""}] host=${game.isHost} hand=${(cards?.Hand ?? []).length}(${types(cards?.Hand)}) deck=${deck.length}(${types(deck)}) ` +
-      `terr=${(cards?.Territorio ?? []).length}(${types(cards?.Territorio)}) descanso=${(cards?.Discard ?? []).length} ` +
-      `rev=${MARKET_PILES.map(({ revealed }) => (cards?.[revealed] ?? []).length).join("/")} ` +
-      `descartes=${MARKET_PILES.map(({ discard }) => (cards?.[discard] ?? []).length).join("/")}`,
-  );
-}
-
 // The Capital needs no script: gamefile.json sets sections.categoriesAlreadyOnBoard to
 // ["Capital->Territorio"], so the engine puts the deck's Capital category straight onto the
 // Território and the 6-card opening hand is dealt from the 12 Trabalhadores.
@@ -56,6 +43,13 @@ async function keepMarketFull() {
 }
 
 const sleep = (ms) => new Promise((resolve) => (typeof setTimeout === "function" ? setTimeout(resolve, ms) : resolve()));
+
+// "Repor Mercado" button: rescue for a row left short. A buyer who closes the browser with the Compra modal open
+// leaves the shared MercadoEstado.pendente flag set, which stops the automatic refill; this clears it and refills.
+async function reporMercado() {
+  game.data.MercadoEstado.pendente = false;
+  await fillMarket();
+}
 
 // Shuffles each pile and reveals the first 4. No-op once any row already has cards.
 async function setupMarket() {
@@ -297,6 +291,9 @@ async function cancelarCompra() {
 // of the Império is not scriptable, so there is no such button: "Deixar no topo" just closes the panel.
 async function olharTopo() {
   const topo = game.data.Topo;
+  // The table is told that someone looked, never which card. Not logged again when atualizarTopo refreshes
+  // a panel that is already open.
+  if (!topo.open) functions.chatLog("Olhou a carta do topo do Império.");
   const deck = await functions.getDeck();
   if (deck.length === 0) {
     Object.assign(topo, { open: true, empty: true, name: "Império vazio", info: "Não há carta para olhar.", text: "", image: "" });

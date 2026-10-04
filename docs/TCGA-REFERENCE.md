@@ -195,4 +195,4 @@ Still open:
 1. `melhoria-argentarii` has `cost: null` but `cost` is a required number (data fix; see README "Itens de dados a revisar").
 2. Set `defaultRessources.backgrounds` (or accept the stray `/undefined` request).
 3. Two-player: buying (guest and host), plena/normal, Renovação, Final de Campanha and several Campanhas verified (E16–E21); Fuga e Perseguição and Formações are not.
-4. Remove the `debugBoard` helper and DEBUG button once play-testing is finished.
+4. ~~Remove the `debugBoard` helper and DEBUG button~~ done; the *Abrir Mercado* button is gone too (`setupMarket` runs from `onPlayersReady`); *Repor Mercado* (`reporMercado`) stays as the rescue.
