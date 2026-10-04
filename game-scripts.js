@@ -75,20 +75,17 @@ async function advanceMarket() {
 const RESOURCE_KEYS = ["roxo", "vermelho", "azul", "verde", "ouro"];
 
 // Reserva.onNewTurn: runs on every client at every turn change. §10.3: resources not stored on
-// Melhorias are discarded when *your* turn ends. Observed live: inside this handler
-// `game.turn.isMyTurn` still describes the turn that has just ENDED (the snapshot is taken before the
-// engine switches turn), so `true` here means "my turn just ended".
+// Melhorias are discarded when *your* turn ends. Verified live (2 players, 12 turn changes): inside
+// this handler `game.turn.isMyTurn` still describes the turn that has just ENDED (the snapshot is
+// taken before the engine switches turn), so `true` here means "my turn just ended".
 function endOfTurnCleanup() {
-  functions.chatLog(`[turn] count=${game.turn.count} justEndedWasMine=${game.turn.isMyTurn}`); // TEMP diagnostic
   if (!game.turn.isMyTurn) return;
   const reserva = game.data.Reserva;
   const lost = RESOURCE_KEYS.filter((k) => reserva[k] > 0).map((k) => `${reserva[k]} ${k}`);
   RESOURCE_KEYS.forEach((k) => { reserva[k] = 0; });
-  functions.chatLog(
-    lost.length
-      ? `Fim do turno: reserva descartada (${lost.join(", ")}). Só ficam os recursos armazenados nas Melhorias.`
-      : "Fim do turno: reserva vazia.",
-  );
+  if (lost.length > 0) {
+    functions.chatLog(`Fim do turno: reserva descartada (${lost.join(", ")}). Só ficam os recursos armazenados nas Melhorias.`);
+  }
 }
 
 // Draws `count` cards. §11.4: the Império is only rebuilt at the moment you must draw from an empty
@@ -141,4 +138,19 @@ function trabalhar() {
     gained.push(color);
   }
   if (gained.length > 0) functions.chatLog(`Trabalhar: +1 ${gained.join(", +1 ")}`);
+}
+
+// --- Compra de Combatente (manual §9.2) -------------------------------------------
+// Mercado cards are engine *tokens* and a token that goes into the Império does not survive being
+// drawn (live: the bought Combatente vanished at the next Renovação). So the Combatentes row's
+// shortcut sends the token to the Mão, and this Hand.onCardsEnter handler swaps it for a real
+// card created in the Império (and sends the token to the Desterro).
+async function comprarCombatente() {
+  for (const bought of transitionCards ?? []) {
+    if (bought.position?.section !== "MercadoCombatentesRevelado") continue;
+    const token = (cards?.Hand ?? []).find((c) => c.id === bought.id);
+    if (token) await functions.moveCard(token, "Remove");
+    await functions.createCard(bought.cardData.id, "Deck");
+    functions.chatLog(`${bought.cardData?.face?.front?.name?.name ?? "Combatente"} comprado: vai para o Império.`);
+  }
 }

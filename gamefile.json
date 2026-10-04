@@ -1135,7 +1135,10 @@
             "isHidden": "opponent-only",
             "height": 11,
             "alignment": "CENTER",
-            "displayedTitle": "Mão"
+            "displayedTitle": "Mão",
+            "events": {
+              "onCardsEnter": "await comprarCombatente()"
+            }
           },
           "Deck": {
             "isHidden": "yes",
@@ -1165,7 +1168,10 @@
             "displayedTitle": "Território",
             "isHorizontalAllowed": true,
             "keepTappedNewTurn": true,
-            "logWhenPlayed": true
+            "logWhenPlayed": true,
+            "cardActionShortcut": {
+              "action": "NONE"
+            }
           },
           "Reserva": {
             "type": "custom",
@@ -1515,7 +1521,7 @@
             "cardActionShortcut": {
               "action": "MOVE",
               "actionData": {
-                "destination": "Deck"
+                "destination": "Hand"
               }
             }
           },
