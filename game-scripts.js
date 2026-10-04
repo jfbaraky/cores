@@ -144,13 +144,16 @@ function trabalhar() {
 // Mercado cards are engine *tokens* and a token that goes into the Império does not survive being
 // drawn (live: the bought Combatente vanished at the next Renovação). So the Combatentes row's
 // shortcut sends the token to the Mão, and this Hand.onCardsEnter handler swaps it for a real
-// card created in the Império (and sends the token to the Desterro).
+// card created in the Descanso (functions.createCard into "Deck" only makes a board card, not a
+// card in the draw pile) and sends the token to the Desterro. The real card joins the Império at
+// the next reshuffle (approximates "fundo do Império"); for a compra plena move it to the top of
+// the Império by hand (right-click > To Império > Top).
 async function comprarCombatente() {
   for (const bought of transitionCards ?? []) {
     if (bought.position?.section !== "MercadoCombatentesRevelado") continue;
     const token = (cards?.Hand ?? []).find((c) => c.id === bought.id);
     if (token) await functions.moveCard(token, "Remove");
-    await functions.createCard(bought.cardData.id, "Deck");
-    functions.chatLog(`${bought.cardData?.face?.front?.name?.name ?? "Combatente"} comprado: vai para o Império.`);
+    await functions.createCard(bought.cardData.id, "Discard");
+    functions.chatLog(`${bought.cardData?.face?.front?.name?.name ?? "Combatente"} comprado: vai para o Descanso e entra no próximo Império.`);
   }
 }
