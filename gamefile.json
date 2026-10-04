@@ -1066,6 +1066,9 @@
             },
             {
               "section": "Topo"
+            },
+            {
+              "section": "MercadoEstado"
             }
           ]
         },
@@ -1563,7 +1566,7 @@
             },
             "events": {
               "onPlayersReady": "await setupMarket()",
-              "onCardsUpdate": "await keepMarketFull(); await atualizarTopo()",
+              "onCardsUpdate": "await keepMarketFull(); await atualizarTopo(); await ajustarPosicao()",
               "onNewTurn": "endOfTurnCleanup()"
             }
           },
@@ -1661,7 +1664,13 @@
               "type": "",
               "name": "",
               "cost": 0,
-              "hint": ""
+              "hint": "",
+              "index": 0,
+              "voltar": {
+                "id": "",
+                "row": "",
+                "index": 0
+              }
             },
             "blueprint": {
               "type": "div",
@@ -1956,6 +1965,26 @@
                   ]
                 }
               ]
+            }
+          },
+          "MercadoEstado": {
+            "type": "custom",
+            "isHidden": "no",
+            "height": 0.1,
+            "alignment": "NONE",
+            "displayedTitle": "Mercado (estado)",
+            "isShared": true,
+            "defaultValue": {
+              "pendente": false
+            },
+            "blueprint": {
+              "type": "div",
+              "props": {
+                "style": {
+                  "display": "none"
+                }
+              },
+              "children": ""
             }
           }
         },

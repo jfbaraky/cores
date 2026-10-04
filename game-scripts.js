@@ -47,8 +47,15 @@ async function fillMarket() {
 async function keepMarketFull() {
   if (!game.isHost) return;
   if (MARKET_PILES.every(({ revealed }) => (cards?.[revealed] ?? []).length === 0)) return;
+  // A card waiting in the Compra modal keeps its row short until the buyer confirms (the flag is shared
+  // state written by the buyer, who may be the guest). The pause gives the flag time to arrive: it is set
+  // ~300 ms after the card moves, this event runs ~500 ms after the move.
+  await sleep(700);
+  if (game.data.MercadoEstado?.pendente) return;
   await fillMarket();
 }
+
+const sleep = (ms) => new Promise((resolve) => (typeof setTimeout === "function" ? setTimeout(resolve, ms) : resolve()));
 
 // Shuffles each pile and reveals the first 4. No-op once any row already has cards.
 async function setupMarket() {
@@ -224,10 +231,12 @@ function comprarCarta() {
     const type = MARKET_ROW_TYPE[bought.position?.section];
     if (!type) continue;
     const data = bought.cardData;
+    game.data.MercadoEstado.pendente = true;
     Object.assign(game.data.Compra, {
       open: true,
       id: bought.id,
       row: bought.position.section,
+      index: bought.position.index ?? 0,
       type,
       name: data?.face?.front?.name?.name ?? type,
       cost: data?.cost ?? data?.face?.front?.cost ?? 0,
@@ -243,6 +252,7 @@ function comprarCarta() {
 async function concluirCompra(modo) {
   const compra = game.data.Compra;
   const plena = modo === "plena";
+  game.data.MercadoEstado.pendente = false; // before the card changes below: they trigger the host's refill
   const token = (cards?.Hand ?? []).find((c) => c.id === compra.id);
   if (token) {
     await functions.updateCards([token], { isToken: false, startOwner: token.owner });
@@ -259,19 +269,30 @@ async function concluirCompra(modo) {
 
 async function cancelarCompra() {
   const compra = game.data.Compra;
-  const pileOf = MARKET_PILES.find(({ revealed }) => revealed === compra.row);
-  // The host already refilled the row (4 cards again): the refilled card (newest = highest index)
-  // goes to the Mercado discard, then the token returns to the row. (Moving a card into a pile from
-  // a script does not work, moving it to the discard does.)
-  const shown = cards?.[compra.row] ?? [];
-  if (pileOf && shown.length >= MARKET_REVEALED_SIZE) {
-    const newest = [...shown].sort((a, b) => b.position.index - a.position.index)[0];
-    await functions.moveCard(newest, pileOf.discard);
-  }
+  // The refill was held while the modal was open, so the row still has its gap: the token goes back and
+  // ajustarPosicao (next onCardsUpdate, fresh snapshot) puts it in the slot it came from.
   const token = (cards?.Hand ?? []).find((c) => c.id === compra.id);
   if (token) await functions.moveCard(token, compra.row);
-  functions.chatLog(`Compra cancelada: ${compra.name} voltou ao Mercado (a carta reposta foi para o descarte do Mercado).`);
+  compra.voltar = { id: compra.id, row: compra.row, index: compra.index };
+  functions.chatLog(`Compra cancelada: ${compra.name} voltou ao Mercado.`);
   compra.open = false;
+  game.data.MercadoEstado.pendente = false;
+}
+
+// Reserva.onCardsUpdate: a returned card is appended at the end of its row by the engine; the index
+// just before its old neighbour restores its slot (works whether or not the others were renumbered).
+async function ajustarPosicao() {
+  const voltar = game.data.Compra?.voltar;
+  if (!voltar?.id) return;
+  const card = (cards?.[voltar.row] ?? []).find((c) => c.id === voltar.id);
+  if (!card) return; // not back in the row yet: try again on the next update
+  game.data.Compra.voltar = { id: "", row: "", index: 0 };
+  try {
+    await functions.updateCards([card], { position: { ...card.position, index: voltar.index - 0.5 } });
+    await functions.repositionCards();
+  } catch (erro) {
+    functions.chatLog("Compra cancelada: não consegui restaurar a posição original da carta na fileira.");
+  }
 }
 
 // --- Topo do Império (Capitais, [CONSCRITO] e outras cartas "olhe o topo do Império") ---------
