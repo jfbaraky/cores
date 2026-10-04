@@ -112,6 +112,7 @@ async function drawWithReshuffle(count) {
 async function encerrarConflito() {
   const me = cards?.Territorio?.[0]?.owner;
   const mine = (cards?.CampoDeBatalha ?? []).filter((c) => !me || c.owner === me);
+  functions.chatLog(`[dbg] encerrar: ${(cards?.CampoDeBatalha ?? []).map((c) => `${c.id}@${c.position?.section}/${c.owner}`).join(", ")} me=${me}`); // TEMP dbg
   if (mine.length === 0) {
     functions.chatLog("Encerrar conflito: não há cartas suas no Campo de Batalha.");
     return;
