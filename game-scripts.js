@@ -142,14 +142,16 @@ function trabalhar() {
 }
 
 // --- Compra normal / compra plena (manual §9.2, §9.3) ---------------------------------
-// The corner shortcut of a Mercado card moves it to the Mão. Hand.onCardsEnter then runs
-// comprarCarta(), which opens the "Compra" modal (a custom section rendered only for the buying
-// player, game.data.Compra) asking: Compra plena / Compra normal / Cancelar. The choice runs
+// The corner shortcut of a Mercado card moves it to the Mão (as a market *token*). Hand.onCardsEnter
+// then runs comprarCarta(), which opens the "Compra" modal (a custom section rendered only for the
+// buying player, game.data.Compra) asking: Compra plena / Compra normal / Cancelar. The choice runs
 // concluirCompra(modo) or cancelarCompra().
-//  - Combatente: the Mercado token is swapped for a real card (a token that enters the Império does
-//    not survive being drawn). Normal: the real card is created in the Descanso (joins the Império
-//    at the next reshuffle, approximating "fundo"). Plena: created in the Descanso, then moved to
-//    the top of the Império.
+// On confirmation the token is converted into a normal card of the buyer (updateCards: isToken false,
+// startOwner = its current owner). Live findings: a token that enters the Império vanishes when
+// drawn, and cards made with createCard (startOwner "UNOWNED") are invisible to the other player
+// after they leave the deck. A normal card has neither problem.
+//  - Combatente: plena -> top of the Império; normal -> Descanso (joins the Império at the next
+//    reshuffle, approximating "fundo": scripts cannot put a card at the bottom).
 //  - Estratégia / Melhoria: the card stays in the Mão; a plena purchase shows the second-purchase
 //    right ("2ª compra: mesmo tipo, custo ≤ N") in the Reserva until the turn ends.
 // The payment itself (counters) stays manual: the choice is the player's declaration, logged for both.
@@ -167,7 +169,6 @@ function comprarCarta() {
     Object.assign(game.data.Compra, {
       open: true,
       id: bought.id,
-      cardId: data?.id ?? "",
       row: bought.position.section,
       type,
       name: data?.face?.front?.name?.name ?? type,
@@ -184,14 +185,10 @@ function comprarCarta() {
 async function concluirCompra(modo) {
   const compra = game.data.Compra;
   const plena = modo === "plena";
-  if (compra.type === "Combatente") {
-    const token = (cards?.Hand ?? []).find((c) => c.id === compra.id);
-    if (token) await functions.moveCard(token, "Remove");
-    // createCard fires no events and a script can only move cards present in its `cards` snapshot
-    // (not refreshed inside the same script), so a plena Combatente is flagged here and moved to
-    // the top of the Império by subirParaTopo(), run from the Reserva's onCardsUpdate (fresh snapshot).
-    if (plena) compra.topo = compra.cardId;
-    await functions.createCard(compra.cardId, "Discard");
+  const token = (cards?.Hand ?? []).find((c) => c.id === compra.id);
+  if (token) {
+    await functions.updateCards([token], { isToken: false, startOwner: token.owner });
+    if (compra.type === "Combatente") await functions.moveCard(token, plena ? "Deck" : "Discard");
   }
   functions.chatLog(
     plena
@@ -200,15 +197,6 @@ async function concluirCompra(modo) {
   );
   game.data.Reserva.bonus = plena && compra.type !== "Combatente" ? `2ª compra: ${compra.type}, custo ≤ ${compra.cost}` : "";
   compra.open = false;
-}
-
-async function subirParaTopo() {
-  const compra = game.data.Compra;
-  if (!compra.topo) return;
-  const card = (cards?.Discard ?? []).find((c) => c.cardData?.id === compra.topo && !c.isToken);
-  if (!card) return;
-  compra.topo = "";
-  await functions.moveCard(card, "Deck");
 }
 
 async function cancelarCompra() {

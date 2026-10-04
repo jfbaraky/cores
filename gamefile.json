@@ -1518,7 +1518,7 @@
             },
             "events": {
               "onPlayersReady": "await setupMarket()",
-              "onCardsUpdate": "await keepMarketFull(); await subirParaTopo()",
+              "onCardsUpdate": "await keepMarketFull()",
               "onNewTurn": "endOfTurnCleanup()"
             }
           },
@@ -1612,13 +1612,11 @@
             "defaultValue": {
               "open": false,
               "id": "",
-              "cardId": "",
               "row": "",
               "type": "",
               "name": "",
               "cost": 0,
-              "hint": "",
-              "topo": ""
+              "hint": ""
             },
             "blueprint": {
               "type": "div",
