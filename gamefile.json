@@ -1190,7 +1190,10 @@
               "verde": 0,
               "ouro": 0,
               "hegemonia": 0,
-              "bonus": ""
+              "bonus": "",
+              "marcas": "",
+              "pontuado": false,
+              "bonusRenovacao": ""
             },
             "blueprint": {
               "type": "div",
@@ -1445,6 +1448,17 @@
                   "children": "{{ game.data.Reserva.bonus }}"
                 },
                 {
+                  "type": "span",
+                  "props": {
+                    "style": {
+                      "fontSize": "1.2vh",
+                      "whiteSpace": "nowrap",
+                      "color": "#9ad1ff"
+                    }
+                  },
+                  "children": "{{ game.data.Reserva.marcas ? 'Influências: ' + game.data.Reserva.marcas : '' }}"
+                },
+                {
                   "type": "button",
                   "props": {
                     "style": {
@@ -1485,6 +1499,20 @@
                   },
                   "children": "Avançar Mercado (Renovação)",
                   "onClick": "await advanceMarket()"
+                },
+                {
+                  "type": "button",
+                  "props": {
+                    "style": {
+                      "fontSize": "1.2vh",
+                      "padding": "0 0.7vh",
+                      "height": "2.6vh",
+                      "whiteSpace": "nowrap",
+                      "lineHeight": "1"
+                    }
+                  },
+                  "children": "Final de Campanha (minha pontuação)",
+                  "onClick": "finalDeCampanha()"
                 },
                 {
                   "type": "button",

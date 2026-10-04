@@ -105,15 +105,73 @@ async function drawWithReshuffle(count) {
   functions.chatLog("Império esgotado: Descanso embaralhado para formar o novo Império.");
 }
 
-// "Renovação (minha parte)": each player runs this once per Renovação. Untaps the Território and
-// brings the hand to exactly 6 (draws if short; the player chooses what to discard if over).
+// --- Final de Campanha: influência (manual §15.3) ------------------------------------
+const CIVILIZATIONS = ["Fenícia", "Latina", "Helênica", "Celta"];
+
+// Pure scoring from the number of Melhorias (Capital included, neutral ones excluded) per
+// civilization: 3/5/7 of one civilization = 1/2/3 points; at least one of each of the four = 1 point.
+function influenceScore(counts) {
+  const scored = CIVILIZATIONS.filter((civ) => counts[civ] >= 3);
+  const civPoints = scored.reduce((sum, civ) => sum + (counts[civ] >= 7 ? 3 : counts[civ] >= 5 ? 2 : 1), 0);
+  const political = CIVILIZATIONS.every((civ) => counts[civ] >= 1);
+  return { scored, civPoints, political };
+}
+
+// "Final de Campanha (minha pontuação)": each player runs it once per Campanha, after the trégua and
+// before the Renovação. The points go straight into the Hegemonia counter. Each civilization scored
+// queues its bonus for the next Renovação (renovacao() applies it). Influência Total: every
+// civilization that ever reached 3 stays recorded in Reserva.marcas; all four win on the spot.
+function finalDeCampanha() {
+  const reserva = game.data.Reserva;
+  if (reserva.pontuado) {
+    functions.chatLog("Final de Campanha: a influência já foi pontuada nesta Campanha (a Renovação libera de novo).");
+    return;
+  }
+  const counts = Object.fromEntries(CIVILIZATIONS.map((civ) => [civ, 0]));
+  for (const card of cards?.Territorio ?? []) {
+    const civ = card.cardData?.civilization;
+    if (civ in counts) counts[civ] += 1;
+  }
+  const { scored, civPoints, political } = influenceScore(counts);
+  reserva.hegemonia += civPoints + (political ? 1 : 0);
+  reserva.pontuado = true;
+  const marks = new Set((reserva.marcas ?? "").split(", ").filter(Boolean));
+  scored.forEach((civ) => marks.add(civ));
+  reserva.marcas = [...marks].join(", ");
+  reserva.bonusRenovacao = scored.join(",");
+  functions.chatLog(
+    `Final de Campanha — Território: ${CIVILIZATIONS.map((civ) => `${civ} ${counts[civ]}`).join(", ")}. ` +
+      `Influência: +${civPoints} (civilização)${political ? ", +1 (política)" : ""}. Hegemonia agora: ${reserva.hegemonia}.`,
+  );
+  if (scored.length > 0) functions.chatLog(`Bônus na Renovação: ${scored.join(", ")}.`);
+  if (political) functions.chatLog("Influência política: escolha UM bônus de uma civilização que você NÃO pontuou nesta Campanha (aplique à mão).");
+  if (marks.size === CIVILIZATIONS.length) functions.chatLog("INFLUÊNCIA TOTAL: as quatro civilizações conquistadas — vitória imediata!");
+  else if (reserva.hegemonia >= 12) functions.chatLog(`Hegemonia ${reserva.hegemonia} (12 ou mais): vitória!`);
+}
+
+// "Renovação (minha parte)": each player runs this once per Renovação. Untaps the Território, applies
+// the civilization bonuses queued by finalDeCampanha (Fenícia +1 ouro, Helênica +1 carta na mão;
+// Latina and Celta are physical/choice bonuses, so they are only announced) and brings the hand to
+// exactly 6 (7 with the Helênica bonus): draws if short; the player chooses what to discard if over.
 // Colonist income and the Mercado roll are separate (the latter is advanceMarket, once per table).
 async function renovacao() {
+  const reserva = game.data.Reserva;
+  const bonus = (reserva.bonusRenovacao ?? "").split(",").filter(Boolean);
   const tapped = (cards?.Territorio ?? []).filter((c) => c.isTapped);
   if (tapped.length > 0) await functions.updateCards(tapped, { isTapped: false });
+  const target = bonus.includes("Helênica") ? 7 : 6;
   const hand = (cards?.Hand ?? []).length;
-  if (hand < 6) await drawWithReshuffle(6 - hand);
-  else if (hand > 6) functions.chatLog(`Renovação: descarte ${hand - 6} carta(s) da mão para o Descanso (a mão deve ter 6).`);
+  if (hand < target) await drawWithReshuffle(target - hand);
+  else if (hand > target) functions.chatLog(`Renovação: descarte ${hand - target} carta(s) da mão para o Descanso (a mão deve ter ${target}).`);
+  if (bonus.includes("Fenícia")) {
+    reserva.ouro += 1;
+    functions.chatLog("Bônus Fenícia: +1 ouro.");
+  }
+  if (bonus.includes("Latina")) functions.chatLog("Bônus Latina: ganhe uma muralha (em uma Melhoria sua) ou uma ficha de força.");
+  if (bonus.includes("Celta")) functions.chatLog("Bônus Celta: destrua uma carta do Mercado ou do seu Descanso durante a Campanha seguinte, no seu turno.");
+  if (bonus.includes("Helênica")) functions.chatLog("Bônus Helênica: 1 carta a mais na mão (7).");
+  reserva.bonusRenovacao = "";
+  reserva.pontuado = false;
   functions.chatLog("Renovação: Melhorias desviradas, mão ajustada.");
 }
 
