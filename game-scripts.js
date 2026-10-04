@@ -287,6 +287,7 @@ async function ajustarPosicao() {
   const card = (cards?.[voltar.row] ?? []).find((c) => c.id === voltar.id);
   if (!card) return; // not back in the row yet: try again on the next update
   game.data.Compra.voltar = { id: "", row: "", index: 0 };
+  functions.chatLog(`[pos] ${voltar.id}: index ${card.position.index} -> ${voltar.index - 0.5}; fileira ${(cards[voltar.row] ?? []).map((c) => c.position.index).join(",")}`); // TEMP
   try {
     await functions.updateCards([card], { position: { ...card.position, index: voltar.index - 0.5 } });
     await functions.repositionCards();
