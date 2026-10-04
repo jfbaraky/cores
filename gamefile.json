@@ -1625,7 +1625,6 @@
                 "style": {
                   "display": "{{ game.data.Compra.open ? 'flex' : 'none' }}",
                   "position": "fixed",
-                  "top": "30%",
                   "left": "50%",
                   "transform": "translateX(-50%)",
                   "zIndex": 100000,
@@ -1638,7 +1637,8 @@
                   "borderRadius": "1vh",
                   "boxShadow": "0 0 4vh rgba(0,0,0,0.85)",
                   "color": "#ffffff",
-                  "pointerEvents": "auto"
+                  "pointerEvents": "auto",
+                  "bottom": "41vh"
                 }
               },
               "children": [
