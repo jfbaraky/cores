@@ -38,9 +38,6 @@ async function keepMarketFull() {
   // state written by the buyer, who may be the guest). The pause gives the flag time to arrive: it is set
   // ~300 ms after the card moves, this event runs ~500 ms after the move.
   await sleep(700);
-  const p1 = game.data.MercadoEstado?.pendente; // TEMP dbg
-  await sleep(1500); // TEMP dbg
-  functions.chatLog(`[dbg] kmf rows=${MARKET_PILES.map(({ revealed }) => (cards?.[revealed] ?? []).length).join("/")} p1=${p1} p2=${game.data.MercadoEstado?.pendente}`); // TEMP dbg
   if (game.data.MercadoEstado?.pendente) return;
   await fillMarket();
 }
@@ -107,6 +104,20 @@ async function drawWithReshuffle(count) {
   await functions.shuffleSection("Deck");
   await functions.draw(Math.min(missing, discarded.length));
   functions.chatLog("Império esgotado: Descanso embaralhado para formar o novo Império.");
+}
+
+// "Encerrar conflito (minhas cartas)": after an Assalto/Combate the owner sends their own cards left on the
+// Campo de Batalha to the Descanso in one go (the manual puts survivors and fallen of both sides in their owners'
+// Descanso). Each player runs it for their own cards: a player cannot move the other one's.
+async function encerrarConflito() {
+  const me = cards?.Territorio?.[0]?.owner;
+  const mine = (cards?.CampoDeBatalha ?? []).filter((c) => !me || c.owner === me);
+  if (mine.length === 0) {
+    functions.chatLog("Encerrar conflito: não há cartas suas no Campo de Batalha.");
+    return;
+  }
+  await functions.moveCards(mine, "Discard", { noLogs: true });
+  functions.chatLog(`Conflito encerrado: ${mine.length} carta(s) foram para o Descanso.`);
 }
 
 // --- Final de Campanha: influência (manual §15.3) ------------------------------------
@@ -250,7 +261,6 @@ async function concluirCompra(modo) {
   const compra = game.data.Compra;
   const plena = modo === "plena";
   game.data.MercadoEstado.pendente = false; // before the card changes below: they trigger the host's refill
-  functions.chatLog("[dbg] concluir: pendente=false"); // TEMP dbg
   const token = (cards?.Hand ?? []).find((c) => c.id === compra.id);
   if (token) {
     await functions.updateCards([token], { isToken: false, startOwner: token.owner });
@@ -263,6 +273,9 @@ async function concluirCompra(modo) {
   );
   game.data.Reserva.bonus = plena && compra.type !== "Combatente" ? `2ª compra: ${compra.type}, custo ≤ ${compra.cost}` : "";
   compra.open = false;
+  // The host's refill hangs on onCardsUpdate, which updateCards does not trigger (an Estratégia/Melhoria confirm moves no
+  // card), so a host buyer tops the row up here. The snapshot still shows the gap, so exactly one card is drawn.
+  if (game.isHost) await fillMarket();
 }
 
 async function cancelarCompra() {
