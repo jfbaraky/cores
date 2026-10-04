@@ -38,6 +38,9 @@ async function keepMarketFull() {
   // state written by the buyer, who may be the guest). The pause gives the flag time to arrive: it is set
   // ~300 ms after the card moves, this event runs ~500 ms after the move.
   await sleep(700);
+  const p1 = game.data.MercadoEstado?.pendente; // TEMP dbg
+  await sleep(1500); // TEMP dbg
+  functions.chatLog(`[dbg] kmf rows=${MARKET_PILES.map(({ revealed }) => (cards?.[revealed] ?? []).length).join("/")} p1=${p1} p2=${game.data.MercadoEstado?.pendente}`); // TEMP dbg
   if (game.data.MercadoEstado?.pendente) return;
   await fillMarket();
 }
@@ -247,6 +250,7 @@ async function concluirCompra(modo) {
   const compra = game.data.Compra;
   const plena = modo === "plena";
   game.data.MercadoEstado.pendente = false; // before the card changes below: they trigger the host's refill
+  functions.chatLog("[dbg] concluir: pendente=false"); // TEMP dbg
   const token = (cards?.Hand ?? []).find((c) => c.id === compra.id);
   if (token) {
     await functions.updateCards([token], { isToken: false, startOwner: token.owner });
