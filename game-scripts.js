@@ -46,6 +46,15 @@ async function fillMarket() {
 // the other rows and over-drew. Does nothing until the market has been opened once.
 async function keepMarketFull() {
   if (!game.isHost) return;
+  // A cancelled purchase puts the token back after the row was already refilled: send the newest
+  // (rightmost) extra card back to the top of its pile.
+  for (const { pile, revealed } of MARKET_PILES) {
+    const shown = cards?.[revealed] ?? [];
+    if (shown.length > MARKET_REVEALED_SIZE) {
+      const newest = [...shown].sort((a, b) => b.position.index - a.position.index)[0];
+      await functions.moveCard(newest, pile);
+    }
+  }
   if (MARKET_PILES.every(({ revealed }) => (cards?.[revealed] ?? []).length === 0)) return;
   await fillMarket();
 }
@@ -81,7 +90,6 @@ const RESOURCE_KEYS = ["roxo", "vermelho", "azul", "verde", "ouro"];
 function endOfTurnCleanup() {
   if (!game.turn.isMyTurn) return;
   const reserva = game.data.Reserva;
-  reserva.compra = "normal";
   reserva.bonus = "";
   const lost = RESOURCE_KEYS.filter((k) => reserva[k] > 0).map((k) => `${reserva[k]} ${k}`);
   RESOURCE_KEYS.forEach((k) => { reserva[k] = 0; });
@@ -143,46 +151,70 @@ function trabalhar() {
 }
 
 // --- Compra normal / compra plena (manual §9.2, §9.3) ---------------------------------
-// The Reserva has two mode buttons, "Compra normal" and "Compra plena" (game.data.Reserva.compra).
-// The corner shortcut of a Mercado card moves the card to the Mão; this Hand.onCardsEnter handler
-// then applies the active mode once and falls back to "normal":
+// The corner shortcut of a Mercado card moves it to the Mão. Hand.onCardsEnter then runs
+// comprarCarta(), which opens the "Compra" modal (a custom section rendered only for the buying
+// player, game.data.Compra) asking: Compra plena / Compra normal / Cancelar. The choice runs
+// concluirCompra(modo) or cancelarCompra().
 //  - Combatente: the Mercado token is swapped for a real card (a token that enters the Império does
 //    not survive being drawn). Normal: the real card is created in the Descanso (joins the Império
-//    at the next reshuffle, approximating "fundo"). Plena: it is created in the Descanso and then
-//    moved to the top of the Império.
+//    at the next reshuffle, approximating "fundo"). Plena: created in the Descanso, then moved to
+//    the top of the Império.
 //  - Estratégia / Melhoria: the card stays in the Mão; a plena purchase shows the second-purchase
 //    right ("2ª compra: mesmo tipo, custo ≤ N") in the Reserva until the turn ends.
-// The payment itself (counters) stays manual: the mode is the player's declaration, logged for both.
+// The payment itself (counters) stays manual: the choice is the player's declaration, logged for both.
 const MARKET_ROW_TYPE = {
   MercadoCombatentesRevelado: "Combatente",
   MercadoEstrategiasRevelado: "Estratégia",
   MercadoMelhoriasRevelado: "Melhoria",
 };
 
-async function comprarCarta() {
-  const reserva = game.data.Reserva;
-  const plena = reserva.compra === "plena";
+function comprarCarta() {
   for (const bought of transitionCards ?? []) {
     const type = MARKET_ROW_TYPE[bought.position?.section];
     if (!type) continue;
     const data = bought.cardData;
-    const name = data?.face?.front?.name?.name ?? type;
-    const cost = data?.cost ?? data?.face?.front?.cost ?? 0;
-    if (type === "Combatente") {
-      const token = (cards?.Hand ?? []).find((c) => c.id === bought.id);
-      if (token) await functions.moveCard(token, "Remove");
-      const created = await functions.createCard(data.id, "Discard");
-      if (plena && created) {
-        await new Promise((resolve) => setTimeout(resolve, 600));
-        await functions.moveCard(created, "Deck");
-      }
-    }
-    functions.chatLog(
-      plena
-        ? `Compra plena: ${name} (custo ${cost})${type === "Combatente" ? " vai para o topo do Império." : ". Direito a uma 2ª compra do mesmo tipo, custo ≤ " + cost + "."}`
-        : `Compra normal: ${name} (custo ${cost})${type === "Combatente" ? " vai para o Descanso e entra no próximo Império." : "."}`,
-    );
-    reserva.bonus = plena && type !== "Combatente" ? `2ª compra: ${type}, custo ≤ ${cost}` : "";
+    Object.assign(game.data.Compra, {
+      open: true,
+      id: bought.id,
+      cardId: data?.id ?? "",
+      row: bought.position.section,
+      type,
+      name: data?.face?.front?.name?.name ?? type,
+      cost: data?.cost ?? data?.face?.front?.cost ?? 0,
+      hint:
+        type === "Combatente"
+          ? "Plena: vai para o topo do Império. Normal: vai para o Descanso e entra no próximo Império."
+          : "Plena: dá direito a uma 2ª compra do mesmo tipo, custo igual ou menor. Normal: sem bônus.",
+    });
+    return;
   }
-  reserva.compra = "normal";
+}
+
+async function concluirCompra(modo) {
+  const compra = game.data.Compra;
+  const plena = modo === "plena";
+  if (compra.type === "Combatente") {
+    const token = (cards?.Hand ?? []).find((c) => c.id === compra.id);
+    if (token) await functions.moveCard(token, "Remove");
+    const created = await functions.createCard(compra.cardId, "Discard");
+    if (plena && created) {
+      await new Promise((resolve) => setTimeout(resolve, 600));
+      await functions.moveCard(created, "Deck");
+    }
+  }
+  functions.chatLog(
+    plena
+      ? `Compra plena: ${compra.name} (custo ${compra.cost})${compra.type === "Combatente" ? " vai para o topo do Império." : ". Direito a uma 2ª compra do mesmo tipo, custo ≤ " + compra.cost + "."}`
+      : `Compra normal: ${compra.name} (custo ${compra.cost})${compra.type === "Combatente" ? " vai para o Descanso e entra no próximo Império." : "."}`,
+  );
+  game.data.Reserva.bonus = plena && compra.type !== "Combatente" ? `2ª compra: ${compra.type}, custo ≤ ${compra.cost}` : "";
+  compra.open = false;
+}
+
+async function cancelarCompra() {
+  const compra = game.data.Compra;
+  const token = (cards?.Hand ?? []).find((c) => c.id === compra.id);
+  if (token) await functions.moveCard(token, compra.row);
+  functions.chatLog(`Compra cancelada: ${compra.name} voltou ao Mercado.`);
+  compra.open = false;
 }

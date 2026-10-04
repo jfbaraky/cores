@@ -1060,6 +1060,9 @@
               "style": {
                 "marginLeft": "18vh"
               }
+            },
+            {
+              "section": "Compra"
             }
           ]
         },
@@ -1137,7 +1140,7 @@
             "alignment": "CENTER",
             "displayedTitle": "Mão",
             "events": {
-              "onCardsEnter": "await comprarCarta()"
+              "onCardsEnter": "comprarCarta()"
             }
           },
           "Deck": {
@@ -1187,7 +1190,6 @@
               "verde": 0,
               "ouro": 0,
               "hegemonia": 0,
-              "compra": "normal",
               "bonus": ""
             },
             "blueprint": {
@@ -1432,38 +1434,6 @@
                   ]
                 },
                 {
-                  "type": "button",
-                  "props": {
-                    "style": {
-                      "fontSize": "1.2vh",
-                      "padding": "0 0.7vh",
-                      "height": "2.6vh",
-                      "whiteSpace": "nowrap",
-                      "lineHeight": "1",
-                      "background": "{{ game.data.Reserva.compra === 'normal' ? '#2e7d32' : '' }}",
-                      "color": "{{ game.data.Reserva.compra === 'normal' ? '#ffffff' : '' }}"
-                    }
-                  },
-                  "children": "Compra normal",
-                  "onClick": "game.data.Reserva.compra = 'normal'"
-                },
-                {
-                  "type": "button",
-                  "props": {
-                    "style": {
-                      "fontSize": "1.2vh",
-                      "padding": "0 0.7vh",
-                      "height": "2.6vh",
-                      "whiteSpace": "nowrap",
-                      "lineHeight": "1",
-                      "background": "{{ game.data.Reserva.compra === 'plena' ? '#2e7d32' : '' }}",
-                      "color": "{{ game.data.Reserva.compra === 'plena' ? '#ffffff' : '' }}"
-                    }
-                  },
-                  "children": "Compra plena",
-                  "onClick": "game.data.Reserva.compra = 'plena'"
-                },
-                {
                   "type": "span",
                   "props": {
                     "style": {
@@ -1630,6 +1600,133 @@
             "alignment": "CENTER",
             "displayedTitle": "Campo de Batalha",
             "isGroupForbidden": true
+          },
+          "Compra": {
+            "type": "custom",
+            "isHidden": "no",
+            "height": 0.1,
+            "alignment": "NONE",
+            "displayedTitle": "Compra",
+            "isShared": false,
+            "playerRenderOnly": true,
+            "defaultValue": {
+              "open": false,
+              "id": "",
+              "cardId": "",
+              "row": "",
+              "type": "",
+              "name": "",
+              "cost": 0,
+              "hint": ""
+            },
+            "blueprint": {
+              "type": "div",
+              "props": {
+                "style": {
+                  "display": "{{ game.data.Compra.open ? 'flex' : 'none' }}",
+                  "position": "fixed",
+                  "top": "30%",
+                  "left": "50%",
+                  "transform": "translateX(-50%)",
+                  "zIndex": 100000,
+                  "width": "46vh",
+                  "flexDirection": "column",
+                  "gap": "1.2vh",
+                  "padding": "2vh",
+                  "background": "#1b2433",
+                  "border": "0.3vh solid #ffd54f",
+                  "borderRadius": "1vh",
+                  "boxShadow": "0 0 4vh rgba(0,0,0,0.85)",
+                  "color": "#ffffff",
+                  "pointerEvents": "auto"
+                }
+              },
+              "children": [
+                {
+                  "type": "div",
+                  "props": {
+                    "style": {
+                      "fontSize": "2.1vh",
+                      "fontWeight": "bold"
+                    }
+                  },
+                  "children": "Comprar {{ game.data.Compra.name }} (custo {{ game.data.Compra.cost }})"
+                },
+                {
+                  "type": "div",
+                  "props": {
+                    "style": {
+                      "fontSize": "1.5vh",
+                      "opacity": "0.85"
+                    }
+                  },
+                  "children": "{{ game.data.Compra.hint }}"
+                },
+                {
+                  "type": "div",
+                  "props": {
+                    "style": {
+                      "display": "flex",
+                      "gap": "1vh",
+                      "justifyContent": "flex-end"
+                    }
+                  },
+                  "children": [
+                    {
+                      "type": "button",
+                      "props": {
+                        "style": {
+                          "fontSize": "1.7vh",
+                          "padding": "0.6vh 1.4vh",
+                          "background": "#2e7d32",
+                          "color": "#fff",
+                          "border": "0",
+                          "borderRadius": "0.6vh",
+                          "cursor": "pointer",
+                          "pointerEvents": "auto"
+                        }
+                      },
+                      "children": "Compra plena",
+                      "onClick": "await concluirCompra('plena')"
+                    },
+                    {
+                      "type": "button",
+                      "props": {
+                        "style": {
+                          "fontSize": "1.7vh",
+                          "padding": "0.6vh 1.4vh",
+                          "background": "#1565c0",
+                          "color": "#fff",
+                          "border": "0",
+                          "borderRadius": "0.6vh",
+                          "cursor": "pointer",
+                          "pointerEvents": "auto"
+                        }
+                      },
+                      "children": "Compra normal",
+                      "onClick": "await concluirCompra('normal')"
+                    },
+                    {
+                      "type": "button",
+                      "props": {
+                        "style": {
+                          "fontSize": "1.7vh",
+                          "padding": "0.6vh 1.4vh",
+                          "background": "#6d4c41",
+                          "color": "#fff",
+                          "border": "0",
+                          "borderRadius": "0.6vh",
+                          "cursor": "pointer",
+                          "pointerEvents": "auto"
+                        }
+                      },
+                      "children": "Cancelar",
+                      "onClick": "await cancelarCompra()"
+                    }
+                  ]
+                }
+              ]
+            }
           }
         },
         "autoPlayFromHand": {
@@ -1646,7 +1743,8 @@
         "ownerOnlySections": {
           "Hand": false,
           "Discard": false,
-          "Deck": false
+          "Deck": false,
+          "EXTRADECKS": false
         },
         "tokenForbiddenSections": {
           "Hand": false,
