@@ -1155,7 +1155,7 @@
             "alignment": "DECK",
             "displayedTitle": "Descanso",
             "events": {
-              "onCardsEnter": "trabalhar()"
+              "onCardsEnter": "trabalhar(); await subirParaTopo()"
             }
           },
           "Remove": {
@@ -1617,7 +1617,8 @@
               "type": "",
               "name": "",
               "cost": 0,
-              "hint": ""
+              "hint": "",
+              "topo": ""
             },
             "blueprint": {
               "type": "div",

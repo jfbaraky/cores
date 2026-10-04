@@ -196,11 +196,11 @@ async function concluirCompra(modo) {
   if (compra.type === "Combatente") {
     const token = (cards?.Hand ?? []).find((c) => c.id === compra.id);
     if (token) await functions.moveCard(token, "Remove");
-    const created = await functions.createCard(compra.cardId, "Discard");
-    if (plena && created) {
-      await new Promise((resolve) => setTimeout(resolve, 600));
-      await functions.moveCard(created, "Deck");
-    }
+    // createCard returns nothing movable and `cards` is a snapshot, so a plena Combatente is
+    // flagged here and moved to the top of the Império by subirParaTopo() once the new card
+    // shows up in the Descanso's own onCardsEnter event (fresh snapshot).
+    if (plena) compra.topo = compra.cardId;
+    await functions.createCard(compra.cardId, "Discard");
   }
   functions.chatLog(
     plena
@@ -209,6 +209,15 @@ async function concluirCompra(modo) {
   );
   game.data.Reserva.bonus = plena && compra.type !== "Combatente" ? `2ª compra: ${compra.type}, custo ≤ ${compra.cost}` : "";
   compra.open = false;
+}
+
+async function subirParaTopo() {
+  const compra = game.data.Compra;
+  if (!compra.topo) return;
+  const card = (cards?.Discard ?? []).find((c) => c.cardData?.id === compra.topo && !c.isToken);
+  if (!card) return;
+  compra.topo = "";
+  await functions.moveCard(card, "Deck");
 }
 
 async function cancelarCompra() {
