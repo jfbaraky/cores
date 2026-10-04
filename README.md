@@ -103,7 +103,8 @@ o que cada decisão custou em tentativas está em `docs/DIAGNOSTICS.md`.
 - **Comprar:** passe o mouse sobre uma carta revelada e clique no ícone do
   canto (`cardActionShortcut` → Mão). A fileira se reabastece sozinha: a
   seção Reserva tem `onCardsUpdate` → `keepMarketFull()` (só o host; roda ~0,5 s
-  depois da última mudança de cartas e completa cada fileira até 4).
+  depois da última mudança de cartas e completa cada fileira até 4). Quando quem compra é o próprio host, a confirmação
+  também repõe a fileira na hora (confirmar uma Estratégia/Melhoria não move nenhuma carta, então nenhum evento chamaria o refil).
 - **Trabalhar automático:** clicar num Trabalhador da Mão o manda ao Descanso **e soma 1 recurso da cor dele**
   na Reserva (`Descanso.onCardsEnter`). Comerciar (2 Trabalhadores → 1 Ouro) continua manual: tire as 2 cores e some 1 Ouro.
 - **Fim do turno (barra de espaço):** a Reserva zera Roxo/Vermelho/Azul/Verde/Ouro de quem acabou de passar
@@ -124,6 +125,9 @@ o que cada decisão custou em tentativas está em `docs/DIAGNOSTICS.md`.
 - **Topo do Império (Capitais, [CONSCRITO]…):** botão "Olhar topo do Império" na Reserva abre um quadro só para você (o
   oponente não vê a carta; o chat só registra "Olhou a carta do topo do Império.") com a imagem, o nome, o texto e o tamanho do Império. Botões: **Mostrar aos outros** (escreve o nome no chat),
   **Pegar para a mão** (saca a carta do topo) e **Deixar no topo** (fecha). Não há "colocar no fundo": o motor não permite por script.
+- **Encerrar conflito:** botão "Encerrar conflito (minhas cartas)" na Reserva: depois de um Assalto/Combate cada jogador manda as
+  **suas** cartas do Campo de Batalha para o Descanso de uma vez (um jogador não pode mover as cartas do outro). Se não houver
+  cartas, avisa no chat.
 - **Final de Campanha (manual §15.3):** depois da trégua (todos passam em sequência, sem agir) cada jogador aperta
   "Final de Campanha (minha pontuação)". O script conta a civilização de cada carta do Território (a Capital conta, Melhorias
   neutras não): 3/5/7 da mesma civilização = 1/2/3 pontos; ao menos uma de cada uma das 4 = 1 ponto (política). Os pontos

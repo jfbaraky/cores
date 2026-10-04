@@ -1248,7 +1248,7 @@
                           "textAlign": "center"
                         }
                       },
-                      "onChange": "const novo = Number(value); if (novo !== game.data.Reserva.hegemonia) { game.data.Reserva.hegemonia = novo; functions.chatLog(`Hegemonia agora: ${novo}`) }"
+                      "onChange": "game.data.Reserva.hegemonia = Number(value); functions.chatLog(`Hegemonia agora: ${game.data.Reserva.hegemonia}`)"
                     }
                   ]
                 },

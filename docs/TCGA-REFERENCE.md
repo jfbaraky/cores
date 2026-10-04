@@ -143,9 +143,9 @@ Blueprint node: `{ type, props, children, onClick, onChange, iterable, template 
 |---|---|
 | `getCardData(card)` → {} | Static cards.json data for the card's current face (sync) |
 | `moveCard(card, section, {noLogs}?)` | `card` is the object from `cards`, not an id |
-| `moveCards(cards[], section, params?)` | Batch |
+| `moveCards(cards[], section, params?)` | Batch; does **not** refresh the script's `cards` snapshot (a second run still sees the cards in their old section): loop `moveCard` when a later click depends on the result |
 | `createCard(cardId, section)` → card | |
-| `updateCards(cards[], changes)` | e.g. `{ isTapped:false }`; prefer over loops |
+| `updateCards(cards[], changes)` | e.g. `{ isTapped:false }`; prefer over loops. Fires no `onCardsUpdate`, so nothing reacts to it (a refill must be called explicitly) |
 | `shuffleSection(name)` | |
 | `draw(count, fromBottom?, targetSection?)` | **Only the player's own `Deck`**; calls `repositionCards` itself |
 | `drawFromExtraDeck(deckSection, count, fromBottom?, forceDestination?)` | Draw from another `DECK` section |
