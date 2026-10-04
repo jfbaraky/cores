@@ -46,15 +46,6 @@ async function fillMarket() {
 // the other rows and over-drew. Does nothing until the market has been opened once.
 async function keepMarketFull() {
   if (!game.isHost) return;
-  // A cancelled purchase puts the token back after the row was already refilled: send the newest
-  // (rightmost) extra card back to the top of its pile.
-  for (const { pile, revealed } of MARKET_PILES) {
-    const shown = cards?.[revealed] ?? [];
-    if (shown.length > MARKET_REVEALED_SIZE) {
-      const newest = [...shown].sort((a, b) => b.position.index - a.position.index)[0];
-      await functions.moveCard(newest, pile);
-    }
-  }
   if (MARKET_PILES.every(({ revealed }) => (cards?.[revealed] ?? []).length === 0)) return;
   await fillMarket();
 }
@@ -222,8 +213,17 @@ async function subirParaTopo() {
 
 async function cancelarCompra() {
   const compra = game.data.Compra;
+  const pileOf = MARKET_PILES.find(({ revealed }) => revealed === compra.row);
+  // The host already refilled the row (4 cards again): the refilled card (newest = highest index)
+  // goes to the Mercado discard, then the token returns to the row. (Moving a card into a pile from
+  // a script does not work, moving it to the discard does.)
+  const shown = cards?.[compra.row] ?? [];
+  if (pileOf && shown.length >= MARKET_REVEALED_SIZE) {
+    const newest = [...shown].sort((a, b) => b.position.index - a.position.index)[0];
+    await functions.moveCard(newest, pileOf.discard);
+  }
   const token = (cards?.Hand ?? []).find((c) => c.id === compra.id);
   if (token) await functions.moveCard(token, compra.row);
-  functions.chatLog(`Compra cancelada: ${compra.name} voltou ao Mercado.`);
+  functions.chatLog(`Compra cancelada: ${compra.name} voltou ao Mercado (a carta reposta foi para o descarte do Mercado).`);
   compra.open = false;
 }
