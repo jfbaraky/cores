@@ -1155,7 +1155,7 @@
             "alignment": "DECK",
             "displayedTitle": "Descanso",
             "events": {
-              "onCardsEnter": "trabalhar(); await subirParaTopo()"
+              "onCardsEnter": "trabalhar()"
             }
           },
           "Remove": {
@@ -1518,7 +1518,7 @@
             },
             "events": {
               "onPlayersReady": "await setupMarket()",
-              "onCardsUpdate": "await keepMarketFull()",
+              "onCardsUpdate": "await keepMarketFull(); await subirParaTopo()",
               "onNewTurn": "endOfTurnCleanup()"
             }
           },
@@ -1639,7 +1639,7 @@
                   "boxShadow": "0 0 4vh rgba(0,0,0,0.85)",
                   "color": "#ffffff",
                   "pointerEvents": "auto",
-                  "bottom": "41vh"
+                  "bottom": "31vh"
                 }
               },
               "children": [

@@ -196,9 +196,9 @@ async function concluirCompra(modo) {
   if (compra.type === "Combatente") {
     const token = (cards?.Hand ?? []).find((c) => c.id === compra.id);
     if (token) await functions.moveCard(token, "Remove");
-    // createCard returns nothing movable and `cards` is a snapshot, so a plena Combatente is
-    // flagged here and moved to the top of the Império by subirParaTopo() once the new card
-    // shows up in the Descanso's own onCardsEnter event (fresh snapshot).
+    // createCard fires no events and a script can only move cards present in its `cards` snapshot
+    // (not refreshed inside the same script), so a plena Combatente is flagged here and moved to
+    // the top of the Império by subirParaTopo(), run from the Reserva's onCardsUpdate (fresh snapshot).
     if (plena) compra.topo = compra.cardId;
     await functions.createCard(compra.cardId, "Discard");
   }
