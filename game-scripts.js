@@ -236,7 +236,7 @@ function comprarCarta() {
       open: true,
       id: bought.id,
       row: bought.position.section,
-      index: bought.position.index ?? 0,
+      posicao: { ...bought.position },
       type,
       name: data?.face?.front?.name?.name ?? type,
       cost: data?.cost ?? data?.face?.front?.cost ?? 0,
@@ -269,31 +269,21 @@ async function concluirCompra(modo) {
 
 async function cancelarCompra() {
   const compra = game.data.Compra;
-  // The refill was held while the modal was open, so the row still has its gap: the token goes back and
-  // ajustarPosicao (next onCardsUpdate, fresh snapshot) puts it in the slot it came from.
+  // The refill was held while the modal was open, so the row still has its gap. The engine appends the
+  // returned token at the end of the row; setting its position to the one it had (index just before its old
+  // neighbour, renumbered by repositionCards) puts it back in its slot. updateCards works by card id, so
+  // the stale snapshot of the token is enough.
   const token = (cards?.Hand ?? []).find((c) => c.id === compra.id);
-  if (token) await functions.moveCard(token, compra.row);
-  compra.voltar = { id: compra.id, row: compra.row, index: compra.index };
+  if (token) {
+    await functions.moveCard(token, compra.row);
+    if (compra.posicao?.section) {
+      await functions.updateCards([token], { position: { ...compra.posicao, index: compra.posicao.index - 0.5 } });
+      await functions.repositionCards();
+    }
+  }
   functions.chatLog(`Compra cancelada: ${compra.name} voltou ao Mercado.`);
   compra.open = false;
   game.data.MercadoEstado.pendente = false;
-}
-
-// Reserva.onCardsUpdate: a returned card is appended at the end of its row by the engine; the index
-// just before its old neighbour restores its slot (works whether or not the others were renumbered).
-async function ajustarPosicao() {
-  const voltar = game.data.Compra?.voltar;
-  if (!voltar?.id) return;
-  const card = (cards?.[voltar.row] ?? []).find((c) => c.id === voltar.id);
-  if (!card) return; // not back in the row yet: try again on the next update
-  game.data.Compra.voltar = { id: "", row: "", index: 0 };
-  functions.chatLog(`[pos] ${voltar.id}: index ${card.position.index} -> ${voltar.index - 0.5}; fileira ${(cards[voltar.row] ?? []).map((c) => c.position.index).join(",")}`); // TEMP
-  try {
-    await functions.updateCards([card], { position: { ...card.position, index: voltar.index - 0.5 } });
-    await functions.repositionCards();
-  } catch (erro) {
-    functions.chatLog("Compra cancelada: não consegui restaurar a posição original da carta na fileira.");
-  }
 }
 
 // --- Topo do Império (Capitais, [CONSCRITO] e outras cartas "olhe o topo do Império") ---------

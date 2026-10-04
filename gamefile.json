@@ -1566,7 +1566,7 @@
             },
             "events": {
               "onPlayersReady": "await setupMarket()",
-              "onCardsUpdate": "await keepMarketFull(); await atualizarTopo(); await ajustarPosicao()",
+              "onCardsUpdate": "await keepMarketFull(); await atualizarTopo()",
               "onNewTurn": "endOfTurnCleanup()"
             }
           },
@@ -1665,12 +1665,7 @@
               "name": "",
               "cost": 0,
               "hint": "",
-              "index": 0,
-              "voltar": {
-                "id": "",
-                "row": "",
-                "index": 0
-              }
+              "posicao": {}
             },
             "blueprint": {
               "type": "div",
@@ -1817,7 +1812,7 @@
                   "boxShadow": "0 0 4vh rgba(0,0,0,0.85)",
                   "color": "#ffffff",
                   "pointerEvents": "auto",
-                  "bottom": "31vh"
+                  "bottom": "6vh"
                 }
               },
               "children": [
