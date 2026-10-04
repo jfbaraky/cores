@@ -1147,7 +1147,10 @@
             "isHidden": "opponent-only",
             "height": 9,
             "alignment": "DECK",
-            "displayedTitle": "Descanso"
+            "displayedTitle": "Descanso",
+            "events": {
+              "onCardsEnter": "trabalhar()"
+            }
           },
           "Remove": {
             "isHidden": "no",

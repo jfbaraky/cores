@@ -118,3 +118,27 @@ async function renovacao() {
   else if (hand > 6) functions.chatLog(`Renovação: descarte ${hand - 6} carta(s) da mão para o Descanso (a mão deve ter 6).`);
   functions.chatLog("Renovação: Melhorias desviradas, mão ajustada.");
 }
+
+// --- Trabalhar automático (manual §8.1) ------------------------------------------
+// Descanso.onCardsEnter: every Trabalhador that arrives from the Mão (the click-to-play "Trabalhar")
+// adds 1 resource of its colour to the Reserva. `transitionCards` holds the cards as they were before
+// moving, so `position.section` is where they came from. Comerciar (2 workers -> 1 gold) is still
+// manual: take the 2 colours back off and add 1 Ouro.
+const WORKER_COLOR = {
+  "trabalhador-helenica": "roxo",
+  "trabalhador-latina": "vermelho",
+  "trabalhador-fenicia": "azul",
+  "trabalhador-celta": "verde",
+};
+
+function trabalhar() {
+  const gained = [];
+  for (const card of transitionCards ?? []) {
+    if (card.position?.section !== "Hand") continue;
+    const color = WORKER_COLOR[card.cardData?.id];
+    if (!color) continue;
+    game.data.Reserva[color] += 1;
+    gained.push(color);
+  }
+  if (gained.length > 0) functions.chatLog(`Trabalhar: +1 ${gained.join(", +1 ")}`);
+}
