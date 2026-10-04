@@ -176,6 +176,12 @@ Blueprint node: `{ type, props, children, onClick, onChange, iterable, template 
 - Hand/Território cards are drawn inside the section's rect: if the board is taller than 100vh the Hand is off-screen. Budget the layout in vh (ours: Território 10, Reserva 9, Deck/Discard/Remove 9, Hand 11, market rows 11, Campo 13 + shared 28).
 - Test harness: the Browser pane must be *displayed* (hidden ⇒ blank renders and 45 s script timeouts); a synthetic or real-looking drag from the market to the Hand crashed the app once (`Cannot read properties of undefined (reading 'clients')`), so use the shortcut buttons.
 - Share link: `https://tcg-arena.fr/load/` + base64(encodeURIComponent(gamefile URL)) (or the Custom games page).
+- **Market tokens → normal cards:** `functions.updateCards([token], { isToken: false, startOwner: token.owner })` converts a bought token into a card of its owner (it survives draws and the other player sees it). `createCard` makes `startOwner: "UNOWNED"` cards that vanish from the other player's view after a deck round-trip, fire no `onCardsEnter` and cannot be moved in the same script.
+- **A room keeps the gamefile it was created with** (a reconnecting guest still had the old panel). A new gamefile/script needs a new room; the app only re-reads the file on a page load.
+- **A player cannot move the other player's cards** (the opponent's card menu only has *Duplicate*; dragging onto the opponent's piles does nothing). Anything that takes or discards an opponent's card has to be done by the owner.
+- **`input-number` `onChange` fires on commit (blur), not on Enter or while typing:** the value, the chat line and the other player's view all update when the box loses focus. Values set from a script update immediately.
+- `game.data.<Section>` values created by a script (e.g. `Reserva.marcas`, `Reserva.pontuado`) work without being in `defaultValue`, but list them there so a fresh room starts clean.
+- Chrome-extension harness: a tab that is not visible does not render new hand cards until a screenshot is taken; `tabs_close`/`navigate` hang on a pending "Leave site?" dialog.
 
 ## 8. Status of earlier hypotheses
 Done and live-verified (see [DIAGNOSTICS.md](DIAGNOSTICS.md)): `autoPlayFromHand` moved to `sections`; Capital via `categoriesAlreadyOnBoard`; market ownership/refill via `onCardsLeave` + `game.isHost`; module flags removed; Reserva compact and last in `layout`; `translations.json` / `noAutoPayTo` removed.
@@ -183,5 +189,5 @@ Done and live-verified (see [DIAGNOSTICS.md](DIAGNOSTICS.md)): `autoPlayFromHand
 Still open:
 1. `melhoria-argentarii` has `cost: null` but `cost` is a required number (data fix; see README "Itens de dados a revisar").
 2. Set `defaultRessources.backgrounds` (or accept the stray `/undefined` request).
-3. Two-player: guest buying and guest Renovação verified; host-side buy and a full round are not.
+3. Two-player: buying (guest and host), plena/normal, Renovação, Final de Campanha and several Campanhas verified (E16–E21); Fuga e Perseguição and Formações are not.
 4. Remove the `debugBoard` helper and DEBUG button once play-testing is finished.

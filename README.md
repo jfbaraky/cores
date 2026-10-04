@@ -118,21 +118,32 @@ o que cada decisão custou em tentativas está em `docs/DIAGNOSTICS.md`.
     "2ª compra: tipo, custo ≤ N" até o fim do turno.
   - *Cancelar* devolve a carta ao Mercado; a carta que já tinha sido reposta vai para o descarte do Mercado.
   - O pagamento (contadores) continua manual: a escolha é a declaração do jogador.
-- **Jogar da mão:** clique na carta (`autoPlayFromHand`): Capital, Combatente,
-  Estratégia e Melhoria vão para o Território; Trabalhador vai para o Descanso
-  ("Trabalhar").
-- **Renovação:** botão "Avançar Mercado (Renovação)" descarta a carta mais
-  antiga de cada fileira (as fileiras se repõem pelo evento acima).
-  "Repor Mercado" completa fileiras até 4 na hora (útil se algo falhar); "Abrir Mercado" é a montagem
+- **Jogar da mão:** clique na carta (`autoPlayFromHand`): Capital e Melhoria vão para o Território, Combatente para o
+  Campo de Batalha, Estratégia para a Pilha (resolve e vai ao Descanso) e Trabalhador para o Descanso ("Trabalhar").
+- **Final de Campanha (manual §15.3):** depois da trégua (todos passam em sequência, sem agir) cada jogador aperta
+  "Final de Campanha (minha pontuação)". O script conta a civilização de cada carta do Território (a Capital conta, Melhorias
+  neutras não): 3/5/7 da mesma civilização = 1/2/3 pontos; ao menos uma de cada uma das 4 = 1 ponto (política). Os pontos
+  entram direto na Hegemonia; cada civilização pontuada fica registrada em "Influências: …" (as 4 = **Influência Total**, vitória
+  imediata) e enfileira o bônus da Renovação. Chegar a 12 de Hegemonia também é anunciado no chat. O botão é protegido
+  contra pontuar duas vezes na mesma Campanha.
+- **Renovação:** "Renovação (minha parte)" (cada jogador) aplica os bônus de civilização pontuados (Fenícia +1 Ouro, Helênica
+  mão de 7; Latina e Celta são avisados no chat, pois dependem de ficha física/escolha), desvira o Território e completa a mão.
+  "Avançar Mercado (Renovação)" (uma vez por mesa) descarta a carta mais antiga de cada fileira (as fileiras se repõem pelo
+  evento acima). "Repor Mercado" completa fileiras até 4 na hora (útil se algo falhar); "Abrir Mercado" é a montagem
   inicial (idempotente). "DEBUG" escreve no log o que o script enxerga.
 - **As cartas do Mercado são *tokens* para o motor** e o padrão do motor apaga
   tokens movidos para Mão/Descanso/Desterro; por isso `gamefile.json` define
   `tokenForbiddenSections` e `ownerOnlySections` com essas seções em `false`
   (sem isso a compra "logava" mas a carta nunca saía da fileira).
 - **Continua manual:** Assalto/Combate (casamento de cartas, Formações, cavalaria
-  vs. muralha, dano, [REAÇÃO]) no Campo de Batalha; passar o token Primazia a
-  cada Renovação (quem jogou por último vira o primeiro); ajustar os contadores
-  da Reserva ao Trabalhar/Comerciar e ao pagar custos (campo numérico ou ▲▼).
+  vs. muralha, dano, [REAÇÃO]) no Campo de Batalha; **pagar os custos** (a compra não desconta os contadores da Reserva e o que
+  sobra é descartado ao passar); Comerciar; a Hegemonia de um Combate (campo numérico: o valor só vale, aparece no log e chega ao
+  outro jogador quando o campo perde o foco ou você aperta Tab).
+  - **Primazia:** o motor não alterna o primeiro jogador. O primeiro da Campanha seguinte é quem joga depois do último a passar na
+    trégua; para entregar a primazia basta o jogador sem ela passar uma vez a mais (trégua: A passa, B passa, A passa → começa B).
+    O +1 na coluna mais nova do Mercado para o primeiro jogador também é só lembrete.
+  - **Um jogador não consegue mover as cartas do outro** (o menu do botão direito mostra só "Duplicate"). Num Assalto, descartar
+    ou destruir a Melhoria (e entregar os recursos guardados nela) é feito pelo dono, a pedido do atacante.
 - **`boardCategoriesInSideboard` não é usado:** testado ao vivo, a tela de
   Sideboard continuou mostrando a Capital dentro do baralho. A tela ainda
   aparece (passo padrão da plataforma): basta "Continue", ou ligar "Disable
@@ -217,11 +228,14 @@ documentação:
   host repõe as fileiras. Ainda falta: compra feita pelo host nessa mesma
   partida. Uma vez a fileira de Combatentes foi revertida no início (voltou
   vazia); "Repor Mercado" corrige e o refil por `onCardsUpdate` também.
-- **Pagar custos com as fichas da Reserva** e o bônus de "compra plena" — só
-  manual, não testados ao vivo.
-- **Assalto/Combate completo** — 100% manual por natureza; o fluxo completo de
-  um Conflito não foi executado.
-- **Uma rodada completa** (Preparação → turno → Renovação).
+- **Pagar custos com as fichas da Reserva** — só manual (a compra não desconta nada).
+- **Fuga e Perseguição, Formações, fichas de força:** manuais e não simulados; o Assalto (dano 1) e a Batalha Campal
+  (diferença → Hegemonia) foram simulados com 2 navegadores (ver `docs/DIAGNOSTICS.md`, E19).
+- **Influência Total e a vitória por 12 pontos** foram verificadas por teste unitário e, ao vivo, só o anúncio dos 12 pontos
+  (com a Hegemonia posta à mão em 10); a Influência Total ao vivo exigiria ~10 Melhorias por jogador.
+- **Partida completa:** 4 Campanhas inteiras com 2 navegadores (compras normais/plenas, trégua, Final de Campanha com
+  pontos por civilização e política, bônus Fenícia/Helênica, Renovação com reembaralho, rolagem do Mercado) sem erros de script;
+  ver E20/E21 em `docs/DIAGNOSTICS.md`.
 
 ## Próximos passos
 
