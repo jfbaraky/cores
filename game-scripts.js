@@ -273,3 +273,51 @@ async function cancelarCompra() {
   functions.chatLog(`Compra cancelada: ${compra.name} voltou ao Mercado (a carta reposta foi para o descarte do Mercado).`);
   compra.open = false;
 }
+
+// --- Topo do Império (Capitais, [CONSCRITO] e outras cartas "olhe o topo do Império") ---------
+// The engine's own "top card" panels do not work for this layout (docs/DIAGNOSTICS.md, E15), so the
+// Reserva has an "Olhar topo do Império" button that opens the Topo panel: a custom section with
+// playerRenderOnly, so only its owner sees it. getDeck() returns the own deck (index 0 = bottom, last =
+// top). Nothing is revealed to the other player until "Mostrar aos outros". Moving a card to the bottom
+// of the Império is not scriptable, so there is no such button: "Deixar no topo" just closes the panel.
+async function olharTopo() {
+  const topo = game.data.Topo;
+  const deck = await functions.getDeck();
+  if (deck.length === 0) {
+    Object.assign(topo, { open: true, empty: true, name: "Império vazio", info: "Não há carta para olhar.", text: "", image: "" });
+    return;
+  }
+  const card = deck[deck.length - 1];
+  const full = card.cardData ?? {};
+  const face = functions.getCardData(card) ?? full.face?.front ?? {};
+  const type = face.type ?? full.type ?? "";
+  const civilization = full.civilization ?? "";
+  const cost = face.cost ?? full.cost;
+  Object.assign(topo, {
+    open: true,
+    empty: false,
+    name: face.name?.name ?? full.name ?? "Carta",
+    info: [type, civilization, cost != null ? `custo ${cost}` : ""].filter(Boolean).join(" · "),
+    text: full.abilityText ?? "",
+    image: face.image ?? full.image ?? "",
+    deckSize: deck.length,
+  });
+}
+
+// Reserva.onCardsUpdate: keeps an open panel in sync with the deck (draws, reshuffles).
+async function atualizarTopo() {
+  if (game.data.Topo?.open) await olharTopo();
+}
+
+function mostrarTopo() {
+  functions.chatLog(`Topo do Império mostrado: ${game.data.Topo.name}.`);
+}
+
+async function pegarTopo() {
+  const topo = game.data.Topo;
+  if (!topo.empty) {
+    await functions.draw(1);
+    functions.chatLog("Carta do topo do Império colocada na mão.");
+  }
+  topo.open = false;
+}

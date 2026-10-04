@@ -1063,6 +1063,9 @@
             },
             {
               "section": "Compra"
+            },
+            {
+              "section": "Topo"
             }
           ]
         },
@@ -1511,6 +1514,20 @@
                       "lineHeight": "1"
                     }
                   },
+                  "children": "Olhar topo do Império",
+                  "onClick": "await olharTopo()"
+                },
+                {
+                  "type": "button",
+                  "props": {
+                    "style": {
+                      "fontSize": "1.2vh",
+                      "padding": "0 0.7vh",
+                      "height": "2.6vh",
+                      "whiteSpace": "nowrap",
+                      "lineHeight": "1"
+                    }
+                  },
                   "children": "Final de Campanha (minha pontuação)",
                   "onClick": "finalDeCampanha()"
                 },
@@ -1546,7 +1563,7 @@
             },
             "events": {
               "onPlayersReady": "await setupMarket()",
-              "onCardsUpdate": "await keepMarketFull()",
+              "onCardsUpdate": "await keepMarketFull(); await atualizarTopo()",
               "onNewTurn": "endOfTurnCleanup()"
             }
           },
@@ -1749,6 +1766,192 @@
                       },
                       "children": "Cancelar",
                       "onClick": "await cancelarCompra()"
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "Topo": {
+            "type": "custom",
+            "isHidden": "no",
+            "height": 0.1,
+            "alignment": "NONE",
+            "displayedTitle": "Topo do Império",
+            "isShared": false,
+            "playerRenderOnly": true,
+            "defaultValue": {
+              "open": false,
+              "empty": false,
+              "name": "",
+              "info": "",
+              "text": "",
+              "image": "",
+              "deckSize": 0
+            },
+            "blueprint": {
+              "type": "div",
+              "props": {
+                "style": {
+                  "display": "{{ game.data.Topo.open ? 'flex' : 'none' }}",
+                  "position": "fixed",
+                  "left": "50%",
+                  "transform": "translateX(-50%)",
+                  "zIndex": 100000,
+                  "width": "66vh",
+                  "flexDirection": "column",
+                  "gap": "1.2vh",
+                  "padding": "2vh",
+                  "background": "#1b2433",
+                  "border": "0.3vh solid #9ad1ff",
+                  "borderRadius": "1vh",
+                  "boxShadow": "0 0 4vh rgba(0,0,0,0.85)",
+                  "color": "#ffffff",
+                  "pointerEvents": "auto",
+                  "bottom": "31vh"
+                }
+              },
+              "children": [
+                {
+                  "type": "div",
+                  "props": {
+                    "style": {
+                      "fontSize": "2.1vh",
+                      "fontWeight": "bold"
+                    }
+                  },
+                  "children": "Topo do Império ({{ game.data.Topo.deckSize }} cartas)"
+                },
+                {
+                  "type": "div",
+                  "props": {
+                    "style": {
+                      "display": "flex",
+                      "gap": "2vh",
+                      "alignItems": "flex-start"
+                    }
+                  },
+                  "children": [
+                    {
+                      "type": "IMG",
+                      "props": {
+                        "src": "{{ game.data.Topo.image }}",
+                        "style": {
+                          "height": "22vh",
+                          "width": "auto",
+                          "borderRadius": "0.6vh",
+                          "display": "{{ game.data.Topo.image ? 'block' : 'none' }}"
+                        }
+                      }
+                    },
+                    {
+                      "type": "div",
+                      "props": {
+                        "style": {
+                          "display": "flex",
+                          "flexDirection": "column",
+                          "gap": "0.8vh",
+                          "flex": "1",
+                          "minWidth": "0"
+                        }
+                      },
+                      "children": [
+                        {
+                          "type": "div",
+                          "props": {
+                            "style": {
+                              "fontSize": "2vh",
+                              "fontWeight": "bold"
+                            }
+                          },
+                          "children": "{{ game.data.Topo.name }}"
+                        },
+                        {
+                          "type": "div",
+                          "props": {
+                            "style": {
+                              "fontSize": "1.5vh",
+                              "opacity": "0.8"
+                            }
+                          },
+                          "children": "{{ game.data.Topo.info }}"
+                        },
+                        {
+                          "type": "div",
+                          "props": {
+                            "style": {
+                              "fontSize": "1.5vh",
+                              "whiteSpace": "pre-line",
+                              "maxHeight": "13vh",
+                              "overflow": "auto"
+                            }
+                          },
+                          "children": "{{ game.data.Topo.text }}"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "div",
+                  "props": {
+                    "style": {
+                      "display": "flex",
+                      "gap": "1vh",
+                      "justifyContent": "flex-end"
+                    }
+                  },
+                  "children": [
+                    {
+                      "type": "button",
+                      "props": {
+                        "style": {
+                          "fontSize": "1.7vh",
+                          "padding": "0.6vh 1.4vh",
+                          "background": "#6d4c41",
+                          "color": "#fff",
+                          "border": "0",
+                          "borderRadius": "0.6vh",
+                          "cursor": "pointer",
+                          "pointerEvents": "auto"
+                        }
+                      },
+                      "children": "Mostrar aos outros",
+                      "onClick": "mostrarTopo()"
+                    },
+                    {
+                      "type": "button",
+                      "props": {
+                        "style": {
+                          "fontSize": "1.7vh",
+                          "padding": "0.6vh 1.4vh",
+                          "background": "#2e7d32",
+                          "color": "#fff",
+                          "border": "0",
+                          "borderRadius": "0.6vh",
+                          "cursor": "pointer",
+                          "pointerEvents": "auto"
+                        }
+                      },
+                      "children": "Pegar para a mão",
+                      "onClick": "await pegarTopo()"
+                    },
+                    {
+                      "type": "button",
+                      "props": {
+                        "style": {
+                          "fontSize": "1.7vh",
+                          "padding": "0.6vh 1.4vh",
+                          "background": "#1565c0",
+                          "color": "#fff",
+                          "border": "0",
+                          "borderRadius": "0.6vh",
+                          "cursor": "pointer",
+                          "pointerEvents": "auto"
+                        }
+                      },
+                      "children": "Deixar no topo",
+                      "onClick": "game.data.Topo.open = false"
                     }
                   ]
                 }
