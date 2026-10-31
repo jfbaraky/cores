@@ -118,6 +118,8 @@ function endOfTurnCleanup() {
   const mine = Boolean(game.turn.isMyTurn);
   const was = reserva.turnoMeu;
   reserva.turnoMeu = mine ? "sim" : "nao";
+  if (was === "" && !reserva.primeiro) reserva.primeiro = mine ? "sim" : "nao"; // TEMP heuristic, see the [dbg] lines
+  functions.chatLog(`[dbg] turno mine=${mine} was=${was} count=${game.turn.count} pos=${game.turn.orderPosition}/${game.turn.totalPlayers}`);
   if (mine || was === "nao") return;
   reserva.bonus = "";
   const lost = RESOURCE_KEYS.filter((k) => reserva[k] > 0).map((k) => `${reserva[k]} ${k}`);
@@ -183,6 +185,7 @@ function finalDeCampanha() {
   }
   const counts = Object.fromEntries(CIVILIZATIONS.map((civ) => [civ, 0]));
   for (const card of cards?.Territorio ?? []) {
+    if (!MELHORIA_TYPES.includes(card.cardData?.type)) continue;
     const civ = card.cardData?.civilization;
     if (civ in counts) counts[civ] += 1;
   }
@@ -207,12 +210,15 @@ function finalDeCampanha() {
 // the civilization bonuses queued by finalDeCampanha (Fenícia +1 ouro, Helênica +1 carta na mão;
 // Latina and Celta are physical/choice bonuses, so they are only announced) and brings the hand to
 // exactly 6 (7 with the Helênica bonus): draws if short; the player chooses what to discard if over.
-// Colonist income and the Mercado roll are separate (the latter is advanceMarket, once per table).
+// Also generates the colonos' income (§8.4) and counts the new Campanha (first-player surcharge, §11.2).
+// The Mercado roll is separate (advanceMarket, once per table).
 async function renovacao() {
   const reserva = game.data.Reserva;
   const bonus = (reserva.bonusRenovacao ?? "").split(",").filter(Boolean);
   const tapped = (cards?.Territorio ?? []).filter((c) => c.isTapped);
   if (tapped.length > 0) await functions.updateCards(tapped, { isTapped: false });
+  gerarDosColonos();
+  proximaCampanha();
   const target = bonus.includes("Helênica") ? 7 : 6;
   const hand = (cards?.Hand ?? []).length;
   if (hand < target) await drawWithReshuffle(target - hand);
@@ -253,6 +259,136 @@ function trabalhar() {
   if (gained.length > 0) functions.chatLog(`Trabalhar: +1 ${gained.join(", +1 ")}`);
 }
 
+// --- Colonos (manual §8.4, §10.2, §11.4) ----------------------------------------------
+// Colonizar = allocate a Trabalhador on an eligible Melhoria of YOUR Território. Eligible: a Melhoria (the Capital is one)
+// of the worker's own civilization, that does not generate resources by itself (cards.json `producesColor: true`) and that has
+// no colono yet. The allocation is permanent. The worker card sits in the Território right after its Melhoria and carries
+// `notes: "colono:<id of the Melhoria>"`; the Melhoria's own `notes` names the colono. Each Renovação ("Renovação
+// (minha parte)") every colono whose Melhoria is still in play generates 1 resource of its colour (2 with Sicília) into the
+// Reserva, to be stored by the end of the owner's next turn like any other gain. If the Melhoria was lost (Assalto), the
+// colono is an orphan: its fate (perdoar, destruir, capturar, §14.2) is the attacker's, the owner moves the card
+// (Descanso / Desterro) by hand, and an orphan generates nothing.
+const MELHORIA_TYPES = ["Melhoria", "Capital"];
+const CIV_COLOR = { "Helênica": "roxo", "Latina": "vermelho", "Fenícia": "azul", "Celta": "verde" };
+
+function colonoDe(card) {
+  const m = /^colono:(.+)$/.exec(card.notes ?? "");
+  return m ? m[1] : null;
+}
+
+// The Trabalhadores allocated in the Território (the card ids of the Melhorias they sit on are in `notes`).
+function colonosEmJogo() {
+  return (cards?.Territorio ?? []).filter((c) => c.cardData?.type === "Trabalhador" && colonoDe(c));
+}
+
+function melhoriasElegiveis(civ) {
+  const ocupadas = new Set(colonosEmJogo().map(colonoDe));
+  return (cards?.Territorio ?? []).filter(
+    (c) =>
+      MELHORIA_TYPES.includes(c.cardData?.type) &&
+      c.cardData?.civilization === civ &&
+      c.cardData?.producesColor !== true &&
+      !ocupadas.has(c.id),
+  );
+}
+
+const nomeDe = (card) => card.cardData?.name ?? functions.getCardData(card)?.name?.name ?? "Carta";
+
+// Reserva "Colonizar": lists every (worker in hand -> eligible Melhoria) pair in the Colonizar panel (a worker of each
+// civilization in the hand is offered once).
+function abrirColonizar() {
+  const opcoes = [];
+  for (const civ of Object.keys(CIV_COLOR)) {
+    const worker = (cards?.Hand ?? []).find((c) => c.cardData?.type === "Trabalhador" && c.cardData?.civilization === civ);
+    if (!worker) continue;
+    for (const melhoria of melhoriasElegiveis(civ)) {
+      opcoes.push({ texto: `${nomeDe(worker)} → ${nomeDe(melhoria)}`, trabalhador: worker.id, melhoria: melhoria.id });
+    }
+  }
+  Object.assign(game.data.Colonizar, { open: true, opcoes, vazio: opcoes.length === 0 });
+}
+
+async function colonizar(index) {
+  const painel = game.data.Colonizar;
+  const opcao = painel.opcoes?.[index];
+  painel.open = false;
+  if (!opcao) return;
+  const worker = (cards?.Hand ?? []).find((c) => c.id === opcao.trabalhador);
+  const melhoria = (cards?.Territorio ?? []).find((c) => c.id === opcao.melhoria);
+  if (!worker || !melhoria || !melhoriasElegiveis(worker.cardData?.civilization).some((c) => c.id === melhoria.id)) {
+    functions.chatLog("Colonizar: a carta mudou de lugar ou a Melhoria já tem colono; tente de novo.");
+    return;
+  }
+  await functions.moveCard(worker, "Territorio", { noLogs: true });
+  await functions.updateCards([worker], {
+    notes: `colono:${melhoria.id}`,
+    position: { ...worker.position, section: "Territorio", index: melhoria.position.index + 0.5 },
+  });
+  await functions.updateCards([melhoria], { notes: `Colono: ${nomeDe(worker)}` });
+  await functions.repositionCards();
+  functions.chatLog(`Colonizar: ${nomeDe(worker)} alocado em ${nomeDe(melhoria)}. A partir da próxima Renovação gera 1 ${CIV_COLOR[worker.cardData.civilization]} por Campanha.`);
+}
+
+// Part of renovacao(): income of the colonos (§11.4 "Gerar recursos").
+function gerarDosColonos() {
+  const reserva = game.data.Reserva;
+  const naMesa = new Set((cards?.Territorio ?? []).map((c) => c.id));
+  const dobro = (cards?.Territorio ?? []).some((c) => c.cardData?.id === "melhoria-sicilia") ? 2 : 1;
+  const ganhos = [];
+  for (const worker of colonosEmJogo()) {
+    if (!naMesa.has(colonoDe(worker))) {
+      functions.chatLog(`Colono órfão: ${nomeDe(worker)} perdeu a Melhoria. Destino do colono (§14.2): perdoar = Descanso, destruir = Desterro, capturar = o atacante o aloca; mova a carta à mão.`);
+      continue;
+    }
+    const cor = CIV_COLOR[worker.cardData?.civilization];
+    if (!cor) continue;
+    reserva[cor] += dobro;
+    ganhos.push(`+${dobro} ${cor}`);
+  }
+  if (ganhos.length > 0) functions.chatLog(`Colonos geraram: ${ganhos.join(", ")}. Armazene-os nas Melhorias até o fim do seu próximo turno.`);
+}
+
+// --- Campanha e primazia (manual §11.2) ------------------------------------------------
+// The engine does not know the Campanha or who has the primazia. Reserva.campanha counts the Renovações (each player's own
+// "Renovação (minha parte)" adds 1) and Reserva.primeiro ("sim"/"nao") says whether I am the first player of the current
+// Campanha: set from the first turn event, flipped at every Renovação (2 players: the primazia alternates). From the 2nd
+// Campanha the first player pays +1 on the leftmost (newest) column of the Mercado, while it is their turn (see
+// comprarCarta). The "Trocar 1º jogador" button corrects it when the table agreed on another order.
+function proximaCampanha() {
+  const reserva = game.data.Reserva;
+  reserva.campanha = (reserva.campanha ?? 1) + 1;
+  if (game.turn.totalPlayers === 2 && reserva.primeiro) reserva.primeiro = reserva.primeiro === "sim" ? "nao" : "sim";
+  functions.chatLog(`Campanha ${reserva.campanha}. ${reserva.primeiro === "sim" ? "Você é o 1º jogador: paga +1 na coluna mais nova do Mercado." : "Você não é o 1º jogador."}`);
+}
+
+function trocarPrimeiro() {
+  const reserva = game.data.Reserva;
+  reserva.primeiro = reserva.primeiro === "sim" ? "nao" : "sim";
+  functions.chatLog(`Primazia: você ${reserva.primeiro === "sim" ? "é" : "não é"} o 1º jogador da Campanha ${reserva.campanha ?? 1}.`);
+}
+
+// --- Início da partida (manual §7.1 passo 9) ---------------------------------------------
+// The Capital enters play with one resource of its colour on it. The digital Reserva has no token on cards, so the
+// resource is given in the Reserva: spend it this turn or store it (drag a token onto the Capital), otherwise it is lost
+// at the pass like any unstored resource.
+function iniciarJogador() {
+  const reserva = game.data.Reserva;
+  if (reserva.inicial) return;
+  reserva.inicial = true;
+  reserva.campanha = 1;
+  const capital = (cards?.Territorio ?? []).find((c) => c.cardData?.type === "Capital");
+  const cor = CIV_COLOR[capital?.cardData?.civilization];
+  if (!cor) return;
+  reserva[cor] += 1;
+  functions.chatLog(`Capital em jogo: ${nomeDe(capital)} entra com 1 ficha de recurso ${cor}. Gaste-a neste turno ou guarde-a (arraste uma ficha para a Capital).`);
+}
+
+// Reserva "Sacar 1 carta": draw from the Império (§5), rebuilding it from the Descanso only if it is empty.
+async function sacarCarta() {
+  await drawWithReshuffle(1);
+  functions.chatLog("Sacou 1 carta do Império.");
+}
+
 // --- Compra normal / compra plena (manual §9.2, §9.3) ---------------------------------
 // The corner shortcut of a Mercado card moves it to the Mão (as a market *token*). Hand.onCardsEnter
 // then runs comprarCarta(), which opens the "Compra" modal (a custom section rendered only for the
@@ -262,8 +398,7 @@ function trabalhar() {
 // startOwner = its current owner). Live findings: a token that enters the Império vanishes when
 // drawn, and cards made with createCard (startOwner "UNOWNED") are invisible to the other player
 // after they leave the deck. A normal card has neither problem.
-//  - Combatente: plena -> top of the Império; normal -> Descanso (joins the Império at the next
-//    reshuffle, approximating "fundo": scripts cannot put a card at the bottom).
+//  - Combatente: plena -> top of the Império; normal -> bottom of the Império (paraOFundo).
 //  - Estratégia / Melhoria: the card stays in the Mão; a plena purchase shows the second-purchase
 //    right ("2ª compra: mesmo tipo, custo ≤ N") in the Reserva until the turn ends.
 // The payment itself (counters) stays manual: the choice is the player's declaration, logged for both.
@@ -278,6 +413,10 @@ function comprarCarta() {
     const type = MARKET_ROW_TYPE[bought.position?.section];
     if (!type) continue;
     const data = bought.cardData;
+    const custo = Number(data?.cost ?? data?.face?.front?.cost ?? 0);
+    // §11.2: from the 2nd Campanha the first player pays +1 on the leftmost (newest) column, while it is their turn.
+    const reserva = game.data.Reserva;
+    const sobretaxa = reserva.primeiro === "sim" && (reserva.campanha ?? 1) >= 2 && bought.position?.index === 0 ? 1 : 0;
     game.data.MercadoEstado.pendente = true;
     Object.assign(game.data.Compra, {
       open: true,
@@ -286,10 +425,11 @@ function comprarCarta() {
       posicao: { ...bought.position },
       type,
       name: data?.face?.front?.name?.name ?? type,
-      cost: data?.cost ?? data?.face?.front?.cost ?? 0,
+      cost: custo,
+      custoTexto: sobretaxa ? `custo ${custo} + 1 de sobretaxa do 1º jogador = ${custo + sobretaxa}` : `custo ${custo}`,
       hint:
         type === "Combatente"
-          ? "Plena: vai para o topo do Império. Normal: vai para o Descanso e entra no próximo Império."
+          ? "Plena: vai para o topo do Império. Normal: vai para o fundo do Império."
           : "Plena: dá direito a uma 2ª compra do mesmo tipo, custo igual ou menor. Normal: sem bônus.",
     });
     return;
@@ -303,18 +443,28 @@ async function concluirCompra(modo) {
   const token = (cards?.Hand ?? []).find((c) => c.id === compra.id);
   if (token) {
     await functions.updateCards([token], { isToken: false, startOwner: token.owner, notes: "" });
-    if (compra.type === "Combatente") await functions.moveCard(token, plena ? "Deck" : "Discard");
+    if (compra.type === "Combatente") {
+      await functions.moveCard(token, "Deck");
+      if (!plena) await paraOFundo(token);
+    }
   }
   functions.chatLog(
     plena
-      ? `Compra plena: ${compra.name} (custo ${compra.cost})${compra.type === "Combatente" ? " vai para o topo do Império." : ". Direito a uma 2ª compra do mesmo tipo, custo ≤ " + compra.cost + "."}`
-      : `Compra normal: ${compra.name} (custo ${compra.cost})${compra.type === "Combatente" ? " vai para o Descanso e entra no próximo Império." : "."}`,
+      ? `Compra plena: ${compra.name} (${compra.custoTexto})${compra.type === "Combatente" ? " vai para o topo do Império." : ". Direito a uma 2ª compra do mesmo tipo, custo ≤ " + compra.cost + "."}`
+      : `Compra normal: ${compra.name} (${compra.custoTexto})${compra.type === "Combatente" ? " vai para o fundo do Império." : "."}`,
   );
   game.data.Reserva.bonus = plena && compra.type !== "Combatente" ? `2ª compra: ${compra.type}, custo ≤ ${compra.cost}` : "";
   compra.open = false;
   // The host's refill hangs on onCardsUpdate, which updateCards does not trigger (an Estratégia/Melhoria confirm moves no
   // card), so a host buyer tops the row up here. The snapshot still shows the gap, so exactly one card is drawn.
   if (game.isHost) await fillMarket();
+}
+
+// Slots a card at the very bottom of the Império (index 0; getDeck() lists the bottom first). moveCard puts it on top; the
+// card then gets an index below every other and repositionCards renumbers the pile.
+async function paraOFundo(card) {
+  await functions.updateCards([card], { position: { ...card.position, section: "Deck", index: -0.5 } });
+  await functions.repositionCards();
 }
 
 async function cancelarCompra() {
@@ -351,6 +501,7 @@ async function olharTopo() {
   // a panel that is already open.
   if (!topo.open) functions.chatLog("Olhou a carta do topo do Império.");
   const deck = await functions.getDeck();
+  functions.chatLog(`[dbg] deck n=${deck.length} fundo=${deck[0]?.cardData?.name} topo=${deck[deck.length - 1]?.cardData?.name}`); // TEMP
   if (deck.length === 0) {
     Object.assign(topo, { open: true, empty: true, name: "Império vazio", info: "Não há carta para olhar.", text: "", image: "" });
     return;

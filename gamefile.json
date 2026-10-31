@@ -1065,6 +1065,9 @@
               "section": "Compra"
             },
             {
+              "section": "Colonizar"
+            },
+            {
               "section": "Topo"
             },
             {
@@ -1200,7 +1203,10 @@
               "marcas": "",
               "pontuado": false,
               "bonusRenovacao": "",
-              "turnoMeu": ""
+              "turnoMeu": "",
+              "campanha": 1,
+              "primeiro": "",
+              "inicial": false
             },
             "blueprint": {
               "type": "div",
@@ -1466,6 +1472,59 @@
                   "children": "{{ game.data.Reserva.marcas ? 'Influências: ' + game.data.Reserva.marcas : '' }}"
                 },
                 {
+                  "type": "span",
+                  "props": {
+                    "style": {
+                      "fontSize": "1.2vh",
+                      "whiteSpace": "nowrap",
+                      "color": "#9ad1ff"
+                    }
+                  },
+                  "children": "Campanha {{ game.data.Reserva.campanha }} · {{ game.data.Reserva.primeiro === 'sim' ? '1º jogador (+1 na coluna nova)' : game.data.Reserva.primeiro === 'nao' ? 'não é o 1º jogador' : '' }}"
+                },
+                {
+                  "type": "button",
+                  "props": {
+                    "style": {
+                      "fontSize": "1.2vh",
+                      "padding": "0 0.7vh",
+                      "height": "2.6vh",
+                      "whiteSpace": "nowrap",
+                      "lineHeight": "1"
+                    }
+                  },
+                  "children": "Colonizar",
+                  "onClick": "abrirColonizar()"
+                },
+                {
+                  "type": "button",
+                  "props": {
+                    "style": {
+                      "fontSize": "1.2vh",
+                      "padding": "0 0.7vh",
+                      "height": "2.6vh",
+                      "whiteSpace": "nowrap",
+                      "lineHeight": "1"
+                    }
+                  },
+                  "children": "Sacar 1 carta",
+                  "onClick": "await sacarCarta()"
+                },
+                {
+                  "type": "button",
+                  "props": {
+                    "style": {
+                      "fontSize": "1.2vh",
+                      "padding": "0 0.7vh",
+                      "height": "2.6vh",
+                      "whiteSpace": "nowrap",
+                      "lineHeight": "1"
+                    }
+                  },
+                  "children": "Trocar 1º jogador",
+                  "onClick": "trocarPrimeiro()"
+                },
+                {
                   "type": "button",
                   "props": {
                     "style": {
@@ -1552,7 +1611,7 @@
               ]
             },
             "events": {
-              "onPlayersReady": "await setupMarket()",
+              "onPlayersReady": "await setupMarket(); iniciarJogador()",
               "onCardsUpdate": "await keepMarketFull(); await atualizarTopo()",
               "onNewTurn": "endOfTurnCleanup()"
             }
@@ -1652,7 +1711,8 @@
               "name": "",
               "cost": 0,
               "hint": "",
-              "posicao": {}
+              "posicao": {},
+              "custoTexto": ""
             },
             "blueprint": {
               "type": "div",
@@ -1685,7 +1745,7 @@
                       "fontWeight": "bold"
                     }
                   },
-                  "children": "Comprar {{ game.data.Compra.name }} (custo {{ game.data.Compra.cost }})"
+                  "children": "Comprar {{ game.data.Compra.name }} ({{ game.data.Compra.custoTexto }})"
                 },
                 {
                   "type": "div",
@@ -1951,6 +2011,117 @@
                 }
               },
               "children": ""
+            }
+          },
+          "Colonizar": {
+            "type": "custom",
+            "isHidden": "no",
+            "height": 0.1,
+            "alignment": "NONE",
+            "displayedTitle": "Colonizar",
+            "isShared": false,
+            "playerRenderOnly": true,
+            "defaultValue": {
+              "open": false,
+              "vazio": false,
+              "opcoes": []
+            },
+            "blueprint": {
+              "type": "div",
+              "props": {
+                "style": {
+                  "display": "{{ game.data.Colonizar.open ? 'flex' : 'none' }}",
+                  "position": "fixed",
+                  "left": "50%",
+                  "transform": "translateX(-50%)",
+                  "zIndex": 100000,
+                  "width": "52vh",
+                  "flexDirection": "column",
+                  "gap": "1.2vh",
+                  "padding": "2vh",
+                  "background": "#1b2433",
+                  "border": "0.3vh solid #ffd54f",
+                  "borderRadius": "1vh",
+                  "boxShadow": "0 0 4vh rgba(0,0,0,0.85)",
+                  "color": "#ffffff",
+                  "pointerEvents": "auto",
+                  "bottom": "31vh"
+                }
+              },
+              "children": [
+                {
+                  "type": "div",
+                  "props": {
+                    "style": {
+                      "fontSize": "2.1vh",
+                      "fontWeight": "bold"
+                    }
+                  },
+                  "children": "Colonizar (alocar um trabalhador em uma Melhoria sua)"
+                },
+                {
+                  "type": "div",
+                  "props": {
+                    "style": {
+                      "fontSize": "1.5vh",
+                      "opacity": "0.85"
+                    }
+                  },
+                  "children": "{{ game.data.Colonizar.vazio ? 'Nenhuma opção: precisa de um trabalhador na mão e de uma Melhoria sua, da mesma cor, que não gere recursos e ainda sem colono.' : 'O trabalhador fica na Melhoria para sempre e gera 1 recurso da cor dela a cada Renovação.' }}"
+                },
+                {
+                  "type": "loop",
+                  "iterable": "{{ game.data.Colonizar.opcoes }}",
+                  "template": {
+                    "type": "button",
+                    "props": {
+                      "style": {
+                        "fontSize": "1.7vh",
+                        "padding": "0.6vh 1.4vh",
+                        "background": "#1565c0",
+                        "color": "#fff",
+                        "border": "0",
+                        "borderRadius": "0.6vh",
+                        "cursor": "pointer",
+                        "pointerEvents": "auto",
+                        "textAlign": "left",
+                        "width": "100%"
+                      }
+                    },
+                    "children": "{{ item.texto }}",
+                    "onClick": "await colonizar(index)"
+                  }
+                },
+                {
+                  "type": "div",
+                  "props": {
+                    "style": {
+                      "display": "flex",
+                      "gap": "1vh",
+                      "justifyContent": "flex-end"
+                    }
+                  },
+                  "children": [
+                    {
+                      "type": "button",
+                      "props": {
+                        "style": {
+                          "fontSize": "1.7vh",
+                          "padding": "0.6vh 1.4vh",
+                          "background": "#6d4c41",
+                          "color": "#fff",
+                          "border": "0",
+                          "borderRadius": "0.6vh",
+                          "cursor": "pointer",
+                          "pointerEvents": "auto"
+                        }
+                      },
+                      "children": "Fechar",
+                      "onClick": "game.data.Colonizar.open = false"
+                    }
+                  ]
+                }
+              ]
             }
           }
         },
