@@ -114,12 +114,24 @@ o que cada decisão custou em tentativas está em `docs/DIAGNOSTICS.md`.
   mais antiga (a mais à direita; as cartas novas entram à esquerda) de cada fileira. As Melhorias ficam viradas entre turnos (§12.1).
 - **Comprar (normal ou plena):** clique no atalho do canto da carta do Mercado. Abre um quadro "Comprar X (custo N)" com
   **Compra plena / Compra normal / Cancelar** (só aparece para quem está comprando; o log da mesa registra a escolha).
-  - Combatente: o token do Mercado é trocado por uma carta de verdade. *Plena* → topo do Império; *normal* → Descanso (entra
-    no próximo Império, aproximando "fundo"). Estratégia/Melhoria: vão para a Mão; *plena* mostra na Reserva
+  - Combatente: o token do Mercado é trocado por uma carta de verdade. *Plena* → topo do Império; *normal* → **fundo do
+    Império** (§9.2): a carta espera no Descanso com a nota `fundo:…` e é sacada, antes de qualquer embaralhamento, quando o Império
+    acabar (o motor não deixa um script pôr uma carta sob a pilha). Estratégia/Melhoria: vão para a Mão; *plena* mostra na Reserva
     "2ª compra: tipo, custo ≤ N" até o fim do turno.
+  - **Sobretaxa do 1º jogador (§11.2):** a Reserva mostra "Campanha N · 1º jogador (+1 na coluna nova)". Da Campanha 2 em diante, quem
+    é o 1º jogador paga +1 na carta da coluna da esquerda (a mais nova) de cada fileira; o quadro de compra mostra o custo total
+    ("custo 3 + 1 de sobretaxa do 1º jogador = 4"). A primazia vem do primeiro evento de turno (quem começa) e alterna a cada Renovação
+    de cada jogador; "Trocar 1º jogador" corrige se a mesa combinou outra ordem.
   - A fileira só é reposta **depois** que a compra é confirmada (enquanto o quadro está aberto ela fica com 3 cartas). *Cancelar*
     devolve a carta ao **mesmo lugar** da fileira, de novo disponível para os dois jogadores; nada vai para o descarte do Mercado.
   - O pagamento (contadores) continua manual: a escolha é a declaração do jogador.
+- **Colonos (§8.4):** botão "Colonizar" na Reserva: lista cada par (trabalhador da mão → Melhoria elegível sua: mesma cor, sem colono,
+  `producesColor` diferente de true; a Capital também serve). O trabalhador vai para o Território, ao lado da Melhoria, com a nota
+  `colono:<id>` (a Melhoria ganha "Colono: …"). Na "Renovação (minha parte)" cada colono gera 1 recurso da cor (2 com Sicília) na Reserva;
+  se a Melhoria foi perdida, o colono fica órfão (aviso no chat, não gera nada) e o dono move a carta conforme o destino (§14.2).
+  Colonos não contam na influência.
+- **Início (§7.1):** a Capital entra com 1 recurso da cor dela **na Reserva** (o motor não coloca ficha em carta): gaste neste turno ou guarde.
+- **Sacar 1 carta:** botão da Reserva; saca do Império e só embaralha o Descanso se o Império e o fundo estiverem vazios.
 - **Jogar da mão:** clique na carta (`autoPlayFromHand`): Capital e Melhoria vão para o Território, Combatente para o
   Campo de Batalha, Estratégia para a Pilha (resolve e vai ao Descanso) e Trabalhador para o Descanso ("Trabalhar").
 - **Topo do Império (Capitais, [CONSCRITO]…):** botão "Olhar topo do Império" na Reserva abre um quadro só para você (o
@@ -238,6 +250,9 @@ documentação:
   partida. Uma vez a fileira de Combatentes foi revertida no início (voltou
   vazia); "Repor Mercado" corrige e o refil por `onCardsUpdate` também.
 - **Pagar custos com as fichas da Reserva** — só manual (a compra não desconta nada).
+- **Vitória por Combate:** a Hegemonia militar é lançada à mão e chegar a 12 assim **não é anunciado** (só o Final de Campanha anuncia).
+- **Estratégias:** clicar numa Estratégia da mão a põe na Pilha nativa do motor; o efeito (sacar etc.) e a ida ao Descanso são manuais.
+- **Fichas na carta (armazenar recursos, força, muralha) e milícia:** só por arrastar a ficha; o teste automático não consegue.
 - **Fuga e Perseguição, Formações, fichas de força:** manuais e não simulados; o Assalto (dano 1) e a Batalha Campal
   (diferença → Hegemonia) foram simulados com 2 navegadores (ver `docs/DIAGNOSTICS.md`, E19).
 - **Influência Total e a vitória por 12 pontos** foram verificadas por teste unitário e, ao vivo, só o anúncio dos 12 pontos

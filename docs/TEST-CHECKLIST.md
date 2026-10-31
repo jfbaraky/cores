@@ -114,15 +114,17 @@ Zones: Descanso reshuffle · Desterro · Capital destroyed → Descanso · Impé
 
 | Rule | State |
 |---|---|
-| Capital starts with 1 resource token (§7.1) | not placed automatically |
+| Capital starts with 1 resource token (§7.1) | **2026-10-31:** given in the Reserva counters (`iniciarJogador`), not on the card |
 | Mercado conveyor: newest **left**, oldest **right** destroyed (§11.4) | **fixed 2026-10-30** (`ordenarFileiras`): the engine put a refilled card at either end of the row, so each card carries its arrival number in `notes` (`idade:N`), the row is rewritten newest-left and the roll destroys the oldest. The first player's +1 applies to the **leftmost** column |
-| +1 surcharge for the first player from Campanha 2 (§11.2) | not implemented; manual |
-| Combatente normal → bottom of the Império (§9.2) | goes to the Descanso (scripts cannot insert at the bottom) |
+| +1 surcharge for the first player from Campanha 2 (§11.2) | **implemented 2026-10-31** (`Reserva.campanha/primeiro`, shown in the Compra modal; verified live from C2 on). Payment itself is still manual |
+| Combatente normal → bottom of the Império (§9.2) | **implemented 2026-10-31:** flagged `fundo:<time>` in the Descanso and drawn before any reshuffle (`drawWithReshuffle`); verified live (drawn first at the next Renovação, order kept) |
 | Storing resources on Melhorias (§10.3) | by dragging tokens onto cards (native drag-and-drop: **cannot be driven by the test harness**, so storing was not exercised — a human tester must do it); counters reset at the end of the turn; spending stored tokens is manual |
-| Colonos / generation in the Renovação (§8.4) | not represented; worker on a Melhoria + manual resource at the Renovação |
+| Colonos / generation in the Renovação (§8.4) | **implemented 2026-10-31** (Colonizar panel, income in `renovacao`, orphan warning); verified live incl. Capital as host, Sicília not exercised |
 | Comerciar, milícia, muralha, força tokens, Conflitos, Pilha, ability effects | manual (declared in chat) |
 | Plena detection, payment validity (colour rule) | manual declaration; the modal only records the choice |
-| Primazia alternation | by pass order; no token movement automation |
+| Primazia alternation | by pass order (the table passes once more when needed); the Reserva follows it (`primeiro`, flips at each Renovação) |
+| Hegemonia ≥ 12 typed after a Combate | not announced (only the Final de Campanha announces it) |
+| Estratégia played from the hand | goes to the engine's Stack (resolve = pick a target arrow); the move to the Descanso is manual |
 | End of turn cleanup timing | **bug found and fixed on 2026-10-30:** since the platform update the discard ran at the start of your *next* turn; now keyed on the previous `isMyTurn`. Verified live: the leftover is discarded at the pass, on both screens |
 
 ## 8. Both-screens feedback checklist (after each step)
@@ -137,3 +139,7 @@ Zones: Descanso reshuffle · Desterro · Capital destroyed → Descanso · Impé
 ```
 C<campanha>.T<turno> <player> | start: hand/Imp/Desc | work: +<resources> | stored: <Melhoria:tokens> | buy: <card> (<plena/normal>, paid <tokens>) | cards used: <list> | conflict: <none/Assalto/Combate> | end: hand/Imp/Desc, lost: <tokens> | other screen agrees: y/n
 ```
+
+## 10. Driving the board from a script
+
+`docs/test-harness.js` is the helper set used for the live matches (`H.workIds`, `H.buy`, `H.decide`, `H.pass`, `H.play`, `H.sum`…). Inject it with a `<script src>` tag pointing at the Pages copy; it has to be re-injected after every page load. Known limits: no token drag-and-drop, card context-menu clicks are by coordinates (the menu re-lays itself out after the first mouse move: move the mouse once, take a screenshot, then click), Chrome's "Leave site?" dialog blocks reloads (leave through the in-game Exit button).

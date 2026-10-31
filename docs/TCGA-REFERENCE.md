@@ -188,6 +188,12 @@ Blueprint node: `{ type, props, children, onClick, onChange, iterable, template 
 - **Script vs gamefile reload:** a page reload + *Reconnect* picks up a new `game-scripts.js`; the layout/events stay as the room was created.
 - Chrome-extension harness: a tab that is not visible does not render new hand cards until a screenshot is taken; `tabs_close`/`navigate` hang on a pending "Leave site?" dialog.
 
+- **`loop` nodes:** inside `template.onClick` there is no `index` variable; the engine rewrites the literal `[index]` in the string into the item's position (`game.data.X.opcoes[index].id`). `item.<field>` works in `{{ }}` strings.
+- **Turn events:** the game start fires `onNewTurn` on every client with `game.turn.isMyTurn` = "I start"; `game.turn.orderPosition` is the client's own seat (host 0, guest 1).
+- **Pile order:** a card cannot be inserted under the Império by script (`updateCards` index + `repositionCards` is ignored for it). `draw(n, false, "Discard")` and `drawFromExtraDeck("Discard", n, false, "Deck")` move piles around but reverse the order of the batch and log every card name to the table. `moveCard(..., { noLogs: true })` into the Império still logs the name.
+- **Stack:** an unmapped card type clicked in the hand goes to the engine's `Stack` (section name `Stack`, shown as a large card on the right with a target arrow); `cards.Stack` is readable.
+- **Native card menu:** *To <section> → Top / Bottom / Shuffle* for every section (including the Império), *Remove* (deletes a token), *Duplicate* (creates a token copy), *Give to player*; the menu relayouts after the first mouse move.
+
 ## 8. Status of earlier hypotheses
 Done and live-verified (see [DIAGNOSTICS.md](DIAGNOSTICS.md)): `autoPlayFromHand` moved to `sections`; Capital via `categoriesAlreadyOnBoard`; market ownership/refill via `onCardsLeave` + `game.isHost`; module flags removed; Reserva compact and last in `layout`; `translations.json` / `noAutoPayTo` removed.
 
