@@ -308,13 +308,11 @@ function abrirColonizar() {
   Object.assign(game.data.Colonizar, { open: true, opcoes, vazio: opcoes.length === 0 });
 }
 
-async function colonizar(index) {
-  const painel = game.data.Colonizar;
-  const opcao = painel.opcoes?.[index];
-  painel.open = false;
-  if (!opcao) return;
-  const worker = (cards?.Hand ?? []).find((c) => c.id === opcao.trabalhador);
-  const melhoria = (cards?.Territorio ?? []).find((c) => c.id === opcao.melhoria);
+// Called from the panel's loop buttons (the engine rewrites `[index]` in their onClick into the position of the item).
+async function colonizar(trabalhadorId, melhoriaId) {
+  game.data.Colonizar.open = false;
+  const worker = (cards?.Hand ?? []).find((c) => c.id === trabalhadorId);
+  const melhoria = (cards?.Territorio ?? []).find((c) => c.id === melhoriaId);
   if (!worker || !melhoria || !melhoriasElegiveis(worker.cardData?.civilization).some((c) => c.id === melhoria.id)) {
     functions.chatLog("Colonizar: a carta mudou de lugar ou a Melhoria já tem colono; tente de novo.");
     return;

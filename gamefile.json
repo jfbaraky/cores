@@ -2035,17 +2035,17 @@
                   "left": "50%",
                   "transform": "translateX(-50%)",
                   "zIndex": 100000,
-                  "width": "52vh",
+                  "width": "56vh",
                   "flexDirection": "column",
-                  "gap": "1.2vh",
-                  "padding": "2vh",
+                  "gap": "0.6vh",
+                  "padding": "1vh 1.4vh",
                   "background": "#1b2433",
                   "border": "0.3vh solid #ffd54f",
                   "borderRadius": "1vh",
                   "boxShadow": "0 0 4vh rgba(0,0,0,0.85)",
                   "color": "#ffffff",
                   "pointerEvents": "auto",
-                  "bottom": "31vh"
+                  "bottom": "27vh"
                 }
               },
               "children": [
@@ -2053,21 +2053,21 @@
                   "type": "div",
                   "props": {
                     "style": {
-                      "fontSize": "2.1vh",
+                      "fontSize": "1.7vh",
                       "fontWeight": "bold"
                     }
                   },
-                  "children": "Colonizar (alocar um trabalhador em uma Melhoria sua)"
+                  "children": "Colonizar"
                 },
                 {
                   "type": "div",
                   "props": {
                     "style": {
-                      "fontSize": "1.5vh",
+                      "fontSize": "1.2vh",
                       "opacity": "0.85"
                     }
                   },
-                  "children": "{{ game.data.Colonizar.vazio ? 'Nenhuma opção: precisa de um trabalhador na mão e de uma Melhoria sua, da mesma cor, que não gere recursos e ainda sem colono.' : 'O trabalhador fica na Melhoria para sempre e gera 1 recurso da cor dela a cada Renovação.' }}"
+                  "children": "{{ game.data.Colonizar.vazio ? 'Sem opção: precisa de um trabalhador na mão e de uma Melhoria sua da mesma cor, sem colono e que não gere recursos.' : 'Fica na Melhoria para sempre e gera 1 recurso da cor dela a cada Renovação.' }}"
                 },
                 {
                   "type": "loop",
@@ -2076,8 +2076,8 @@
                     "type": "button",
                     "props": {
                       "style": {
-                        "fontSize": "1.7vh",
-                        "padding": "0.6vh 1.4vh",
+                        "fontSize": "1.4vh",
+                        "padding": "0.4vh 1vh",
                         "background": "#1565c0",
                         "color": "#fff",
                         "border": "0",
@@ -2089,7 +2089,7 @@
                       }
                     },
                     "children": "{{ item.texto }}",
-                    "onClick": "await colonizar(index)"
+                    "onClick": "await colonizar(game.data.Colonizar.opcoes[index].trabalhador, game.data.Colonizar.opcoes[index].melhoria)"
                   }
                 },
                 {
