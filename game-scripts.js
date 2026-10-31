@@ -442,8 +442,8 @@ async function concluirCompra(modo) {
   if (token) {
     await functions.updateCards([token], { isToken: false, startOwner: token.owner, notes: "" });
     if (compra.type === "Combatente") {
-      await functions.moveCard(token, "Deck");
-      if (!plena) await paraOFundo(token);
+      if (plena) await functions.moveCard(token, "Deck");
+      else await paraOFundo(token);
     }
   }
   functions.chatLog(
@@ -458,11 +458,15 @@ async function concluirCompra(modo) {
   if (game.isHost) await fillMarket();
 }
 
-// Slots a card at the very bottom of the Império (index 0; getDeck() lists the bottom first). moveCard puts it on top; the
-// card then gets an index below every other and repositionCards renumbers the pile.
+// Puts a card at the very bottom of the Império (index 0; getDeck() lists the bottom first). The engine only puts a card on
+// top, and re-indexing it (updateCards + repositionCards) does not reorder the pile (live-checked), so the Império is parked
+// in the Descanso for a moment: its n cards are drawn onto the Descanso (the first drawn ends deepest), the card goes into the
+// now empty Império, and the n cards are drawn back from the top of the Descanso, restoring their order above it.
 async function paraOFundo(card) {
-  await functions.updateCards([card], { position: { ...card.position, section: "Deck", index: -0.5 } });
-  await functions.repositionCards();
+  const n = (await functions.getDeck()).length;
+  if (n > 0) await functions.draw(n, false, "Discard");
+  await functions.moveCard(card, "Deck", { noLogs: true });
+  if (n > 0) await functions.drawFromExtraDeck("Discard", n, false, "Deck");
 }
 
 async function cancelarCompra() {
