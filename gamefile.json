@@ -1940,7 +1940,8 @@
             "displayedTitle": "Mercado (estado)",
             "isShared": true,
             "defaultValue": {
-              "pendente": false
+              "pendente": false,
+              "fileiras": ""
             },
             "blueprint": {
               "type": "div",

@@ -72,6 +72,7 @@ Keep a one-line log per step: `Mão / Império / Descanso / Território / Campo 
 - [ ] Payment: **≥ 1 token of the card's colour**, rest any colour or ouro; neutral (grey) cards any colours (§9.2). Counters (or stored tokens) are reduced by hand — nobody gets a card for free.
 - [ ] The card leaves the row, the row **closes up and a new card is revealed immediately** (§9.2, §11.4) on both screens; pile −1.
 - [ ] Estratégia/Melhoria → hand. **Combatente → BOTTOM of the Império** (TOP if plena) (§9.2/§9.3).
+- [ ] **The turn ends with the Compra**: nothing from the Preparação (playing the bought card, working, tapping) happens afterwards in that turn; the card is played in a **later** turn (§11.1 "Por que a Compra é sempre a última"). The first re-test run played bought Melhorias in the same turn — wrong.
 - [ ] **Plena** (§9.3): whole cost paid in the card's own colour and/or ouro (cost 0 never plena; reducers count). Combatente → top of the Império; Estratégia/Melhoria → **one second purchase**, same type, cost ≤ first, normal cost, **no second plena bonus**.
 - [ ] Cancel returns the card to the same slot, owned by nobody, the row is unchanged.
 
@@ -114,15 +115,15 @@ Zones: Descanso reshuffle · Desterro · Capital destroyed → Descanso · Impé
 | Rule | State |
 |---|---|
 | Capital starts with 1 resource token (§7.1) | not placed automatically |
-| Mercado conveyor: newest **left**, oldest **right** destroyed (§11.4) | **inverted**: new cards go on the right and the leftmost (oldest) is destroyed — the "newest column" for the +1 surcharge is therefore the **right** one on screen |
+| Mercado conveyor: newest **left**, oldest **right** destroyed (§11.4) | **fixed 2026-10-30** (`ordenarFileiras`): the engine put a refilled card at either end of the row, so the arrival order is kept in `MercadoEstado.fileiras` and the row is rewritten newest-left; the roll destroys the oldest. The first player's +1 applies to the **leftmost** column |
 | +1 surcharge for the first player from Campanha 2 (§11.2) | not implemented; manual |
 | Combatente normal → bottom of the Império (§9.2) | goes to the Descanso (scripts cannot insert at the bottom) |
-| Storing resources on Melhorias (§10.3) | by dragging tokens onto cards; counters reset at the end of the turn; spending stored tokens is manual |
+| Storing resources on Melhorias (§10.3) | by dragging tokens onto cards (native drag-and-drop: **cannot be driven by the test harness**, so storing was not exercised — a human tester must do it); counters reset at the end of the turn; spending stored tokens is manual |
 | Colonos / generation in the Renovação (§8.4) | not represented; worker on a Melhoria + manual resource at the Renovação |
 | Comerciar, milícia, muralha, força tokens, Conflitos, Pilha, ability effects | manual (declared in chat) |
 | Plena detection, payment validity (colour rule) | manual declaration; the modal only records the choice |
 | Primazia alternation | by pass order; no token movement automation |
-| End of turn cleanup timing | **bug found on 2026-10-30:** the discard ran at the start of your *next* turn since the platform update (fixed in `game-scripts.js`, not yet published) |
+| End of turn cleanup timing | **bug found and fixed on 2026-10-30:** since the platform update the discard ran at the start of your *next* turn; now keyed on the previous `isMyTurn`. Verified live: the leftover is discarded at the pass, on both screens |
 
 ## 8. Both-screens feedback checklist (after each step)
 

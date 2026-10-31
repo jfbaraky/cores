@@ -39,7 +39,45 @@ async function keepMarketFull() {
   // ~300 ms after the card moves, this event runs ~500 ms after the move.
   await sleep(700);
   if (game.data.MercadoEstado?.pendente) return;
+  await ordenarFileiras();
   await fillMarket();
+}
+
+// Mercado conveyor (manual §11.4): in each row the NEWEST card is on the LEFT and the OLDEST on the right; the
+// Renovação destroys the rightmost one and the first player's +1 surcharge applies to the leftmost column. The engine
+// puts a refilled card at either end of the row (seen on both), so the arrival order is kept in the shared
+// MercadoEstado.fileiras (JSON: row section -> card ids, oldest first) and the positions are rewritten from it.
+// Cards waiting in a Compra modal are not in the row: the caller skips this while a purchase is pending, so a
+// cancelled card keeps its place in the list.
+function lerFileiras() {
+  try {
+    return JSON.parse(game.data.MercadoEstado?.fileiras || "{}");
+  } catch (e) {
+    return {};
+  }
+}
+
+async function ordenarFileiras() {
+  const stored = lerFileiras();
+  const next = {};
+  const moves = [];
+  for (const { revealed } of MARKET_PILES) {
+    const shown = [...(cards?.[revealed] ?? [])].sort((a, b) => a.position.index - b.position.index);
+    const present = new Set(shown.map((c) => c.id));
+    const known = (stored[revealed] ?? []).filter((id) => present.has(id));
+    // Cards not seen before are the newest (several at once, as at the start: the one on the right counts as older).
+    const fresh = shown.map((c) => c.id).filter((id) => !known.includes(id));
+    const oldestFirst = [...known, ...fresh];
+    next[revealed] = oldestFirst;
+    [...oldestFirst].reverse().forEach((id, index) => {
+      const card = shown.find((c) => c.id === id);
+      if (card && card.position.index !== index) moves.push([card, index]);
+    });
+  }
+  const json = JSON.stringify(next);
+  if (json !== (game.data.MercadoEstado?.fileiras ?? "")) game.data.MercadoEstado.fileiras = json;
+  for (const [card, index] of moves) await functions.updateCards([card], { position: { ...card.position, index } });
+  if (moves.length > 0) await functions.repositionCards();
 }
 
 const sleep = (ms) => new Promise((resolve) => (typeof setTimeout === "function" ? setTimeout(resolve, ms) : resolve()));
@@ -59,14 +97,16 @@ async function setupMarket() {
   await fillMarket();
 }
 
-// Renovação: the oldest revealed card of each row goes to its discard; keepMarketFull then refills
-// the rows (fillMarket is not called here to avoid a double refill). New cards are appended on the
-// RIGHT of a row, so the oldest is the LEFTMOST (the manual's conveyor runs the other way round).
+// Renovação (manual §11.4): the oldest card of each row (the rightmost one, see ordenarFileiras) goes to its discard;
+// keepMarketFull then refills the rows (fillMarket is not called here to avoid a double refill).
 async function advanceMarket() {
+  const stored = lerFileiras();
   for (const { revealed, discard } of MARKET_PILES) {
     const shown = cards?.[revealed] ?? [];
     if (shown.length === 0) continue;
-    const oldest = [...shown].sort((a, b) => a.position.index - b.position.index)[0];
+    const byIndex = [...shown].sort((a, b) => b.position.index - a.position.index);
+    const oldestId = (stored[revealed] ?? []).find((id) => shown.some((c) => c.id === id));
+    const oldest = shown.find((c) => c.id === oldestId) ?? byIndex[0];
     await functions.moveCard(oldest, discard);
     functions.chatLog(`${functions.getCardData(oldest)?.name?.name ?? "Carta"} descartada do Mercado (Renovação).`);
   }

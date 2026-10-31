@@ -111,7 +111,7 @@ o que cada decisão custou em tentativas está em `docs/DIAGNOSTICS.md`.
   (manual §10.3: recurso não armazenado nas Melhorias é descartado). Hegemonia não é zerada.
 - **Renovação:** botão "Renovação (minha parte)" (cada jogador): desvira o Território, completa a mão até 6 (só
   embaralha o Descanso se precisar sacar com o Império vazio). "Avançar Mercado" (uma vez por mesa) descarta a carta
-  mais antiga (a mais à esquerda) de cada fileira. As Melhorias ficam viradas entre turnos (§12.1).
+  mais antiga (a mais à direita; as cartas novas entram à esquerda) de cada fileira. As Melhorias ficam viradas entre turnos (§12.1).
 - **Comprar (normal ou plena):** clique no atalho do canto da carta do Mercado. Abre um quadro "Comprar X (custo N)" com
   **Compra plena / Compra normal / Cancelar** (só aparece para quem está comprando; o log da mesa registra a escolha).
   - Combatente: o token do Mercado é trocado por uma carta de verdade. *Plena* → topo do Império; *normal* → Descanso (entra
