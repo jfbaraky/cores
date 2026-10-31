@@ -45,39 +45,33 @@ async function keepMarketFull() {
 
 // Mercado conveyor (manual §11.4): in each row the NEWEST card is on the LEFT and the OLDEST on the right; the
 // Renovação destroys the rightmost one and the first player's +1 surcharge applies to the leftmost column. The engine
-// puts a refilled card at either end of the row (seen on both), so the arrival order is kept in the shared
-// MercadoEstado.fileiras (JSON: row section -> card ids, oldest first) and the positions are rewritten from it.
+// puts a refilled card at either end of the row (seen on both), so each card carries its arrival number in its own
+// `notes` field ("idade:N", higher = newer) and the positions are rewritten from it. (A list kept in shared game data
+// does not work: two runs overlap and the second one reads the value before the first run's write has landed.)
 // Cards waiting in a Compra modal are not in the row: the caller skips this while a purchase is pending, so a
-// cancelled card keeps its place in the list.
-function lerFileiras() {
-  try {
-    return JSON.parse(game.data.MercadoEstado?.fileiras || "{}");
-  } catch (e) {
-    return {};
-  }
+// cancelled card keeps its age and its place.
+function idadeDe(card) {
+  const m = /^idade:(\d+)$/.exec(card.notes ?? "");
+  return m ? Number(m[1]) : null;
 }
 
 async function ordenarFileiras() {
-  const stored = lerFileiras();
-  const next = {};
-  const moves = [];
+  let proxima = 1 + Math.max(0, ...MARKET_PILES.flatMap(({ revealed }) => (cards?.[revealed] ?? []).map((c) => idadeDe(c) ?? 0)));
+  const changes = [];
   for (const { revealed } of MARKET_PILES) {
     const shown = [...(cards?.[revealed] ?? [])].sort((a, b) => a.position.index - b.position.index);
-    const present = new Set(shown.map((c) => c.id));
-    const known = (stored[revealed] ?? []).filter((id) => present.has(id));
-    // Cards not seen before are the newest (several at once, as at the start: the one on the right counts as older).
-    const fresh = shown.map((c) => c.id).filter((id) => !known.includes(id));
-    const oldestFirst = [...known, ...fresh];
-    next[revealed] = oldestFirst;
-    [...oldestFirst].reverse().forEach((id, index) => {
-      const card = shown.find((c) => c.id === id);
-      if (card && card.position.index !== index) moves.push([card, index]);
+    // Cards without an age are the newest; several at once (the start): the one on the right counts as older.
+    const aged = shown.map((c) => ({ card: c, idade: idadeDe(c), novo: idadeDe(c) === null }));
+    for (const entry of aged) if (entry.novo) entry.idade = proxima++;
+    [...aged].sort((a, b) => b.idade - a.idade).forEach((entry, index) => {
+      const change = {};
+      if (entry.novo) change.notes = `idade:${entry.idade}`;
+      if (entry.card.position.index !== index) change.position = { ...entry.card.position, index };
+      if (Object.keys(change).length > 0) changes.push([entry.card, change]);
     });
   }
-  const json = JSON.stringify(next);
-  if (json !== (game.data.MercadoEstado?.fileiras ?? "")) game.data.MercadoEstado.fileiras = json;
-  for (const [card, index] of moves) await functions.updateCards([card], { position: { ...card.position, index } });
-  if (moves.length > 0) await functions.repositionCards();
+  for (const [card, change] of changes) await functions.updateCards([card], change);
+  if (changes.some(([, change]) => change.position)) await functions.repositionCards();
 }
 
 const sleep = (ms) => new Promise((resolve) => (typeof setTimeout === "function" ? setTimeout(resolve, ms) : resolve()));
@@ -97,16 +91,13 @@ async function setupMarket() {
   await fillMarket();
 }
 
-// Renovação (manual §11.4): the oldest card of each row (the rightmost one, see ordenarFileiras) goes to its discard;
-// keepMarketFull then refills the rows (fillMarket is not called here to avoid a double refill).
+// Renovação (manual §11.4): the oldest card of each row (lowest `idade`, normally the rightmost one, see ordenarFileiras)
+// goes to its discard; keepMarketFull then refills the rows (fillMarket is not called here to avoid a double refill).
 async function advanceMarket() {
-  const stored = lerFileiras();
   for (const { revealed, discard } of MARKET_PILES) {
     const shown = cards?.[revealed] ?? [];
     if (shown.length === 0) continue;
-    const byIndex = [...shown].sort((a, b) => b.position.index - a.position.index);
-    const oldestId = (stored[revealed] ?? []).find((id) => shown.some((c) => c.id === id));
-    const oldest = shown.find((c) => c.id === oldestId) ?? byIndex[0];
+    const oldest = [...shown].sort((a, b) => (idadeDe(a) ?? 1e9) - (idadeDe(b) ?? 1e9) || b.position.index - a.position.index)[0];
     await functions.moveCard(oldest, discard);
     functions.chatLog(`${functions.getCardData(oldest)?.name?.name ?? "Carta"} descartada do Mercado (Renovação).`);
   }
@@ -120,14 +111,14 @@ const RESOURCE_KEYS = ["roxo", "vermelho", "azul", "verde", "ouro"];
 // inside this handler describes the turn that has just STARTED (before it described the one that ended; the
 // discard then ran at the start of your NEXT turn, so the leftovers stayed visible to the opponent and anything
 // received during their turn was wiped). So "my turn just ended" = it is not my turn now and it was before:
-// the previous value is kept in Reserva.turnoMeu (unknown at the very first event, which counts as "was mine"
+// the previous value is kept in Reserva.turnoMeu ("sim"/"nao"; empty at the very first event, which counts as "was mine"
 // so the starting player's first turn is cleaned even if the game start fires no event).
 function endOfTurnCleanup() {
   const reserva = game.data.Reserva;
   const mine = Boolean(game.turn.isMyTurn);
   const was = reserva.turnoMeu;
-  reserva.turnoMeu = mine;
-  if (mine || was === false) return;
+  reserva.turnoMeu = mine ? "sim" : "nao";
+  if (mine || was === "nao") return;
   reserva.bonus = "";
   const lost = RESOURCE_KEYS.filter((k) => reserva[k] > 0).map((k) => `${reserva[k]} ${k}`);
   RESOURCE_KEYS.forEach((k) => { reserva[k] = 0; });
@@ -311,7 +302,7 @@ async function concluirCompra(modo) {
   game.data.MercadoEstado.pendente = false; // before the card changes below: they trigger the host's refill
   const token = (cards?.Hand ?? []).find((c) => c.id === compra.id);
   if (token) {
-    await functions.updateCards([token], { isToken: false, startOwner: token.owner });
+    await functions.updateCards([token], { isToken: false, startOwner: token.owner, notes: "" });
     if (compra.type === "Combatente") await functions.moveCard(token, plena ? "Deck" : "Discard");
   }
   functions.chatLog(

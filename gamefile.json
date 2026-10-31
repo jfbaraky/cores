@@ -1199,7 +1199,8 @@
               "bonus": "",
               "marcas": "",
               "pontuado": false,
-              "bonusRenovacao": ""
+              "bonusRenovacao": "",
+              "turnoMeu": ""
             },
             "blueprint": {
               "type": "div",
@@ -1940,8 +1941,7 @@
             "displayedTitle": "Mercado (estado)",
             "isShared": true,
             "defaultValue": {
-              "pendente": false,
-              "fileiras": ""
+              "pendente": false
             },
             "blueprint": {
               "type": "div",

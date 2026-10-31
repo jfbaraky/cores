@@ -115,7 +115,7 @@ Zones: Descanso reshuffle · Desterro · Capital destroyed → Descanso · Impé
 | Rule | State |
 |---|---|
 | Capital starts with 1 resource token (§7.1) | not placed automatically |
-| Mercado conveyor: newest **left**, oldest **right** destroyed (§11.4) | **fixed 2026-10-30** (`ordenarFileiras`): the engine put a refilled card at either end of the row, so the arrival order is kept in `MercadoEstado.fileiras` and the row is rewritten newest-left; the roll destroys the oldest. The first player's +1 applies to the **leftmost** column |
+| Mercado conveyor: newest **left**, oldest **right** destroyed (§11.4) | **fixed 2026-10-30** (`ordenarFileiras`): the engine put a refilled card at either end of the row, so each card carries its arrival number in `notes` (`idade:N`), the row is rewritten newest-left and the roll destroys the oldest. The first player's +1 applies to the **leftmost** column |
 | +1 surcharge for the first player from Campanha 2 (§11.2) | not implemented; manual |
 | Combatente normal → bottom of the Império (§9.2) | goes to the Descanso (scripts cannot insert at the bottom) |
 | Storing resources on Melhorias (§10.3) | by dragging tokens onto cards (native drag-and-drop: **cannot be driven by the test harness**, so storing was not exercised — a human tester must do it); counters reset at the end of the turn; spending stored tokens is manual |
