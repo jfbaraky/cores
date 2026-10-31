@@ -1,6 +1,6 @@
 {
   "name": "Cores da Guerra",
-  "menuBackgroundImage": "https://jfbaraky.github.io/cores/assets/cardback.jpg",
+  "menuBackgroundImage": "https://jfbaraky.github.io/cores/assets/banner.jpg",
   "cardRotation": 45,
   "scriptsUrls": [
     "https://jfbaraky.github.io/cores/game-scripts.js"
