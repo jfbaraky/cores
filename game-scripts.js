@@ -76,12 +76,18 @@ async function advanceMarket() {
 const RESOURCE_KEYS = ["roxo", "vermelho", "azul", "verde", "ouro"];
 
 // Reserva.onNewTurn: runs on every client at every turn change. §10.3: resources not stored on
-// Melhorias are discarded when *your* turn ends. Verified live (2 players, 12 turn changes): inside
-// this handler `game.turn.isMyTurn` still describes the turn that has just ENDED (the snapshot is
-// taken before the engine switches turn), so `true` here means "my turn just ended".
+// Melhorias are discarded when *your* turn ends. Since the platform update of October 2026 `game.turn.isMyTurn`
+// inside this handler describes the turn that has just STARTED (before it described the one that ended; the
+// discard then ran at the start of your NEXT turn, so the leftovers stayed visible to the opponent and anything
+// received during their turn was wiped). So "my turn just ended" = it is not my turn now and it was before:
+// the previous value is kept in Reserva.turnoMeu (unknown at the very first event, which counts as "was mine"
+// so the starting player's first turn is cleaned even if the game start fires no event).
 function endOfTurnCleanup() {
-  if (!game.turn.isMyTurn) return;
   const reserva = game.data.Reserva;
+  const mine = Boolean(game.turn.isMyTurn);
+  const was = reserva.turnoMeu;
+  reserva.turnoMeu = mine;
+  if (mine || was === false) return;
   reserva.bonus = "";
   const lost = RESOURCE_KEYS.filter((k) => reserva[k] > 0).map((k) => `${reserva[k]} ${k}`);
   RESOURCE_KEYS.forEach((k) => { reserva[k] = 0; });
