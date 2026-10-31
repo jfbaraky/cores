@@ -118,8 +118,8 @@ function endOfTurnCleanup() {
   const mine = Boolean(game.turn.isMyTurn);
   const was = reserva.turnoMeu;
   reserva.turnoMeu = mine ? "sim" : "nao";
-  if (was === "" && !reserva.primeiro) reserva.primeiro = mine ? "sim" : "nao"; // TEMP heuristic, see the [dbg] lines
-  functions.chatLog(`[dbg] turno mine=${mine} was=${was} count=${game.turn.count} pos=${game.turn.orderPosition}/${game.turn.totalPlayers}`);
+  // The game start fires one event on every client with `isMyTurn` = "I start" (live-checked); `orderPosition` is the client's own seat.
+  if (was === "" && !reserva.primeiro) reserva.primeiro = mine ? "sim" : "nao";
   if (mine || was === "nao") return;
   reserva.bonus = "";
   const lost = RESOURCE_KEYS.filter((k) => reserva[k] > 0).map((k) => `${reserva[k]} ${k}`);
