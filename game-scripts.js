@@ -129,17 +129,39 @@ function endOfTurnCleanup() {
   }
 }
 
+// Cards bought "para o fundo do Império" (manual §9.2) wait in the Descanso flagged `notes: "fundo:<time>"`. The engine cannot
+// put a card under the pile (re-indexing does not reorder it, and parking the pile in another section writes every card
+// name of the Império into the shared log), so the Império counts them as its last cards: they are drawn, oldest first,
+// when the pile runs out and before the Descanso is shuffled into a new Império.
+const FUNDO = /^fundo:(\d+)$/;
+function fundoDoImperio() {
+  const hora = (c) => Number(FUNDO.exec(c.notes ?? "")[1]);
+  return (cards?.Discard ?? []).filter((c) => FUNDO.test(c.notes ?? "")).sort((a, b) => hora(a) - hora(b));
+}
+
+async function paraOFundo(card) {
+  await functions.updateCards([card], { notes: `fundo:${Date.now()}` });
+  await functions.moveCard(card, "Discard", { noLogs: true });
+}
+
 // Draws `count` cards. §11.4: the Império is only rebuilt at the moment you must draw from an empty
-// one, by shuffling the Descanso into it.
+// one, by shuffling the Descanso into it (the cards under it, see above, come first).
 async function drawWithReshuffle(count) {
   const inDeck = (await functions.getDeck()).length;
   const first = Math.min(count, inDeck);
   if (first > 0) await functions.draw(first);
-  const missing = count - first;
+  let missing = count - first;
   if (missing <= 0) return;
-  const discarded = cards?.Discard ?? [];
+  const fundo = fundoDoImperio().slice(0, missing);
+  for (const card of fundo) {
+    await functions.updateCards([card], { notes: "" });
+    await functions.moveCard(card, "Hand", { noLogs: true });
+  }
+  missing -= fundo.length;
+  if (missing <= 0) return;
+  const discarded = (cards?.Discard ?? []).filter((c) => !FUNDO.test(c.notes ?? ""));
   if (discarded.length === 0) return;
-  for (const card of discarded) await functions.moveCard(card, "Deck");
+  for (const card of discarded) await functions.moveCard(card, "Deck", { noLogs: true });
   await functions.shuffleSection("Deck");
   await functions.draw(Math.min(missing, discarded.length));
   functions.chatLog("Império esgotado: Descanso embaralhado para formar o novo Império.");
@@ -396,7 +418,7 @@ async function sacarCarta() {
 // startOwner = its current owner). Live findings: a token that enters the Império vanishes when
 // drawn, and cards made with createCard (startOwner "UNOWNED") are invisible to the other player
 // after they leave the deck. A normal card has neither problem.
-//  - Combatente: plena -> top of the Império; normal -> bottom of the Império (paraOFundo).
+//  - Combatente: plena -> top of the Império; normal -> bottom of the Império (paraOFundo: flagged in the Descanso).
 //  - Estratégia / Melhoria: the card stays in the Mão; a plena purchase shows the second-purchase
 //    right ("2ª compra: mesmo tipo, custo ≤ N") in the Reserva until the turn ends.
 // The payment itself (counters) stays manual: the choice is the player's declaration, logged for both.
@@ -458,17 +480,6 @@ async function concluirCompra(modo) {
   if (game.isHost) await fillMarket();
 }
 
-// Puts a card at the very bottom of the Império (index 0; getDeck() lists the bottom first). The engine only puts a card on
-// top, and re-indexing it (updateCards + repositionCards) does not reorder the pile (live-checked), so the Império is parked
-// in the Descanso for a moment: its n cards are drawn onto the Descanso (the first drawn ends deepest), the card goes into the
-// now empty Império, and the n cards are drawn back from the top of the Descanso, restoring their order above it.
-async function paraOFundo(card) {
-  const n = (await functions.getDeck()).length;
-  if (n > 0) await functions.draw(n, false, "Discard");
-  await functions.moveCard(card, "Deck", { noLogs: true });
-  if (n > 0) await functions.drawFromExtraDeck("Discard", n, false, "Deck");
-}
-
 async function cancelarCompra() {
   const compra = game.data.Compra;
   // The refill was held while the modal was open, so the row still has its gap. The engine appends the
@@ -502,15 +513,14 @@ async function olharTopo() {
   // The table is told that someone looked, never which card. Not logged again when atualizarTopo refreshes
   // a panel that is already open.
   const deck = await functions.getDeck();
-  if (!topo.open) {
-    functions.chatLog("Olhou a carta do topo do Império.");
-    functions.chatLog(`[dbg] deck n=${deck.length} fundo=${deck[0]?.cardData?.name} topo=${deck[deck.length - 1]?.cardData?.name}`); // TEMP
-  }
-  if (deck.length === 0) {
+  if (!topo.open) functions.chatLog("Olhou a carta do topo do Império.");
+  // With the pile empty the top is the first card waiting under it (fundoDoImperio).
+  const fundo = deck.length === 0 ? fundoDoImperio() : [];
+  if (deck.length === 0 && fundo.length === 0) {
     Object.assign(topo, { open: true, empty: true, name: "Império vazio", info: "Não há carta para olhar.", text: "", image: "" });
     return;
   }
-  const card = deck[deck.length - 1];
+  const card = deck.length > 0 ? deck[deck.length - 1] : fundo[0];
   const full = card.cardData ?? {};
   const face = functions.getCardData(card) ?? full.face?.front ?? {};
   const type = face.type ?? full.type ?? "";
@@ -523,7 +533,7 @@ async function olharTopo() {
     info: [type, civilization, cost != null ? `custo ${cost}` : ""].filter(Boolean).join(" · "),
     text: full.abilityText ?? "",
     image: face.image ?? full.image ?? "",
-    deckSize: deck.length,
+    deckSize: deck.length + fundoDoImperio().length,
   });
 }
 
@@ -539,7 +549,7 @@ function mostrarTopo() {
 async function pegarTopo() {
   const topo = game.data.Topo;
   if (!topo.empty) {
-    await functions.draw(1);
+    await drawWithReshuffle(1);
     functions.chatLog("Carta do topo do Império colocada na mão.");
   }
   topo.open = false;
