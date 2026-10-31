@@ -501,9 +501,11 @@ async function olharTopo() {
   const topo = game.data.Topo;
   // The table is told that someone looked, never which card. Not logged again when atualizarTopo refreshes
   // a panel that is already open.
-  if (!topo.open) functions.chatLog("Olhou a carta do topo do Império.");
   const deck = await functions.getDeck();
-  functions.chatLog(`[dbg] deck n=${deck.length} fundo=${deck[0]?.cardData?.name} topo=${deck[deck.length - 1]?.cardData?.name}`); // TEMP
+  if (!topo.open) {
+    functions.chatLog("Olhou a carta do topo do Império.");
+    functions.chatLog(`[dbg] deck n=${deck.length} fundo=${deck[0]?.cardData?.name} topo=${deck[deck.length - 1]?.cardData?.name}`); // TEMP
+  }
   if (deck.length === 0) {
     Object.assign(topo, { open: true, empty: true, name: "Império vazio", info: "Não há carta para olhar.", text: "", image: "" });
     return;
