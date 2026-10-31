@@ -1,9 +1,8 @@
 # Cores da Guerra — Manual de Regras (v1, working version)
 
-`cores-da-guerra-manual-v1.pdf` is the rulebook the game is being built from (40 pages, Portuguese).
-The original PDF (`cores-da-guerra-manual-v1-2.pdf`, from Downloads) is no longer on disk; this copy was **rebuilt from the
-page images captured when the manual was first read** (850×1100 px per page, image-only: not text-searchable). Replace it with the
-original if you still have it.
+`cores-da-guerra-manual-v1.pdf` is the rulebook the game is being built from (40 pages, Portuguese, "Versão de Trabalho v1").
+It is the original file (`cores-da-guerra-manual-v1-2.pdf`, copied from Downloads on 2026-10-30; the earlier image-only reconstruction was replaced).
+The test checklist built from it is in [`../TEST-CHECKLIST.md`](../TEST-CHECKLIST.md).
 
 Below: what the manual says about **ending a turn / a Campaign**, and how it compares with the TCG Arena implementation. Section numbers are the manual's.
 
